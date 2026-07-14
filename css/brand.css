@@ -1,0 +1,209 @@
+/* ============================================
+   First Class Spanish — Shared Brand Stylesheet
+   Used by every page on the site. Page-specific
+   styles (lesson layouts, drag-and-drop, etc.)
+   stay in that page's own <style> block.
+   ============================================ */
+
+:root {
+  /* Core brand */
+  --jade: #1F7A4D;
+  --forest: #0E3522;
+  --gold: #D4A017;
+  --gold-light: #FBF0D4;
+  --page-bg: #F2F1EE;
+  --white: #FFFFFF;
+  --charcoal: #1A231E;
+  --gray: #4A5750;
+  --muted: #7A8880;
+  --error: #B3412A;
+
+  /* Unit 1 — Pronunciation */
+  --teal: #1A8A8A;
+  --teal-light: #E4F4F4;
+  --teal-dark: #0F5C5C;
+
+  /* Unit 2 — Grammatical Person */
+  --terracotta: #C0522A;
+  --terracotta-light: #F5E5DE;
+  --terracotta-dark: #8A3A1D;
+
+  /* Unit 3 — Parts of Speech */
+  --plum: #7A3A9A;
+  --plum-light: #F0E4F5;
+  --plum-dark: #5A2872;
+
+  /* Unit 4 — Conjugation */
+  --blue: #2A5FA8;
+  --blue-light: #E3EAF5;
+  --blue-dark: #1E4478;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: var(--page-bg);
+  color: var(--charcoal);
+  line-height: 1.6;
+}
+
+h1, h2, h3 { font-family: 'Sora', sans-serif; color: var(--forest); }
+a { color: inherit; text-decoration: none; }
+
+/* ---------- Header ---------- */
+header {
+  background: var(--jade);
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--white);
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: opacity 0.15s ease;
+}
+.brand:hover { opacity: 0.85; }
+.brand .star { color: var(--gold); }
+.unit-pill {
+  background: rgba(255,255,255,0.15);
+  color: var(--white);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  text-align: center;
+  padding: 30px 24px 50px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* ---------- Ticket divider ---------- */
+.ticket-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 48px auto;
+  max-width: 700px;
+  position: relative;
+}
+.ticket-divider::before,
+.ticket-divider::after { content: ""; flex: 1; border-top: 2px dashed var(--muted); }
+.ticket-divider .notch {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--page-bg);
+  border: 2px dashed var(--muted);
+  margin: 0 10px;
+}
+
+/* ---------- Page container ---------- */
+.wrap { max-width: 860px; margin: 0 auto; padding: 0 24px 40px; }
+
+/* ---------- Content card ---------- */
+section.block {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 36px 40px;
+  box-shadow: 0 1px 3px rgba(14,53,34,0.06);
+  margin-bottom: 8px;
+}
+.block h2 {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.block h2 .tag { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+.block p { color: var(--gray); margin-bottom: 14px; }
+.block p:last-child { margin-bottom: 0; }
+
+@media (max-width: 640px) {
+  section.block { padding: 26px 22px; }
+}
+
+/* ---------- Callouts ---------- */
+.callout {
+  background: var(--teal-light);
+  border-left: 4px solid var(--teal);
+  padding: 16px 20px;
+  border-radius: 8px;
+  color: var(--forest);
+  font-weight: 600;
+  margin-top: 16px;
+}
+.callout.terracotta { background: var(--terracotta-light); border-left-color: var(--terracotta); }
+.callout.plum { background: var(--plum-light); border-left-color: var(--plum); }
+.callout.blue { background: var(--blue-light); border-left-color: var(--blue); }
+
+/* ---------- Special note (distinct from callout) ---------- */
+.special-note {
+  background: var(--gold-light);
+  border: 1.5px dashed var(--gold);
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin-top: 16px;
+}
+.special-note .sn-badge {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--white);
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 4px 10px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+.special-note p { color: var(--forest); margin: 0; font-weight: 500; }
+
+/* ---------- Quiz level CTA (used on lesson pages) ---------- */
+.quiz-cta { margin-top: 8px; }
+.quiz-cta h2 { color: var(--forest); text-align: center; margin-bottom: 6px; }
+.quiz-cta .sub { text-align: center; color: var(--gray); margin-bottom: 24px; }
+.level-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+@media (max-width: 700px) { .level-grid { grid-template-columns: 1fr; } }
+.level-card {
+  background: var(--gold-light);
+  border: 1.5px solid var(--gold);
+  border-radius: 14px;
+  padding: 22px 20px;
+  text-align: center;
+  transition: transform 0.15s ease;
+  display: block;
+}
+.level-card:hover { transform: translateY(-3px); }
+.level-card .emoji { font-size: 1.8rem; margin-bottom: 6px; }
+.level-card .name { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--forest); font-size: 1.05rem; margin-bottom: 4px; }
+.level-card .desc { color: var(--gray); font-size: 0.85rem; margin-bottom: 14px; }
+.level-card .btn { display: inline-block; background: var(--gold); color: var(--white); font-weight: 600; font-size: 0.88rem; padding: 8px 18px; border-radius: 20px; }
+
+/* ---------- Generic end-of-page action buttons ---------- */
+.end-btn {
+  display: inline-block;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 10px 20px;
+  border-radius: 22px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+.end-btn.primary { background: var(--gold); color: var(--forest); }
+.end-btn.secondary { background: rgba(255,255,255,0.18); color: var(--white); }

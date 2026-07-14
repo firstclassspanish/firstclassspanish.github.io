@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 1 Intro Animation | First Class Spanish</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/brand.css">
+<link rel="stylesheet" href="css/animation.css">
+<style>
+  .vowel-row { display: flex; gap: clamp(8px, 2.5vw, 20px); margin-bottom: 20px; }
+  .vowel-item {
+    background: rgba(255,255,255,0.15); border-radius: 12px; padding: 14px 10px; width: 62px;
+    opacity: 0; transform: scale(0.7); animation: pop 0.4s ease forwards;
+  }
+  .vowel-item .l { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--white); font-size: 1.6rem; }
+  .vowel-item .s { color: rgba(255,255,255,0.8); font-size: 0.75rem; margin-top: 4px; font-weight: 600; }
+  .vowel-item:nth-child(1) { animation-delay: 0.1s; }
+  .vowel-item:nth-child(2) { animation-delay: 0.35s; }
+  .vowel-item:nth-child(3) { animation-delay: 0.6s; }
+  .vowel-item:nth-child(4) { animation-delay: 0.85s; }
+  .vowel-item:nth-child(5) { animation-delay: 1.1s; }
+
+  .syl-word {
+    font-family: 'Sora', sans-serif; font-weight: 700; color: var(--white);
+    font-size: clamp(1.8rem, 6vw, 2.8rem); display: flex; gap: 4px; margin-bottom: 6px;
+  }
+  .syl-word span { opacity: 0.35; transition: opacity 0.3s ease; }
+  .syl-word span.lit { opacity: 1; }
+  .syl-meaning { color: rgba(255,255,255,0.85); font-size: 1rem; margin-top: 10px; min-height: 1.4em; }
+
+  .flash-words { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+  .flash-words span {
+    font-family: 'Sora', sans-serif; font-weight: 700; color: var(--white);
+    background: rgba(255,255,255,0.15); padding: 8px 18px; border-radius: 20px;
+    font-size: 1.1rem; opacity: 0; animation: pop 0.35s ease forwards;
+  }
+  .flash-words span:nth-child(1) { animation-delay: 0.1s; }
+  .flash-words span:nth-child(2) { animation-delay: 0.4s; }
+  .flash-words span:nth-child(3) { animation-delay: 0.7s; }
+</style>
+</head>
+<body class="animation-page">
+
+<div>
+  <div class="stage theme-teal" id="stage">
+
+    <div class="home-control">
+      <a class="ctrl-btn" href="index.html">🏠 Home</a>
+    </div>
+    <div class="top-controls">
+      <button class="ctrl-btn" id="skipBtn">Skip ⏭</button>
+    </div>
+
+    <!-- Beat 1: Hook -->
+    <div class="beat" data-beat="0">
+      <div class="messy-word w1">though</div>
+      <div class="messy-word w2">through</div>
+      <div class="messy-word w3">tough</div>
+      <p class="vo">Why do these all end the same way... but sound nothing alike?</p>
+    </div>
+
+    <!-- Beat 2: Problem -->
+    <div class="beat" data-beat="1">
+      <div class="settle-word">Spanish works differently.</div>
+      <p class="vo">English pronunciation can be tricky to guess. Spanish is consistent — learn the rules once, and you're set.</p>
+    </div>
+
+    <!-- Beat 3: Reveal -->
+    <div class="beat" data-beat="2">
+      <div class="vowel-row">
+        <div class="vowel-item"><div class="l">a</div><div class="s">"ah"</div></div>
+        <div class="vowel-item"><div class="l">e</div><div class="s">"eh"</div></div>
+        <div class="vowel-item"><div class="l">i</div><div class="s">"ee"</div></div>
+        <div class="vowel-item"><div class="l">o</div><div class="s">"oh"</div></div>
+        <div class="vowel-item"><div class="l">u</div><div class="s">"oo"</div></div>
+      </div>
+      <p class="vo">In Spanish, every letter makes the same sound, every time. Learn it once — it works everywhere.</p>
+    </div>
+
+    <!-- Beat 4: Proof -->
+    <div class="beat" data-beat="3">
+      <div class="syl-word" id="sylWord">
+        <span id="s1">es</span><span id="s2">cue</span><span id="s3">la</span>
+      </div>
+      <div class="syl-meaning" id="sylMeaning"></div>
+    </div>
+
+    <!-- Beat 5: Payoff -->
+    <div class="beat" data-beat="4">
+      <div class="flash-words">
+        <span>gracias</span><span>hermano</span><span>amigo</span>
+      </div>
+      <p class="vo">Once you know the sounds, you're not memorizing anymore — you can read almost anything.</p>
+    </div>
+
+    <!-- Beat 6: CTA -->
+    <div class="beat" data-beat="5">
+      <div class="cta-star">★</div>
+      <div class="cta-title">Unit 1 · Pronunciation</div>
+      <div class="cta-sub">Let's learn the sounds.</div>
+      <div class="end-actions">
+        <button class="end-btn secondary" id="replayBtn">Replay</button>
+        <a class="end-btn primary" href="unit1-pronunciation-lesson.html">Start the Lesson</a>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="progress-dots" id="dots"></div>
+    </div>
+
+  </div>
+
+  <p class="caption-note">Silent animatic — pairs with the narration script. Add voiceover audio once recorded.</p>
+</div>
+
+<script src="js/animation-engine.js"></script>
+<script>
+  const durations = [7200, 7200, 8000, 8600, 7000, 7600]; // ms per beat
+  let syllableTimers = [];
+
+  function animateSyllables() {
+    const spans = ['s1', 's2', 's3'].map(id => document.getElementById(id));
+    const meaning = document.getElementById('sylMeaning');
+    syllableTimers.forEach(t => clearTimeout(t));
+    syllableTimers = [];
+    spans.forEach(s => s.classList.remove('lit'));
+    meaning.textContent = '';
+    spans.forEach((s, idx) => {
+      syllableTimers.push(setTimeout(() => s.classList.add('lit'), 300 + idx * 500));
+    });
+    syllableTimers.push(setTimeout(() => { meaning.textContent = '"escuela" = school'; }, 300 + spans.length * 500 + 300));
+  }
+
+  initAnimation(durations, 'unit1-pronunciation-lesson.html', (beatIndex) => {
+    if (beatIndex === 3) animateSyllables();
+  });
+</script>
+
+</body>
+</html>

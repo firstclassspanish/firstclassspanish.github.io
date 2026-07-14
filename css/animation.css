@@ -1,0 +1,136 @@
+/* ============================================
+   First Class Spanish — Shared Intro Animation Stylesheet
+   Used by every unit's intro animation (index.html /
+   unitN-intro-animation.html). Depends on brand.css.
+   Each page adds its own small <style> block for
+   content unique to that unit's animation (e.g. the
+   vowel grid in Unit 1, the Box of Six grid in Unit 2).
+   ============================================ */
+
+body.animation-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.stage {
+  width: 100%;
+  max-width: 640px;
+  aspect-ratio: 16 / 10;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(14,53,34,0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.stage.theme-teal { background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%); }
+.stage.theme-terracotta { background: linear-gradient(135deg, var(--terracotta) 0%, var(--terracotta-dark) 100%); }
+.stage.theme-plum { background: linear-gradient(135deg, var(--plum) 0%, var(--plum-dark) 100%); }
+.stage.theme-blue { background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%); }
+
+.beat {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+}
+.beat.active { opacity: 1; pointer-events: auto; }
+
+.messy-word {
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  color: var(--white);
+  font-size: clamp(1.3rem, 5vw, 2rem);
+  margin: 3px 0;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: rise 0.5s ease forwards;
+}
+.messy-word.w1 { animation-delay: 0.1s; transform: rotate(-2deg); }
+.messy-word.w2 { animation-delay: 0.4s; }
+.messy-word.w3 { animation-delay: 0.7s; transform: rotate(2deg); }
+.messy-word.w4 { animation-delay: 1.0s; }
+.messy-word.w5 { animation-delay: 1.3s; transform: rotate(-1deg); }
+@keyframes rise { to { opacity: 1; transform: translateY(0) rotate(0); } }
+@keyframes pop { to { opacity: 1; transform: scale(1); } }
+
+.beat p.vo {
+  color: rgba(255,255,255,0.92);
+  font-size: clamp(0.9rem, 2.3vw, 1.1rem);
+  max-width: 460px;
+  margin-top: 18px;
+  line-height: 1.5;
+}
+
+.settle-word {
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  color: var(--white);
+  font-size: clamp(1.6rem, 6vw, 2.4rem);
+  letter-spacing: 0.01em;
+  max-width: 480px;
+}
+
+.cta-star { color: var(--gold); font-size: 1.8rem; margin-bottom: 8px; }
+.cta-title { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--white); font-size: clamp(1.4rem, 5vw, 2rem); }
+.cta-sub { color: rgba(255,255,255,0.85); margin-top: 6px; font-size: 0.95rem; }
+
+.end-actions { display: flex; gap: 10px; margin-top: 20px; }
+
+.controls {
+  position: absolute;
+  bottom: 16px;
+  left: 0; right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  z-index: 10;
+}
+.progress-dots { display: flex; gap: 6px; }
+.dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.35); transition: background 0.3s ease; }
+.dot.done { background: rgba(255,255,255,0.9); }
+
+.home-control {
+  position: absolute;
+  top: 14px; left: 14px;
+  z-index: 10;
+}
+.top-controls {
+  position: absolute;
+  top: 14px; right: 14px;
+  z-index: 10;
+  display: flex;
+  gap: 8px;
+}
+.ctrl-btn {
+  background: rgba(255,255,255,0.18);
+  color: var(--white);
+  border: none;
+  border-radius: 16px;
+  padding: 6px 14px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+.ctrl-btn:hover { background: rgba(255,255,255,0.3); }
+
+.caption-note {
+  max-width: 640px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.82rem;
+  margin-top: 14px;
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 1 Foundation Quiz | First Class Spanish</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/brand.css">
+<link rel="stylesheet" href="css/quiz.css">
+</head>
+<body>
+
+<header>
+  <a class="brand" href="index.html"><span class="star">★</span> First Class Spanish</a>
+  <div class="unit-pill">Unit 1 · Pronunciation</div>
+</header>
+
+<div class="quiz-hero">
+  <div class="level-badge">🌱</div>
+  <h1>Foundation Quiz</h1>
+  <p>Core concepts, no prior knowledge needed. Take your time — every question includes an explanation.</p>
+</div>
+
+<div class="quiz-wrap">
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <div id="quizContainer"></div>
+  <div class="results" id="results">
+    <div class="score" id="scoreText"></div>
+    <div class="msg" id="scoreMsg"></div>
+    <div class="msg-es" id="scoreMsgEs"></div>
+    <div class="nav-links">
+      <button class="retry-btn" onclick="location.reload()">Try Again</button>
+      <a class="btn secondary" href="unit1-pronunciation-lesson.html">Back to Lesson</a>
+      <a class="btn" href="unit1-quiz-practice.html">Next: Practice 💪</a>
+    </div>
+  </div>
+</div>
+
+<footer>First Class Spanish · Your Ticket to Spanish Fluency</footer>
+
+<script src="js/quiz-engine.js"></script>
+<script>
+const questions = [
+  {
+    q: "What does it mean that Spanish is a \"phonetic\" language?",
+    options: [
+      "Each letter makes the same sound every time it appears",
+      "Words are spelled however they sound to the writer",
+      "Spanish has no rules for pronunciation",
+      "Every word has a silent letter"
+    ],
+    correct: 0,
+    explain: "Phonetic means consistent: once you learn what a letter sounds like, it sounds that way in every word."
+  },
+  {
+    q: "Which vowel sound does the letter \"a\" make in Spanish?",
+    options: ["\"ay\" like in cake", "\"ah\" like in father", "\"a\" like in cat", "\"uh\" like in about"],
+    correct: 1,
+    explain: "Spanish \"a\" is always a clean \"ah\" sound, as in casa."
+  },
+  {
+    q: "How many vowel sounds does Spanish have?",
+    options: ["3", "5", "7", "10"],
+    correct: 1,
+    explain: "Spanish has exactly five vowel sounds: a, e, i, o, u — and they never change."
+  },
+  {
+    q: "Which letter is always silent in Spanish?",
+    options: ["j", "h", "r", "ñ"],
+    correct: 1,
+    explain: "The letter h is never pronounced. Hola sounds like \"OH-lah.\""
+  },
+  {
+    q: "What sound does the Spanish \"j\" make?",
+    options: ["Like the English \"j\" in jump", "Like the English \"h\"", "Like the English \"y\"", "It's silent"],
+    correct: 1,
+    explain: "Spanish j sounds like the English h, so jugo sounds like \"HOO-go.\""
+  },
+  {
+    q: "What does \"ñ\" sound like?",
+    options: ["\"n\" as in no", "\"ny\" as in canyon", "\"m\" as in me", "\"ng\" as in sing"],
+    correct: 1,
+    explain: "The tilde over ñ adds a \"y\" sound, so año sounds like \"AH-nyo.\""
+  },
+  {
+    q: "What does the letter \"ll\" sound like?",
+    options: ["Like \"l\"", "Like \"y\"", "Like \"j\" in English", "Silent"],
+    correct: 1,
+    explain: "Ll typically sounds like the English y, so llamar sounds like \"yah-MAR.\" (Some parts of Spain use a distinct sound instead, and in Argentina and Uruguay it often sounds closer to \"sh\" — but y is the most common pronunciation across Latin America.)"
+  },
+  {
+    q: "Why is it useful that Spanish is phonetic?",
+    options: [
+      "You don't need to learn any vocabulary",
+      "You can read unfamiliar words aloud once you know the sound rules",
+      "Every word sounds the same",
+      "It means Spanish has no grammar"
+    ],
+    correct: 1,
+    explain: "Because letters behave consistently, you can sound out brand-new words with confidence."
+  }
+];
+
+const resultsMessages = {
+  perfect: "Perfect score! You've got the foundation down. 🌟",
+  good: "Solid work — you're ready to move on to Practice.",
+  low: "Good start. Revisit the lesson, then give it another shot."
+};
+
+initQuiz(questions, resultsMessages);
+</script>
+
+</body>
+</html>

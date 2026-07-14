@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 2 Practice Quiz | First Class Spanish</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/brand.css">
+<link rel="stylesheet" href="css/quiz.css">
+</head>
+<body class="unit-terracotta">
+
+<header>
+  <a class="brand" href="index.html"><span class="star">★</span> First Class Spanish</a>
+  <div class="unit-pill">Unit 2 · Grammatical Person</div>
+</header>
+
+<div class="quiz-hero">
+  <div class="level-badge">💪</div>
+  <h1>Practice Quiz</h1>
+  <p>Time to apply what you know. These questions ask you to sort real subjects into the right box.</p>
+</div>
+
+<div class="quiz-wrap">
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <div id="quizContainer"></div>
+  <div class="results" id="results">
+    <div class="score" id="scoreText"></div>
+    <div class="msg" id="scoreMsg"></div>
+    <div class="msg-es" id="scoreMsgEs"></div>
+    <div class="nav-links">
+      <button class="retry-btn" onclick="location.reload()">Try Again</button>
+      <a class="btn secondary" href="unit2-quiz-foundation.html">Back to Foundation</a>
+      <a class="btn" href="unit2-quiz-mastery.html">Next: Mastery 🎯</a>
+    </div>
+  </div>
+</div>
+
+<footer>First Class Spanish · Your Ticket to Spanish Fluency</footer>
+
+<script src="js/quiz-engine.js"></script>
+<script>
+const questions = [
+  {
+    q: "\"Elena\" — which box does this subject belong in?",
+    options: ["1st person singular", "2nd person singular", "3rd person singular", "3rd person plural"],
+    correct: 2,
+    explain: "Elena is one person, not the speaker or the listener — 3rd person singular. Pronoun: ella."
+  },
+  {
+    q: "\"My dog and I\" — which box does this subject belong in?",
+    options: ["1st person singular", "1st person plural", "3rd person singular", "3rd person plural"],
+    correct: 1,
+    explain: "Since \"I\" is included, the speaker is part of the subject — that makes it 1st person, and plural since it's more than one. Pronoun: nosotros."
+  },
+  {
+    q: "\"The students\" — which box does this subject belong in?",
+    options: ["2nd person plural", "3rd person singular", "3rd person plural", "1st person plural"],
+    correct: 2,
+    explain: "A group being talked about, not speaking or being spoken to — 3rd person plural. Pronoun: ellos/ellas."
+  },
+  {
+    q: "You're talking directly to your friend Marco. Which pronoun would you use?",
+    options: ["usted", "tú", "él", "ustedes"],
+    correct: 1,
+    explain: "Marco is a friend, so this calls for the informal tú — 2nd person singular."
+  },
+  {
+    q: "You're addressing your school principal, someone you'd speak to formally. Which pronoun fits?",
+    options: ["tú", "usted", "nosotros", "ellos"],
+    correct: 1,
+    explain: "A formal relationship calls for usted — even though it means \"you,\" it's grammatically 3rd person."
+  },
+  {
+    q: "\"You and your sister\" (both being spoken to) — which pronoun, and which box does it use for verb conjugation?",
+    options: [
+      "tú — 2nd person singular",
+      "vosotros — 2nd person plural",
+      "ustedes — 3rd person plural box",
+      "nosotros — 1st person plural"
+    ],
+    correct: 2,
+    explain: "This is plural \"you\" in concept, but since vosotros isn't used, ustedes borrows the 3rd-person-plural box for its verb forms."
+  },
+  {
+    q: "\"My friends and I\" — which box?",
+    options: ["1st person plural", "2nd person plural", "3rd person plural", "1st person singular"],
+    correct: 0,
+    explain: "The speaker is included, so this is 1st person — and plural, since it's more than one person. Pronoun: nosotros."
+  },
+  {
+    q: "Which of these is grammatically 3rd person, even though it translates as \"you\"?",
+    options: ["tú", "usted", "yo", "nosotros"],
+    correct: 1,
+    explain: "Usted means \"you\" but its verb endings match él/ella — grammatically 3rd person singular."
+  },
+  {
+    q: "\"The teacher\" — which box?",
+    options: ["1st person singular", "2nd person singular", "3rd person singular", "3rd person plural"],
+    correct: 2,
+    explain: "One person being talked about, not speaking or being spoken to — 3rd person singular."
+  }
+];
+
+const resultsMessages = {
+  perfect: "Perfect score! Sorting subjects into boxes is clicking. 🌟",
+  good: "Nice work — you're ready for the Mastery challenge.",
+  low: "Getting there. Revisit the tricky cases in the lesson, then try again."
+};
+
+initQuiz(questions, resultsMessages);
+</script>
+
+</body>
+</html>

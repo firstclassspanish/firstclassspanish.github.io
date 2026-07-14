@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 2 Mastery Quiz | First Class Spanish</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/brand.css">
+<link rel="stylesheet" href="css/quiz.css">
+</head>
+<body class="unit-terracotta">
+
+<header>
+  <a class="brand" href="index.html"><span class="star">★</span> First Class Spanish</a>
+  <div class="unit-pill">Unit 2 · Grammatical Person</div>
+</header>
+
+<div class="quiz-hero">
+  <div class="level-badge">🎯</div>
+  <h1>Mastery Quiz</h1>
+  <p>The challenge level. These questions mix tricky subjects and test the reasoning behind each box.</p>
+</div>
+
+<div class="quiz-wrap">
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <div id="quizContainer"></div>
+  <div class="results" id="results">
+    <div class="score" id="scoreText"></div>
+    <div class="msg" id="scoreMsg"></div>
+    <div class="msg-es" id="scoreMsgEs"></div>
+    <div class="nav-links">
+      <button class="retry-btn" onclick="location.reload()">Try Again</button>
+      <a class="btn secondary" href="unit2-quiz-practice.html">Back to Practice</a>
+      <a class="btn" href="unit2-grammatical-person-lesson.html">Back to Lesson</a>
+    </div>
+  </div>
+</div>
+
+<footer>First Class Spanish · Your Ticket to Spanish Fluency</footer>
+
+<script src="js/quiz-engine.js"></script>
+<script>
+const questions = [
+  {
+    q: "\"Usted\" translates as \"you,\" but for verb conjugation purposes, which box does it actually use?",
+    options: ["2nd person singular, same as tú", "3rd person singular, same as él/ella", "1st person singular", "3rd person plural"],
+    correct: 1,
+    explain: "Despite meaning \"you,\" usted is grammatically 3rd person singular — its verb endings match él/ella, not tú."
+  },
+  {
+    q: "A student says \"vosotros\" is the correct way to say plural \"you\" in everyday Latin American Spanish. What's the issue with that?",
+    options: [
+      "Vosotros doesn't mean \"you\" at all",
+      "Vosotros is mainly used in Spain; Latin America uses ustedes instead",
+      "Vosotros is only for formal situations",
+      "There's no issue — that's correct"
+    ],
+    correct: 1,
+    explain: "Vosotros is Spain's informal plural \"you.\" Across Latin America, ustedes fills that role for both formal and informal situations."
+  },
+  {
+    q: "\"You and your sister\" (both being addressed) — what makes this subject tricky to categorize?",
+    options: [
+      "It doesn't fit any box",
+      "It's conceptually 2nd person plural, but grammatically uses the 3rd-person-plural box",
+      "It's always 1st person",
+      "It's only used in formal writing"
+    ],
+    correct: 1,
+    explain: "This is plural \"you\" in meaning, but since vosotros isn't used, ustedes borrows the 3rd-person-plural verb forms."
+  },
+  {
+    q: "Why does English speakers' historical use of \"thou\" help explain tú vs. usted?",
+    options: [
+      "It doesn't relate at all",
+      "English also once had a formal/informal \"you\" split, similar to tú/usted",
+      "Thou is the same word as usted",
+      "English never distinguished formal and informal \"you\""
+    ],
+    correct: 1,
+    explain: "English used to have thou (informal) alongside you (formal) — a similar split to tú/usted, though English eventually dropped thou entirely."
+  },
+  {
+    q: "\"My brother and my cousins\" — assuming the speaker is not included, which box?",
+    options: ["1st person plural", "2nd person plural", "3rd person plural", "3rd person singular"],
+    correct: 2,
+    explain: "The speaker isn't part of this group, and it's more than one person — 3rd person plural."
+  },
+  {
+    q: "You're introduced to your friend's grandmother for the first time. Which pronoun would typically be most appropriate?",
+    options: ["tú", "usted", "nosotros", "ustedes"],
+    correct: 1,
+    explain: "A first meeting with an elder calls for the formal usted, out of respect — even though only one person is being addressed."
+  },
+  {
+    q: "Which statement best explains why the Box of Six matters beyond this unit?",
+    options: [
+      "It only matters for spelling",
+      "It's the foundation for verb conjugation and, later, object pronouns",
+      "It's only used in written Spanish",
+      "It doesn't apply to real conversations"
+    ],
+    correct: 1,
+    explain: "Every verb ending in Spanish is tied to one of these six boxes — and the same six categories reappear later for object pronouns."
+  },
+  {
+    q: "\"I\" is 1st person singular. What happens to the person and number if you change it to \"my classmates and I\"?",
+    options: [
+      "Stays 1st person singular",
+      "Becomes 1st person plural",
+      "Becomes 3rd person plural",
+      "Becomes 2nd person plural"
+    ],
+    correct: 1,
+    explain: "Adding others to a subject that includes the speaker keeps it 1st person, but now plural — nosotros."
+  }
+];
+
+const resultsMessages = {
+  perfect: "Perfect score! You've mastered the Box of Six. 🎯",
+  good: "Strong work — the tricky cases are clicking into place.",
+  low: "Some genuine trap questions in there. Revisit usted/ustedes, then try again."
+};
+
+initQuiz(questions, resultsMessages);
+</script>
+
+</body>
+</html>

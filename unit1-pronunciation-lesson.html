@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 1: Spanish Pronunciation | First Class Spanish</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/brand.css">
+<style>
+  .block h2 .tag { background: var(--teal); }
+
+  .unit-hero {
+    background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
+    color: var(--white); padding: 64px 24px 56px; text-align: center;
+  }
+  .unit-eyebrow {
+    display: inline-block; background: rgba(255,255,255,0.18); padding: 6px 16px;
+    border-radius: 20px; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.03em; margin-bottom: 20px;
+  }
+  .unit-hero h1 { color: var(--white); font-size: 2.4rem; font-weight: 700; max-width: 680px; margin: 0 auto 16px; }
+  .unit-hero p { max-width: 560px; margin: 0 auto; font-size: 1.1rem; color: rgba(255,255,255,0.92); }
+
+  /* ---------- Vowel grid ---------- */
+  .vowel-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-top: 20px; }
+  .vowel-card { background: var(--teal-light); border-radius: 12px; padding: 18px 10px; text-align: center; }
+  .vowel-card .letter { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 2rem; color: var(--teal-dark); }
+  .vowel-card .sound { font-size: 0.82rem; color: var(--gray); margin-top: 6px; font-weight: 600; }
+  .vowel-card .example { font-size: 0.78rem; color: var(--muted); margin-top: 4px; }
+  @media (max-width: 640px) {
+    .vowel-grid { grid-template-columns: repeat(5, 1fr); gap: 6px; }
+    .vowel-card { padding: 10px 4px; }
+    .vowel-card .letter { font-size: 1.4rem; }
+    .vowel-card .example { display: none; }
+  }
+
+  /* ---------- Consonant grid ---------- */
+  .cons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 20px; }
+  @media (max-width: 640px) { .cons-grid { grid-template-columns: 1fr; } }
+  .cons-card { border: 1.5px solid #E4E2DC; border-radius: 12px; padding: 16px 18px; }
+  .cons-card .letters { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--teal-dark); font-size: 1.1rem; margin-bottom: 4px; }
+  .cons-card .desc { color: var(--gray); font-size: 0.92rem; }
+  .cons-card .ex { color: var(--muted); font-size: 0.85rem; margin-top: 6px; font-style: italic; }
+
+  /* ---------- Syllable practice ---------- */
+  .syllable-list { margin-top: 20px; }
+  .syllable-row { display: flex; align-items: center; gap: 16px; padding: 14px 0; border-bottom: 1px solid #EEEDE8; }
+  .syllable-row:last-child { border-bottom: none; }
+  .syllable-row .word { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--forest); min-width: 110px; }
+  .syllable-row .breakdown { display: flex; gap: 6px; flex-wrap: wrap; }
+  .syllable-row .syl { background: var(--teal-light); color: var(--teal-dark); font-weight: 600; padding: 4px 10px; border-radius: 6px; font-size: 0.9rem; }
+  .syllable-row .meaning { color: var(--muted); font-size: 0.85rem; margin-left: auto; }
+
+  /* ---------- Special cases ---------- */
+  .special-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-top: 20px; }
+  @media (max-width: 640px) { .special-grid { grid-template-columns: 1fr; } }
+  .special-card { background: #FAFAF8; border-radius: 10px; padding: 14px 16px; }
+  .special-card .head { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--teal-dark); font-size: 0.95rem; margin-bottom: 4px; }
+  .special-card p { font-size: 0.87rem; color: var(--gray); margin: 0; }
+
+  /* ---------- Go Further (optional) ---------- */
+  .go-further { background: var(--gold-light); border: 1.5px dashed var(--gold); border-radius: 16px; padding: 6px 40px; }
+  .go-further summary { list-style: none; cursor: pointer; padding: 24px 0; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .go-further summary::-webkit-details-marker { display: none; }
+  .go-further .gf-title { display: flex; align-items: center; gap: 10px; }
+  .go-further .gf-badge { background: var(--gold); color: var(--white); font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; padding: 4px 10px; border-radius: 10px; }
+  .go-further summary h2 { font-size: 1.3rem; margin: 0; }
+  .go-further .chevron { font-size: 1.2rem; color: var(--forest); transition: transform 0.2s ease; flex-shrink: 0; }
+  .go-further[open] .chevron { transform: rotate(90deg); }
+  .go-further .gf-body { padding-bottom: 30px; }
+  .go-further .gf-body > p { color: var(--gray); margin-bottom: 16px; }
+  .gf-rule { background: var(--white); border-radius: 12px; padding: 16px 20px; margin-bottom: 12px; }
+  .gf-rule .gf-rule-title { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--forest); font-size: 0.98rem; margin-bottom: 4px; }
+  .gf-rule p { color: var(--gray); font-size: 0.92rem; margin: 0; }
+  .gf-rule .gf-ex { color: var(--teal-dark); font-weight: 600; margin-top: 6px; font-size: 0.88rem; }
+  .gf-practice-list { margin-top: 16px; }
+  .gf-practice-row { display: flex; align-items: center; gap: 16px; padding: 12px 0; border-bottom: 1px solid rgba(212,160,23,0.25); }
+  .gf-practice-row:last-child { border-bottom: none; }
+  .gf-practice-row .word { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--forest); min-width: 100px; }
+  .gf-practice-row .breakdown { display: flex; gap: 6px; flex-wrap: wrap; }
+  .gf-practice-row .syl { background: var(--white); color: var(--forest); font-weight: 600; padding: 4px 10px; border-radius: 6px; font-size: 0.88rem; border: 1px solid rgba(212,160,23,0.35); }
+  .gf-practice-row .rule-tag { color: var(--muted); font-size: 0.8rem; margin-left: auto; }
+  @media (max-width: 640px) {
+    .go-further { padding: 4px 20px; }
+    .gf-practice-row { flex-wrap: wrap; }
+    .gf-practice-row .rule-tag { margin-left: 0; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="brand" href="index.html"><span class="star">★</span> First Class Spanish</a>
+  <div class="unit-pill">Unit 1 · Pronunciation</div>
+</header>
+
+<div class="unit-hero">
+  <div class="unit-eyebrow">UNIT 1 · PRONUNCIATION</div>
+  <h1>Spanish sounds like it&nbsp;looks.</h1>
+  <p>Once you learn a small set of sound rules, you can read almost any Spanish word out loud — even ones you've never seen before. <span style="white-space: nowrap;">Let's build that skill.</span></p>
+</div>
+
+<div class="wrap">
+
+  <section class="block" style="margin-top: 40px;">
+    <h2><span class="tag"></span>Spanish is a phonetic language.</h2>
+    <p>That means every letter (or letter pair) makes the <strong>same sound, every single time</strong> — no matter what word it's in.</p>
+    <p>Compare that to English, where spelling is often a poor guide to pronunciation: think about how differently "though," "through," and "tough" end, even though they're spelled almost the same.</p>
+    <p>That's great news for you: it means pronunciation isn't something you memorize word by word. You learn the rules once, and they work everywhere.</p>
+    <div class="callout">Learn the sounds → read any word. That's the whole game in Unit 1.</div>
+  </section>
+
+  <div class="ticket-divider"><span class="notch"></span></div>
+
+  <section class="block">
+    <h2><span class="tag"></span>The five vowel sounds</h2>
+    <p>Spanish uses the same five vowel letters as English — a, e, i, o, u. But here's the key difference: each Spanish vowel has exactly <strong>one</strong> sound, always. English vowels, by contrast, can each stand for several different sounds depending on the word — just look at how many ways "a" gets pronounced: <em>cat</em>, <em>father</em>, <em>ape</em>, <em>about</em>.</p>
+    <div class="vowel-grid">
+      <div class="vowel-card"><div class="letter">a</div><div class="sound">"ah"</div><div class="example">casa</div></div>
+      <div class="vowel-card"><div class="letter">e</div><div class="sound">"eh"</div><div class="example">mesa</div></div>
+      <div class="vowel-card"><div class="letter">i</div><div class="sound">"ee"</div><div class="example">libro</div></div>
+      <div class="vowel-card"><div class="letter">o</div><div class="sound">"oh"</div><div class="example">gato</div></div>
+      <div class="vowel-card"><div class="letter">u</div><div class="sound">"oo"</div><div class="example">luna</div></div>
+    </div>
+    <div class="callout">One more thing to listen for: Spanish vowels stay pure — they don't slide into another vowel sound the way English ones often do. Think of how "boat" actually ends closer to "bo-oht," or "day" trails into "day-ee." In Spanish, gato and mesa stay clean and flat the whole way through.</div>
+  </section>
+
+  <div class="ticket-divider"><span class="notch"></span></div>
+
+  <section class="block">
+    <h2><span class="tag"></span>Consonants that trip up English speakers</h2>
+    <p>Most Spanish consonants sound close to their English versions. These are the ones worth learning on purpose:</p>
+    <div class="cons-grid">
+      <div class="cons-card">
+        <div class="letters">h</div>
+        <div class="desc">Always silent. Never pronounced.</div>
+        <div class="ex">hola → "OH-lah"</div>
+      </div>
+      <div class="cons-card">
+        <div class="letters">j</div>
+        <div class="desc">Sounds like the English "h" — but often more guttural, produced further back in the throat. Closer to the "ch" in the Scottish "loch."</div>
+        <div class="ex">jugo → "HOO-go" (with a rougher h)</div>
+      </div>
+      <div class="cons-card">
+        <div class="letters">ll / y</div>
+        <div class="desc">Both sound like the English "y."*</div>
+        <div class="ex">llamar → "yah-MAR"</div>
+        <div style="font-size: 0.75rem; color: var(--muted); margin-top: 4px;">*A few regions vary (parts of Spain, Argentina/Uruguay) — no big deal, you'll pick up on it as you hear more Spanish.</div>
+      </div>
+      <div class="cons-card">
+        <div class="letters">ñ</div>
+        <div class="desc">Sounds like "ny," as in "canyon."</div>
+        <div class="ex">año → "AH-nyo"</div>
+      </div>
+      <div class="cons-card">
+        <div class="letters">r / rr</div>
+        <div class="desc">A single "r" is a quick tap; "rr" is rolled (sometimes called "trilled").</div>
+        <div class="ex">pero vs. perro</div>
+      </div>
+      <div class="cons-card">
+        <div class="letters">c</div>
+        <div class="desc">Hard "k" sound before a, o, u. Soft "s" sound before e, i.</div>
+        <div class="ex">casa vs. cielo</div>
+      </div>
+      <div class="cons-card">
+        <div class="letters">g</div>
+        <div class="desc">Hard before a, o, u — same as the English g in "go." Soft before e, i — sounds like the Spanish h (the same sound as j).</div>
+        <div class="ex">gato vs. gente</div>
+      </div>
+      <div class="cons-card">
+        <div class="letters">b / v</div>
+        <div class="desc">Both make the same soft "b" sound. Spanish has no hard English "v."</div>
+        <div class="ex">vaca → "BAH-ca"</div>
+      </div>
+    </div>
+    <div class="special-note">
+      <span class="sn-badge">🎙️ Real Talk</span>
+      <p>Rolling your r's is a physical skill, not just a knowledge one — plenty of native speakers never fully master it either. If it's not coming naturally yet, start from the quick single tap (similar to the fast "dd" sound in the American English "ladder"), then build toward repeating it rather than forcing the full roll right away.</p>
+    </div>
+  </section>
+
+  <div class="ticket-divider"><span class="notch"></span></div>
+
+  <section class="block">
+    <h2><span class="tag"></span>Sound it out, syllable by syllable</h2>
+    <p>The fastest way to read a new Spanish word is to break it into syllables and sound out each piece using the rules above. Here are a few words already broken apart for you — don't worry about doing this division yourself yet. That's a bonus skill in the "Go Further" section below, once you're ready for it.</p>
+    <div class="syllable-list">
+      <div class="syllable-row">
+        <div class="word">escuela</div>
+        <div class="breakdown"><span class="syl">es</span><span class="syl">cue</span><span class="syl">la</span></div>
+        <div class="meaning">school</div>
+      </div>
+      <div class="syllable-row">
+        <div class="word">amigo</div>
+        <div class="breakdown"><span class="syl">a</span><span class="syl">mi</span><span class="syl">go</span></div>
+        <div class="meaning">friend</div>
+      </div>
+      <div class="syllable-row">
+        <div class="word">hermano</div>
+        <div class="breakdown"><span class="syl">her</span><span class="syl">ma</span><span class="syl">no</span></div>
+        <div class="meaning">brother</div>
+      </div>
+      <div class="syllable-row">
+        <div class="word">gracias</div>
+        <div class="breakdown"><span class="syl">gra</span><span class="syl">cias</span></div>
+        <div class="meaning">thank you</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticket-divider"><span class="notch"></span></div>
+
+  <section class="block">
+    <h2><span class="tag"></span>Special cases worth knowing</h2>
+    <div class="special-grid">
+      <div class="special-card">
+        <div class="head">qu</div>
+        <p>Always makes a hard "k" sound — the u is silent. Queso sounds like "KEH-so."</p>
+      </div>
+      <div class="special-card">
+        <div class="head">z</div>
+        <p>Always sounds like an English "s" — never the buzzy English "z." Zapato sounds like "sah-PAH-toh."</p>
+      </div>
+      <div class="special-card">
+        <div class="head">x</div>
+        <p>Usually a "ks" sound, as in taxi. One notable exception: in words like México and Oaxaca, x sounds like "h" — a historical spelling holdover.</p>
+      </div>
+      <div class="special-card">
+        <div class="head">w</div>
+        <p>Rare in Spanish — mostly shows up in borrowed words like wifi or kiwi, pronounced close to the English "w."</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticket-divider"><span class="notch"></span></div>
+
+  <details class="go-further">
+    <summary>
+      <div class="gf-title">
+        <span class="gf-badge">Go Further</span>
+        <h2>Breaking any word into syllables</h2>
+      </div>
+      <span class="chevron">›</span>
+    </summary>
+    <div class="gf-body">
+      <p>You don't need this to read Spanish out loud — the sound rules above already get you there. But once you're comfortable, learning to divide words into syllables yourself makes reading longer, unfamiliar words even easier. Here are the three rules.</p>
+
+      <div class="gf-rule">
+        <div class="gf-rule-title">1. Every syllable has exactly one vowel sound</div>
+        <p>A single vowel counts as one. Two vowels that blend together (a diphthong) also count as just one syllable.</p>
+        <div class="gf-ex">cue counts as one syllable in es-cue-la, not cu-e-la</div>
+      </div>
+
+      <div class="gf-rule">
+        <div class="gf-rule-title">Diphthongs vs. hiatus: when two vowels split (and when they don't)</div>
+        <p>Vowels come in two types: "strong" (a, e, o) and "weak" (i, u). When a strong and weak vowel — or two weak vowels — sit next to each other, they usually blend into one syllable (a <strong>diphthong</strong>). When two strong vowels sit together, or when a written accent breaks up what would normally blend, they stay as separate syllables (<strong>hiatus</strong>).</p>
+        <div class="gf-ex">gui-ta-rra — "ui" blends &nbsp;·&nbsp; pa-ís — the accent forces a split &nbsp;·&nbsp; con-ti-nú-a — same idea</div>
+      </div>
+
+      <div class="callout" style="margin-top: 4px;">Watch out for this mix-up: in <strong>que</strong>, the u is silent — qu together just makes a hard "k," so que is one clean syllable, "keh." In <strong>cue</strong> (like in escuela), the u is <em>not</em> silent — it blends with the e into a "weh" sound, so cue is "kweh." Same three letters, rearranged, with the u playing an opposite role each time.</div>
+
+      <div class="gf-rule">
+        <div class="gf-rule-title">2. A single consonant moves forward, to the next vowel</div>
+        <p>When one consonant sits between two vowels, it joins the syllable that comes after it.</p>
+        <div class="gf-ex">ca-sa, not cas-a &nbsp;·&nbsp; a-mi-go, not am-igo</div>
+      </div>
+
+      <div class="gf-rule">
+        <div class="gf-rule-title">3. Two consonants together usually split — with a few exceptions</div>
+        <p>Most consonant pairs divide, one to each syllable. But certain pairs are "unbreakable" and always stay together with the vowel that follows: bl, br, cl, cr, dr, fl, fr, gl, gr, pl, pr, tr — plus the letter pairs ch, ll, and rr, which act like a single letter.</p>
+        <div class="gf-ex">al-to splits &nbsp;·&nbsp; ha-blar keeps "bl" together &nbsp;·&nbsp; pe-rro keeps "rr" together</div>
+      </div>
+
+      <div class="gf-practice-list">
+        <div class="gf-practice-row">
+          <div class="word">libro</div>
+          <div class="breakdown"><span class="syl">li</span><span class="syl">bro</span></div>
+          <div class="rule-tag">rule 3 — "br" unbreakable</div>
+        </div>
+        <div class="gf-practice-row">
+          <div class="word">altura</div>
+          <div class="breakdown"><span class="syl">al</span><span class="syl">tu</span><span class="syl">ra</span></div>
+          <div class="rule-tag">rule 3 — "lt" splits</div>
+        </div>
+        <div class="gf-practice-row">
+          <div class="word">aeropuerto</div>
+          <div class="breakdown"><span class="syl">a</span><span class="syl">e</span><span class="syl">ro</span><span class="syl">puer</span><span class="syl">to</span></div>
+          <div class="rule-tag">rule 1 — "ue" blends</div>
+        </div>
+        <div class="gf-practice-row">
+          <div class="word">país</div>
+          <div class="breakdown"><span class="syl">pa</span><span class="syl">ís</span></div>
+          <div class="rule-tag">hiatus — accent splits "a" and "í"</div>
+        </div>
+      </div>
+
+      <div class="gf-rule" style="margin-top: 20px;">
+        <div class="gf-rule-title">One more thing: every word has a stressed syllable</div>
+        <p>When you say a Spanish word out loud, one syllable naturally gets a little more emphasis than the rest — that's the stressed syllable. A written accent mark (´), when you see one, is simply pointing at which syllable to stress. Not every word needs one. The full rules for exactly when a written accent is required are their own topic for a future unit — for now, it's just worth getting used to listening for which syllable carries the stress.</p>
+      </div>
+    </div>
+  </details>
+
+  <div class="ticket-divider"><span class="notch"></span></div>
+
+  <section class="block" style="text-align: center;">
+    <h2 style="justify-content: center;"><span class="tag"></span>Ready to sound out real words?</h2>
+    <p>Put the sound rules to work with 27 common Spanish nouns, each broken into syllables.</p>
+    <a href="unit1-vocabulary.html" style="display: inline-block; margin-top: 10px; background: var(--teal); color: var(--white); font-weight: 600; padding: 10px 24px; border-radius: 22px; font-size: 0.92rem;">Practice Vocabulary →</a>
+  </section>
+
+  <div class="ticket-divider"><span class="notch"></span></div>
+
+  <section class="quiz-cta">
+    <h2>Put it into practice</h2>
+    <p class="sub">Three levels. Work your way up whenever you're ready.</p>
+    <div class="level-grid">
+      <a class="level-card" href="unit1-quiz-foundation.html">
+        <div class="emoji">🌱</div>
+        <div class="name">Foundation</div>
+        <div class="desc">Guided intro. No prior knowledge needed.</div>
+        <span class="btn">Start</span>
+      </a>
+      <a class="level-card" href="unit1-quiz-practice.html">
+        <div class="emoji">💪</div>
+        <div class="name">Practice</div>
+        <div class="desc">Reinforcement drills to build confidence.</div>
+        <span class="btn">Start</span>
+      </a>
+      <a class="level-card" href="unit1-quiz-mastery.html">
+        <div class="emoji">🎯</div>
+        <div class="name">Mastery</div>
+        <div class="desc">Challenge level. Prove you've got it.</div>
+        <span class="btn">Start</span>
+      </a>
+    </div>
+  </section>
+
+</div>
+
+<footer>First Class Spanish · Your Ticket to Spanish Fluency</footer>
+
+</body>
+</html>

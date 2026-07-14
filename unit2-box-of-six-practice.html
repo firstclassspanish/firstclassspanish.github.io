@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 2 Box of Six Practice | First Class Spanish</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/brand.css">
+<style>
+  * { -webkit-tap-highlight-color: transparent; }
+
+  .practice-hero {
+    background: linear-gradient(135deg, var(--terracotta) 0%, var(--terracotta-dark) 100%);
+    color: var(--white); padding: 40px 24px 34px; text-align: center;
+  }
+  .practice-hero h1 { color: var(--white); font-size: 1.7rem; margin-bottom: 8px; }
+  .practice-hero p { max-width: 520px; margin: 0 auto; color: rgba(255,255,255,0.92); font-size: 0.98rem; }
+
+  .practice-wrap { max-width: 780px; margin: 0 auto; padding: 30px 24px 60px; }
+
+  .status-bar {
+    display: flex; align-items: center; justify-content: space-between;
+    background: var(--white); border-radius: 12px; padding: 14px 20px;
+    box-shadow: 0 1px 3px rgba(14,53,34,0.06); margin-bottom: 20px; flex-wrap: wrap; gap: 10px;
+  }
+  .status-bar .score { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--terracotta-dark); }
+  .status-bar .reset-btn {
+    background: var(--terracotta-light); color: var(--terracotta-dark); border: none;
+    padding: 8px 16px; border-radius: 18px; font-weight: 600; font-size: 0.85rem; cursor: pointer;
+  }
+
+  .box-container { background: var(--white); border-radius: 16px; padding: 24px; box-shadow: 0 1px 3px rgba(14,53,34,0.06); margin-bottom: 20px; }
+  .box-of-six { display: grid; grid-template-columns: 70px 1fr 1fr; gap: 8px; }
+  .box-header {
+    font-family: 'Sora', sans-serif; font-weight: 700; font-size: 0.78rem; text-transform: uppercase;
+    letter-spacing: 0.03em; color: var(--terracotta-dark); text-align: center; padding: 6px 0;
+  }
+  .row-label {
+    display: flex; align-items: center; justify-content: flex-end; padding-right: 8px;
+    font-family: 'Sora', sans-serif; font-weight: 700; font-size: 0.8rem; color: var(--terracotta-dark);
+  }
+  .drop-zone {
+    background: var(--terracotta-light); border: 2px dashed var(--terracotta); border-radius: 12px;
+    min-height: 90px; padding: 8px; display: flex; flex-direction: column; align-items: center;
+    justify-content: center; gap: 4px; transition: background 0.15s ease, border-color 0.15s ease;
+  }
+  .drop-zone .zone-label { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--terracotta-dark); font-size: 0.85rem; }
+  .drop-zone .zone-sub { color: var(--muted); font-size: 0.7rem; }
+  .drop-zone.disabled { background: #F0EFEA; border: 2px dashed #D8D6CE; opacity: 0.7; }
+  .drop-zone.disabled .zone-label { color: var(--muted); }
+  .drop-zone.hover-target { background: #EFDFD3; border-color: var(--terracotta-dark); }
+  .drop-zone .placed-cards { display: flex; flex-wrap: wrap; gap: 4px; justify-content: center; margin-top: 4px; }
+
+  .placed-chip { background: var(--jade); color: var(--white); font-size: 0.72rem; font-weight: 600; padding: 3px 8px; border-radius: 10px; }
+
+  .pool-title { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--forest); margin-bottom: 12px; text-align: center; }
+  .card-pool {
+    display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;
+    background: var(--white); border-radius: 16px; padding: 20px;
+    box-shadow: 0 1px 3px rgba(14,53,34,0.06); min-height: 70px;
+  }
+
+  .subject-card {
+    background: var(--gold-light); border: 1.5px solid var(--gold); border-radius: 12px;
+    padding: 10px 16px; font-weight: 600; color: var(--forest); font-size: 0.88rem;
+    cursor: grab; user-select: none; touch-action: none;
+    transition: box-shadow 0.15s ease, transform 0.1s ease; position: relative;
+  }
+  .subject-card.dragging { position: fixed; z-index: 999; box-shadow: 0 8px 20px rgba(14,53,34,0.25); cursor: grabbing; pointer-events: none; }
+  .subject-card.selected { box-shadow: 0 0 0 3px var(--terracotta); transform: translateY(-2px); }
+  .subject-card.placed { display: none; }
+  .subject-card.shake { animation: shake 0.4s ease; }
+  @keyframes shake { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
+
+  .instructions { text-align: center; color: var(--muted); font-size: 0.85rem; margin-bottom: 16px; }
+
+  .complete-banner {
+    display: none; background: var(--gold-light); border: 1.5px solid var(--gold);
+    border-radius: 14px; padding: 24px; text-align: center; margin-top: 20px;
+  }
+  .complete-banner.show { display: block; }
+  .complete-banner .big { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1.3rem; color: var(--forest); margin-bottom: 6px; }
+  .complete-banner a {
+    display: inline-block; margin-top: 12px; background: var(--terracotta); color: var(--white);
+    font-weight: 600; padding: 10px 24px; border-radius: 22px; font-size: 0.9rem;
+  }
+
+  @media (max-width: 560px) {
+    .box-of-six { grid-template-columns: 46px 1fr 1fr; }
+    .drop-zone { min-height: 76px; padding: 4px; }
+    .drop-zone .zone-label { font-size: 0.72rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="brand" href="index.html"><span class="star">★</span> First Class Spanish</a>
+  <div class="unit-pill">Unit 2 · Grammatical Person</div>
+</header>
+
+<div class="practice-hero">
+  <h1>Sort the subjects into the Box of Six</h1>
+  <p>Drag each subject into the box where it belongs — or tap a card, then tap a box, if that's easier on your device.</p>
+</div>
+
+<div class="practice-wrap">
+
+  <div class="status-bar">
+    <div class="score">Placed correctly: <span id="scoreCount">0</span> / <span id="totalCount">0</span></div>
+    <button class="reset-btn" id="resetBtn">Reset</button>
+  </div>
+
+  <p class="instructions">Remember: the vosotros box is grayed out — it's not used in this course, so no card belongs there. *Also has a feminine form (nosotras, ellas) — more on that in a future unit.</p>
+
+  <div class="box-container">
+    <div class="box-of-six" id="boxGrid">
+      <div></div>
+      <div class="box-header">Singular</div>
+      <div class="box-header">Plural</div>
+
+      <div class="row-label">1st</div>
+      <div class="drop-zone" data-zone="1s"><div class="zone-label">yo</div><div class="zone-sub">I</div><div class="placed-cards"></div></div>
+      <div class="drop-zone" data-zone="1p"><div class="zone-label">nosotros*</div><div class="zone-sub">we</div><div class="placed-cards"></div></div>
+
+      <div class="row-label">2nd</div>
+      <div class="drop-zone" data-zone="2s"><div class="zone-label">tú</div><div class="zone-sub">you</div><div class="placed-cards"></div></div>
+      <div class="drop-zone disabled" data-zone="2p" data-disabled="true"><div class="zone-label">vosotros</div><div class="zone-sub">not used</div><div class="placed-cards"></div></div>
+
+      <div class="row-label">3rd</div>
+      <div class="drop-zone" data-zone="3s"><div class="zone-label">él / ella / usted</div><div class="zone-sub">he / she / you (formal)</div><div class="placed-cards"></div></div>
+      <div class="drop-zone" data-zone="3p"><div class="zone-label">ellos / ustedes*</div><div class="zone-sub">they / you (plural)</div><div class="placed-cards"></div></div>
+    </div>
+  </div>
+
+  <div class="pool-title">Drag or tap a card to place it:</div>
+  <div class="card-pool" id="cardPool"></div>
+
+  <div class="complete-banner" id="completeBanner">
+    <div class="big">You've filled the Box of Six! 🎉</div>
+    <p>Every subject found its home. Ready for the leveled quizzes?</p>
+    <a href="unit2-quiz-foundation.html">Start Practicing →</a>
+  </div>
+
+</div>
+
+<footer>First Class Spanish · Your Ticket to Spanish Fluency</footer>
+
+<script>
+const subjects = [
+  { id: 'c1', text: 'I', zone: '1s' },
+  { id: 'c2', text: 'Just me, myself', zone: '1s' },
+  { id: 'c3', text: 'My dog and I', zone: '1p' },
+  { id: 'c4', text: 'My friends and I', zone: '1p' },
+  { id: 'c5', text: 'You (talking to one friend)', zone: '2s' },
+  { id: 'c6', text: 'You (talking to your brother)', zone: '2s' },
+  { id: 'c7', text: 'Elena', zone: '3s' },
+  { id: 'c8', text: 'The teacher', zone: '3s' },
+  { id: 'c9', text: 'Usted (the formal "you")', zone: '3s' },
+  { id: 'c10', text: 'Mom and Dad', zone: '3p' },
+  { id: 'c11', text: 'The students', zone: '3p' },
+  { id: 'c12', text: 'You and your sister (both being spoken to)', zone: '3p' }
+];
+
+let placedCount = 0;
+let selectedCard = null;
+
+const pool = document.getElementById('cardPool');
+const scoreCount = document.getElementById('scoreCount');
+const totalCount = document.getElementById('totalCount');
+const completeBanner = document.getElementById('completeBanner');
+totalCount.textContent = subjects.length;
+
+function buildCards() {
+  pool.innerHTML = '';
+  placedCount = 0;
+  scoreCount.textContent = '0';
+  completeBanner.classList.remove('show');
+  document.querySelectorAll('.placed-cards').forEach(p => p.innerHTML = '');
+
+  subjects.forEach(subj => {
+    const card = document.createElement('div');
+    card.className = 'subject-card';
+    card.textContent = subj.text;
+    card.dataset.id = subj.id;
+    card.dataset.zone = subj.zone;
+    attachInteraction(card);
+    pool.appendChild(card);
+  });
+}
+
+function attachInteraction(card) {
+  let startX, startY, origX, origY, dragging = false;
+
+  card.addEventListener('pointerdown', (e) => {
+    card.setPointerCapture(e.pointerId);
+    startX = e.clientX;
+    startY = e.clientY;
+    const rect = card.getBoundingClientRect();
+    origX = rect.left;
+    origY = rect.top;
+    dragging = false;
+  });
+
+  card.addEventListener('pointermove', (e) => {
+    const dx = e.clientX - startX;
+    const dy = e.clientY - startY;
+    if (!dragging && (Math.abs(dx) > 6 || Math.abs(dy) > 6)) {
+      dragging = true;
+      card.classList.add('dragging');
+      card.style.width = card.offsetWidth + 'px';
+      document.body.appendChild(card);
+      card.style.left = origX + 'px';
+      card.style.top = origY + 'px';
+      clearSelection();
+    }
+    if (dragging) {
+      card.style.left = (origX + dx) + 'px';
+      card.style.top = (origY + dy) + 'px';
+      highlightZoneUnder(e.clientX, e.clientY);
+    }
+  });
+
+  card.addEventListener('pointerup', (e) => {
+    if (dragging) {
+      card.classList.remove('dragging');
+      card.style.width = '';
+      const zoneEl = getZoneUnder(e.clientX, e.clientY);
+      clearAllHighlights();
+      if (zoneEl) {
+        tryPlace(card, zoneEl);
+      } else {
+        pool.appendChild(card);
+        card.style.position = '';
+        card.style.left = '';
+        card.style.top = '';
+      }
+      dragging = false;
+    } else {
+      toggleSelect(card);
+    }
+  });
+}
+
+function toggleSelect(card) {
+  if (selectedCard === card) {
+    clearSelection();
+    return;
+  }
+  clearSelection();
+  selectedCard = card;
+  card.classList.add('selected');
+}
+
+function clearSelection() {
+  if (selectedCard) selectedCard.classList.remove('selected');
+  selectedCard = null;
+}
+
+function getZoneUnder(x, y) {
+  const zones = document.querySelectorAll('.drop-zone');
+  for (const z of zones) {
+    const r = z.getBoundingClientRect();
+    if (x >= r.left && x <= r.right && y >= r.top && y <= r.bottom) return z;
+  }
+  return null;
+}
+
+function highlightZoneUnder(x, y) {
+  clearAllHighlights();
+  const z = getZoneUnder(x, y);
+  if (z && z.dataset.disabled !== 'true') z.classList.add('hover-target');
+}
+
+function clearAllHighlights() {
+  document.querySelectorAll('.drop-zone').forEach(z => z.classList.remove('hover-target'));
+}
+
+document.querySelectorAll('.drop-zone').forEach(zone => {
+  zone.addEventListener('click', () => {
+    if (selectedCard) {
+      tryPlace(selectedCard, zone);
+      clearSelection();
+    }
+  });
+});
+
+function tryPlace(card, zoneEl) {
+  card.style.position = '';
+  card.style.left = '';
+  card.style.top = '';
+
+  if (zoneEl.dataset.disabled === 'true') {
+    pool.appendChild(card);
+    shakeCard(card);
+    return;
+  }
+
+  if (zoneEl.dataset.zone === card.dataset.zone) {
+    const chip = document.createElement('div');
+    chip.className = 'placed-chip';
+    chip.textContent = card.textContent;
+    zoneEl.querySelector('.placed-cards').appendChild(chip);
+    card.classList.add('placed');
+    pool.appendChild(card);
+    placedCount++;
+    scoreCount.textContent = placedCount;
+    if (placedCount === subjects.length) {
+      completeBanner.classList.add('show');
+    }
+  } else {
+    pool.appendChild(card);
+    shakeCard(card);
+  }
+}
+
+function shakeCard(card) {
+  card.classList.add('shake');
+  setTimeout(() => card.classList.remove('shake'), 400);
+}
+
+document.getElementById('resetBtn').addEventListener('click', buildCards);
+
+buildCards();
+</script>
+
+</body>
+</html>

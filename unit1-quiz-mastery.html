@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 1 Mastery Quiz | First Class Spanish</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/brand.css">
+<link rel="stylesheet" href="css/quiz.css">
+</head>
+<body>
+
+<header>
+  <a class="brand" href="index.html"><span class="star">★</span> First Class Spanish</a>
+  <div class="unit-pill">Unit 1 · Pronunciation</div>
+</header>
+
+<div class="quiz-hero">
+  <div class="level-badge">🎯</div>
+  <h1>Mastery Quiz</h1>
+  <p>The challenge level. These words may be unfamiliar — use the sound rules to figure them out.</p>
+</div>
+
+<div class="quiz-wrap">
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <div id="quizContainer"></div>
+  <div class="results" id="results">
+    <div class="score" id="scoreText"></div>
+    <div class="msg" id="scoreMsg"></div>
+    <div class="msg-es" id="scoreMsgEs"></div>
+    <div class="nav-links">
+      <button class="retry-btn" onclick="location.reload()">Try Again</button>
+      <a class="btn secondary" href="unit1-quiz-practice.html">Back to Practice</a>
+      <a class="btn" href="unit1-pronunciation-lesson.html">Back to Lesson</a>
+    </div>
+  </div>
+</div>
+
+<footer>First Class Spanish · Your Ticket to Spanish Fluency</footer>
+
+<script src="js/quiz-engine.js"></script>
+<script>
+const questions = [
+  {
+    q: "You see the unfamiliar word \"cigüeña\" (stork) for the first time. Even though it has letters you haven't studied, which sound can you still predict with confidence?",
+    options: [
+      "The \"a\" will sound like \"ah\"",
+      "The \"a\" will sound like \"ay\"",
+      "You can't predict any of it",
+      "The final vowel will be silent"
+    ],
+    correct: 0,
+    explain: "The five vowel sounds never change, no matter what else is going on in a word — that's what makes them the most reliable rule you have."
+  },
+  {
+    q: "\"Zanahoria\" (carrot) contains a silent letter. Where is it?",
+    options: ["The z at the start", "The h in the middle", "The final a", "There isn't one"],
+    correct: 1,
+    explain: "Zanahoria has a silent h between the two a's — it's pronounced \"sah-nah-OH-ree-ah.\""
+  },
+  {
+    q: "Which of these two words would you expect to have a rolled r: \"correo\" (mail) or \"coro\" (choir)?",
+    options: ["correo", "coro", "Both", "Neither"],
+    correct: 0,
+    explain: "Correo has a double rr, so it's trilled. Coro has a single r between vowels, so it's a quick tap."
+  },
+  {
+    q: "Based on the rules you know, how would \"jirafa\" (giraffe) most likely start?",
+    options: [
+      "With a \"j\" sound like in \"jump\"",
+      "With an \"h\" sound",
+      "Silently",
+      "With a \"y\" sound"
+    ],
+    correct: 1,
+    explain: "Spanish j sounds like English h, so jirafa starts \"hee-RAH-fa.\""
+  },
+  {
+    q: "In the unfamiliar word \"querido,\" what should the \"qu\" sound like?",
+    options: ["\"kw\" as in \"quick\"", "Hard \"k,\" with a silent u", "\"kh\"", "Soft \"k\" like \"s\""],
+    correct: 1,
+    explain: "Qu is always a hard k with a silent u, so querido starts \"keh-REE-do.\""
+  },
+  {
+    q: "In \"cigarro\" (cigar), how should the c and g each sound?",
+    options: [
+      "c is hard, g is soft",
+      "c is soft (before i), g is hard (before a)",
+      "Both are soft",
+      "Both are hard"
+    ],
+    correct: 1,
+    explain: "C is soft before i, and g is hard before a — so cigarro is \"see-GAH-rro,\" with a rolled rr."
+  },
+  {
+    q: "A student sees the unfamiliar word \"yeso\" (plaster) for the first time. What's the best guess for how the y sounds?",
+    options: ["Like a vowel \"ee\"", "Like the English y in \"yes\"", "Silent", "Like \"j\" in jump"],
+    correct: 1,
+    explain: "Like ll, the consonant y usually sounds like the English y — yeso starts \"YEH-so.\""
+  },
+  {
+    q: "You come across a Spanish word you've never seen before. What can you rely on to read it aloud correctly?",
+    options: [
+      "Nothing — you'd have to guess randomly",
+      "The consistent sound rules you've learned, since Spanish is phonetic",
+      "Memorizing every word individually",
+      "English pronunciation rules"
+    ],
+    correct: 1,
+    explain: "That's the whole point of Unit 1: because Spanish letters behave consistently, the rules generalize to any new word."
+  }
+];
+
+const resultsMessages = {
+  perfect: "Perfect score! You can sound out Spanish words on sight. 🎯",
+  good: "Strong work — you've mastered Unit 1 pronunciation.",
+  low: "Some tricky ones in there. Revisit the special cases, then try again."
+};
+
+initQuiz(questions, resultsMessages);
+</script>
+
+</body>
+</html>

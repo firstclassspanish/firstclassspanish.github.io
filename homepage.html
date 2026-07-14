@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>First Class Spanish | Your Ticket to Spanish Fluency</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/brand.css">
+<style>
+  .tagline { color: rgba(255,255,255,0.75); font-size: 0.82rem; }
+
+  .hero { text-align: center; padding: 64px 24px 50px; }
+  .hero .eyebrow-star { color: var(--gold); font-size: 1.6rem; margin-bottom: 14px; }
+  .hero h1 { font-size: clamp(1.8rem, 5vw, 2.6rem); max-width: 640px; margin: 0 auto 16px; }
+  .hero p { color: var(--gray); font-size: 1.1rem; max-width: 520px; margin: 0 auto; }
+
+  .home-wrap { max-width: 960px; margin: 0 auto; padding: 0 24px 60px; }
+
+  .section-label {
+    text-align: center; font-family: 'Sora', sans-serif; font-weight: 700; color: var(--forest);
+    font-size: 1.3rem; margin-bottom: 28px;
+  }
+
+  .unit-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  @media (max-width: 700px) { .unit-grid { grid-template-columns: 1fr; } }
+
+  .unit-card {
+    border-radius: 18px; padding: 28px 26px; position: relative; overflow: hidden;
+    transition: transform 0.15s ease;
+  }
+  .unit-card.active:hover { transform: translateY(-3px); }
+  .unit-card.active { cursor: pointer; }
+  .unit-card.locked { opacity: 0.6; }
+
+  .unit-card .unit-num {
+    display: inline-block; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 0.75rem;
+    text-transform: uppercase; letter-spacing: 0.04em; padding: 4px 12px; border-radius: 12px; margin-bottom: 12px;
+  }
+  .unit-card h3 { font-size: 1.25rem; margin-bottom: 8px; }
+  .unit-card p { color: var(--gray); font-size: 0.9rem; margin-bottom: 16px; }
+  .unit-card .status { font-size: 0.82rem; font-weight: 700; display: flex; align-items: center; gap: 6px; }
+
+  .unit-card.unit1 { background: var(--teal-light); }
+  .unit-card.unit1 .unit-num { background: var(--teal); color: var(--white); }
+  .unit-card.unit1 .status { color: var(--teal); }
+
+  .unit-card.unit2 { background: var(--terracotta-light); }
+  .unit-card.unit2 .unit-num { background: var(--terracotta); color: var(--white); }
+  .unit-card.unit2 .status { color: var(--terracotta); }
+
+  .unit-card.partsofspeech { background: var(--plum-light); }
+  .unit-card.partsofspeech .unit-num { background: var(--plum); color: var(--white); }
+  .unit-card.partsofspeech .status { color: var(--plum); }
+
+  .unit-card.conjugation { background: var(--blue-light); }
+  .unit-card.conjugation .unit-num { background: var(--blue); color: var(--white); }
+  .unit-card.conjugation .status { color: var(--blue); }
+
+  .greeting-strip { max-width: 700px; margin: 0 auto; padding: 0 24px; text-align: center; }
+  .greeting-label { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--forest); font-size: 1.3rem; }
+  .greeting-label .greeting-en { color: var(--muted); font-weight: 500; font-size: 0.85rem; }
+  .greeting-chips { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 16px 0 10px; }
+  .phrase-chip {
+    background: var(--gold-light); border: 1.5px solid var(--gold); border-radius: 20px;
+    padding: 8px 18px; font-family: 'Sora', sans-serif; font-weight: 700; color: var(--forest);
+    font-size: 0.95rem; cursor: pointer; transition: transform 0.1s ease;
+  }
+  .phrase-chip:hover { transform: translateY(-2px); }
+  .phrase-chip .translation { display: none; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 500; font-size: 0.72rem; color: var(--muted); margin-top: 3px; }
+  .phrase-chip.revealed .translation { display: block; }
+  .greeting-note { color: var(--muted); font-size: 0.82rem; margin-top: 4px; }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="brand" href="index.html"><span class="star">★</span> First Class Spanish</a>
+  <div class="tagline">Your Ticket to Spanish Fluency</div>
+</header>
+
+<div class="hero">
+  <div class="eyebrow-star">★</div>
+  <h1>Great trips take some prep. <span style="white-space: nowrap;">Let's get you ready.</span></h1>
+  <p>Core skills, clear steps, real progress. We break it down. <span style="white-space: nowrap;">You build it up.</span></p>
+</div>
+
+<div class="greeting-strip">
+  <div class="greeting-label">¡Bienvenidos! <span class="greeting-en">(Welcome!)</span></div>
+  <div class="greeting-chips">
+    <button class="phrase-chip" type="button"><span class="es">¡Hola!</span><span class="translation">Hi! / Hello!</span></button>
+    <button class="phrase-chip" type="button"><span class="es">¿Qué tal?</span><span class="translation">How's it going?</span></button>
+    <button class="phrase-chip" type="button"><span class="es">¡Buena suerte!</span><span class="translation">Good luck!</span></button>
+    <button class="phrase-chip" type="button"><span class="es">¡Vamos!</span><span class="translation">Let's go!</span></button>
+  </div>
+  <p class="greeting-note">Tap a phrase to see what it means. More greetings and everyday phrases coming soon.</p>
+</div>
+
+<div class="ticket-divider"><span class="notch"></span></div>
+
+<div class="home-wrap">
+  <div class="section-label">Choose a unit</div>
+  <div class="unit-grid">
+
+    <a class="unit-card unit1 active" href="unit1-intro-animation.html">
+      <div class="unit-num">Unit 1</div>
+      <h3>Pronunciation <span style="font-weight: 500; font-size: 0.85em; opacity: 0.75;">(La pronunciación)</span></h3>
+      <p>Spanish is phonetic — learn the sound rules once, and read almost anything out loud.</p>
+      <div class="status">● Ready to start</div>
+    </a>
+
+    <a class="unit-card unit2 active" href="unit2-intro-animation.html">
+      <div class="unit-num">Unit 2</div>
+      <h3>Grammatical Person <span style="font-weight: 500; font-size: 0.85em; opacity: 0.75;">(La persona gramatical)</span></h3>
+      <p>Meet the Box of Six — the foundation for verbs, pronouns, and everything ahead.</p>
+      <div class="status">● Ready to start</div>
+    </a>
+
+    <div class="unit-card partsofspeech locked">
+      <div class="unit-num">Unit 3</div>
+      <h3>Parts of Speech <span style="font-weight: 500; font-size: 0.85em; opacity: 0.75;">(Las partes de la oración)</span></h3>
+      <p>Every word has a job. Spot nouns, verbs, and more in real English and Spanish sentences.</p>
+      <div class="status">○ Coming soon</div>
+    </div>
+
+    <div class="unit-card conjugation locked">
+      <div class="unit-num">Unit 4</div>
+      <h3>Conjugation <span style="font-weight: 500; font-size: 0.85em; opacity: 0.75;">(La conjugación)</span></h3>
+      <p>Infinitives, verb families, and how person connects to verb endings.</p>
+      <div class="status">○ Coming soon</div>
+    </div>
+
+  </div>
+</div>
+
+<footer>First Class Spanish · Your Ticket to Spanish Fluency</footer>
+
+<script>
+document.querySelectorAll('.phrase-chip').forEach(chip => {
+  chip.addEventListener('click', () => chip.classList.toggle('revealed'));
+});
+</script>
+
+</body>
+</html>

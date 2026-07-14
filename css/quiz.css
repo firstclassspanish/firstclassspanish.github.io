@@ -1,0 +1,51 @@
+/* ============================================
+   First Class Spanish — Shared Quiz Stylesheet
+   Used by every quiz page (all units, all levels).
+   Depends on brand.css being loaded first for
+   colors and base styles.
+   ============================================ */
+
+.quiz-hero { background: var(--gold); color: var(--forest); padding: 40px 24px 34px; text-align: center; }
+.quiz-hero .level-badge { font-size: 2.2rem; margin-bottom: 6px; }
+.quiz-hero h1 { font-size: 1.7rem; margin-bottom: 6px; }
+.quiz-hero p { color: var(--forest); opacity: 0.85; max-width: 480px; margin: 0 auto; }
+
+.quiz-wrap { max-width: 640px; margin: 0 auto; padding: 36px 24px 60px; }
+
+.progress-track { background: #E4E2DC; border-radius: 20px; height: 8px; overflow: hidden; margin-bottom: 30px; }
+.progress-fill { background: var(--gold); height: 100%; width: 0%; transition: width 0.3s ease; }
+
+.q-card { background: var(--white); border-radius: 16px; padding: 28px 26px; box-shadow: 0 1px 3px rgba(14,53,34,0.06); margin-bottom: 18px; }
+.q-num { font-size: 0.8rem; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 8px; }
+.q-text { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--forest); margin-bottom: 18px; }
+
+.opt { display: block; border: 1.5px solid #E4E2DC; border-radius: 10px; padding: 12px 16px; margin-bottom: 10px; cursor: pointer; transition: all 0.15s ease; font-weight: 600; color: var(--gray); }
+.opt:hover { border-color: var(--gold); background: var(--gold-light); }
+.opt input { margin-right: 10px; }
+.opt.correct { border-color: var(--jade); background: #E8F5EE; color: var(--forest); }
+.opt.incorrect { border-color: var(--terracotta); background: #FBEAE3; color: var(--forest); }
+
+.feedback-msg { display: none; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1.05rem; margin-top: 14px; }
+.feedback-msg.show { display: block; }
+.feedback-msg.right { color: var(--jade); }
+.feedback-msg.wrong { color: var(--terracotta); }
+
+.explain { display: none; margin-top: 12px; padding: 12px 14px; border-radius: 8px; font-size: 0.9rem; color: var(--forest); }
+.explain.show { display: block; }
+/* Default accent (overridden per unit via body class, see quiz-engine init) */
+.explain { background: var(--teal-light); border-left: 4px solid var(--teal); }
+body.unit-terracotta .explain { background: var(--terracotta-light); border-left-color: var(--terracotta); }
+body.unit-plum .explain { background: var(--plum-light); border-left-color: var(--plum); }
+body.unit-blue .explain { background: var(--blue-light); border-left-color: var(--blue); }
+
+.check-btn { display: block; width: 100%; background: var(--gold); color: var(--white); font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1rem; border: none; border-radius: 12px; padding: 16px; cursor: pointer; margin-top: 10px; }
+.check-btn:disabled { background: #D8D6CE; cursor: not-allowed; }
+
+.results { display: none; background: var(--white); border-radius: 16px; padding: 40px 30px; text-align: center; box-shadow: 0 1px 3px rgba(14,53,34,0.06); }
+.results.show { display: block; }
+.results .score { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 2.4rem; color: var(--gold); margin-bottom: 6px; }
+.results .msg { color: var(--gray); margin-bottom: 4px; }
+.results .msg-es { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--jade); margin-bottom: 20px; font-size: 1.05rem; }
+.results .nav-links { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.results a.btn, .retry-btn { display: inline-block; background: var(--jade); color: var(--white); font-weight: 600; padding: 12px 24px; border-radius: 24px; text-decoration: none; border: none; cursor: pointer; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.95rem; }
+.results a.btn.secondary { background: var(--gold-light); color: var(--forest); }
