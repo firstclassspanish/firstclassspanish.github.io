@@ -7,8 +7,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/brand.css">
-<link rel="stylesheet" href="css/animation.css">
+<link rel="stylesheet" href="css/brand.css?v=1">
+<link rel="stylesheet" href="css/animation.css?v=1">
 <style>
   /* Box of Six grid */
   .box-grid {
@@ -110,13 +110,14 @@
 
         <div class="box-cell row-label">2nd</div>
         <div class="box-cell filled">tú</div>
-        <div class="box-cell empty">Spain only</div>
+        <div class="box-cell empty">vosotros<br><span style="font-size: 0.65em; opacity: 0.8;">Spain only</span></div>
 
         <div class="box-cell row-label">3rd</div>
         <div class="box-cell filled">él/ella/usted</div>
         <div class="box-cell filled">ellos/ustedes</div>
       </div>
       <p class="vo">Spanish uses the exact same six boxes — just with different words.</p>
+      <p style="font-size: 0.75rem; color: rgba(255,255,255,0.65); margin-top: 6px;">Latin America usually uses ustedes instead, so that box often stays blank.</p>
     </div>
 
     <!-- Beat 5: CTA -->
@@ -139,7 +140,7 @@
   <p class="caption-note">Silent animatic — pairs with the narration script. Add voiceover audio once recorded.</p>
 </div>
 
-<script src="js/animation-engine.js"></script>
+<script src="js/animation-engine.js?v=1"></script>
 <script>
   const durations = [9600, 9000, 11000, 11500, 8000]; // ms per beat
   initAnimation(durations, 'unit2-grammatical-person-lesson.html');
