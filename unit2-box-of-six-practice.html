@@ -211,7 +211,6 @@ function attachInteraction(card) {
       dragging = true;
       card.classList.add('dragging');
       card.style.width = card.offsetWidth + 'px';
-      document.body.appendChild(card);
       card.style.left = origX + 'px';
       card.style.top = origY + 'px';
       clearSelection();
