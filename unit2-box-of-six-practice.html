@@ -65,10 +65,10 @@
   .subject-card {
     background: var(--gold-light); border: 1.5px solid var(--gold); border-radius: 12px;
     padding: 10px 16px; font-weight: 600; color: var(--forest); font-size: 0.88rem;
-    cursor: grab; user-select: none; touch-action: none;
+    cursor: grab; user-select: none;
     transition: box-shadow 0.15s ease, transform 0.1s ease; position: relative;
   }
-  .subject-card.dragging { position: fixed; z-index: 999; box-shadow: 0 8px 20px rgba(14,53,34,0.25); cursor: grabbing; }
+  .subject-card.dragging { opacity: 0.4; }
   .subject-card.selected { box-shadow: 0 0 0 3px var(--terracotta); transform: translateY(-2px); }
   .subject-card.placed { display: none; }
   .subject-card.shake { animation: shake 0.4s ease; }
@@ -192,54 +192,22 @@ function buildCards() {
 }
 
 function attachInteraction(card) {
-  let startX, startY, origX, origY, dragging = false;
+  card.draggable = true;
 
-  card.addEventListener('pointerdown', (e) => {
-    card.setPointerCapture(e.pointerId);
-    startX = e.clientX;
-    startY = e.clientY;
-    const rect = card.getBoundingClientRect();
-    origX = rect.left;
-    origY = rect.top;
-    dragging = false;
+  card.addEventListener('dragstart', (e) => {
+    e.dataTransfer.setData('text/plain', card.dataset.id);
+    e.dataTransfer.effectAllowed = 'move';
+    card.classList.add('dragging');
+    clearSelection();
   });
 
-  card.addEventListener('pointermove', (e) => {
-    const dx = e.clientX - startX;
-    const dy = e.clientY - startY;
-    if (!dragging && (Math.abs(dx) > 6 || Math.abs(dy) > 6)) {
-      dragging = true;
-      card.classList.add('dragging');
-      card.style.width = card.offsetWidth + 'px';
-      card.style.left = origX + 'px';
-      card.style.top = origY + 'px';
-      clearSelection();
-    }
-    if (dragging) {
-      card.style.left = (origX + dx) + 'px';
-      card.style.top = (origY + dy) + 'px';
-      highlightZoneUnder(e.clientX, e.clientY);
-    }
+  card.addEventListener('dragend', () => {
+    card.classList.remove('dragging');
+    clearAllHighlights();
   });
 
-  card.addEventListener('pointerup', (e) => {
-    if (dragging) {
-      card.classList.remove('dragging');
-      card.style.width = '';
-      const zoneEl = getZoneUnder(e.clientX, e.clientY);
-      clearAllHighlights();
-      if (zoneEl) {
-        tryPlace(card, zoneEl);
-      } else {
-        pool.appendChild(card);
-        card.style.position = '';
-        card.style.left = '';
-        card.style.top = '';
-      }
-      dragging = false;
-    } else {
-      toggleSelect(card);
-    }
+  card.addEventListener('click', () => {
+    toggleSelect(card);
   });
 }
 
@@ -258,26 +226,28 @@ function clearSelection() {
   selectedCard = null;
 }
 
-function getZoneUnder(x, y) {
-  const zones = document.querySelectorAll('.drop-zone');
-  for (const z of zones) {
-    const r = z.getBoundingClientRect();
-    if (x >= r.left && x <= r.right && y >= r.top && y <= r.bottom) return z;
-  }
-  return null;
-}
-
-function highlightZoneUnder(x, y) {
-  clearAllHighlights();
-  const z = getZoneUnder(x, y);
-  if (z && z.dataset.disabled !== 'true') z.classList.add('hover-target');
-}
-
 function clearAllHighlights() {
   document.querySelectorAll('.drop-zone').forEach(z => z.classList.remove('hover-target'));
 }
 
 document.querySelectorAll('.drop-zone').forEach(zone => {
+  zone.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    if (zone.dataset.disabled !== 'true') zone.classList.add('hover-target');
+  });
+
+  zone.addEventListener('dragleave', () => {
+    zone.classList.remove('hover-target');
+  });
+
+  zone.addEventListener('drop', (e) => {
+    e.preventDefault();
+    zone.classList.remove('hover-target');
+    const cardId = e.dataTransfer.getData('text/plain');
+    const card = document.querySelector(`.subject-card[data-id="${cardId}"]`);
+    if (card) tryPlace(card, zone);
+  });
+
   zone.addEventListener('click', () => {
     if (selectedCard) {
       tryPlace(selectedCard, zone);
@@ -287,10 +257,6 @@ document.querySelectorAll('.drop-zone').forEach(zone => {
 });
 
 function tryPlace(card, zoneEl) {
-  card.style.position = '';
-  card.style.left = '';
-  card.style.top = '';
-
   if (zoneEl.dataset.disabled === 'true') {
     pool.appendChild(card);
     shakeCard(card);
