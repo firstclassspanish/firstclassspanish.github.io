@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 3 Intro Animation | First Class Spanish</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/brand.css?v=1">
+<link rel="stylesheet" href="css/animation.css?v=1">
+<style>
+  /* Tagged sentence display */
+  .sentence-row { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 10px; }
+  .word-block { display: flex; flex-direction: column; align-items: center; opacity: 0; transform: translateY(8px); animation: rise 0.4s ease forwards; }
+  .word-block:nth-child(1) { animation-delay: 0.1s; }
+  .word-block:nth-child(2) { animation-delay: 0.4s; }
+  .word-block:nth-child(3) { animation-delay: 0.7s; }
+  .word-block:nth-child(4) { animation-delay: 1.0s; }
+  .word-block .word {
+    font-family: 'Sora', sans-serif; font-weight: 700; color: var(--white);
+    font-size: clamp(1.1rem, 4vw, 1.6rem);
+  }
+  .word-block .tag {
+    font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em;
+    padding: 3px 9px; border-radius: 8px; margin-top: 6px;
+    opacity: 0; animation: pop 0.3s ease forwards;
+  }
+  .word-block:nth-child(1) .tag { animation-delay: 1.4s; }
+  .word-block:nth-child(2) .tag { animation-delay: 1.6s; }
+  .word-block:nth-child(3) .tag { animation-delay: 1.8s; }
+  .word-block:nth-child(4) .tag { animation-delay: 2.0s; }
+  .tag.article { background: rgba(255,255,255,0.18); color: var(--white); }
+  .tag.noun { background: var(--gold); color: var(--forest); }
+  .tag.verb { background: rgba(255,255,255,0.85); color: var(--plum-dark); }
+  .tag.adverb { background: rgba(255,255,255,0.18); color: var(--white); border: 1px solid rgba(255,255,255,0.4); }
+
+  /* Category list */
+  .category-list { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 14px; max-width: 420px; }
+  .category-chip {
+    font-family: 'Sora', sans-serif; font-weight: 700; color: var(--white);
+    background: rgba(255,255,255,0.16); padding: 8px 16px; border-radius: 20px;
+    font-size: 0.9rem; opacity: 0; transform: scale(0.85); animation: pop 0.35s ease forwards;
+  }
+  .category-chip:nth-child(1) { animation-delay: 0.1s; }
+  .category-chip:nth-child(2) { animation-delay: 0.35s; }
+  .category-chip:nth-child(3) { animation-delay: 0.6s; }
+  .category-chip:nth-child(4) { animation-delay: 0.85s; }
+
+  .glow-word {
+    display: inline-block; padding: 14px 26px; border: 2px solid rgba(255,255,255,0.5); border-radius: 14px;
+    font-family: 'Sora', sans-serif; font-weight: 700; color: var(--white); font-size: 1.3rem;
+    margin-top: 10px; animation: glow 1.8s ease-in-out infinite;
+  }
+  @keyframes glow { 0%, 100% { box-shadow: 0 0 0px rgba(255,255,255,0.3); } 50% { box-shadow: 0 0 22px rgba(255,255,255,0.5); } }
+</style>
+</head>
+<body class="animation-page">
+
+<div>
+  <div class="stage theme-plum" id="stage">
+
+    <div class="home-control">
+      <a class="ctrl-btn" href="index.html">🏠 Home</a>
+    </div>
+    <div class="top-controls">
+      <button class="ctrl-btn" id="skipBtn">Skip ⏭</button>
+    </div>
+
+    <!-- Beat 1: Hook -->
+    <div class="beat" data-beat="0">
+      <div class="settle-word" style="font-size: clamp(1.4rem, 5vw, 2rem);">The dog runs fast.</div>
+      <p class="vo">Every word in that sentence has a job.</p>
+    </div>
+
+    <!-- Beat 2: Bridge - tagged English sentence -->
+    <div class="beat" data-beat="1">
+      <div class="sentence-row">
+        <div class="word-block"><div class="word">The</div><div class="tag article">article</div></div>
+        <div class="word-block"><div class="word">dog</div><div class="tag noun">noun</div></div>
+        <div class="word-block"><div class="word">runs</div><div class="tag verb">verb</div></div>
+        <div class="word-block"><div class="word">fast</div><div class="tag adverb">adverb</div></div>
+      </div>
+      <p class="vo">Some words name things. Some show action. Some describe. Every word fits a category.</p>
+    </div>
+
+    <!-- Beat 3: Reveal -->
+    <div class="beat" data-beat="2">
+      <div class="category-list">
+        <span class="category-chip">article</span>
+        <span class="category-chip">noun</span>
+        <span class="category-chip">verb</span>
+        <span class="category-chip">adverb</span>
+      </div>
+      <p class="vo">These categories are called parts of speech. And here's the useful part: they work the same way in Spanish.</p>
+    </div>
+
+    <!-- Beat 4: Proof - tagged Spanish sentence -->
+    <div class="beat" data-beat="3">
+      <div class="sentence-row">
+        <div class="word-block"><div class="word">El</div><div class="tag article">article</div></div>
+        <div class="word-block"><div class="word">perro</div><div class="tag noun">noun</div></div>
+        <div class="word-block"><div class="word">corre</div><div class="tag verb">verb</div></div>
+        <div class="word-block"><div class="word">rápido</div><div class="tag adverb">adverb</div></div>
+      </div>
+      <p class="vo">El perro corre rápido. Same sentence, same categories, same logic.</p>
+    </div>
+
+    <!-- Beat 5: Payoff + CTA -->
+    <div class="beat" data-beat="4">
+      <div class="cta-star">★</div>
+      <div class="cta-title">Unit 3 · Parts of Speech</div>
+      <div class="cta-sub">Let's meet the parts of speech.</div>
+      <div class="end-actions">
+        <button class="end-btn secondary" id="replayBtn">Replay</button>
+        <a class="end-btn primary" href="unit3-parts-of-speech-lesson.html">Start the Lesson</a>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="progress-dots" id="dots"></div>
+    </div>
+
+  </div>
+
+  <p class="caption-note">Silent animatic — pairs with the narration script. Add voiceover audio once recorded.</p>
+</div>
+
+<script src="js/animation-engine.js?v=1"></script>
+<script>
+  const durations = [4200, 6800, 6800, 6800, 6000]; // ms per beat
+  initAnimation(durations, 'unit3-parts-of-speech-lesson.html');
+</script>
+
+</body>
+</html>
