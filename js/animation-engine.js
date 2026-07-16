@@ -30,7 +30,7 @@ function initAnimation(durations, lessonUrl, onBeatShow) {
 
     if (current) {
       const animated = current.querySelectorAll(
-        '.messy-word, .box-cell, .vowel-item, .flash-words span, .sentence-line'
+        '.messy-word, .box-cell, .vowel-item, .flash-words span, .sentence-line, .word-block, .tag, .category-chip'
       );
       animated.forEach(el => {
         el.style.animation = 'none';
