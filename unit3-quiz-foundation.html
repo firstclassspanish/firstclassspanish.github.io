@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 3 Foundation Quiz | First Class Spanish</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/brand.css?v=1">
+<link rel="stylesheet" href="css/quiz.css?v=1">
+</head>
+<body class="unit-plum">
+
+<header>
+  <a class="brand" href="index.html"><span class="star">★</span> First Class Spanish</a>
+  <div class="unit-pill">Unit 3 · Parts of Speech</div>
+</header>
+
+<div class="quiz-hero">
+  <div class="level-badge">🌱</div>
+  <h1>Foundation Quiz</h1>
+  <p>Core concepts, no prior knowledge needed. Take your time — every question includes an explanation.</p>
+</div>
+
+<div class="quiz-wrap">
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <div id="quizContainer"></div>
+  <div class="results" id="results">
+    <div class="score" id="scoreText"></div>
+    <div class="msg" id="scoreMsg"></div>
+    <div class="msg-es" id="scoreMsgEs"></div>
+    <div class="nav-links">
+      <button class="retry-btn" onclick="location.reload()">Try Again</button>
+      <a class="btn secondary" href="unit3-parts-of-speech-lesson.html">Back to Lesson</a>
+      <a class="btn" href="unit3-quiz-practice.html">Next: Practice 💪</a>
+    </div>
+  </div>
+</div>
+
+<footer>First Class Spanish · Your Ticket to Spanish Fluency</footer>
+
+<script src="js/quiz-engine.js?v=1"></script>
+<script>
+const questions = [
+  { q: "What does a noun do?", options: ["Shows action", "Names a person, place, thing, or idea", "Describes a noun", "Connects two words"], correct: 1, explain: "A noun names something — perro (dog), casa (house), amor (love) are all nouns." },
+  { q: "What does a verb show?", options: ["A description", "Action or a state of being", "A category of noun", "A number"], correct: 1, explain: "Verbs show action (corre = runs) or state of being (es = is)." },
+  { q: "What does an adjective do?", options: ["Names a thing", "Shows action", "Describes a noun", "Stands in for a noun"], correct: 2, explain: "Adjectives describe nouns — grande (big), bonito (pretty)." },
+  { q: "What does an adverb usually describe?", options: ["A noun", "A verb — often how, when, or where", "An article", "A pronoun"], correct: 1, explain: "Adverbs usually describe verbs: corre rápido (runs fast) — rápido describes how he runs." },
+  { q: "What does an article do?", options: ["Describes a noun", "Shows action", "Signals that a noun is coming", "Connects two sentences"], correct: 2, explain: "Articles (el, la, un, una) come right before a noun to signal it's about to appear." },
+  { q: "What is a pronoun?", options: ["A word that names a specific thing", "A word that stands in for a noun", "A word that describes an action", "A word that shows number"], correct: 1, explain: "Pronouns (ella, nosotros) stand in for a noun so you don't have to repeat a name — you met these in Unit 2." },
+  { q: "Which part of speech is \"perro\" (dog)?", options: ["Verb", "Adjective", "Noun", "Adverb"], correct: 2, explain: "Perro names a thing — that makes it a noun." },
+  { q: "Which part of speech is \"corre\" (runs)?", options: ["Noun", "Verb", "Article", "Pronoun"], correct: 1, explain: "Corre shows action — that makes it a verb." }
+];
+
+const resultsMessages = {
+  perfect: "Perfect score! You've got the six categories down. 🌟",
+  good: "Solid work — you're ready to move on to Practice.",
+  low: "Good start. Revisit the lesson, then give it another shot."
+};
+
+initQuiz(questions, resultsMessages);
+</script>
+
+</body>
+</html>

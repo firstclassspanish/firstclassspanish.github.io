@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 3 Practice Quiz | First Class Spanish</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/brand.css?v=1">
+<link rel="stylesheet" href="css/quiz.css?v=1">
+</head>
+<body class="unit-plum">
+
+<header>
+  <a class="brand" href="index.html"><span class="star">★</span> First Class Spanish</a>
+  <div class="unit-pill">Unit 3 · Parts of Speech</div>
+</header>
+
+<div class="quiz-hero">
+  <div class="level-badge">💪</div>
+  <h1>Practice Quiz</h1>
+  <p>Time to apply what you know. These questions ask you to categorize real words in context.</p>
+</div>
+
+<div class="quiz-wrap">
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <div id="quizContainer"></div>
+  <div class="results" id="results">
+    <div class="score" id="scoreText"></div>
+    <div class="msg" id="scoreMsg"></div>
+    <div class="msg-es" id="scoreMsgEs"></div>
+    <div class="nav-links">
+      <button class="retry-btn" onclick="location.reload()">Try Again</button>
+      <a class="btn secondary" href="unit3-quiz-foundation.html">Back to Foundation</a>
+      <a class="btn" href="unit3-quiz-mastery.html">Next: Mastery 🎯</a>
+    </div>
+  </div>
+</div>
+
+<footer>First Class Spanish · Your Ticket to Spanish Fluency</footer>
+
+<script src="js/quiz-engine.js?v=1"></script>
+<script>
+const questions = [
+  { q: "In \"El perro corre rápido,\" what part of speech is \"rápido\"?", options: ["Noun", "Verb", "Adjective", "Adverb"], correct: 3, explain: "Rápido describes how the dog runs — that's an adverb." },
+  { q: "In \"La casa grande,\" what part of speech is \"grande\"?", options: ["Adjective", "Adverb", "Verb", "Article"], correct: 0, explain: "Grande describes the noun casa — that's an adjective." },
+  { q: "Which of these words is a pronoun?", options: ["perro", "ella", "corre", "grande"], correct: 1, explain: "Ella (she) stands in for a noun — that's a pronoun." },
+  { q: "Based on \"perro grande,\" where does a descriptive adjective usually go in Spanish?", options: ["Before the noun, like English", "After the noun", "At the start of the sentence", "It doesn\'t matter"], correct: 1, explain: "Spanish typically places descriptive adjectives after the noun — the opposite order from English." },
+  { q: "\"Hablar\" (to speak) is which part of speech?", options: ["Noun", "Verb", "Adjective", "Pronoun"], correct: 1, explain: "Hablar shows an action (even unconjugated) — it's a verb, specifically the infinitive form you'll meet again in Unit 4." },
+  { q: "Which of these is an article?", options: ["una", "corre", "rápido", "ella"], correct: 0, explain: "Una signals a feminine noun is coming — that's an article." },
+  { q: "\"Nosotros\" belongs to which category?", options: ["Noun", "Verb", "Pronoun", "Adjective"], correct: 2, explain: "Nosotros stands in for a group including the speaker — a pronoun, straight out of Unit 2's Box of Six." },
+  { q: "In \"El gato bonito duerme,\" what part of speech is \"bonito\"?", options: ["Noun", "Adjective", "Verb", "Adverb"], correct: 1, explain: "Bonito describes the noun gato — an adjective." },
+  { q: "In \"Corre rápido,\" which word answers \"how\" the action happens?", options: ["Corre", "Rápido"], correct: 1, explain: "Rápido tells you how he runs — the defining job of an adverb." }
+];
+
+const resultsMessages = {
+  perfect: "Perfect score! You're spotting categories everywhere now. 🌟",
+  good: "Nice work — you're ready for the Mastery challenge.",
+  low: "Getting there. Revisit the tricky cases in the lesson, then try again."
+};
+
+initQuiz(questions, resultsMessages);
+</script>
+
+</body>
+</html>

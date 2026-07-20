@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 3 Mastery Quiz | First Class Spanish</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/brand.css?v=1">
+<link rel="stylesheet" href="css/quiz.css?v=1">
+</head>
+<body class="unit-plum">
+
+<header>
+  <a class="brand" href="index.html"><span class="star">★</span> First Class Spanish</a>
+  <div class="unit-pill">Unit 3 · Parts of Speech</div>
+</header>
+
+<div class="quiz-hero">
+  <div class="level-badge">🎯</div>
+  <h1>Mastery Quiz</h1>
+  <p>The challenge level. These questions dig into word order, agreement, and the road ahead.</p>
+</div>
+
+<div class="quiz-wrap">
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <div id="quizContainer"></div>
+  <div class="results" id="results">
+    <div class="score" id="scoreText"></div>
+    <div class="msg" id="scoreMsg"></div>
+    <div class="msg-es" id="scoreMsgEs"></div>
+    <div class="nav-links">
+      <button class="retry-btn" onclick="location.reload()">Try Again</button>
+      <a class="btn secondary" href="unit3-quiz-practice.html">Back to Practice</a>
+      <a class="btn" href="unit3-parts-of-speech-lesson.html">Back to Lesson</a>
+    </div>
+  </div>
+</div>
+
+<footer>First Class Spanish · Your Ticket to Spanish Fluency</footer>
+
+<script src="js/quiz-engine.js?v=1"></script>
+<script>
+const questions = [
+  { q: "Why does \"perro grande\" put the adjective after the noun, unlike English \"big dog\"?", options: ["It\'s a translation mistake", "Spanish word order for descriptive adjectives commonly differs from English", "Grande is actually a noun in this case", "There\'s no rule — it\'s random"], correct: 1, explain: "This is a genuine, consistent pattern in Spanish — not random, and not a mistake." },
+  { q: "\"Elena\" and \"ella\" can both refer to the same person. What's the category difference?", options: ["No difference — they\'re the same category", "Elena is a noun (a name); ella is a pronoun standing in for it", "Elena is a verb; ella is a noun", "Both are pronouns"], correct: 1, explain: "Elena names a specific person (noun). Ella stands in for that name without repeating it (pronoun)." },
+  { q: "Which part of speech will Unit 4 spend the whole unit on?", options: ["Nouns", "Adjectives", "Verbs", "Articles"], correct: 2, explain: "Unit 4 is entirely about conjugating verbs — everything from this unit about recognizing verbs sets that up." },
+  { q: "\"El\" and \"la\" are both articles meaning \"the.\" Why are there two?", options: ["They\'re interchangeable, no reason", "They match the gender of the noun that follows", "El is for singular, la is for plural", "La is more formal than el"], correct: 1, explain: "Spanish articles agree with the noun's gender — el for masculine nouns, la for feminine. The full rules are their own future unit." },
+  { q: "\"Hablar,\" \"comer,\" and \"vivir\" are all verbs in their unconjugated form. What is this form called?", options: ["The root", "The infinitive", "The subject", "The article"], correct: 1, explain: "The infinitive is the \"to ___\" form of a verb — hablar (to speak), comer (to eat), vivir (to live)." },
+  { q: "In \"Los estudiantes inteligentes estudian mucho,\" what part of speech is \"estudiantes\"?", options: ["Verb", "Noun", "Adjective", "Adverb"], correct: 1, explain: "Estudiantes (students) names the people in the sentence — a noun." },
+  { q: "In that same sentence, what part of speech is \"mucho\"?", options: ["Adjective", "Noun", "Adverb", "Article"], correct: 2, explain: "Mucho describes how much they study — modifying the verb estudian, which makes it an adverb here." },
+  { q: "Why does knowing parts of speech help with English grammar too, not just Spanish?", options: ["It doesn\'t — they\'re unrelated", "The same categories exist in English, so naming them in Spanish reinforces the concept in both languages", "English doesn\'t have parts of speech", "Only advanced students benefit"], correct: 1, explain: "Nouns, verbs, adjectives, and the rest exist in every language — practicing the concept in Spanish sharpens it in English too." }
+];
+
+const resultsMessages = {
+  perfect: "Perfect score! You've mastered the parts of speech. 🎯",
+  good: "Strong work — the tricky cases are clicking into place.",
+  low: "Some genuine trap questions in there. Revisit the lesson, then try again."
+};
+
+initQuiz(questions, resultsMessages);
+</script>
+
+</body>
+</html>
