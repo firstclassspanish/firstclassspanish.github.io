@@ -177,7 +177,7 @@
     <h2><span class="tag"></span>Try it: which category?</h2>
     <p>Here are some words. Decide the part of speech before checking your answer.</p>
     <div class="practice-list" id="practiceList"></div>
-    <div class="callout" style="text-align: center;">Ready for a bigger challenge? <a href="unit3-category-sort-practice.html" style="text-decoration: underline; font-weight: 700;">Sort a full set of words by category →</a></div>
+    <div class="callout" style="text-align: center;">Ready for a bigger challenge? <a href="unit3-category-sort-english.html" style="text-decoration: underline; font-weight: 700;">Sort a full set of words by category →</a></div>
   </section>
 
   <div class="ticket-divider"><span class="notch"></span></div>
@@ -248,6 +248,7 @@
         <span class="btn">Start</span>
       </a>
     </div>
+    <p style="text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 20px;">Want extra reps with a wider variety of words? Try the <a href="unit3-quiz-categories.html" style="text-decoration: underline; font-weight: 700; color: var(--plum-dark);">Category Practice Quiz</a> — great for repeat runs.</p>
   </section>
 
 </div>
@@ -256,16 +257,16 @@
 
 <script>
 const practiceItems = [
-  { subject: "casa", answer: "Noun", note: "Casa means \"house\" — it names a thing." },
-  { subject: "corre", answer: "Verb", note: "Corre means \"runs\" — it shows action." },
-  { subject: "rápido", answer: "Adverb", note: "Rápido describes how the action happens — \"fast.\"" },
-  { subject: "ella", answer: "Pronoun", note: "Ella stands in for a name — \"she.\" You met this back in Unit 2." },
-  { subject: "grande", answer: "Adjective", note: "Grande describes a noun — \"big.\"" },
-  { subject: "el", answer: "Article", note: "El signals that a masculine noun is coming — \"the.\"" },
-  { subject: "hablar", answer: "Verb", note: "Hablar means \"to speak\" — this unconjugated form is called an infinitive, and it's the star of Unit 4." },
-  { subject: "bonito", answer: "Adjective", note: "Bonito describes a noun — \"pretty\" or \"nice.\"" },
-  { subject: "nosotros", answer: "Pronoun", note: "Nosotros stands in for a group that includes the speaker — \"we.\" Another callback to the Box of Six." },
-  { subject: "una", answer: "Article", note: "Una signals a feminine noun is coming — \"a\" or \"an.\"" }
+  { subject: "casa", en: "house", answer: "Noun", esAnswer: "Sustantivo", note: "Casa names a thing — that makes it a noun." },
+  { subject: "corre", en: "runs", answer: "Verb", esAnswer: "Verbo", note: "Corre shows action — that makes it a verb." },
+  { subject: "rápido", en: "fast", answer: "Adverb", esAnswer: "Adverbio", note: "Rápido describes how the action happens." },
+  { subject: "ella", en: "she", answer: "Pronoun", esAnswer: "Pronombre", note: "Ella stands in for a name. You met this back in Unit 2." },
+  { subject: "grande", en: "big", answer: "Adjective", esAnswer: "Adjetivo", note: "Grande describes a noun." },
+  { subject: "el", en: "the", answer: "Article", esAnswer: "Artículo", note: "El signals that a masculine noun is coming." },
+  { subject: "hablar", en: "to speak", answer: "Verb", esAnswer: "Verbo", note: "This unconjugated form is called an infinitive, and it's the star of Unit 4." },
+  { subject: "bonito", en: "pretty", answer: "Adjective", esAnswer: "Adjetivo", note: "Bonito describes a noun." },
+  { subject: "nosotros", en: "we", answer: "Pronoun", esAnswer: "Pronombre", note: "Nosotros stands in for a group that includes the speaker. Another callback to the Box of Six." },
+  { subject: "una", en: "a / an", answer: "Article", esAnswer: "Artículo", note: "Una signals a feminine noun is coming." }
 ];
 
 const list = document.getElementById('practiceList');
@@ -274,11 +275,11 @@ practiceItems.forEach((item) => {
   card.className = 'practice-card';
   card.innerHTML = `
     <div class="subject">
-      <span>${item.subject}</span>
+      <span>${item.subject} <span style="color: var(--muted); font-weight: 500; font-size: 0.85em;">(${item.en})</span></span>
       <span class="toggle-icon">＋</span>
     </div>
-    <div class="hint">Tap to reveal the answer</div>
-    <div class="answer"><strong>${item.answer}</strong>. ${item.note}</div>
+    <div class="hint">Tap to reveal the category</div>
+    <div class="answer"><strong>${item.esAnswer} (${item.answer})</strong>. ${item.note}</div>
   `;
   card.addEventListener('click', () => {
     card.classList.toggle('revealed');
