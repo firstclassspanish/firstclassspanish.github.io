@@ -53,9 +53,11 @@
 
   .word-card {
     background: var(--gold-light); border: 1.5px solid var(--gold); border-radius: 12px;
-    padding: 10px 16px; font-family: 'Sora', sans-serif; font-weight: 700; color: var(--forest); font-size: 0.92rem;
+    padding: 8px 16px; font-family: 'Sora', sans-serif; font-weight: 700; color: var(--forest); font-size: 0.92rem;
     cursor: grab; user-select: none; transition: box-shadow 0.15s ease, transform 0.1s ease, opacity 0.15s ease;
+    display: flex; flex-direction: column; align-items: center; text-align: center;
   }
+  .word-card .translation { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 500; color: var(--muted); font-size: 0.7rem; margin-top: 2px; }
   .word-card:hover { transform: translateY(-2px); }
   .word-card.dragging { opacity: 0.4; }
   .word-card.selected { box-shadow: 0 0 0 3px var(--plum); transform: translateY(-2px); }
@@ -85,8 +87,8 @@
 </header>
 
 <div class="practice-hero">
-  <h1>Sort the words by category</h1>
-  <p>Drag each word into the category it belongs to — or tap a word, then tap a category, if that's easier on your device.</p>
+  <h1>Round 2: Sort in Spanish</h1>
+  <p>Same categories, now in Spanish — with the Spanish term labeling each box. Drag each word into place, or tap a word, then tap a category.</p>
 </div>
 
 <div class="practice-wrap">
@@ -96,15 +98,15 @@
     <button class="reset-btn" id="resetBtn">Reset</button>
   </div>
 
-  <p class="instructions">Some words might surprise you — read carefully before you sort.</p>
+  <p class="instructions">Some words might surprise you — read carefully before you sort. (<a href="unit3-category-sort-english.html" style="text-decoration: underline; color: var(--plum);">Back to Round 1: English</a>)</p>
 
   <div class="bins" id="binGrid">
-    <div class="bin" data-cat="noun"><div class="bin-label">Noun</div><div class="placed-cards"></div></div>
-    <div class="bin" data-cat="pronoun"><div class="bin-label">Pronoun</div><div class="placed-cards"></div></div>
-    <div class="bin" data-cat="verb"><div class="bin-label">Verb</div><div class="placed-cards"></div></div>
-    <div class="bin" data-cat="adjective"><div class="bin-label">Adjective</div><div class="placed-cards"></div></div>
-    <div class="bin" data-cat="adverb"><div class="bin-label">Adverb</div><div class="placed-cards"></div></div>
-    <div class="bin" data-cat="article"><div class="bin-label">Article</div><div class="placed-cards"></div></div>
+    <div class="bin" data-cat="noun"><div class="bin-label">Sustantivo <span style="opacity: 0.7; font-weight: 500;">(Noun)</span></div><div class="placed-cards"></div></div>
+    <div class="bin" data-cat="pronoun"><div class="bin-label">Pronombre <span style="opacity: 0.7; font-weight: 500;">(Pronoun)</span></div><div class="placed-cards"></div></div>
+    <div class="bin" data-cat="verb"><div class="bin-label">Verbo <span style="opacity: 0.7; font-weight: 500;">(Verb)</span></div><div class="placed-cards"></div></div>
+    <div class="bin" data-cat="adjective"><div class="bin-label">Adjetivo <span style="opacity: 0.7; font-weight: 500;">(Adjective)</span></div><div class="placed-cards"></div></div>
+    <div class="bin" data-cat="adverb"><div class="bin-label">Adverbio <span style="opacity: 0.7; font-weight: 500;">(Adverb)</span></div><div class="placed-cards"></div></div>
+    <div class="bin" data-cat="article"><div class="bin-label">Artículo <span style="opacity: 0.7; font-weight: 500;">(Article)</span></div><div class="placed-cards"></div></div>
   </div>
 
   <div class="pool-title">Drag or tap a word to sort it:</div>
@@ -112,8 +114,9 @@
 
   <div class="complete-banner" id="completeBanner">
     <div class="big">Every word found its category! 🎉</div>
-    <p>Ready for the leveled quizzes?</p>
-    <a href="unit3-quiz-foundation.html">Start Practicing →</a>
+    <p>Want more reps with a wider variety, or ready for the leveled quizzes?</p>
+    <a href="unit3-quiz-categories.html">More Category Practice →</a>
+    <a href="unit3-quiz-foundation.html" style="margin-left: 10px;">Start the Leveled Quizzes →</a>
   </div>
 
 </div>
@@ -122,18 +125,18 @@
 
 <script>
 const words = [
-  { id: 'w1', text: 'perro', cat: 'noun' },
-  { id: 'w2', text: 'mesa', cat: 'noun' },
-  { id: 'w3', text: 'ella', cat: 'pronoun' },
-  { id: 'w4', text: 'nosotros', cat: 'pronoun' },
-  { id: 'w5', text: 'corre', cat: 'verb' },
-  { id: 'w6', text: 'hablar', cat: 'verb' },
-  { id: 'w7', text: 'grande', cat: 'adjective' },
-  { id: 'w8', text: 'bonito', cat: 'adjective' },
-  { id: 'w9', text: 'rápido', cat: 'adverb' },
-  { id: 'w10', text: 'bien', cat: 'adverb' },
-  { id: 'w11', text: 'el', cat: 'article' },
-  { id: 'w12', text: 'una', cat: 'article' }
+  { id: 'w1', text: 'perro', en: 'dog', cat: 'noun' },
+  { id: 'w2', text: 'mesa', en: 'table', cat: 'noun' },
+  { id: 'w3', text: 'ella', en: 'she', cat: 'pronoun' },
+  { id: 'w4', text: 'nosotros', en: 'we', cat: 'pronoun' },
+  { id: 'w5', text: 'corre', en: 'runs', cat: 'verb' },
+  { id: 'w6', text: 'hablar', en: 'to speak', cat: 'verb' },
+  { id: 'w7', text: 'grande', en: 'big', cat: 'adjective' },
+  { id: 'w8', text: 'bonito', en: 'pretty', cat: 'adjective' },
+  { id: 'w9', text: 'rápido', en: 'fast', cat: 'adverb' },
+  { id: 'w10', text: 'bien', en: 'well', cat: 'adverb' },
+  { id: 'w11', text: 'el', en: 'the', cat: 'article' },
+  { id: 'w12', text: 'una', en: 'a / an', cat: 'article' }
 ];
 
 let placedCount = 0;
@@ -155,9 +158,10 @@ function buildCards() {
   words.forEach(w => {
     const card = document.createElement('div');
     card.className = 'word-card';
-    card.textContent = w.text;
+    card.innerHTML = `${w.text}<span class="translation">${w.en}</span>`;
     card.dataset.id = w.id;
     card.dataset.cat = w.cat;
+    card.dataset.text = w.text;
     attachInteraction(card);
     pool.appendChild(card);
   });
@@ -232,7 +236,7 @@ function tryPlace(card, binEl) {
   if (binEl.dataset.cat === card.dataset.cat) {
     const chip = document.createElement('div');
     chip.className = 'placed-chip';
-    chip.textContent = card.textContent;
+    chip.textContent = card.dataset.text;
     binEl.querySelector('.placed-cards').appendChild(chip);
     card.classList.add('placed');
     pool.appendChild(card);
