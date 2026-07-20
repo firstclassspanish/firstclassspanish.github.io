@@ -3,16 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Unit 2 Box of Six Practice | First Class Spanish</title>
+<title>Unit 4 Conjugation Practice | First Class Spanish</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/brand.css?v=1">
 <style>
-  * { -webkit-tap-highlight-color: transparent; }
-
   .practice-hero {
-    background: linear-gradient(135deg, var(--terracotta) 0%, var(--terracotta-dark) 100%);
+    background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%);
     color: var(--white); padding: 40px 24px 34px; text-align: center;
   }
   .practice-hero h1 { color: var(--white); font-size: 1.7rem; margin-bottom: 8px; }
@@ -25,9 +23,9 @@
     background: var(--white); border-radius: 12px; padding: 14px 20px;
     box-shadow: 0 1px 3px rgba(14,53,34,0.06); margin-bottom: 20px; flex-wrap: wrap; gap: 10px;
   }
-  .status-bar .score { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--terracotta-dark); }
+  .status-bar .score { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--blue-dark); }
   .status-bar .reset-btn {
-    background: var(--terracotta-light); color: var(--terracotta-dark); border: none;
+    background: var(--blue-light); color: var(--blue-dark); border: none;
     padding: 8px 16px; border-radius: 18px; font-weight: 600; font-size: 0.85rem; cursor: pointer;
   }
 
@@ -35,22 +33,22 @@
   .box-of-six { display: grid; grid-template-columns: 70px 1fr 1fr; gap: 8px; }
   .box-header {
     font-family: 'Sora', sans-serif; font-weight: 700; font-size: 0.78rem; text-transform: uppercase;
-    letter-spacing: 0.03em; color: var(--terracotta-dark); text-align: center; padding: 6px 0;
+    letter-spacing: 0.03em; color: var(--blue-dark); text-align: center; padding: 6px 0;
   }
   .row-label {
     display: flex; align-items: center; justify-content: flex-end; padding-right: 8px;
-    font-family: 'Sora', sans-serif; font-weight: 700; font-size: 0.8rem; color: var(--terracotta-dark);
+    font-family: 'Sora', sans-serif; font-weight: 700; font-size: 0.8rem; color: var(--blue-dark);
   }
   .drop-zone {
-    background: var(--terracotta-light); border: 2px dashed var(--terracotta); border-radius: 12px;
+    background: var(--blue-light); border: 2px dashed var(--blue); border-radius: 12px;
     min-height: 90px; padding: 8px; display: flex; flex-direction: column; align-items: center;
     justify-content: center; gap: 4px; transition: background 0.15s ease, border-color 0.15s ease;
   }
-  .drop-zone .zone-label { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--terracotta-dark); font-size: 0.85rem; }
+  .drop-zone .zone-label { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--blue-dark); font-size: 0.85rem; }
   .drop-zone .zone-sub { color: var(--muted); font-size: 0.7rem; }
   .drop-zone.disabled { background: #F0EFEA; border: 2px dashed #D8D6CE; opacity: 0.7; }
   .drop-zone.disabled .zone-label { color: var(--muted); }
-  .drop-zone.hover-target { background: #EFDFD3; border-color: var(--terracotta-dark); }
+  .drop-zone.hover-target { background: #D6E2F2; border-color: var(--blue-dark); }
   .drop-zone .placed-cards { display: flex; flex-wrap: wrap; gap: 4px; justify-content: center; margin-top: 4px; }
 
   .placed-chip { background: var(--jade); color: var(--white); font-size: 0.72rem; font-weight: 600; padding: 3px 8px; border-radius: 10px; }
@@ -62,19 +60,17 @@
     box-shadow: 0 1px 3px rgba(14,53,34,0.06); min-height: 70px;
   }
 
-  .subject-card {
+  .verb-card {
     background: var(--gold-light); border: 1.5px solid var(--gold); border-radius: 12px;
-    padding: 10px 16px; font-weight: 600; color: var(--forest); font-size: 0.88rem;
-    cursor: grab; user-select: none;
-    transition: box-shadow 0.15s ease, transform 0.1s ease; position: relative;
+    padding: 10px 16px; font-family: 'Sora', sans-serif; font-weight: 700; color: var(--forest); font-size: 0.92rem;
+    cursor: grab; user-select: none; transition: box-shadow 0.15s ease, transform 0.1s ease, opacity 0.15s ease;
   }
-  .subject-card.dragging { opacity: 0.4; }
-  .subject-card.selected { box-shadow: 0 0 0 3px var(--terracotta); transform: translateY(-2px); }
-  .subject-card.placed { display: none; }
-  .subject-card.shake { animation: shake 0.4s ease; }
+  .verb-card:hover { transform: translateY(-2px); }
+  .verb-card.dragging { opacity: 0.4; }
+  .verb-card.selected { box-shadow: 0 0 0 3px var(--blue); transform: translateY(-2px); }
+  .verb-card.placed { display: none; }
+  .verb-card.shake { animation: shake 0.4s ease; }
   @keyframes shake { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
-
-  .instructions { text-align: center; color: var(--muted); font-size: 0.85rem; margin-bottom: 16px; }
 
   .complete-banner {
     display: none; background: var(--gold-light); border: 1.5px solid var(--gold);
@@ -83,9 +79,11 @@
   .complete-banner.show { display: block; }
   .complete-banner .big { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1.3rem; color: var(--forest); margin-bottom: 6px; }
   .complete-banner a {
-    display: inline-block; margin-top: 12px; background: var(--terracotta); color: var(--white);
+    display: inline-block; margin-top: 12px; background: var(--blue); color: var(--white);
     font-weight: 600; padding: 10px 24px; border-radius: 22px; font-size: 0.9rem;
   }
+
+  .instructions { text-align: center; color: var(--muted); font-size: 0.85rem; margin-bottom: 16px; }
 
   @media (max-width: 560px) {
     .box-of-six { grid-template-columns: 46px 1fr 1fr; }
@@ -98,12 +96,12 @@
 
 <header>
   <a class="brand" href="index.html"><span class="star">★</span> First Class Spanish</a>
-  <div class="unit-pill">Unit 2 · Grammatical Person</div>
+  <div class="unit-pill">Unit 4 · Conjugation</div>
 </header>
 
 <div class="practice-hero">
-  <h1>Sort the subjects into the Box of Six</h1>
-  <p>Drag each subject into the box where it belongs — or tap a card, then tap a box, if that's easier on your device.</p>
+  <h1>Sort conjugated verbs into the Box of Six</h1>
+  <p>Same box, new job — this time you're sorting conjugated forms of hablar, comer, and vivir by which subject they match. Drag or tap to place each one.</p>
 </div>
 
 <div class="practice-wrap">
@@ -113,7 +111,7 @@
     <button class="reset-btn" id="resetBtn">Reset</button>
   </div>
 
-  <p class="instructions">Remember: the vosotros box is grayed out — it's not used in this course, so no card belongs there. *Also has a feminine form (nosotras, ellas) — more on that in a future unit.</p>
+  <p class="instructions">Three different verbs share these five boxes — the ending changes, but the logic doesn't.</p>
 
   <div class="box-container">
     <div class="box-of-six" id="boxGrid">
@@ -123,7 +121,7 @@
 
       <div class="row-label">1st</div>
       <div class="drop-zone" data-zone="1s"><div class="zone-label">yo</div><div class="zone-sub">I</div><div class="placed-cards"></div></div>
-      <div class="drop-zone" data-zone="1p"><div class="zone-label">nosotros*</div><div class="zone-sub">we</div><div class="placed-cards"></div></div>
+      <div class="drop-zone" data-zone="1p"><div class="zone-label">nosotros</div><div class="zone-sub">we</div><div class="placed-cards"></div></div>
 
       <div class="row-label">2nd</div>
       <div class="drop-zone" data-zone="2s"><div class="zone-label">tú</div><div class="zone-sub">you</div><div class="placed-cards"></div></div>
@@ -131,18 +129,17 @@
 
       <div class="row-label">3rd</div>
       <div class="drop-zone" data-zone="3s"><div class="zone-label">él / ella / usted</div><div class="zone-sub">he / she / you (formal)</div><div class="placed-cards"></div></div>
-      <div class="drop-zone" data-zone="3p"><div class="zone-label">ellos / ustedes*</div><div class="zone-sub">they / you (plural)</div><div class="placed-cards"></div></div>
+      <div class="drop-zone" data-zone="3p"><div class="zone-label">ellos / ustedes</div><div class="zone-sub">they / you (plural)</div><div class="placed-cards"></div></div>
     </div>
   </div>
 
-  <div class="pool-title">Drag or tap a card to place it:</div>
+  <div class="pool-title">Drag or tap a verb form to place it:</div>
   <div class="card-pool" id="cardPool"></div>
 
   <div class="complete-banner" id="completeBanner">
-    <div class="big">You've filled the Box of Six! 🎉</div>
-    <p>Every subject found its home. Want more reps with a wider variety, or ready for the leveled quizzes?</p>
-    <a href="unit2-quiz-subjects.html">More Subject Practice →</a>
-    <a href="unit2-quiz-foundation.html" style="margin-left: 10px;">Start the Leveled Quizzes →</a>
+    <div class="big">Every form found its box! 🎉</div>
+    <p>Ready for the leveled quizzes?</p>
+    <a href="unit4-quiz-foundation.html">Start Practicing →</a>
   </div>
 
 </div>
@@ -150,19 +147,22 @@
 <footer>First Class Spanish · Your Ticket to Spanish Fluency</footer>
 
 <script>
-const subjects = [
-  { id: 'c1', text: 'I', zone: '1s' },
-  { id: 'c2', text: 'Just me, myself', zone: '1s' },
-  { id: 'c3', text: 'My dog and I', zone: '1p' },
-  { id: 'c4', text: 'My friends and I', zone: '1p' },
-  { id: 'c5', text: 'You (talking to one friend)', zone: '2s' },
-  { id: 'c6', text: 'You (talking to your brother)', zone: '2s' },
-  { id: 'c7', text: 'Elena', zone: '3s' },
-  { id: 'c8', text: 'The teacher', zone: '3s' },
-  { id: 'c9', text: 'Usted (the formal "you")', zone: '3s' },
-  { id: 'c10', text: 'Mom and Dad', zone: '3p' },
-  { id: 'c11', text: 'The students', zone: '3p' },
-  { id: 'c12', text: 'You and your sister (both being spoken to)', zone: '3p' }
+const verbs = [
+  { id: 'v1', text: 'hablo', zone: '1s' },
+  { id: 'v2', text: 'como', zone: '1s' },
+  { id: 'v3', text: 'vivo', zone: '1s' },
+  { id: 'v4', text: 'hablamos', zone: '1p' },
+  { id: 'v5', text: 'comemos', zone: '1p' },
+  { id: 'v6', text: 'vivimos', zone: '1p' },
+  { id: 'v7', text: 'hablas', zone: '2s' },
+  { id: 'v8', text: 'comes', zone: '2s' },
+  { id: 'v9', text: 'vives', zone: '2s' },
+  { id: 'v10', text: 'habla', zone: '3s' },
+  { id: 'v11', text: 'come', zone: '3s' },
+  { id: 'v12', text: 'vive', zone: '3s' },
+  { id: 'v13', text: 'hablan', zone: '3p' },
+  { id: 'v14', text: 'comen', zone: '3p' },
+  { id: 'v15', text: 'viven', zone: '3p' }
 ];
 
 let placedCount = 0;
@@ -172,7 +172,7 @@ const pool = document.getElementById('cardPool');
 const scoreCount = document.getElementById('scoreCount');
 const totalCount = document.getElementById('totalCount');
 const completeBanner = document.getElementById('completeBanner');
-totalCount.textContent = subjects.length;
+totalCount.textContent = verbs.length;
 
 function buildCards() {
   pool.innerHTML = '';
@@ -181,12 +181,12 @@ function buildCards() {
   completeBanner.classList.remove('show');
   document.querySelectorAll('.placed-cards').forEach(p => p.innerHTML = '');
 
-  subjects.forEach(subj => {
+  verbs.forEach(v => {
     const card = document.createElement('div');
-    card.className = 'subject-card';
-    card.textContent = subj.text;
-    card.dataset.id = subj.id;
-    card.dataset.zone = subj.zone;
+    card.className = 'verb-card';
+    card.textContent = v.text;
+    card.dataset.id = v.id;
+    card.dataset.zone = v.zone;
     attachInteraction(card);
     pool.appendChild(card);
   });
@@ -245,7 +245,7 @@ document.querySelectorAll('.drop-zone').forEach(zone => {
     e.preventDefault();
     zone.classList.remove('hover-target');
     const cardId = e.dataTransfer.getData('text/plain');
-    const card = document.querySelector(`.subject-card[data-id="${cardId}"]`);
+    const card = document.querySelector(`.verb-card[data-id="${cardId}"]`);
     if (card) tryPlace(card, zone);
   });
 
@@ -273,7 +273,7 @@ function tryPlace(card, zoneEl) {
     pool.appendChild(card);
     placedCount++;
     scoreCount.textContent = placedCount;
-    if (placedCount === subjects.length) {
+    if (placedCount === verbs.length) {
       completeBanner.classList.add('show');
     }
   } else {

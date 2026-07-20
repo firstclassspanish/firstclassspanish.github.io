@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 4 Mastery Quiz | First Class Spanish</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/brand.css?v=1">
+<link rel="stylesheet" href="css/quiz.css?v=1">
+</head>
+<body class="unit-blue">
+
+<header>
+  <a class="brand" href="index.html"><span class="star">★</span> First Class Spanish</a>
+  <div class="unit-pill">Unit 4 · Conjugation</div>
+</header>
+
+<div class="quiz-hero">
+  <div class="level-badge">🎯</div>
+  <h1>Mastery Quiz</h1>
+  <p>The challenge level. These questions dig into irregular verbs, stem-changers, and how this unit connects everything.</p>
+</div>
+
+<div class="quiz-wrap">
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <div id="quizContainer"></div>
+  <div class="results" id="results">
+    <div class="score" id="scoreText"></div>
+    <div class="msg" id="scoreMsg"></div>
+    <div class="msg-es" id="scoreMsgEs"></div>
+    <div class="nav-links">
+      <button class="retry-btn" onclick="location.reload()">Try Again</button>
+      <a class="btn secondary" href="unit4-quiz-practice.html">Back to Practice</a>
+      <a class="btn" href="unit4-conjugation-lesson.html">Back to Lesson</a>
+    </div>
+  </div>
+</div>
+
+<footer>First Class Spanish · Your Ticket to Spanish Fluency</footer>
+
+<script src="js/quiz-engine.js?v=1"></script>
+<script>
+const questions = [
+  { q: "Why does knowing the Box of Six help you conjugate any regular verb, not just hablar?", options: [
+      "It doesn\'t — each verb has to be memorized separately",
+      "Every regular verb in the same family follows the same ending pattern for each box",
+      "Only hablar uses the Box of Six",
+      "The Box of Six only applies to irregular verbs"
+    ], correct: 1, explain: "Once you know hablar\'s pattern, every other -ar verb (caminar, estudiar, etc.) conjugates the same way for each box." },
+  { q: "\"Ser\" (to be) doesn\'t conjugate like a regular -er verb. What category does it fall into?", options: ["Reflexive verb", "Irregular verb", "Stem-changing verb", "It\'s not a real verb"], correct: 1, explain: "Ser is one of the most common irregular verbs — its forms (soy, eres, es...) don\'t follow the regular -er pattern at all." },
+  { q: "\"Querer\" (to want) becomes \"quiero,\" not \"quero.\" What kind of verb is this?", options: ["Irregular", "Reflexive", "Stem-changing", "Regular -er"], correct: 2, explain: "Stem-changing verbs keep the regular endings but shift a vowel in the stem — querer becomes quiero, quieres, quiere, and so on." },
+  { q: "What makes a verb like \"llamarse\" (to be called) reflexive?", options: [
+      "It\'s irregular",
+      "The action reflects back on the subject, requiring an extra pronoun",
+      "It only works in the plural",
+      "It has no infinitive form"
+    ], correct: 1, explain: "Reflexive verbs describe an action done to oneself — me llamo... literally means \"I call myself...\", using an extra pronoun alongside the conjugation." },
+  { q: "Everything taught in this unit\'s core lesson covers which tense?", options: ["Past tense", "Future tense", "Present tense", "All tenses at once"], correct: 2, explain: "This unit covers present tense — action happening now. Other tenses (past, future) have their own conjugation patterns, covered in future units." },
+  { q: "Why does usted use the same conjugated form as él/ella, even though usted means \"you\"?", options: [
+      "It\'s a coincidence",
+      "Usted is grammatically 3rd person singular, from the Box of Six you learned in Unit 2",
+      "Usted is actually a noun, not a pronoun",
+      "Spanish doesn\'t distinguish formal \"you\" from he/she"
+    ], correct: 1, explain: "This connects directly back to Unit 2: usted sits in the 3rd-person-singular box, so it takes the exact same verb ending as él or ella." },
+  { q: "If you know that \"aprender\" is an -er verb, what can you predict about its nosotros form?", options: [
+      "It\'s unpredictable without memorizing it separately",
+      "It should end in -emos, following the regular -er pattern: aprendemos",
+      "It should end in -amos, like -ar verbs",
+      "It has no nosotros form"
+    ], correct: 1, explain: "Since aprender is a regular -er verb, it follows the same pattern as comer — nosotros takes -emos: aprendemos." },
+  { q: "What\'s the actual relationship between Units 2, 3, and 4?", options: [
+      "They\'re unrelated topics",
+      "Unit 2 gives the boxes, Unit 3 identifies verbs as a category, Unit 4 shows how verbs change per box",
+      "Unit 4 replaces everything taught in Units 2 and 3",
+      "Only Unit 4 matters for real Spanish"
+    ], correct: 1, explain: "This is the core arc of the course so far: person and number (Unit 2) plus recognizing verbs (Unit 3) come together in conjugation (Unit 4)." }
+];
+
+const resultsMessages = {
+  perfect: "Perfect score! You've mastered regular conjugation. 🎯",
+  good: "Strong work — the tricky cases are clicking into place.",
+  low: "Some genuine trap questions in there. Revisit the lesson, then try again."
+};
+
+initQuiz(questions, resultsMessages);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 4 Foundation Quiz | First Class Spanish</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/brand.css?v=1">
+<link rel="stylesheet" href="css/quiz.css?v=1">
+</head>
+<body class="unit-blue">
+
+<header>
+  <a class="brand" href="index.html"><span class="star">★</span> First Class Spanish</a>
+  <div class="unit-pill">Unit 4 · Conjugation</div>
+</header>
+
+<div class="quiz-hero">
+  <div class="level-badge">🌱</div>
+  <h1>Foundation Quiz</h1>
+  <p>Core concepts, no prior knowledge needed. Take your time — every question includes an explanation.</p>
+</div>
+
+<div class="quiz-wrap">
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <div id="quizContainer"></div>
+  <div class="results" id="results">
+    <div class="score" id="scoreText"></div>
+    <div class="msg" id="scoreMsg"></div>
+    <div class="msg-es" id="scoreMsgEs"></div>
+    <div class="nav-links">
+      <button class="retry-btn" onclick="location.reload()">Try Again</button>
+      <a class="btn secondary" href="unit4-conjugation-lesson.html">Back to Lesson</a>
+      <a class="btn" href="unit4-quiz-practice.html">Next: Practice 💪</a>
+    </div>
+  </div>
+</div>
+
+<footer>First Class Spanish · Your Ticket to Spanish Fluency</footer>
+
+<script src="js/quiz-engine.js?v=1"></script>
+<script>
+const questions = [
+  { q: "What is an infinitive?", options: ["A conjugated verb form", "A verb\'s plain, unconjugated \"to ___\" form", "A type of noun", "A subject pronoun"], correct: 1, explain: "Hablar (to speak), comer (to eat), vivir (to live) — all infinitives, the starting point before conjugation." },
+  { q: "What are the three verb families in Spanish?", options: ["-ar, -er, -ir", "-o, -s, -n", "1st, 2nd, 3rd", "Regular, irregular, reflexive"], correct: 0, explain: "Every Spanish infinitive ends in -ar, -er, or -ir — that ending determines the family." },
+  { q: "Which family does \"hablar\" belong to?", options: ["-er", "-ir", "-ar", "None of these"], correct: 2, explain: "Hablar ends in -ar." },
+  { q: "What is the yo form of hablar?", options: ["hablo", "hablas", "habla", "hablamos"], correct: 0, explain: "Yo takes the -o ending for -ar verbs: hablo." },
+  { q: "What is the tú form of comer?", options: ["como", "comes", "come", "comen"], correct: 1, explain: "Tú takes the -es ending for -er verbs: comes." },
+  { q: "What is the nosotros form of vivir?", options: ["vivo", "vives", "vivimos", "viven"], correct: 2, explain: "Nosotros takes the -imos ending for -ir verbs: vivimos." },
+  { q: "Which box in the Box of Six is skipped when conjugating, in this course?", options: ["1st plural", "2nd singular", "2nd plural (vosotros)", "3rd plural"], correct: 2, explain: "Vosotros isn't used in Latin American Spanish, so this course skips its conjugation entirely." },
+  { q: "What ending do ellos/ustedes take for -ar verbs?", options: ["-an", "-en", "-amos", "-as"], correct: 0, explain: "3rd person plural takes -an for -ar verbs: hablan." }
+];
+
+const resultsMessages = {
+  perfect: "Perfect score! You've got the basics of conjugation down. 🌟",
+  good: "Solid work — you're ready to move on to Practice.",
+  low: "Good start. Revisit the lesson, then give it another shot."
+};
+
+initQuiz(questions, resultsMessages);
+</script>
+
+</body>
+</html>

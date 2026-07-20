@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 4 Intro Animation | First Class Spanish</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/brand.css?v=1">
+<link rel="stylesheet" href="css/animation.css?v=1">
+<style>
+  /* Verb family cards */
+  .family-row { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-bottom: 16px; }
+  .family-card {
+    background: rgba(255,255,255,0.14); border-radius: 12px; padding: 14px 18px; text-align: center;
+    opacity: 0; transform: scale(0.85); animation: pop 0.4s ease forwards;
+  }
+  .family-card:nth-child(1) { animation-delay: 0.2s; }
+  .family-card:nth-child(2) { animation-delay: 0.6s; }
+  .family-card:nth-child(3) { animation-delay: 1.0s; }
+  .family-card .ending { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--gold); font-size: 1.1rem; }
+  .family-card .verb { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--white); font-size: 1rem; margin-top: 4px; }
+</style>
+</head>
+<body class="animation-page">
+
+<div>
+  <div class="stage theme-blue" id="stage">
+
+    <div class="home-control">
+      <a class="ctrl-btn" href="index.html">🏠 Home</a>
+    </div>
+    <div class="top-controls">
+      <button class="ctrl-btn" id="skipBtn">Skip ⏭</button>
+    </div>
+
+    <!-- Beat 1: Hook -->
+    <div class="beat" data-beat="0">
+      <div class="messy-word w1">hablo</div>
+      <div class="messy-word w2">hablas</div>
+      <div class="messy-word w3">habla</div>
+      <div class="messy-word w4">hablamos</div>
+      <div class="messy-word w5">hablan</div>
+      <p class="vo">Five different words — but they're all just one verb.</p>
+    </div>
+
+    <!-- Beat 2: Bridge -->
+    <div class="beat" data-beat="1">
+      <div class="settle-word">hablar</div>
+      <p class="vo">Every verb starts life in one plain form — the infinitive. Hablar. To speak.</p>
+    </div>
+
+    <!-- Beat 3: Reveal - verb families -->
+    <div class="beat" data-beat="2">
+      <div class="family-row">
+        <div class="family-card"><div class="ending">-AR</div><div class="verb">hablar</div></div>
+        <div class="family-card"><div class="ending">-ER</div><div class="verb">comer</div></div>
+        <div class="family-card"><div class="ending">-IR</div><div class="verb">vivir</div></div>
+      </div>
+      <p class="vo">Every Spanish infinitive ends one of three ways. That ending tells you the family — and every verb in a family conjugates the same way.</p>
+    </div>
+
+    <!-- Beat 4: Proof - Box of Six activated -->
+    <div class="beat" data-beat="3">
+      <div class="box-grid" id="boxGrid">
+        <div class="box-cell header"></div>
+        <div class="box-cell header">Singular</div>
+        <div class="box-cell header">Plural</div>
+
+        <div class="box-cell row-label">1st</div>
+        <div class="box-cell filled">hablo</div>
+        <div class="box-cell filled">hablamos</div>
+
+        <div class="box-cell row-label">2nd</div>
+        <div class="box-cell filled">hablas</div>
+        <div class="box-cell empty">(not used)</div>
+
+        <div class="box-cell row-label">3rd</div>
+        <div class="box-cell filled">habla</div>
+        <div class="box-cell filled">hablan</div>
+      </div>
+      <p class="vo">Remember the Box of Six? Watch what happens when hablar meets it.</p>
+    </div>
+
+    <!-- Beat 5: Payoff + CTA -->
+    <div class="beat" data-beat="4">
+      <div class="cta-star">★</div>
+      <div class="cta-title">Unit 4 · Conjugation</div>
+      <div class="cta-sub">Let's put it together.</div>
+      <div class="end-actions">
+        <button class="end-btn secondary" id="replayBtn">Replay</button>
+        <a class="end-btn primary" href="unit4-conjugation-lesson.html">Start the Lesson</a>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="progress-dots" id="dots"></div>
+    </div>
+
+  </div>
+
+  <p class="caption-note">Silent animatic — pairs with the narration script. Add voiceover audio once recorded.</p>
+</div>
+
+<script src="js/animation-engine.js?v=1"></script>
+<script>
+  const durations = [6800, 5800, 7200, 7800, 6000]; // ms per beat
+  initAnimation(durations, 'unit4-conjugation-lesson.html');
+</script>
+
+</body>
+</html>

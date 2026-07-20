@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 4 Practice Quiz | First Class Spanish</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/brand.css?v=1">
+<link rel="stylesheet" href="css/quiz.css?v=1">
+</head>
+<body class="unit-blue">
+
+<header>
+  <a class="brand" href="index.html"><span class="star">★</span> First Class Spanish</a>
+  <div class="unit-pill">Unit 4 · Conjugation</div>
+</header>
+
+<div class="quiz-hero">
+  <div class="level-badge">💪</div>
+  <h1>Practice Quiz</h1>
+  <p>Time to apply what you know. These questions ask you to conjugate real verbs across all three families.</p>
+</div>
+
+<div class="quiz-wrap">
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <div id="quizContainer"></div>
+  <div class="results" id="results">
+    <div class="score" id="scoreText"></div>
+    <div class="msg" id="scoreMsg"></div>
+    <div class="msg-es" id="scoreMsgEs"></div>
+    <div class="nav-links">
+      <button class="retry-btn" onclick="location.reload()">Try Again</button>
+      <a class="btn secondary" href="unit4-quiz-foundation.html">Back to Foundation</a>
+      <a class="btn" href="unit4-quiz-mastery.html">Next: Mastery 🎯</a>
+    </div>
+  </div>
+</div>
+
+<footer>First Class Spanish · Your Ticket to Spanish Fluency</footer>
+
+<script src="js/quiz-engine.js?v=1"></script>
+<script>
+const questions = [
+  { q: "Conjugate hablar for \"tú\":", options: ["hablo", "hablas", "habla", "hablamos"], correct: 1, explain: "Tú takes -as for -ar verbs: hablas." },
+  { q: "Conjugate comer for \"nosotros\":", options: ["como", "comes", "comemos", "comen"], correct: 2, explain: "Nosotros takes -emos for -er verbs: comemos." },
+  { q: "Conjugate vivir for \"ella\":", options: ["vivo", "vives", "vive", "viven"], correct: 2, explain: "3rd person singular takes -e for -ir verbs: vive." },
+  { q: "Which family does \"escribir\" (to write) belong to?", options: ["-ar", "-er", "-ir"], correct: 2, explain: "Escribir ends in -ir." },
+  { q: "Conjugate hablar for \"usted\":", options: ["hablo", "hablas", "habla", "hablan"], correct: 2, explain: "Usted is grammatically 3rd person singular, just like él/ella — habla." },
+  { q: "Conjugate comer for \"ustedes\":", options: ["come", "comen", "comemos", "comes"], correct: 1, explain: "Ustedes borrows the 3rd-person-plural ending, just like ellos: comen." },
+  { q: "What\'s the difference between hablar (infinitive) and hablo (conjugated)?", options: [
+      "No difference",
+      "Hablar is the plain \"to speak\" form; hablo is that verb conjugated for yo",
+      "Hablar is present tense; hablo is future tense",
+      "Hablo is the infinitive"
+    ], correct: 1, explain: "Hablar is the unconjugated dictionary form. Hablo is what it becomes once you plug in the subject yo." },
+  { q: "Conjugate vivir for \"nosotros\":", options: ["vivo", "vive", "vivimos", "viven"], correct: 2, explain: "Nosotros takes -imos for -ir verbs: vivimos." },
+  { q: "Which ending do -er and -ir verbs share for the yo form?", options: ["Both take -o", "Both take -as", "Both take -amos", "They don\'t share any endings"], correct: 0, explain: "All three families — -ar, -er, -ir — take -o for the yo form. Como and vivo both end in -o, just like hablo." }
+];
+
+const resultsMessages = {
+  perfect: "Perfect score! You're conjugating like it's second nature. 🌟",
+  good: "Nice work — you're ready for the Mastery challenge.",
+  low: "Getting there. Revisit the tricky cases in the lesson, then try again."
+};
+
+initQuiz(questions, resultsMessages);
+</script>
+
+</body>
+</html>
