@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 3 Category Sort Practice — English | First Class Spanish</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/brand.css?v=1">
+<style>
+  .practice-hero {
+    background: linear-gradient(135deg, var(--plum) 0%, var(--plum-dark) 100%);
+    color: var(--white); padding: 40px 24px 34px; text-align: center;
+  }
+  .practice-hero h1 { color: var(--white); font-size: 1.7rem; margin-bottom: 8px; }
+  .practice-hero p { max-width: 520px; margin: 0 auto; color: rgba(255,255,255,0.92); font-size: 0.98rem; }
+
+  .practice-wrap { max-width: 900px; margin: 0 auto; padding: 30px 24px 60px; }
+
+  .status-bar {
+    display: flex; align-items: center; justify-content: space-between;
+    background: var(--white); border-radius: 12px; padding: 14px 20px;
+    box-shadow: 0 1px 3px rgba(14,53,34,0.06); margin-bottom: 20px; flex-wrap: wrap; gap: 10px;
+  }
+  .status-bar .score { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--plum-dark); }
+  .status-bar .reset-btn {
+    background: var(--plum-light); color: var(--plum-dark); border: none;
+    padding: 8px 16px; border-radius: 18px; font-weight: 600; font-size: 0.85rem; cursor: pointer;
+  }
+
+  .bins { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px; }
+  @media (max-width: 700px) { .bins { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 460px) { .bins { grid-template-columns: 1fr; } }
+
+  .bin {
+    background: var(--plum-light); border: 2px dashed var(--plum); border-radius: 12px;
+    min-height: 110px; padding: 10px; display: flex; flex-direction: column; align-items: center;
+    transition: background 0.15s ease, border-color 0.15s ease;
+  }
+  .bin .bin-label { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--plum-dark); font-size: 0.85rem; margin-bottom: 8px; }
+  .bin.hover-target { background: #E8D9F0; border-color: var(--plum-dark); }
+  .bin .placed-cards { display: flex; flex-wrap: wrap; gap: 4px; justify-content: center; }
+
+  .placed-chip { background: var(--jade); color: var(--white); font-size: 0.72rem; font-weight: 600; padding: 3px 8px; border-radius: 10px; }
+
+  .pool-title { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--forest); margin-bottom: 12px; text-align: center; }
+  .card-pool {
+    display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;
+    background: var(--white); border-radius: 16px; padding: 20px;
+    box-shadow: 0 1px 3px rgba(14,53,34,0.06); min-height: 70px;
+  }
+
+  .word-card {
+    background: var(--gold-light); border: 1.5px solid var(--gold); border-radius: 12px;
+    padding: 10px 16px; font-family: 'Sora', sans-serif; font-weight: 700; color: var(--forest); font-size: 0.92rem;
+    cursor: grab; user-select: none; transition: box-shadow 0.15s ease, transform 0.1s ease, opacity 0.15s ease;
+  }
+  .word-card:hover { transform: translateY(-2px); }
+  .word-card.dragging { opacity: 0.4; }
+  .word-card.selected { box-shadow: 0 0 0 3px var(--plum); transform: translateY(-2px); }
+  .word-card.placed { display: none; }
+  .word-card.shake { animation: shake 0.4s ease; }
+  @keyframes shake { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
+
+  .complete-banner {
+    display: none; background: var(--gold-light); border: 1.5px solid var(--gold);
+    border-radius: 14px; padding: 24px; text-align: center; margin-top: 20px;
+  }
+  .complete-banner.show { display: block; }
+  .complete-banner .big { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1.3rem; color: var(--forest); margin-bottom: 6px; }
+  .complete-banner a {
+    display: inline-block; margin-top: 12px; background: var(--plum); color: var(--white);
+    font-weight: 600; padding: 10px 24px; border-radius: 22px; font-size: 0.9rem;
+  }
+
+  .instructions { text-align: center; color: var(--muted); font-size: 0.85rem; margin-bottom: 16px; }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="brand" href="index.html"><span class="star">★</span> First Class Spanish</a>
+  <div class="unit-pill">Unit 3 · Parts of Speech</div>
+</header>
+
+<div class="practice-hero">
+  <h1>Round 1: Sort in English</h1>
+  <p>Start with words you already know — drag each one into the category it belongs to, or tap a word, then tap a category. Once you've got this down, you'll do the same thing in Spanish.</p>
+</div>
+
+<div class="practice-wrap">
+
+  <div class="status-bar">
+    <div class="score">Placed correctly: <span id="scoreCount">0</span> / <span id="totalCount">0</span></div>
+    <button class="reset-btn" id="resetBtn">Reset</button>
+  </div>
+
+  <p class="instructions">This round is a warm-up — same categories, familiar words.</p>
+
+  <div class="bins" id="binGrid">
+    <div class="bin" data-cat="noun"><div class="bin-label">Noun</div><div class="placed-cards"></div></div>
+    <div class="bin" data-cat="pronoun"><div class="bin-label">Pronoun</div><div class="placed-cards"></div></div>
+    <div class="bin" data-cat="verb"><div class="bin-label">Verb</div><div class="placed-cards"></div></div>
+    <div class="bin" data-cat="adjective"><div class="bin-label">Adjective</div><div class="placed-cards"></div></div>
+    <div class="bin" data-cat="adverb"><div class="bin-label">Adverb</div><div class="placed-cards"></div></div>
+    <div class="bin" data-cat="article"><div class="bin-label">Article</div><div class="placed-cards"></div></div>
+  </div>
+
+  <div class="pool-title">Drag or tap a word to sort it:</div>
+  <div class="card-pool" id="cardPool"></div>
+
+  <div class="complete-banner" id="completeBanner">
+    <div class="big">Every word found its category! 🎉</div>
+    <p>Now let's try it in Spanish.</p>
+    <a href="unit3-category-sort-practice.html">Round 2: Sort in Spanish →</a>
+  </div>
+
+</div>
+
+<footer>First Class Spanish · Your Ticket to Spanish Fluency</footer>
+
+<script>
+const words = [
+  { id: 'w1', text: 'dog', cat: 'noun' },
+  { id: 'w2', text: 'table', cat: 'noun' },
+  { id: 'w3', text: 'she', cat: 'pronoun' },
+  { id: 'w4', text: 'we', cat: 'pronoun' },
+  { id: 'w5', text: 'runs', cat: 'verb' },
+  { id: 'w6', text: 'to speak', cat: 'verb' },
+  { id: 'w7', text: 'big', cat: 'adjective' },
+  { id: 'w8', text: 'pretty', cat: 'adjective' },
+  { id: 'w9', text: 'fast', cat: 'adverb' },
+  { id: 'w10', text: 'well', cat: 'adverb' },
+  { id: 'w11', text: 'the', cat: 'article' },
+  { id: 'w12', text: 'a', cat: 'article' }
+];
+
+let placedCount = 0;
+let selectedCard = null;
+
+const pool = document.getElementById('cardPool');
+const scoreCount = document.getElementById('scoreCount');
+const totalCount = document.getElementById('totalCount');
+const completeBanner = document.getElementById('completeBanner');
+totalCount.textContent = words.length;
+
+function buildCards() {
+  pool.innerHTML = '';
+  placedCount = 0;
+  scoreCount.textContent = '0';
+  completeBanner.classList.remove('show');
+  document.querySelectorAll('.placed-cards').forEach(p => p.innerHTML = '');
+
+  words.forEach(w => {
+    const card = document.createElement('div');
+    card.className = 'word-card';
+    card.textContent = w.text;
+    card.dataset.id = w.id;
+    card.dataset.cat = w.cat;
+    attachInteraction(card);
+    pool.appendChild(card);
+  });
+}
+
+function attachInteraction(card) {
+  card.draggable = true;
+
+  card.addEventListener('dragstart', (e) => {
+    e.dataTransfer.setData('text/plain', card.dataset.id);
+    e.dataTransfer.effectAllowed = 'move';
+    card.classList.add('dragging');
+    clearSelection();
+  });
+
+  card.addEventListener('dragend', () => {
+    card.classList.remove('dragging');
+    clearAllHighlights();
+  });
+
+  card.addEventListener('click', () => {
+    toggleSelect(card);
+  });
+}
+
+function toggleSelect(card) {
+  if (selectedCard === card) {
+    clearSelection();
+    return;
+  }
+  clearSelection();
+  selectedCard = card;
+  card.classList.add('selected');
+}
+
+function clearSelection() {
+  if (selectedCard) selectedCard.classList.remove('selected');
+  selectedCard = null;
+}
+
+function clearAllHighlights() {
+  document.querySelectorAll('.bin').forEach(b => b.classList.remove('hover-target'));
+}
+
+document.querySelectorAll('.bin').forEach(bin => {
+  bin.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    bin.classList.add('hover-target');
+  });
+
+  bin.addEventListener('dragleave', () => {
+    bin.classList.remove('hover-target');
+  });
+
+  bin.addEventListener('drop', (e) => {
+    e.preventDefault();
+    bin.classList.remove('hover-target');
+    const cardId = e.dataTransfer.getData('text/plain');
+    const card = document.querySelector(`.word-card[data-id="${cardId}"]`);
+    if (card) tryPlace(card, bin);
+  });
+
+  bin.addEventListener('click', () => {
+    if (selectedCard) {
+      tryPlace(selectedCard, bin);
+      clearSelection();
+    }
+  });
+});
+
+function tryPlace(card, binEl) {
+  if (binEl.dataset.cat === card.dataset.cat) {
+    const chip = document.createElement('div');
+    chip.className = 'placed-chip';
+    chip.textContent = card.textContent;
+    binEl.querySelector('.placed-cards').appendChild(chip);
+    card.classList.add('placed');
+    pool.appendChild(card);
+    placedCount++;
+    scoreCount.textContent = placedCount;
+    if (placedCount === words.length) {
+      completeBanner.classList.add('show');
+    }
+  } else {
+    pool.appendChild(card);
+    shakeCard(card);
+  }
+}
+
+function shakeCard(card) {
+  card.classList.add('shake');
+  setTimeout(() => card.classList.remove('shake'), 400);
+}
+
+document.getElementById('resetBtn').addEventListener('click', buildCards);
+
+buildCards();
+</script>
+
+</body>
+</html>
