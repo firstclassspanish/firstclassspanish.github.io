@@ -21,6 +21,14 @@
   .family-card:nth-child(3) { animation-delay: 1.0s; }
   .family-card .ending { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--gold); font-size: 1.1rem; }
   .family-card .verb { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--white); font-size: 1rem; margin-top: 4px; }
+
+  /* Hook: compact conjugated forms with translations */
+  .messy-word.compact { font-size: clamp(1rem, 3.6vw, 1.4rem); margin: 2px 0; }
+  .conj-translation { font-size: 0.55em; font-weight: 500; color: rgba(255,255,255,0.7); }
+
+  /* Bridge: infinitive translation label + highlighted term */
+  .settle-sub { color: rgba(255,255,255,0.8); font-size: 1rem; margin-top: 4px; }
+  .highlight-term { color: var(--gold); font-weight: 700; }
 </style>
 </head>
 <body class="animation-page">
@@ -37,18 +45,19 @@
 
     <!-- Beat 1: Hook -->
     <div class="beat" data-beat="0">
-      <div class="messy-word w1">hablo</div>
-      <div class="messy-word w2">hablas</div>
-      <div class="messy-word w3">habla</div>
-      <div class="messy-word w4">hablamos</div>
-      <div class="messy-word w5">hablan</div>
+      <div class="messy-word w1 compact">hablo <span class="conj-translation">(I speak)</span></div>
+      <div class="messy-word w2 compact">hablas <span class="conj-translation">(you speak)</span></div>
+      <div class="messy-word w3 compact">habla <span class="conj-translation">(he/she speaks)</span></div>
+      <div class="messy-word w4 compact">hablamos <span class="conj-translation">(we speak)</span></div>
+      <div class="messy-word w5 compact">hablan <span class="conj-translation">(they speak)</span></div>
       <p class="vo">Five different words — but they're all just one verb.</p>
     </div>
 
     <!-- Beat 2: Bridge -->
     <div class="beat" data-beat="1">
       <div class="settle-word">hablar</div>
-      <p class="vo">Every verb starts life in one plain form — the infinitive. Hablar. To speak.</p>
+      <div class="settle-sub">(to speak / to talk)</div>
+      <p class="vo">Every verb starts life in one plain form — the <strong class="highlight-term">infinitive</strong>.</p>
     </div>
 
     <!-- Beat 3: Reveal - verb families -->
