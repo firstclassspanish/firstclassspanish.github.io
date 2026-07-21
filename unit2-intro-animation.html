@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/brand.css?v=1">
-<link rel="stylesheet" href="css/animation.css?v=5">
+<link rel="stylesheet" href="css/animation.css?v=6">
 <style>
   /* Box of Six grid */
 
@@ -46,12 +46,13 @@
 
     <!-- Beat 2: Bridge -->
     <div class="beat" data-beat="1">
-      <div class="settle-word">Any subject fits a category.</div>
-      <p class="vo">Every subject can be sorted by two things: whether it's 1st, 2nd, or 3rd person — and whether it's singular or plural, one or more than one.</p>
+      <div class="settle-word">Every subject fits a category.</div>
+      <p class="vo">Every subject can be sorted by two things: whether it's <strong class="highlight-term">1st, 2nd, or 3rd person</strong> — and whether it's <strong class="highlight-term">singular or plural</strong>, one or more than one.</p>
     </div>
 
     <!-- Beat 3: Reveal - English Box of Six first -->
     <div class="beat" data-beat="2">
+      <div class="box-title">Subject Pronouns</div>
       <div class="box-grid">
         <div class="box-cell header"></div>
         <div class="box-cell header">Singular</div>
@@ -69,30 +70,31 @@
         <div class="box-cell filled">he/she/it</div>
         <div class="box-cell filled">they</div>
       </div>
-      <p class="vo">In grammar, this is called person — and English already sorts pronouns into six boxes. The Box of Six.</p>
+      <p class="vo">In grammar, this is called <strong class="highlight-term">person</strong> — and English already sorts pronouns into six boxes. The <strong class="highlight-term">Box of Six</strong>.</p>
     </div>
 
     <!-- Beat 4: Reveal - Same boxes, in Spanish -->
     <div class="beat" data-beat="3">
+      <div class="box-title">Pronombres personales <span style="opacity: 0.7; font-weight: 500;">(Subject Pronouns)</span></div>
       <div class="box-grid" id="boxGrid">
         <div class="box-cell header"></div>
         <div class="box-cell header">Singular</div>
         <div class="box-cell header">Plural</div>
 
         <div class="box-cell row-label">1st</div>
-        <div class="box-cell filled">yo</div>
-        <div class="box-cell filled">nosotros</div>
+        <div class="box-cell filled two-line"><div>yo</div><div class="box-translation">(I)</div></div>
+        <div class="box-cell filled two-line"><div>nosotros</div><div class="box-translation">(we)</div></div>
 
         <div class="box-cell row-label">2nd</div>
-        <div class="box-cell filled">tú</div>
+        <div class="box-cell filled two-line"><div>tú</div><div class="box-translation">(you)</div></div>
         <div class="box-cell" style="background: rgba(255,255,255,0.08); flex-direction: column; gap: 4px;">
           <div style="font-family: 'Sora', sans-serif; font-weight: 700; color: var(--white); font-size: clamp(0.85rem, 2.5vw, 1.05rem);">vosotros</div>
           <div style="font-size: 0.72rem; color: rgba(255,255,255,0.8); font-style: italic;">Spain only</div>
         </div>
 
         <div class="box-cell row-label">3rd</div>
-        <div class="box-cell filled">él/ella/usted</div>
-        <div class="box-cell filled">ellos/ustedes</div>
+        <div class="box-cell filled two-line"><div>él/ella/usted</div><div class="box-translation">(he/she/you)</div></div>
+        <div class="box-cell filled two-line"><div>ellos/ustedes</div><div class="box-translation">(they/you)</div></div>
       </div>
       <p class="vo">Spanish uses the exact same six boxes — just with different words.</p>
       <p style="font-size: 0.75rem; color: rgba(255,255,255,0.65); margin-top: 6px;">Latin America usually uses ustedes instead, so that box often stays blank.</p>

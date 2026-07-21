@@ -86,6 +86,12 @@ body.animation-page {
 .cta-title { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--white); font-size: clamp(2rem, 6.5vw, 2.7rem); }
 .cta-sub { color: rgba(255,255,255,0.85); margin-top: 6px; font-size: 0.95rem; }
 
+.box-title {
+  font-family: 'Sora', sans-serif; font-weight: 700; color: rgba(255,255,255,0.9);
+  font-size: 1.05rem; margin-bottom: 12px; text-align: center;
+}
+.highlight-term { color: var(--gold); font-weight: 700; }
+
 .end-actions { display: flex; gap: 10px; margin-top: 20px; }
 
 .controls {
