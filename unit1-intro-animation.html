@@ -10,13 +10,13 @@
 <link rel="stylesheet" href="css/brand.css?v=1">
 <link rel="stylesheet" href="css/animation.css?v=6">
 <style>
-  .vowel-row { display: flex; gap: clamp(8px, 2.5vw, 20px); margin-bottom: 20px; }
+  .vowel-row { display: flex; gap: clamp(10px, 3vw, 24px); margin-bottom: 20px; }
   .vowel-item {
-    background: rgba(255,255,255,0.15); border-radius: 12px; padding: 14px 10px; width: 62px;
+    background: rgba(255,255,255,0.15); border-radius: 14px; padding: 20px 16px; width: 96px;
     opacity: 0; transform: scale(0.7); animation: pop 0.4s ease forwards;
   }
-  .vowel-item .l { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--white); font-size: 1.6rem; }
-  .vowel-item .s { color: rgba(255,255,255,0.8); font-size: 0.75rem; margin-top: 4px; font-weight: 600; }
+  .vowel-item .l { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--white); font-size: 2.3rem; }
+  .vowel-item .s { color: rgba(255,255,255,0.8); font-size: 1rem; margin-top: 6px; font-weight: 600; }
   .vowel-item:nth-child(1) { animation-delay: 0.1s; }
   .vowel-item:nth-child(2) { animation-delay: 0.35s; }
   .vowel-item:nth-child(3) { animation-delay: 0.6s; }
@@ -29,6 +29,7 @@
   }
   .syl-word span { opacity: 0.35; transition: opacity 0.3s ease; }
   .syl-word span.lit { opacity: 1; }
+  .syl-divider { opacity: 0.5 !important; }
   .syl-meaning { color: rgba(255,255,255,0.85); font-size: 1rem; margin-top: 10px; min-height: 1.4em; }
 
   .flash-words { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
@@ -65,7 +66,7 @@
     <!-- Beat 2: Problem -->
     <div class="beat" data-beat="1">
       <div class="settle-word">Spanish works differently.</div>
-      <p class="vo">English pronunciation can be tricky to guess. Spanish is consistent — learn the rules once, and you're set.</p>
+      <p class="vo">English pronunciation can be tricky to guess. Spanish is <strong class="highlight-term">consistent</strong> — learn the rules once, and you're set.</p>
     </div>
 
     <!-- Beat 3: Reveal -->
@@ -77,13 +78,13 @@
         <div class="vowel-item"><div class="l">o</div><div class="s">"oh"</div></div>
         <div class="vowel-item"><div class="l">u</div><div class="s">"oo"</div></div>
       </div>
-      <p class="vo">In Spanish, every letter makes the same sound, every time. Learn it once — it works everywhere.</p>
+      <p class="vo">In Spanish, every letter makes the <strong class="highlight-term">same sound, every time</strong>. Learn it once — it works everywhere.</p>
     </div>
 
     <!-- Beat 4: Proof -->
     <div class="beat" data-beat="3">
       <div class="syl-word" id="sylWord">
-        <span id="s1">es</span><span id="s2">cue</span><span id="s3">la</span>
+        <span id="s1">es</span><span class="syl-divider">-</span><span id="s2">cue</span><span class="syl-divider">-</span><span id="s3">la</span>
       </div>
       <div class="syl-meaning" id="sylMeaning"></div>
     </div>
@@ -93,7 +94,7 @@
       <div class="flash-words">
         <span>gracias</span><span>hermano</span><span>amigo</span>
       </div>
-      <p class="vo">Once you know the sounds, you're not memorizing anymore — you can read almost anything.</p>
+      <p class="vo">Once you know the sounds, you're not memorizing anymore — you can <strong class="highlight-term">read almost anything</strong>.</p>
     </div>
 
     <!-- Beat 6: CTA -->
