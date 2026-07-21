@@ -17,8 +17,8 @@ body.animation-page {
 
 .stage {
   width: 100%;
-  max-width: 640px;
-  aspect-ratio: 16 / 10;
+  max-width: 760px;
+  aspect-ratio: 4 / 3;
   border-radius: 20px;
   position: relative;
   overflow: hidden;
@@ -51,17 +51,17 @@ body.animation-page {
   font-family: 'Sora', sans-serif;
   font-weight: 700;
   color: var(--white);
-  font-size: clamp(1.3rem, 5vw, 2rem);
+  font-size: clamp(1.6rem, 6vw, 2.4rem);
   margin: 3px 0;
   opacity: 0;
   transform: translateY(10px);
   animation: rise 0.5s ease forwards;
 }
-.messy-word.w1 { animation-delay: 0.1s; transform: rotate(-2deg); }
-.messy-word.w2 { animation-delay: 0.4s; }
-.messy-word.w3 { animation-delay: 0.7s; transform: rotate(2deg); }
-.messy-word.w4 { animation-delay: 1.0s; }
-.messy-word.w5 { animation-delay: 1.3s; transform: rotate(-1deg); }
+.messy-word.w1 { animation-delay: 0.2s; transform: rotate(-2deg); }
+.messy-word.w2 { animation-delay: 1.0s; }
+.messy-word.w3 { animation-delay: 1.8s; transform: rotate(2deg); }
+.messy-word.w4 { animation-delay: 2.6s; }
+.messy-word.w5 { animation-delay: 3.4s; transform: rotate(-1deg); }
 @keyframes rise { to { opacity: 1; transform: translateY(0) rotate(0); } }
 @keyframes pop { to { opacity: 1; transform: scale(1); } }
 
@@ -77,13 +77,13 @@ body.animation-page {
   font-family: 'Sora', sans-serif;
   font-weight: 700;
   color: var(--white);
-  font-size: clamp(1.6rem, 6vw, 2.4rem);
+  font-size: clamp(2rem, 7vw, 2.8rem);
   letter-spacing: 0.01em;
-  max-width: 480px;
+  max-width: 560px;
 }
 
 .cta-star { color: var(--gold); font-size: 1.8rem; margin-bottom: 8px; }
-.cta-title { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--white); font-size: clamp(1.4rem, 5vw, 2rem); }
+.cta-title { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--white); font-size: clamp(1.7rem, 6vw, 2.4rem); }
 .cta-sub { color: rgba(255,255,255,0.85); margin-top: 6px; font-size: 0.95rem; }
 
 .end-actions { display: flex; gap: 10px; margin-top: 20px; }
@@ -137,17 +137,17 @@ body.animation-page {
 
 /* Box of Six grid (used by Unit 2's and Unit 4's animations) */
 .box-grid {
-  display: grid; grid-template-columns: 70px 1fr 1fr; grid-template-rows: auto repeat(3, auto);
-  gap: 4px; margin-bottom: 16px; max-width: 420px; width: 100%;
+  display: grid; grid-template-columns: 90px 1fr 1fr; grid-template-rows: auto repeat(3, auto);
+  gap: 6px; margin-bottom: 16px; max-width: 500px; width: 100%;
 }
 .box-cell {
-  background: rgba(255,255,255,0.12); border-radius: 8px; padding: 8px 6px;
+  background: rgba(255,255,255,0.12); border-radius: 8px; padding: 10px 8px;
   opacity: 0; transform: scale(0.85); animation: pop 0.4s ease forwards;
   display: flex; align-items: center; justify-content: center; text-align: center;
 }
 .box-cell.header { background: transparent; color: rgba(255,255,255,0.75); font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
 .box-cell.row-label { background: transparent; color: rgba(255,255,255,0.75); font-size: 0.72rem; font-weight: 700; justify-content: flex-start; }
-.box-cell.filled { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--white); font-size: clamp(0.85rem, 2.5vw, 1.05rem); }
+.box-cell.filled { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--white); font-size: clamp(1rem, 3vw, 1.3rem); }
 .box-cell.empty { background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.45); font-size: 0.68rem; font-style: italic; }
 .box-cell.two-line { flex-direction: column; gap: 2px; }
 .box-cell:nth-child(1) { animation-delay: 0s; }
