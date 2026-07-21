@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/brand.css?v=1">
-<link rel="stylesheet" href="css/animation.css?v=2">
+<link rel="stylesheet" href="css/animation.css?v=3">
 <style>
   /* Verb family cards */
   .family-row { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-bottom: 16px; }
@@ -29,6 +29,15 @@
   /* Bridge: infinitive translation label + highlighted term */
   .settle-sub { color: rgba(255,255,255,0.8); font-size: 1rem; margin-top: 4px; }
   .highlight-term { color: var(--gold); font-weight: 700; }
+
+  /* Hook: left-align the word stack */
+  .hook-word-list { display: flex; flex-direction: column; align-items: flex-start; margin: 0 auto 10px; }
+
+  /* Family card translations */
+  .family-translation { color: rgba(255,255,255,0.7); font-size: 0.75rem; margin-top: 3px; }
+
+  /* Box cell translations */
+  .box-translation { font-size: 0.6rem; font-weight: 500; color: rgba(255,255,255,0.7); font-style: normal; margin-top: 2px; }
 </style>
 </head>
 <body class="animation-page">
@@ -45,11 +54,13 @@
 
     <!-- Beat 1: Hook -->
     <div class="beat" data-beat="0">
-      <div class="messy-word w1 compact">hablo <span class="conj-translation">(I speak)</span></div>
-      <div class="messy-word w2 compact">hablas <span class="conj-translation">(you speak)</span></div>
-      <div class="messy-word w3 compact">habla <span class="conj-translation">(he/she speaks)</span></div>
-      <div class="messy-word w4 compact">hablamos <span class="conj-translation">(we speak)</span></div>
-      <div class="messy-word w5 compact">hablan <span class="conj-translation">(they speak)</span></div>
+      <div class="hook-word-list">
+        <div class="messy-word w1 compact">hablo <span class="conj-translation">(I speak)</span></div>
+        <div class="messy-word w2 compact">hablas <span class="conj-translation">(you speak)</span></div>
+        <div class="messy-word w3 compact">habla <span class="conj-translation">(he/she speaks)</span></div>
+        <div class="messy-word w4 compact">hablamos <span class="conj-translation">(we speak)</span></div>
+        <div class="messy-word w5 compact">hablan <span class="conj-translation">(they speak)</span></div>
+      </div>
       <p class="vo">Five different words — but they're all just one verb.</p>
     </div>
 
@@ -63,9 +74,9 @@
     <!-- Beat 3: Reveal - verb families -->
     <div class="beat" data-beat="2">
       <div class="family-row">
-        <div class="family-card"><div class="ending">-AR</div><div class="verb">hablar</div></div>
-        <div class="family-card"><div class="ending">-ER</div><div class="verb">comer</div></div>
-        <div class="family-card"><div class="ending">-IR</div><div class="verb">vivir</div></div>
+        <div class="family-card"><div class="ending">-AR</div><div class="verb">hablar</div><div class="family-translation">(to speak)</div></div>
+        <div class="family-card"><div class="ending">-ER</div><div class="verb">comer</div><div class="family-translation">(to eat)</div></div>
+        <div class="family-card"><div class="ending">-IR</div><div class="verb">vivir</div><div class="family-translation">(to live)</div></div>
       </div>
       <p class="vo">Every Spanish infinitive ends one of three ways. That ending tells you the family — and every verb in a family conjugates the same way.</p>
     </div>
@@ -78,16 +89,16 @@
         <div class="box-cell header">Plural</div>
 
         <div class="box-cell row-label">1st</div>
-        <div class="box-cell filled">hablo</div>
-        <div class="box-cell filled">hablamos</div>
+        <div class="box-cell filled two-line"><div>hablo</div><div class="box-translation">(I speak)</div></div>
+        <div class="box-cell filled two-line"><div>hablamos</div><div class="box-translation">(we speak)</div></div>
 
         <div class="box-cell row-label">2nd</div>
-        <div class="box-cell filled">hablas</div>
+        <div class="box-cell filled two-line"><div>hablas</div><div class="box-translation">(you speak)</div></div>
         <div class="box-cell empty">(not used)</div>
 
         <div class="box-cell row-label">3rd</div>
-        <div class="box-cell filled">habla</div>
-        <div class="box-cell filled">hablan</div>
+        <div class="box-cell filled two-line"><div>habla</div><div class="box-translation">(he/she speaks)</div></div>
+        <div class="box-cell filled two-line"><div>hablan</div><div class="box-translation">(they speak)</div></div>
       </div>
       <p class="vo">Remember the Box of Six? Watch what happens when hablar meets it.</p>
     </div>
