@@ -28,6 +28,15 @@
   }
 
   /* Verb family cards */
+  /* Stem + ending color coding (reused throughout the lesson) */
+  .verb-stem { color: var(--blue-dark); }
+  .verb-ending { color: var(--gold); font-weight: 700; }
+  .stem-demo-row { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 20px; }
+  .stem-demo {
+    font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1.8rem;
+    background: var(--blue-light); padding: 14px 24px; border-radius: 12px;
+  }
+
   .family-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 20px; }
   @media (max-width: 600px) { .family-grid { grid-template-columns: 1fr; } }
   .family-card { background: var(--blue-light); border-radius: 12px; padding: 18px 16px; text-align: center; }
@@ -82,7 +91,7 @@
 
 <div class="unit-hero">
   <div class="unit-eyebrow">UNIT 4 · CONJUGATION</div>
-  <h1>One verb, six endings.</h1>
+  <h1>One verb, six endings <span style="font-weight: 500; font-size: 0.55em; opacity: 0.85;">(though we'll only need five)</span></h1>
   <p>Every verb ending you'll ever see traces back to two things you already know: the Box of Six from Unit 2, and the parts of speech from Unit 3. This unit connects them.</p>
 </div>
 
@@ -98,20 +107,40 @@
   <div class="ticket-divider"><span class="notch"></span></div>
 
   <section class="block">
+    <h2><span class="tag"></span>Every infinitive has two parts</h2>
+    <p>Break hablar apart and you get two pieces: the <strong>stem</strong> (raíz) and the <strong>ending</strong> (terminación). Throughout this lesson, the stem stays in blue and the ending stays in gold — so you can start training your eye to spot the split.</p>
+    <div class="stem-demo-row">
+      <div class="stem-demo"><span class="verb-stem">habl</span><span class="verb-ending">ar</span></div>
+      <div class="stem-demo"><span class="verb-stem">com</span><span class="verb-ending">er</span></div>
+      <div class="stem-demo"><span class="verb-stem">viv</span><span class="verb-ending">ir</span></div>
+    </div>
+    <div class="callout">
+      <strong>Here's the actual process, spelled out:</strong>
+      <ol style="margin: 10px 0 0 20px; padding: 0; font-weight: 500;">
+        <li style="margin-bottom: 6px;">Start with the infinitive — hablar.</li>
+        <li style="margin-bottom: 6px;">Drop the ending (-ar, -er, or -ir), leaving just the stem — habl-.</li>
+        <li>Add the ending that matches both the subject (which box in the Box of Six) and the tense. For yo in the present tense, that's -o: habl- + -o = hablo.</li>
+      </ol>
+    </div>
+  </section>
+
+  <div class="ticket-divider"><span class="notch"></span></div>
+
+  <section class="block">
     <h2><span class="tag"></span>The three verb families</h2>
     <p>Every Spanish infinitive ends one of three ways. That ending tells you the family — and every verb in a family conjugates the same way.</p>
     <div class="family-grid">
       <div class="family-card">
         <div class="ending">-AR</div>
-        <div class="verbs"><strong>hablar</strong> (to speak)<br><strong>caminar</strong> (to walk)<br><strong>estudiar</strong> (to study)</div>
+        <div class="verbs"><strong><span class="verb-stem">habl</span><span class="verb-ending">ar</span></strong> (to speak)<br><strong><span class="verb-stem">camin</span><span class="verb-ending">ar</span></strong> (to walk)<br><strong><span class="verb-stem">estudi</span><span class="verb-ending">ar</span></strong> (to study)</div>
       </div>
       <div class="family-card">
         <div class="ending">-ER</div>
-        <div class="verbs"><strong>comer</strong> (to eat)<br><strong>beber</strong> (to drink)<br><strong>aprender</strong> (to learn)</div>
+        <div class="verbs"><strong><span class="verb-stem">com</span><span class="verb-ending">er</span></strong> (to eat)<br><strong><span class="verb-stem">beb</span><span class="verb-ending">er</span></strong> (to drink)<br><strong><span class="verb-stem">aprend</span><span class="verb-ending">er</span></strong> (to learn)</div>
       </div>
       <div class="family-card">
         <div class="ending">-IR</div>
-        <div class="verbs"><strong>vivir</strong> (to live)<br><strong>escribir</strong> (to write)<br><strong>abrir</strong> (to open)</div>
+        <div class="verbs"><strong><span class="verb-stem">viv</span><span class="verb-ending">ir</span></strong> (to live)<br><strong><span class="verb-stem">escrib</span><span class="verb-ending">ir</span></strong> (to write)<br><strong><span class="verb-stem">abr</span><span class="verb-ending">ir</span></strong> (to open)</div>
       </div>
     </div>
   </section>
@@ -130,18 +159,18 @@
         </tr>
         <tr>
           <td class="row-head">1st</td>
-          <td class="filled">yo hablo</td>
-          <td class="filled">nosotros hablamos</td>
+          <td class="filled">yo <span class="verb-stem">habl</span><span class="verb-ending">o</span></td>
+          <td class="filled">nosotros <span class="verb-stem">habl</span><span class="verb-ending">amos</span></td>
         </tr>
         <tr>
           <td class="row-head">2nd</td>
-          <td class="filled">tú hablas</td>
+          <td class="filled">tú <span class="verb-stem">habl</span><span class="verb-ending">as</span></td>
           <td class="empty">— not used —</td>
         </tr>
         <tr>
           <td class="row-head">3rd</td>
-          <td class="filled">él/ella/usted habla</td>
-          <td class="filled">ellos/ustedes hablan</td>
+          <td class="filled">él/ella/usted <span class="verb-stem">habl</span><span class="verb-ending">a</span></td>
+          <td class="filled">ellos/ustedes <span class="verb-stem">habl</span><span class="verb-ending">an</span></td>
         </tr>
       </table>
     </div>
@@ -164,33 +193,33 @@
         </tr>
         <tr>
           <td class="row-head">yo</td>
-          <td class="filled">hablo</td>
-          <td class="filled">como</td>
-          <td class="filled">vivo</td>
+          <td class="filled"><span class="verb-stem">habl</span><span class="verb-ending">o</span></td>
+          <td class="filled"><span class="verb-stem">com</span><span class="verb-ending">o</span></td>
+          <td class="filled"><span class="verb-stem">viv</span><span class="verb-ending">o</span></td>
         </tr>
         <tr>
           <td class="row-head">tú</td>
-          <td class="filled">hablas</td>
-          <td class="filled">comes</td>
-          <td class="filled">vives</td>
+          <td class="filled"><span class="verb-stem">habl</span><span class="verb-ending">as</span></td>
+          <td class="filled"><span class="verb-stem">com</span><span class="verb-ending">es</span></td>
+          <td class="filled"><span class="verb-stem">viv</span><span class="verb-ending">es</span></td>
         </tr>
         <tr>
           <td class="row-head">él/ella/usted</td>
-          <td class="filled">habla</td>
-          <td class="filled">come</td>
-          <td class="filled">vive</td>
+          <td class="filled"><span class="verb-stem">habl</span><span class="verb-ending">a</span></td>
+          <td class="filled"><span class="verb-stem">com</span><span class="verb-ending">e</span></td>
+          <td class="filled"><span class="verb-stem">viv</span><span class="verb-ending">e</span></td>
         </tr>
         <tr>
           <td class="row-head">nosotros</td>
-          <td class="filled">hablamos</td>
-          <td class="filled">comemos</td>
-          <td class="filled">vivimos</td>
+          <td class="filled"><span class="verb-stem">habl</span><span class="verb-ending">amos</span></td>
+          <td class="filled"><span class="verb-stem">com</span><span class="verb-ending">emos</span></td>
+          <td class="filled"><span class="verb-stem">viv</span><span class="verb-ending">imos</span></td>
         </tr>
         <tr>
           <td class="row-head">ellos/ustedes</td>
-          <td class="filled">hablan</td>
-          <td class="filled">comen</td>
-          <td class="filled">viven</td>
+          <td class="filled"><span class="verb-stem">habl</span><span class="verb-ending">an</span></td>
+          <td class="filled"><span class="verb-stem">com</span><span class="verb-ending">en</span></td>
+          <td class="filled"><span class="verb-stem">viv</span><span class="verb-ending">en</span></td>
         </tr>
       </table>
     </div>
