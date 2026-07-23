@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 6 Intro Animation | First Class Spanish</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Sora:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/brand.css?v=5">
+<link rel="stylesheet" href="css/animation.css?v=6">
+<style>
+  /* Mismatch vs match phrase cards */
+  .phrase-row { display: flex; gap: 14px; justify-content: center; margin-bottom: 10px; flex-wrap: wrap; }
+  .phrase-card {
+    background: rgba(255,255,255,0.14); border-radius: 12px; padding: 12px 18px; text-align: center;
+    opacity: 0; transform: scale(0.85); animation: pop 0.4s ease forwards;
+  }
+  .phrase-card:nth-child(1) { animation-delay: 0.2s; }
+  .phrase-card:nth-child(2) { animation-delay: 0.6s; }
+  .phrase-card .p-text { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--white); font-size: 1.15rem; }
+  .phrase-card .p-mark { font-size: 1.1rem; margin-top: 4px; }
+  .phrase-card.bad .p-mark { color: #FF8A8A; }
+  .phrase-card.good .p-mark { color: #A8E6A3; }
+
+  .hook-word-list { display: flex; flex-direction: column; align-items: flex-start; margin: 0 auto 10px; }
+  .messy-word.compact { font-size: clamp(1rem, 3.6vw, 1.4rem); margin: 2px 0; }
+  .conj-translation { font-size: 0.55em; font-weight: 500; color: rgba(255,255,255,0.7); }
+  .settle-sub { color: rgba(255,255,255,0.8); font-size: 1rem; margin-top: 4px; }
+
+  /* Chain reaction beat */
+  .chain-row { display: flex; align-items: center; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 10px; }
+  .chain-item { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--white); font-size: 1.3rem; background: rgba(255,255,255,0.14); padding: 8px 16px; border-radius: 10px; }
+  .chain-arrow { color: var(--gold); font-size: 1.2rem; }
+</style>
+</head>
+<body class="animation-page">
+
+<div>
+  <div class="stage theme-moss" id="stage">
+
+    <div class="home-control">
+      <a class="ctrl-btn" href="index.html">🏠 Home</a>
+    </div>
+    <div class="top-controls">
+      <button class="ctrl-btn" id="skipBtn">Skip ⏭</button>
+    </div>
+
+    <!-- Beat 1: Hook -->
+    <div class="beat" data-beat="0">
+      <div class="phrase-row">
+        <div class="phrase-card bad"><div class="p-text">la libro</div><div class="p-mark">✗</div></div>
+        <div class="phrase-card good"><div class="p-text">el libro</div><div class="p-mark">✓</div></div>
+      </div>
+      <p class="vo">Why does one of these sound wrong to a Spanish speaker's ear — even though every word is spelled correctly?</p>
+    </div>
+
+    <!-- Beat 2: Bridge -->
+    <div class="beat" data-beat="1">
+      <div class="settle-word">concordancia</div>
+      <div class="settle-sub">(agreement)</div>
+      <p class="vo">In Spanish, articles and adjectives have to <strong class="highlight-term">agree</strong> with the noun they describe — in gender and in number.</p>
+    </div>
+
+    <!-- Beat 3: Reveal - chain reaction -->
+    <div class="beat" data-beat="2">
+      <div class="chain-row">
+        <div class="chain-item">libro</div>
+        <div class="chain-arrow">→</div>
+        <div class="chain-item">el</div>
+      </div>
+      <p class="vo">Remember gender and number from Unit 5? Every noun still carries them — and now they <strong class="highlight-term">ripple outward</strong> to everything around it.</p>
+    </div>
+
+    <!-- Beat 4: Proof - full phrase build -->
+    <div class="beat" data-beat="3">
+      <div class="hook-word-list">
+        <div class="messy-word w1 compact">el libro rojo <span class="conj-translation">(the red book)</span></div>
+        <div class="messy-word w2 compact">la mesa roja <span class="conj-translation">(the red table)</span></div>
+        <div class="messy-word w3 compact">los libros rojos <span class="conj-translation">(the red books)</span></div>
+      </div>
+      <p class="vo">Article, noun, adjective — all three <strong class="highlight-term">match</strong>. Change the noun, and everything else shifts with it.</p>
+    </div>
+
+    <!-- Beat 5: Payoff + CTA -->
+    <div class="beat" data-beat="4">
+      <div class="cta-star">★</div>
+      <div class="cta-title">Unit 6 · Concordancia</div>
+      <div class="cta-sub">Let's make everything agree.</div>
+      <div class="end-actions">
+        <button class="end-btn secondary" id="replayBtn">Replay</button>
+        <a class="end-btn primary" href="unit6-concordancia-lesson.html">Start the Lesson</a>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="progress-dots" id="dots"></div>
+    </div>
+
+  </div>
+
+  <p class="caption-note">Silent animatic — pairs with the narration script. Add voiceover audio once recorded.</p>
+</div>
+
+<script src="js/animation-engine.js?v=1"></script>
+<script>
+  const durations = [6800, 6200, 6800, 7200, 6000]; // ms per beat
+  initAnimation(durations, 'unit6-concordancia-lesson.html');
+</script>
+
+</body>
+</html>
