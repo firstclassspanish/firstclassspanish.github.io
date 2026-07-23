@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 6 Concordancia Practice | First Class Spanish</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Sora:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/brand.css?v=5">
+<style>
+  .practice-hero {
+    background: linear-gradient(135deg, var(--moss) 0%, var(--moss-dark) 100%);
+    color: var(--white); padding: 40px 24px 34px; text-align: center;
+  }
+  .practice-hero h1 { color: var(--white); font-size: 1.7rem; margin-bottom: 8px; }
+  .practice-hero p { max-width: 540px; margin: 0 auto; color: rgba(255,255,255,0.92); font-size: 0.98rem; }
+
+  .practice-wrap { max-width: 820px; margin: 0 auto; padding: 30px 24px 60px; }
+
+  .status-bar {
+    display: flex; align-items: center; justify-content: space-between;
+    background: var(--white); border-radius: 12px; padding: 14px 20px;
+    box-shadow: 0 1px 3px rgba(14,53,34,0.06); margin-bottom: 20px; flex-wrap: wrap; gap: 10px;
+  }
+  .status-bar .score { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--moss-dark); }
+  .status-bar .reset-btn {
+    background: var(--moss-light); color: var(--moss-dark); border: none;
+    padding: 8px 16px; border-radius: 18px; font-weight: 600; font-size: 0.85rem; cursor: pointer;
+  }
+
+  .box-container { background: var(--white); border-radius: 16px; padding: 24px; box-shadow: 0 1px 3px rgba(14,53,34,0.06); margin-bottom: 20px; }
+  .article-zones { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  @media (max-width: 640px) { .article-zones { grid-template-columns: 1fr 1fr; } }
+  .drop-zone {
+    background: var(--moss-light); border: 2px dashed var(--moss); border-radius: 12px;
+    min-height: 200px; padding: 12px; display: flex; flex-direction: column; align-items: center;
+    gap: 6px; transition: background 0.15s ease, border-color 0.15s ease;
+  }
+  .drop-zone .zone-label { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--moss-dark); font-size: 1.1rem; }
+  .drop-zone .zone-sub { color: var(--muted); font-size: 0.68rem; margin-bottom: 4px; text-align: center; }
+  .drop-zone.hover-target { background: #D6E6D5; border-color: var(--moss-dark); }
+  .drop-zone .placed-cards { display: flex; flex-wrap: wrap; gap: 4px; justify-content: center; }
+
+  .placed-chip { background: var(--jade); color: var(--white); font-size: 0.68rem; font-weight: 600; padding: 3px 7px; border-radius: 10px; text-align: center; }
+
+  .pool-title { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--forest); margin-bottom: 12px; text-align: center; }
+  .card-pool {
+    display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;
+    background: var(--white); border-radius: 16px; padding: 20px;
+    box-shadow: 0 1px 3px rgba(14,53,34,0.06); min-height: 70px;
+  }
+
+  .phrase-card {
+    background: var(--gold-light); border: 1.5px solid var(--gold); border-radius: 12px;
+    padding: 10px 16px; font-family: 'Sora', sans-serif; font-weight: 700; color: var(--forest); font-size: 0.9rem;
+    cursor: grab; user-select: none; transition: box-shadow 0.15s ease, transform 0.1s ease, opacity 0.15s ease;
+  }
+  .phrase-card:hover { transform: translateY(-2px); }
+  .phrase-card.dragging { opacity: 0.4; }
+  .phrase-card.selected { box-shadow: 0 0 0 3px var(--moss); transform: translateY(-2px); }
+  .phrase-card.placed { display: none; }
+  .phrase-card.shake { animation: shake 0.4s ease; }
+  @keyframes shake { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
+
+  .complete-banner {
+    display: none; background: var(--gold-light); border: 1.5px solid var(--gold);
+    border-radius: 14px; padding: 24px; text-align: center; margin-top: 20px;
+  }
+  .complete-banner.show { display: block; }
+  .complete-banner .big { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1.3rem; color: var(--forest); margin-bottom: 6px; }
+  .complete-banner a {
+    display: inline-block; margin-top: 12px; background: var(--moss); color: var(--white);
+    font-weight: 600; padding: 10px 24px; border-radius: 22px; font-size: 0.9rem;
+  }
+
+  .instructions { text-align: center; color: var(--muted); font-size: 0.85rem; margin-bottom: 16px; }
+
+  @media (max-width: 560px) {
+    .drop-zone { min-height: 150px; padding: 8px; }
+    .drop-zone .zone-label { font-size: 0.95rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="brand" href="index.html"><span class="star">★</span> First Class Spanish</a>
+  <div class="unit-pill">Unit 6 · Concordancia</div>
+</header>
+
+<div class="practice-hero">
+  <h1>Sort phrases into el, la, los, or las</h1>
+  <p>Each phrase already agrees internally — a noun and an adjective that match. Your job is figuring out which article belongs with it.</p>
+</div>
+
+<div class="practice-wrap">
+
+  <div class="status-bar">
+    <div class="score">Placed correctly: <span id="scoreCount">0</span> / <span id="totalCount">0</span></div>
+    <button class="reset-btn" id="resetBtn">Reset</button>
+  </div>
+
+  <p class="instructions">Drag or tap a phrase to place it in the right box.</p>
+
+  <div class="box-container">
+    <div class="article-zones" id="zoneGrid">
+      <div class="drop-zone" data-zone="el">
+        <div class="zone-label">el</div>
+        <div class="zone-sub">masculine singular</div>
+        <div class="placed-cards"></div>
+      </div>
+      <div class="drop-zone" data-zone="la">
+        <div class="zone-label">la</div>
+        <div class="zone-sub">feminine singular</div>
+        <div class="placed-cards"></div>
+      </div>
+      <div class="drop-zone" data-zone="los">
+        <div class="zone-label">los</div>
+        <div class="zone-sub">masculine plural</div>
+        <div class="placed-cards"></div>
+      </div>
+      <div class="drop-zone" data-zone="las">
+        <div class="zone-label">las</div>
+        <div class="zone-sub">feminine plural</div>
+        <div class="placed-cards"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pool-title">Drag or tap a phrase to place it:</div>
+  <div class="card-pool" id="cardPool"></div>
+
+  <div class="complete-banner" id="completeBanner">
+    <div class="big">Every phrase found its article! 🎉</div>
+    <p>Ready for the leveled quizzes?</p>
+    <a href="unit6-quiz-foundation.html">Start Practicing →</a>
+  </div>
+
+</div>
+
+<footer>First Class Spanish · Your Ticket to Spanish Fluency</footer>
+
+<script>
+const phrases = [
+  { id: 'p1', text: 'libro rojo', zone: 'el' },
+  { id: 'p2', text: 'gato negro', zone: 'el' },
+  { id: 'p3', text: 'examen fácil', zone: 'el' },
+  { id: 'p4', text: 'chico inteligente', zone: 'el' },
+  { id: 'p5', text: 'mesa roja', zone: 'la' },
+  { id: 'p6', text: 'casa blanca', zone: 'la' },
+  { id: 'p7', text: 'clase fácil', zone: 'la' },
+  { id: 'p8', text: 'chica inteligente', zone: 'la' },
+  { id: 'p9', text: 'libros rojos', zone: 'los' },
+  { id: 'p10', text: 'carros grandes', zone: 'los' },
+  { id: 'p11', text: 'exámenes fáciles', zone: 'los' },
+  { id: 'p12', text: 'chicos inteligentes', zone: 'los' },
+  { id: 'p13', text: 'mesas rojas', zone: 'las' },
+  { id: 'p14', text: 'ventanas pequeñas', zone: 'las' },
+  { id: 'p15', text: 'clases fáciles', zone: 'las' },
+  { id: 'p16', text: 'chicas inteligentes', zone: 'las' }
+];
+
+let placedCount = 0;
+let selectedCard = null;
+
+const pool = document.getElementById('cardPool');
+const scoreCount = document.getElementById('scoreCount');
+const totalCount = document.getElementById('totalCount');
+const completeBanner = document.getElementById('completeBanner');
+totalCount.textContent = phrases.length;
+
+function shuffle(arr) {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function buildCards() {
+  pool.innerHTML = '';
+  placedCount = 0;
+  scoreCount.textContent = '0';
+  completeBanner.classList.remove('show');
+  document.querySelectorAll('.placed-cards').forEach(p => p.innerHTML = '');
+
+  shuffle(phrases).forEach(ph => {
+    const card = document.createElement('div');
+    card.className = 'phrase-card';
+    card.textContent = ph.text;
+    card.dataset.id = ph.id;
+    card.dataset.zone = ph.zone;
+    attachInteraction(card);
+    pool.appendChild(card);
+  });
+}
+
+function attachInteraction(card) {
+  card.draggable = true;
+
+  card.addEventListener('dragstart', (e) => {
+    e.dataTransfer.setData('text/plain', card.dataset.id);
+    e.dataTransfer.effectAllowed = 'move';
+    card.classList.add('dragging');
+    clearSelection();
+  });
+
+  card.addEventListener('dragend', () => {
+    card.classList.remove('dragging');
+    clearAllHighlights();
+  });
+
+  card.addEventListener('click', () => {
+    toggleSelect(card);
+  });
+}
+
+function toggleSelect(card) {
+  if (selectedCard === card) {
+    clearSelection();
+    return;
+  }
+  clearSelection();
+  selectedCard = card;
+  card.classList.add('selected');
+}
+
+function clearSelection() {
+  if (selectedCard) selectedCard.classList.remove('selected');
+  selectedCard = null;
+}
+
+function clearAllHighlights() {
+  document.querySelectorAll('.drop-zone').forEach(z => z.classList.remove('hover-target'));
+}
+
+document.querySelectorAll('.drop-zone').forEach(zone => {
+  zone.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    zone.classList.add('hover-target');
+  });
+
+  zone.addEventListener('dragleave', () => {
+    zone.classList.remove('hover-target');
+  });
+
+  zone.addEventListener('drop', (e) => {
+    e.preventDefault();
+    zone.classList.remove('hover-target');
+    const cardId = e.dataTransfer.getData('text/plain');
+    const card = document.querySelector(`.phrase-card[data-id="${cardId}"]`);
+    if (card) tryPlace(card, zone);
+  });
+
+  zone.addEventListener('click', () => {
+    if (selectedCard) {
+      tryPlace(selectedCard, zone);
+      clearSelection();
+    }
+  });
+});
+
+function tryPlace(card, zoneEl) {
+  if (zoneEl.dataset.zone === card.dataset.zone) {
+    const chip = document.createElement('div');
+    chip.className = 'placed-chip';
+    chip.textContent = card.textContent;
+    zoneEl.querySelector('.placed-cards').appendChild(chip);
+    card.classList.add('placed');
+    pool.appendChild(card);
+    placedCount++;
+    scoreCount.textContent = placedCount;
+    if (placedCount === phrases.length) {
+      completeBanner.classList.add('show');
+    }
+  } else {
+    pool.appendChild(card);
+    shakeCard(card);
+  }
+}
+
+function shakeCard(card) {
+  card.classList.add('shake');
+  setTimeout(() => card.classList.remove('shake'), 400);
+}
+
+document.getElementById('resetBtn').addEventListener('click', buildCards);
+
+buildCards();
+</script>
+
+</body>
+</html>

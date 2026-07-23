@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 6 Mastery Quiz | First Class Spanish</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Sora:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/brand.css?v=5">
+<link rel="stylesheet" href="css/quiz.css?v=3">
+</head>
+<body class="unit-moss">
+
+<header>
+  <a class="brand" href="index.html"><span class="star">★</span> First Class Spanish</a>
+  <div class="unit-pill">Unit 6 · Concordancia</div>
+</header>
+
+<div class="quiz-hero">
+  <div class="level-badge">🎯</div>
+  <h1>Mastery Quiz</h1>
+  <p>Challenge level — including the trickier adjective patterns. Prove you've got it.</p>
+</div>
+
+<div class="quiz-wrap">
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <div id="quizContainer"></div>
+  <div class="results" id="results">
+    <div class="score" id="scoreText"></div>
+    <div class="msg" id="scoreMsg"></div>
+    <div class="msg-es" id="scoreMsgEs"></div>
+    <div class="nav-links">
+      <button class="retry-btn" onclick="location.reload()">Try Again</button>
+      <a class="btn secondary" href="unit6-concordancia-lesson.html">Back to Lesson</a>
+      <a class="btn" href="unit6-intro-animation.html">Unit 6 Home</a>
+    </div>
+  </div>
+</div>
+
+<footer>First Class Spanish · Your Ticket to Spanish Fluency</footer>
+
+<script src="js/quiz-engine.js?v=1"></script>
+<script>
+const questions = [
+  { q: "\"Los exámenes fáciles\" — why does fácil become fáciles here, not \"fácils\"?", options: ["It's an irregular exception with no pattern", "Consonant-ending adjectives add -es for the plural, just like consonant-ending nouns do", "Fáciles is actually incorrect", "Exámenes forces a special adjective form"], correct: 1, explain: "This mirrors the noun pluralization rule from Unit 5 — consonant endings add -es, whether it's a noun or an adjective." },
+  { q: "\"Un amigo viejo\" and \"un viejo amigo\" both use the same words. What actually changes?", options: ["Nothing — they mean exactly the same thing", "The agreement rules change depending on position", "The word order shifts the shade of meaning — elderly friend vs. longtime friend — while agreement stays the same", "Viejo becomes an adverb in one version"], correct: 2, explain: "Adjective position can shift meaning in Spanish even though gender/number agreement doesn't change either way." },
+  { q: "\"La chica inteligente\" and \"las chicas inteligentes\" — what actually changed between these?", options: ["Only the noun changed; the adjective is identical both times", "Only the number changed — the adjective added -s since gender was already unmarked for -e endings", "Only the gender changed", "Nothing changed at all"], correct: 1, explain: "Inteligente doesn't mark gender (same word for el/la), but it does mark number: inteligente → inteligentes." },
+  { q: "Why does el examen fácil use el, when examen doesn't end in -o?", options: ["It's an exception with no explanation", "Examen's gender has to be learned individually, just like other nouns not ending in -o/-a (Unit 5) — it happens to be masculine", "Fácil forces the noun to become masculine", "El is used here by mistake"], correct: 1, explain: "This connects straight back to Unit 5 — nouns ending in other letters (like -en) don't hint at their gender through the ending; examen is simply masculine, memorized as such." },
+  { q: "What's the real relationship between Units 5 and 6?", options: ["They're unrelated — Unit 6 starts a completely new topic", "Unit 5 taught what a noun carries (gender, number); Unit 6 taught how that information spreads to everything around it", "Unit 6 replaces everything taught in Unit 5", "Unit 5 was about verbs, not nouns"], correct: 1, explain: "Unit 5 built the noun's gender/number identity; Unit 6 is entirely about applying that identity outward to articles and adjectives." },
+  { q: "\"Unas mesas grandes\" — walk through why every word here agrees.", options: ["It's a coincidence that they all end similarly", "Mesas is feminine plural, so the indefinite article (unas) and the adjective (grandes) both match that gender and number", "Only the article needs to match; grandes is fixed", "Grandes is masculine, so this phrase is actually incorrect"], correct: 1, explain: "Every piece — article, noun, adjective — carries the same feminine plural agreement, which is the entire point of concordancia." }
+];
+
+const resultsMessages = {
+  perfect: "Outstanding! You've mastered agreement — patterns and exceptions alike. 🌟",
+  good: "Great work — you're handling the trickier cases well.",
+  low: "These are the hard ones. Revisit the Go Further section and try again."
+};
+
+initQuiz(questions, resultsMessages);
+</script>
+
+</body>
+</html>

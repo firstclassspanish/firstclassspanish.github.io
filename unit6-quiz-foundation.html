@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 6 Foundation Quiz | First Class Spanish</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Sora:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/brand.css?v=5">
+<link rel="stylesheet" href="css/quiz.css?v=3">
+</head>
+<body class="unit-moss">
+
+<header>
+  <a class="brand" href="index.html"><span class="star">★</span> First Class Spanish</a>
+  <div class="unit-pill">Unit 6 · Concordancia</div>
+</header>
+
+<div class="quiz-hero">
+  <div class="level-badge">🌱</div>
+  <h1>Foundation Quiz</h1>
+  <p>Core concepts, no prior knowledge needed. Take your time — every question includes an explanation.</p>
+</div>
+
+<div class="quiz-wrap">
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <div id="quizContainer"></div>
+  <div class="results" id="results">
+    <div class="score" id="scoreText"></div>
+    <div class="msg" id="scoreMsg"></div>
+    <div class="msg-es" id="scoreMsgEs"></div>
+    <div class="nav-links">
+      <button class="retry-btn" onclick="location.reload()">Try Again</button>
+      <a class="btn secondary" href="unit6-concordancia-lesson.html">Back to Lesson</a>
+      <a class="btn" href="unit6-quiz-practice.html">Next: Practice 💪</a>
+    </div>
+  </div>
+</div>
+
+<footer>First Class Spanish · Your Ticket to Spanish Fluency</footer>
+
+<script src="js/quiz-engine.js?v=1"></script>
+<script>
+const questions = [
+  { q: "What does \"concordancia\" (agreement) mean in Spanish grammar?", options: ["Verbs and subjects must match in person", "Articles and adjectives must match the noun's gender and number", "All nouns must end in a vowel", "Sentences must always start with a subject"], correct: 1, explain: "Concordancia specifically refers to articles and adjectives matching the gender and number of the noun they go with." },
+  { q: "Which article means \"the\" for a masculine singular noun?", options: ["la", "el", "los", "las"], correct: 1, explain: "El libro — masculine singular takes el." },
+  { q: "Which article means \"the\" for a feminine plural noun?", options: ["la", "el", "los", "las"], correct: 3, explain: "Las mesas — feminine plural takes las." },
+  { q: "Fill in the blank: el libro roj__ (the red book)", options: ["-o", "-a", "-os", "-as"], correct: 0, explain: "Libro is masculine singular, so the adjective takes the matching -o ending: rojo." },
+  { q: "Fill in the blank: la mesa roj__ (the red table)", options: ["-o", "-a", "-os", "-as"], correct: 1, explain: "Mesa is feminine singular, so the adjective takes the matching -a ending: roja." },
+  { q: "What's un/una the Spanish equivalent of?", options: ["\"the\"", "\"a/an\"", "\"some\"", "\"this\""], correct: 1, explain: "Un and una are indefinite articles, equivalent to \"a\" or \"an\" in English — and they agree with gender just like el/la." },
+  { q: "Change the noun's number, and what happens to the adjective describing it?", options: ["Nothing — adjectives never change", "The adjective's ending changes to match", "Only the article changes, never the adjective", "The noun and adjective swap places"], correct: 1, explain: "Both the article and the adjective shift to match the noun — los libros rojos, not \"los libros rojo.\"" },
+  { q: "Which best describes how article, noun, and adjective relate in a Spanish phrase?", options: ["They're independent and don't need to match", "All three carry the same gender and number, like matching puzzle pieces", "Only the noun and article need to match; adjectives are free", "Only the noun and adjective need to match; articles are free"], correct: 1, explain: "That's the whole idea of concordancia — one noun's gender and number ripple out to everything describing it." }
+];
+
+const resultsMessages = {
+  perfect: "Perfect score! You've got the basics of agreement down. 🌟",
+  good: "Solid work — you're ready to move on to Practice.",
+  low: "Good start. Revisit the lesson, then give it another shot."
+};
+
+initQuiz(questions, resultsMessages);
+</script>
+
+</body>
+</html>

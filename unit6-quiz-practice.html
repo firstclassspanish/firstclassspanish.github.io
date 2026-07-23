@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 6 Practice Quiz | First Class Spanish</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Sora:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/brand.css?v=5">
+<link rel="stylesheet" href="css/quiz.css?v=3">
+</head>
+<body class="unit-moss">
+
+<header>
+  <a class="brand" href="index.html"><span class="star">★</span> First Class Spanish</a>
+  <div class="unit-pill">Unit 6 · Concordancia</div>
+</header>
+
+<div class="quiz-hero">
+  <div class="level-badge">💪</div>
+  <h1>Practice Quiz</h1>
+  <p>Reinforcement drills to build confidence. Apply agreement to new nouns and adjectives.</p>
+</div>
+
+<div class="quiz-wrap">
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <div id="quizContainer"></div>
+  <div class="results" id="results">
+    <div class="score" id="scoreText"></div>
+    <div class="msg" id="scoreMsg"></div>
+    <div class="msg-es" id="scoreMsgEs"></div>
+    <div class="nav-links">
+      <button class="retry-btn" onclick="location.reload()">Try Again</button>
+      <a class="btn secondary" href="unit6-concordancia-lesson.html">Back to Lesson</a>
+      <a class="btn" href="unit6-quiz-mastery.html">Next: Mastery 🎯</a>
+    </div>
+  </div>
+</div>
+
+<footer>First Class Spanish · Your Ticket to Spanish Fluency</footer>
+
+<script src="js/quiz-engine.js?v=1"></script>
+<script>
+const questions = [
+  { q: "Fill in the article: ___ carro (the car, masculine singular)", options: ["el", "la", "los", "las"], correct: 0, explain: "Carro is masculine singular, so it takes el." },
+  { q: "Fill in the article: ___ ventanas (the windows, feminine plural)", options: ["el", "la", "los", "las"], correct: 3, explain: "Ventanas is feminine plural, so it takes las." },
+  { q: "Fill in the blank: los gatos negr__ (the black cats)", options: ["-o", "-a", "-os", "-as"], correct: 2, explain: "Gatos is masculine plural, so the adjective takes -os: negros." },
+  { q: "Fill in the blank: las casas blanc__ (the white houses)", options: ["-o", "-a", "-os", "-as"], correct: 3, explain: "Casas is feminine plural, so the adjective takes -as: blancas." },
+  { q: "\"El examen fácil\" — why doesn't fácil change to \"fácila\" for a feminine noun like \"la clase fácil\"?", options: ["Fácil is a typo", "Adjectives ending in a consonant don't have separate masculine/feminine forms — only number changes", "Clase is actually masculine", "Fácil only works with masculine nouns"], correct: 1, explain: "Consonant-ending adjectives like fácil use the same form for both genders; only the plural changes it, adding -es: fáciles." },
+  { q: "\"Un amigo inteligente\" and \"una amiga inteligente\" — what's happening with inteligente?", options: ["It's used incorrectly in one of these", "Inteligente stays the same for both genders — only -e-ending adjectives work this way", "Inteligente is not a real adjective", "Amigo and amiga aren't actually different genders"], correct: 1, explain: "Adjectives ending in -e keep the same form for masculine and feminine, only changing for number." },
+  { q: "Make this agree: un__ mesa (a table, feminine)", options: ["un", "una", "unos", "unas"], correct: 1, explain: "Mesa is feminine singular, so the indefinite article is una." },
+  { q: "Which of these phrases is correctly matched?", options: ["la libro grande", "el libro grande", "los libro grande", "las libro grande"], correct: 1, explain: "Libro is masculine singular, so it needs el, not la, los, or las." }
+];
+
+const resultsMessages = {
+  perfect: "Excellent! Your instincts for agreement are sharp. 🌟",
+  good: "Nice work — a bit more practice and this will feel automatic.",
+  low: "Keep at it — revisit the article and adjective sections and try again."
+};
+
+initQuiz(questions, resultsMessages);
+</script>
+
+</body>
+</html>

@@ -38,6 +38,7 @@ body.unit-terracotta .explain { background: var(--terracotta-light); border-left
 body.unit-plum .explain { background: var(--plum-light); border-left-color: var(--plum); }
 body.unit-blue .explain { background: var(--blue-light); border-left-color: var(--blue); }
 body.unit-rose .explain { background: var(--rose-light); border-left-color: var(--rose); }
+body.unit-moss .explain { background: var(--moss-light); border-left-color: var(--moss); }
 
 .check-btn { display: block; width: 100%; background: var(--gold); color: var(--white); font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1rem; border: none; border-radius: 12px; padding: 16px; cursor: pointer; margin-top: 10px; }
 .check-btn:disabled { background: #D8D6CE; cursor: not-allowed; }
