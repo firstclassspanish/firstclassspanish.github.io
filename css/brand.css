@@ -107,7 +107,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 64px auto;
+  margin: 80px auto;
   max-width: 700px;
   position: relative;
 }
@@ -128,24 +128,24 @@ footer {
 /* ---------- Content card ---------- */
 section.block {
   background: var(--white);
-  border-radius: 24px;
-  padding: 48px 46px;
+  border-radius: 26px;
+  padding: 56px 54px;
   box-shadow: 0 1px 3px rgba(14,53,34,0.06);
   margin-bottom: 8px;
 }
 .block h2 {
-  font-size: 1.6rem;
-  margin-bottom: 14px;
+  font-size: 1.65rem;
+  margin-bottom: 18px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 .block h2 .tag { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
 .block h2 .emoji-accent {
   font-size: 1.4rem; display: inline-flex; align-items: center; justify-content: center;
   width: 42px; height: 42px; border-radius: 14px; flex-shrink: 0;
 }
-.block p { color: var(--gray); margin-bottom: 16px; font-size: 1.02rem; line-height: 1.65; }
+.block p { color: var(--gray); margin-bottom: 20px; font-size: 1.02rem; line-height: 1.7; }
 .block p:last-child { margin-bottom: 0; }
 
 /* ---------- Softer tables: any *-wrap wrapper containing a table gets
@@ -156,11 +156,6 @@ section.block {
   box-shadow: 0 1px 4px rgba(14,53,34,0.07);
 }
 .article-wrap table, .conj-wrap table, .plural-wrap table { border-radius: 0; }
-
-/* ---------- Small delight: practice cards lift slightly on hover,
-   matching the same playful micro-interaction already used on unit
-   and quiz-level cards elsewhere on the site. ---------- */
-.practice-card:hover { transform: translateY(-2px) !important; box-shadow: 0 4px 12px rgba(14,53,34,0.08) !important; }
 
 @media (max-width: 640px) {
   section.block { padding: 30px 26px; }
@@ -175,12 +170,22 @@ section.block {
   color: var(--forest);
   font-weight: 600;
   margin-top: 16px;
+  transition: transform 0.15s ease;
 }
+.callout:hover { transform: translateX(5px); }
 .callout.terracotta { background: var(--terracotta-light); border-left-color: var(--terracotta); }
 .callout.plum { background: var(--plum-light); border-left-color: var(--plum); }
 .callout.blue { background: var(--blue-light); border-left-color: var(--blue); }
 .callout.rose { background: var(--rose-light); border-left-color: var(--rose); }
 .callout.moss { background: var(--moss-light); border-left-color: var(--moss); }
+
+/* Reveal animation for tap-to-reveal practice card answers, used across every unit */
+@keyframes revealPop {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.practice-card.revealed .answer { animation: revealPop 0.25s ease; }
+.practice-card:hover { transform: translateY(-2px) !important; box-shadow: 0 4px 12px rgba(14,53,34,0.08) !important; }
 
 /* Speech-bubble callout for key payoff moments — use sparingly, for the one or two
    biggest takeaways on a page, not every note. Pair with an accent-color class

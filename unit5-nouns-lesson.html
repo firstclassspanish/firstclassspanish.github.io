@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Sora:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/brand.css?v=6">
+<link rel="stylesheet" href="css/brand.css?v=7">
 <style>
   .block h2 .tag { background: var(--rose); }
   .block h2 .emoji-accent { background: var(--rose-light); }
@@ -40,10 +40,12 @@
   /* Pluralization table */
   .plural-wrap { margin-top: 20px; overflow-x: auto; }
   .plural-table { width: 100%; border-collapse: collapse; min-width: 480px; }
-  .plural-table th, .plural-table td { border: 1.5px solid #E4E2DC; padding: 12px 10px; text-align: center; font-size: 0.9rem; }
+  .plural-table th, .plural-table td { border: none; border-bottom: 1.5px solid #ECE9E1; padding: 16px 14px; text-align: center; font-size: 0.92rem; }
+  .plural-table tr:last-child td { border-bottom: none; }
   .plural-table th { background: var(--rose-light); color: var(--rose-dark); font-family: 'Sora', sans-serif; font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.03em; }
   .plural-table td.filled { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--forest); }
   .plural-table td.rule { color: var(--gray); font-size: 0.85rem; }
+  .plural-table tbody tr:nth-child(even) td { background: rgba(194,59,107,0.04); }
 
   /* Practice cards (reused pattern) */
   .practice-list { margin-top: 20px; display: flex; flex-direction: column; gap: 10px; }
