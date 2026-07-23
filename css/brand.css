@@ -213,6 +213,99 @@ section.block {
 .level-card .desc { color: var(--gray); font-size: 0.85rem; margin-bottom: 14px; }
 .level-card .btn { display: inline-block; background: var(--gold); color: var(--white); font-weight: 600; font-size: 0.88rem; padding: 8px 18px; border-radius: 20px; }
 
+/* ---------- Unit intro: learning goals + why it matters ----------
+   Sits right under the hero, before the first .block section, on every
+   unit lesson page. One shared definition — pair with an accent-color
+   modifier (.terracotta / .plum / .blue) matching the unit; defaults
+   to teal (Unit 1). Content (goals list + why-it-matters text) is
+   unit-specific and lives in each page's own HTML. */
+.unit-goals {
+  max-width: 900px;
+  margin: -28px auto 0;
+  padding: 26px 30px;
+  background: var(--white);
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(14,53,34,0.10);
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 28px;
+  position: relative;
+  z-index: 2;
+}
+@media (max-width: 700px) {
+  .unit-goals { grid-template-columns: 1fr; margin-top: -20px; padding: 22px 22px; gap: 18px; }
+}
+.unit-goals .goals-label {
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--teal-dark);
+  margin-bottom: 10px;
+}
+.unit-goals.terracotta .goals-label { color: var(--terracotta-dark); }
+.unit-goals.plum .goals-label { color: var(--plum-dark); }
+.unit-goals.blue .goals-label { color: var(--blue-dark); }
+.unit-goals ul { list-style: none; margin: 0; padding: 0; }
+.unit-goals li {
+  color: var(--charcoal);
+  font-weight: 600;
+  font-size: 0.96rem;
+  padding-left: 24px;
+  position: relative;
+  margin-bottom: 8px;
+}
+.unit-goals li:last-child { margin-bottom: 0; }
+.unit-goals li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--teal);
+  font-weight: 700;
+}
+.unit-goals.terracotta li::before { color: var(--terracotta); }
+.unit-goals.plum li::before { color: var(--plum); }
+.unit-goals.blue li::before { color: var(--blue); }
+.unit-goals .why-block {
+  border-left: 3px solid var(--teal-light);
+  padding-left: 20px;
+}
+.unit-goals.terracotta .why-block { border-left-color: var(--terracotta-light); }
+.unit-goals.plum .why-block { border-left-color: var(--plum-light); }
+.unit-goals.blue .why-block { border-left-color: var(--blue-light); }
+.unit-goals .why-block p { color: var(--gray); font-size: 0.96rem; margin: 0; line-height: 1.55; }
+
+.unit-goals .key-question {
+  grid-column: 1 / -1;
+  padding-bottom: 18px;
+  margin-bottom: 4px;
+  border-bottom: 1.5px dashed var(--teal-light);
+}
+.unit-goals.terracotta .key-question { border-bottom-color: var(--terracotta-light); }
+.unit-goals.plum .key-question { border-bottom-color: var(--plum-light); }
+.unit-goals.blue .key-question { border-bottom-color: var(--blue-light); }
+.unit-goals .kq-label {
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--teal-dark);
+  display: block;
+  margin-bottom: 6px;
+}
+.unit-goals.terracotta .kq-label { color: var(--terracotta-dark); }
+.unit-goals.plum .kq-label { color: var(--plum-dark); }
+.unit-goals.blue .kq-label { color: var(--blue-dark); }
+.unit-goals .key-question p {
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--forest);
+  margin: 0;
+}
+
 /* ---------- Generic end-of-page action buttons ---------- */
 .end-btn {
   display: inline-block;
