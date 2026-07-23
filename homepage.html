@@ -24,10 +24,13 @@
   }
 
   /* ---------- Category system ---------- */
-  .category-block { margin-bottom: 56px; }
+  .category-block {
+    margin-bottom: 40px; background: var(--white); border-radius: 22px;
+    padding: 34px 34px 30px; box-shadow: 0 1px 3px rgba(14,53,34,0.06);
+  }
   .category-block:last-child { margin-bottom: 0; }
 
-  .category-intro { display: flex; align-items: center; gap: 18px; margin-bottom: 26px; }
+  .category-intro { display: flex; align-items: center; gap: 18px; margin-bottom: 14px; }
   .category-stamp {
     flex-shrink: 0; width: 74px; height: 74px; border-radius: 50%;
     border: 2.5px dashed var(--jade); display: flex; flex-direction: column;
@@ -42,13 +45,18 @@
   .category-heading h2 { font-size: 1.5rem; margin-bottom: 4px; }
   .category-heading p { color: var(--gray); font-size: 0.92rem; margin: 0; }
 
+  .category-explainer {
+    color: var(--gray); font-size: 0.92rem; line-height: 1.55; max-width: 680px;
+    margin: 0 0 26px; padding-top: 14px; border-top: 1px dashed #E4E2DC;
+  }
+
   .unit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
   @media (max-width: 860px) { .unit-grid { grid-template-columns: 1fr 1fr; } }
   @media (max-width: 560px) { .unit-grid { grid-template-columns: 1fr; } }
 
   .coming-soon-block {
     margin-top: 22px; border: 1.5px dashed #C9C6BC; border-radius: 16px;
-    padding: 22px 26px; text-align: center; background: rgba(255,255,255,0.5);
+    padding: 22px 26px; text-align: center; background: var(--page-bg);
   }
   .coming-soon-block .cs-label {
     font-family: 'Sora', sans-serif; font-weight: 700; color: var(--muted); font-size: 0.85rem;
@@ -162,6 +170,8 @@
         <p>Units 1–6 · The foundation everything else builds on.</p>
       </div>
     </div>
+
+    <p class="category-explainer">These six units aren't about mastering every rule right away — that comes later, in more advanced lessons. Here, the goal is simpler: give you the general idea and the most important facts for each topic, so you can start reading, writing, and speaking with real confidence — fast.</p>
 
     <div class="unit-grid">
 
