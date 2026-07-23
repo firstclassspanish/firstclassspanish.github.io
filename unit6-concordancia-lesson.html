@@ -121,7 +121,7 @@
   <section class="block">
     <h2><span class="tag"></span>Articles: definite and indefinite <span class="emoji-accent">🏷️</span></h2>
     <p>Spanish articles come in two types, same as English — and both types agree with the noun's gender and number.</p>
-    <p><strong>Definite articles</strong> — English uses one word for this: "the" (the book, the books). Spanish uses four, depending on gender and number:</p>
+    <p><strong>Definite articles</strong> — English uses one word for this: "the" (the book, the books). Spanish uses four (el/la/los/las), depending on gender and number:</p>
     <div class="article-wrap">
       <table class="article-table">
         <tr>
@@ -141,7 +141,7 @@
         </tr>
       </table>
     </div>
-    <p style="margin-top: 18px;"><strong>Indefinite articles</strong> — English uses "a/an" for singular and "some" for plural. Spanish also uses four, following the same gender/number pattern:</p>
+    <p style="margin-top: 18px;"><strong>Indefinite articles</strong> — English uses "a/an" for singular and "some" for plural. Spanish also uses four (un/una/unos/unas), following the same gender/number pattern:</p>
     <div class="article-wrap">
       <table class="article-table">
         <tr>
@@ -175,6 +175,13 @@
       <div class="phrase-part"><div class="p-label">Adjective</div><div class="p-word">rojo</div></div>
     </div>
     <div class="phrase-full">el libro rojo <span style="font-weight: 500; color: var(--gray); font-size: 0.85em;">(the red book)</span></div>
+    <p style="margin-top: 18px;">Now the opposite case — feminine and plural instead of masculine and singular:</p>
+    <div class="phrase-grid">
+      <div class="phrase-part"><div class="p-label">Article</div><div class="p-word">las</div></div>
+      <div class="phrase-part"><div class="p-label">Noun</div><div class="p-word">ventanas</div></div>
+      <div class="phrase-part"><div class="p-label">Adjective</div><div class="p-word">abiertas</div></div>
+    </div>
+    <div class="phrase-full">las ventanas abiertas <span style="font-weight: 500; color: var(--gray); font-size: 0.85em;">(the open windows)</span></div>
     <p style="margin-top: 18px;">Change the noun's gender, and the adjective's ending changes with it: la mesa roja (the red table). Change the number, and it changes again: los libros rojos, las mesas rojas.</p>
     <div class="callout">One adjective, four possible endings — rojo, roja, rojos, rojas — depending entirely on what noun it's describing.</div>
   </section>
@@ -259,14 +266,14 @@
 
 <script>
 const practiceItems = [
-  { subject: "el / la ___ mesa", answer: "la", note: "Mesa is feminine, so it takes the feminine article la." },
-  { subject: "el / los ___ libros", answer: "los", note: "Libros is masculine plural, so it takes the plural article los." },
-  { subject: "un / una ___ ventana", answer: "una", note: "Ventana is feminine, so it takes the indefinite article una." },
+  { subject: "el / la ___ mesa (the table)", answer: "la", note: "Mesa is feminine, so it takes the feminine article la." },
+  { subject: "el / los ___ libros (the books)", answer: "los", note: "Libros is masculine plural, so it takes the plural article los." },
+  { subject: "un / una ___ ventana (a window)", answer: "una", note: "Ventana is feminine, so it takes the indefinite article una." },
   { subject: "el gato negr__ (black cat)", answer: "o", note: "Gato is masculine singular, so the adjective ends in -o: negro." },
   { subject: "la casa blanc__ (white house)", answer: "a", note: "Casa is feminine singular, so the adjective ends in -a: blanca." },
   { subject: "los perros grand__ (big dogs)", answer: "es", note: "Perros is masculine plural, so the adjective ends in -es: grandes." },
   { subject: "las mesas roj__ (red tables)", answer: "as", note: "Mesas is feminine plural, so the adjective ends in -as: rojas." },
-  { subject: "el libro fácil — plural form?", answer: "los libros fáciles", note: "Fácil ends in a consonant, so it just adds -es for plural — no gender change needed." }
+  { subject: "el libro fácil (the easy book) — plural form?", answer: "los libros fáciles", note: "Fácil ends in a consonant, so it just adds -es for plural — no gender change needed." }
 ];
 
 const list = document.getElementById('practiceList');
