@@ -35,6 +35,7 @@
   .article-table th { background: var(--moss-light); color: var(--moss-dark); font-family: 'Sora', sans-serif; font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.03em; }
   .article-table td.row-head { background: var(--moss-light); color: var(--moss-dark); font-family: 'Sora', sans-serif; font-weight: 700; text-align: left; }
   .article-table td.filled { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--forest); }
+  .article-table td.filled .cell-translation { display: block; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 500; color: var(--muted); font-size: 0.72rem; margin-top: 3px; }
 
   /* Phrase build cards */
   .phrase-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 20px; }
@@ -42,6 +43,7 @@
   .phrase-part { background: var(--moss-light); border-radius: 12px; padding: 14px; text-align: center; }
   .phrase-part .p-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--moss-dark); font-weight: 700; margin-bottom: 6px; }
   .phrase-part .p-word { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--forest); font-size: 1.1rem; }
+  .phrase-part .p-word-en { display: block; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 500; color: var(--muted); font-size: 0.72rem; margin-top: 3px; }
   .phrase-full { text-align: center; margin-top: 14px; font-family: 'Sora', sans-serif; font-weight: 700; color: var(--moss-dark); font-size: 1.2rem; }
 
   /* Practice cards (reused pattern) */
@@ -82,8 +84,8 @@
 
 <div class="unit-hero">
   <div class="unit-eyebrow">UNIT 6 · CONCORDANCIA (AGREEMENT)</div>
-  <h1>Every article and adjective has to agree with its noun's gender and number.</h1>
-  <p>In Unit 5, you learned every noun carries a gender and a number. Now you'll see why that mattered so much — articles and adjectives have to match whatever the noun is carrying, every single time.</p>
+  <h1>Every article and adjective has to agree (match) with its noun's gender and&nbsp;number.</h1>
+  <p>In Unit 5, you learned every noun carries a gender and a number. Now you'll see why that mattered so much — articles and adjectives have to match whatever the noun is carrying, every single time. That's exactly what concordancia (agreement) means.</p>
 </div>
 
 <div class="unit-goals moss">
@@ -131,13 +133,13 @@
         </tr>
         <tr>
           <td class="row-head">Masculine</td>
-          <td class="filled">el libro</td>
-          <td class="filled">los libros</td>
+          <td class="filled">el libro<span class="cell-translation">the book</span></td>
+          <td class="filled">los libros<span class="cell-translation">the books</span></td>
         </tr>
         <tr>
           <td class="row-head">Feminine</td>
-          <td class="filled">la mesa</td>
-          <td class="filled">las mesas</td>
+          <td class="filled">la mesa<span class="cell-translation">the table</span></td>
+          <td class="filled">las mesas<span class="cell-translation">the tables</span></td>
         </tr>
       </table>
     </div>
@@ -151,13 +153,13 @@
         </tr>
         <tr>
           <td class="row-head">Masculine</td>
-          <td class="filled">un libro</td>
-          <td class="filled">unos libros</td>
+          <td class="filled">un libro<span class="cell-translation">a book</span></td>
+          <td class="filled">unos libros<span class="cell-translation">some books</span></td>
         </tr>
         <tr>
           <td class="row-head">Feminine</td>
-          <td class="filled">una mesa</td>
-          <td class="filled">unas mesas</td>
+          <td class="filled">una mesa<span class="cell-translation">a table</span></td>
+          <td class="filled">unas mesas<span class="cell-translation">some tables</span></td>
         </tr>
       </table>
     </div>
@@ -168,18 +170,18 @@
 
   <section class="block">
     <h2><span class="tag"></span>Adjectives agree too <span class="emoji-accent">🎨</span></h2>
-    <p>Adjectives follow the same logic as articles — they shift their ending to match the noun's gender and number. Most adjectives ending in -o work like this:</p>
+    <p>Adjectives follow the same logic as articles — they shift their ending to match the noun's gender and number. One more difference from English worth flagging: in Spanish, most descriptive adjectives come <em>after</em> the noun, not before it — "the red book" becomes "the book red." Most adjectives ending in -o work like this:</p>
     <div class="phrase-grid">
-      <div class="phrase-part"><div class="p-label">Article</div><div class="p-word">el</div></div>
-      <div class="phrase-part"><div class="p-label">Noun</div><div class="p-word">libro</div></div>
-      <div class="phrase-part"><div class="p-label">Adjective</div><div class="p-word">rojo</div></div>
+      <div class="phrase-part"><div class="p-label">Article</div><div class="p-word">el<span class="p-word-en">the</span></div></div>
+      <div class="phrase-part"><div class="p-label">Noun</div><div class="p-word">libro<span class="p-word-en">book</span></div></div>
+      <div class="phrase-part"><div class="p-label">Adjective</div><div class="p-word">rojo<span class="p-word-en">red</span></div></div>
     </div>
     <div class="phrase-full">el libro rojo <span style="font-weight: 500; color: var(--gray); font-size: 0.85em;">(the red book)</span></div>
     <p style="margin-top: 18px;">Now the opposite case — feminine and plural instead of masculine and singular:</p>
     <div class="phrase-grid">
-      <div class="phrase-part"><div class="p-label">Article</div><div class="p-word">las</div></div>
-      <div class="phrase-part"><div class="p-label">Noun</div><div class="p-word">ventanas</div></div>
-      <div class="phrase-part"><div class="p-label">Adjective</div><div class="p-word">abiertas</div></div>
+      <div class="phrase-part"><div class="p-label">Article</div><div class="p-word">las<span class="p-word-en">the</span></div></div>
+      <div class="phrase-part"><div class="p-label">Noun</div><div class="p-word">ventanas<span class="p-word-en">windows</span></div></div>
+      <div class="phrase-part"><div class="p-label">Adjective</div><div class="p-word">abiertas<span class="p-word-en">open</span></div></div>
     </div>
     <div class="phrase-full">las ventanas abiertas <span style="font-weight: 500; color: var(--gray); font-size: 0.85em;">(the open windows)</span></div>
     <p style="margin-top: 18px;">Change the noun's gender, and the adjective's ending changes with it: la mesa roja (the red table). Change the number, and it changes again: los libros rojos, las mesas rojas.</p>
