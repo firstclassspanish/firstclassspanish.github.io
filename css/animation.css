@@ -31,6 +31,8 @@ body.animation-page {
 .stage.theme-terracotta { background: linear-gradient(135deg, var(--terracotta) 0%, var(--terracotta-dark) 100%); }
 .stage.theme-plum { background: linear-gradient(135deg, var(--plum) 0%, var(--plum-dark) 100%); }
 .stage.theme-blue { background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%); }
+.stage.theme-rose { background: linear-gradient(135deg, var(--rose) 0%, var(--rose-dark) 100%); }
+.stage.theme-moss { background: linear-gradient(135deg, var(--moss) 0%, var(--moss-dark) 100%); }
 
 .beat {
   position: absolute;

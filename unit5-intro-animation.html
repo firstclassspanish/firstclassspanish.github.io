@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 5 Intro Animation | First Class Spanish</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Sora:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/brand.css?v=4">
+<link rel="stylesheet" href="css/animation.css?v=6">
+<style>
+  /* Gender tag pills */
+  .gender-row { display: flex; gap: 16px; justify-content: center; margin-bottom: 16px; flex-wrap: wrap; }
+  .gender-card {
+    background: rgba(255,255,255,0.14); border-radius: 12px; padding: 16px 22px; text-align: center;
+    opacity: 0; transform: scale(0.85); animation: pop 0.4s ease forwards;
+  }
+  .gender-card:nth-child(1) { animation-delay: 0.2s; }
+  .gender-card:nth-child(2) { animation-delay: 0.6s; }
+  .gender-card .g-word { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--white); font-size: 1.3rem; }
+  .gender-card .g-label { font-size: 0.75rem; color: rgba(255,255,255,0.75); margin-top: 4px; font-weight: 600; }
+  .gender-card .g-article { font-size: 0.85rem; color: var(--gold); font-weight: 700; margin-top: 2px; }
+
+  .hook-word-list { display: flex; flex-direction: column; align-items: flex-start; margin: 0 auto 10px; }
+  .messy-word.compact { font-size: clamp(1rem, 3.6vw, 1.4rem); margin: 2px 0; }
+  .conj-translation { font-size: 0.55em; font-weight: 500; color: rgba(255,255,255,0.7); }
+  .settle-sub { color: rgba(255,255,255,0.8); font-size: 1rem; margin-top: 4px; }
+
+  /* Plural transform */
+  .plural-row { display: flex; align-items: center; gap: 18px; justify-content: center; flex-wrap: wrap; margin-bottom: 10px; }
+  .plural-item { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--white); font-size: 1.5rem; }
+  .plural-arrow { color: var(--gold); font-size: 1.4rem; }
+</style>
+</head>
+<body class="animation-page">
+
+<div>
+  <div class="stage theme-rose" id="stage">
+
+    <div class="home-control">
+      <a class="ctrl-btn" href="index.html">🏠 Home</a>
+    </div>
+    <div class="top-controls">
+      <button class="ctrl-btn" id="skipBtn">Skip ⏭</button>
+    </div>
+
+    <!-- Beat 1: Hook -->
+    <div class="beat" data-beat="0">
+      <div class="hook-word-list">
+        <div class="messy-word w1 compact">el libro <span class="conj-translation">(the book)</span></div>
+        <div class="messy-word w2 compact">la mesa <span class="conj-translation">(the table)</span></div>
+        <div class="messy-word w3 compact">el perro <span class="conj-translation">(the dog)</span></div>
+      </div>
+      <p class="vo">Why is a book "el" but a table "la"? In Spanish, every noun has a <strong class="highlight-term">gender</strong>.</p>
+    </div>
+
+    <!-- Beat 2: Bridge -->
+    <div class="beat" data-beat="1">
+      <div class="settle-word">masculino / femenino</div>
+      <div class="settle-sub">every noun is one or the other</div>
+      <p class="vo">It's not about the object itself — it's just a category every Spanish noun belongs to. And once you know it, everything else <strong class="highlight-term">agrees</strong> with it.</p>
+    </div>
+
+    <!-- Beat 3: Reveal - the patterns -->
+    <div class="beat" data-beat="2">
+      <div class="gender-row">
+        <div class="gender-card"><div class="g-word">libro</div><div class="g-article">el libro</div><div class="g-label">usually -o = masculine</div></div>
+        <div class="gender-card"><div class="g-word">mesa</div><div class="g-article">la mesa</div><div class="g-label">usually -a = feminine</div></div>
+      </div>
+      <p class="vo">Most Spanish nouns follow a pattern — but not all. You'll learn to spot both.</p>
+    </div>
+
+    <!-- Beat 4: Proof - pluralization -->
+    <div class="beat" data-beat="3">
+      <div class="plural-row">
+        <div class="plural-item">libro</div>
+        <div class="plural-arrow">→</div>
+        <div class="plural-item">libros</div>
+      </div>
+      <div class="plural-row">
+        <div class="plural-item">papel</div>
+        <div class="plural-arrow">→</div>
+        <div class="plural-item">papeles</div>
+      </div>
+      <p class="vo">Gender is half the story. The other half? Making nouns <strong class="highlight-term">plural</strong> — and Spanish has clear rules for that too.</p>
+    </div>
+
+    <!-- Beat 5: Payoff + CTA -->
+    <div class="beat" data-beat="4">
+      <div class="cta-star">★</div>
+      <div class="cta-title">Unit 5 · Nouns</div>
+      <div class="cta-sub">Let's learn what makes a Spanish noun tick.</div>
+      <div class="end-actions">
+        <button class="end-btn secondary" id="replayBtn">Replay</button>
+        <a class="end-btn primary" href="unit5-nouns-lesson.html">Start the Lesson</a>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="progress-dots" id="dots"></div>
+    </div>
+
+  </div>
+
+  <p class="caption-note">Silent animatic — pairs with the narration script. Add voiceover audio once recorded.</p>
+</div>
+
+<script src="js/animation-engine.js?v=1"></script>
+<script>
+  const durations = [7500, 6800, 6800, 7200, 6000]; // ms per beat
+  initAnimation(durations, 'unit5-nouns-lesson.html');
+</script>
+
+</body>
+</html>

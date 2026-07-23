@@ -37,6 +37,14 @@
   --blue: #3670D6;
   --blue-light: #E5EDFC;
   --blue-dark: #244F9E;
+
+  --rose: #C23B6B;
+  --rose-light: #FBE3EC;
+  --rose-dark: #8F2650;
+
+  --moss: #5B8C5A;
+  --moss-light: #E8F1E4;
+  --moss-dark: #3E6440;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -157,6 +165,8 @@ section.block {
 .callout.terracotta { background: var(--terracotta-light); border-left-color: var(--terracotta); }
 .callout.plum { background: var(--plum-light); border-left-color: var(--plum); }
 .callout.blue { background: var(--blue-light); border-left-color: var(--blue); }
+.callout.rose { background: var(--rose-light); border-left-color: var(--rose); }
+.callout.moss { background: var(--moss-light); border-left-color: var(--moss); }
 
 /* Speech-bubble callout for key payoff moments — use sparingly, for the one or two
    biggest takeaways on a page, not every note. Pair with an accent-color class
@@ -168,6 +178,8 @@ section.block {
 .callout-bold.terracotta { background: var(--terracotta); }
 .callout-bold.plum { background: var(--plum); }
 .callout-bold.blue { background: var(--blue); }
+.callout-bold.rose { background: var(--rose); }
+.callout-bold.moss { background: var(--moss); }
 
 /* ---------- Special note (distinct from callout) ---------- */
 .special-note {
@@ -247,6 +259,8 @@ section.block {
 .unit-goals.terracotta .goals-label { color: var(--terracotta-dark); }
 .unit-goals.plum .goals-label { color: var(--plum-dark); }
 .unit-goals.blue .goals-label { color: var(--blue-dark); }
+.unit-goals.rose .goals-label { color: var(--rose-dark); }
+.unit-goals.moss .goals-label { color: var(--moss-dark); }
 .unit-goals ul { list-style: none; margin: 0; padding: 0; }
 .unit-goals li {
   color: var(--charcoal);
@@ -267,6 +281,8 @@ section.block {
 .unit-goals.terracotta li::before { color: var(--terracotta); }
 .unit-goals.plum li::before { color: var(--plum); }
 .unit-goals.blue li::before { color: var(--blue); }
+.unit-goals.rose li::before { color: var(--rose); }
+.unit-goals.moss li::before { color: var(--moss); }
 .unit-goals .why-block {
   border-left: 3px solid var(--teal-light);
   padding-left: 20px;
@@ -274,6 +290,8 @@ section.block {
 .unit-goals.terracotta .why-block { border-left-color: var(--terracotta-light); }
 .unit-goals.plum .why-block { border-left-color: var(--plum-light); }
 .unit-goals.blue .why-block { border-left-color: var(--blue-light); }
+.unit-goals.rose .why-block { border-left-color: var(--rose-light); }
+.unit-goals.moss .why-block { border-left-color: var(--moss-light); }
 .unit-goals .why-block p { color: var(--gray); font-size: 0.96rem; margin: 0; line-height: 1.55; }
 
 .unit-goals .key-question {
@@ -285,6 +303,8 @@ section.block {
 .unit-goals.terracotta .key-question { border-bottom-color: var(--terracotta-light); }
 .unit-goals.plum .key-question { border-bottom-color: var(--plum-light); }
 .unit-goals.blue .key-question { border-bottom-color: var(--blue-light); }
+.unit-goals.rose .key-question { border-bottom-color: var(--rose-light); }
+.unit-goals.moss .key-question { border-bottom-color: var(--moss-light); }
 .unit-goals .kq-label {
   font-family: 'Sora', sans-serif;
   font-weight: 700;
@@ -298,6 +318,8 @@ section.block {
 .unit-goals.terracotta .kq-label { color: var(--terracotta-dark); }
 .unit-goals.plum .kq-label { color: var(--plum-dark); }
 .unit-goals.blue .kq-label { color: var(--blue-dark); }
+.unit-goals.rose .kq-label { color: var(--rose-dark); }
+.unit-goals.moss .kq-label { color: var(--moss-dark); }
 .unit-goals .key-question p {
   font-family: 'Sora', sans-serif;
   font-weight: 700;
