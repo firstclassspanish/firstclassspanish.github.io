@@ -16,18 +16,61 @@
   .hero h1 { font-size: clamp(1.8rem, 5vw, 2.6rem); max-width: 640px; margin: 0 auto 16px; }
   .hero p { color: var(--gray); font-size: 1.1rem; max-width: 520px; margin: 0 auto; }
 
-  .home-wrap { max-width: 960px; margin: 0 auto; padding: 0 24px 60px; }
+  .home-wrap { max-width: 1020px; margin: 0 auto; padding: 0 24px 60px; }
 
   .section-label {
     text-align: center; font-family: 'Sora', sans-serif; font-weight: 700; color: var(--forest);
     font-size: 1.3rem; margin-bottom: 28px;
   }
 
-  .unit-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-  @media (max-width: 700px) { .unit-grid { grid-template-columns: 1fr; } }
+  /* ---------- Category system ---------- */
+  .category-block { margin-bottom: 56px; }
+  .category-block:last-child { margin-bottom: 0; }
+
+  .category-intro { display: flex; align-items: center; gap: 18px; margin-bottom: 26px; }
+  .category-stamp {
+    flex-shrink: 0; width: 74px; height: 74px; border-radius: 50%;
+    border: 2.5px dashed var(--jade); display: flex; flex-direction: column;
+    align-items: center; justify-content: center; transform: rotate(-7deg);
+    background: rgba(31,160,92,0.05);
+  }
+  .category-stamp .stamp-star { color: var(--gold); font-size: 1rem; line-height: 1; margin-bottom: 2px; }
+  .category-stamp .stamp-label {
+    font-family: 'Sora', sans-serif; font-weight: 700; color: var(--jade); font-size: 0.56rem;
+    text-transform: uppercase; letter-spacing: 0.03em; text-align: center; line-height: 1.15;
+  }
+  .category-heading h2 { font-size: 1.5rem; margin-bottom: 4px; }
+  .category-heading p { color: var(--gray); font-size: 0.92rem; margin: 0; }
+
+  .unit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  @media (max-width: 860px) { .unit-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .unit-grid { grid-template-columns: 1fr; } }
+
+  .coming-soon-block {
+    margin-top: 22px; border: 1.5px dashed #C9C6BC; border-radius: 16px;
+    padding: 22px 26px; text-align: center; background: rgba(255,255,255,0.5);
+  }
+  .coming-soon-block .cs-label {
+    font-family: 'Sora', sans-serif; font-weight: 700; color: var(--muted); font-size: 0.85rem;
+    text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 6px;
+  }
+  .coming-soon-block p { color: var(--muted); font-size: 0.88rem; margin: 0; }
+
+  /* ---------- Bottom CTA ---------- */
+  .home-cta {
+    background: linear-gradient(135deg, var(--jade) 0%, var(--forest) 100%);
+    text-align: center; padding: 52px 24px 58px; margin-top: 10px;
+  }
+  .home-cta h2 { color: var(--white); font-size: 1.7rem; margin-bottom: 10px; }
+  .home-cta p { color: rgba(255,255,255,0.88); font-size: 1rem; max-width: 460px; margin: 0 auto 24px; }
+  .home-cta a.board-btn {
+    display: inline-block; background: var(--gold); color: var(--forest);
+    font-family: 'Sora', sans-serif; font-weight: 700; padding: 13px 30px;
+    border-radius: 24px; font-size: 1rem;
+  }
 
   .unit-card {
-    border-radius: 18px; padding: 28px 26px; position: relative; overflow: hidden;
+    border-radius: 18px; padding: 24px 22px; position: relative; overflow: hidden;
     transition: transform 0.15s ease;
   }
   .unit-card.active:hover { transform: translateY(-3px); }
@@ -108,52 +151,75 @@
 <div class="ticket-divider"><span class="notch"></span></div>
 
 <div class="home-wrap">
-  <div class="section-label">Choose a unit</div>
-  <div class="unit-grid">
+  <div class="category-block">
+    <div class="category-intro">
+      <div class="category-stamp">
+        <div class="stamp-star">★</div>
+        <div class="stamp-label">Core<br>Skills</div>
+      </div>
+      <div class="category-heading">
+        <h2>Core Skills</h2>
+        <p>Units 1–6 · The foundation everything else builds on.</p>
+      </div>
+    </div>
 
-    <a class="unit-card unit1 active" href="unit1-intro-animation.html">
-      <div class="unit-num">Unit 1</div>
-      <h3>Pronunciation <span style="font-weight: 500; font-size: 0.85em; opacity: 0.75;">(La pronunciación)</span></h3>
-      <p>Spanish is phonetic — learn the sound rules once, and read almost anything out loud.</p>
-      <div class="status">● Ready to start</div>
-    </a>
+    <div class="unit-grid">
 
-    <a class="unit-card unit2 active" href="unit2-intro-animation.html">
-      <div class="unit-num">Unit 2</div>
-      <h3>Grammatical Person <span style="font-weight: 500; font-size: 0.85em; opacity: 0.75;">(La persona gramatical)</span></h3>
-      <p>Meet the Box of Six — the foundation for verbs, pronouns, and everything ahead.</p>
-      <div class="status">● Ready to start</div>
-    </a>
+      <a class="unit-card unit1 active" href="unit1-intro-animation.html">
+        <div class="unit-num">Unit 1</div>
+        <h3>Pronunciation <span style="font-weight: 500; font-size: 0.85em; opacity: 0.75;">(La pronunciación)</span></h3>
+        <p>Spanish is phonetic — learn the sound rules once, and read almost anything out loud.</p>
+        <div class="status">● Ready to start</div>
+      </a>
 
-    <a class="unit-card partsofspeech active" href="unit3-intro-animation.html">
-      <div class="unit-num">Unit 3</div>
-      <h3>Parts of Speech <span style="font-weight: 500; font-size: 0.85em; opacity: 0.75;">(Las partes de la oración)</span></h3>
-      <p>Every word has a job. Spot nouns, verbs, and more in real English and Spanish sentences.</p>
-      <div class="status">● Ready to start</div>
-    </a>
+      <a class="unit-card unit2 active" href="unit2-intro-animation.html">
+        <div class="unit-num">Unit 2</div>
+        <h3>Grammatical Person <span style="font-weight: 500; font-size: 0.85em; opacity: 0.75;">(La persona gramatical)</span></h3>
+        <p>Meet the Box of Six — the foundation for verbs, pronouns, and everything ahead.</p>
+        <div class="status">● Ready to start</div>
+      </a>
 
-    <a class="unit-card conjugation active" href="unit4-intro-animation.html">
-      <div class="unit-num">Unit 4</div>
-      <h3>Conjugation <span style="font-weight: 500; font-size: 0.85em; opacity: 0.75;">(La conjugación)</span></h3>
-      <p>Infinitives, verb families, and how person connects to verb endings.</p>
-      <div class="status">● Ready to start</div>
-    </a>
+      <a class="unit-card partsofspeech active" href="unit3-intro-animation.html">
+        <div class="unit-num">Unit 3</div>
+        <h3>Parts of Speech <span style="font-weight: 500; font-size: 0.85em; opacity: 0.75;">(Las partes de la oración)</span></h3>
+        <p>Every word has a job. Spot nouns, verbs, and more in real English and Spanish sentences.</p>
+        <div class="status">● Ready to start</div>
+      </a>
 
-    <a class="unit-card unit5 active" href="unit5-intro-animation.html">
-      <div class="unit-num">Unit 5</div>
-      <h3>Nouns <span style="font-weight: 500; font-size: 0.85em; opacity: 0.75;">(Los sustantivos)</span></h3>
-      <p>Every noun has a gender and number — learn to spot both and make nouns plural.</p>
-      <div class="status">● Ready to start</div>
-    </a>
+      <a class="unit-card conjugation active" href="unit4-intro-animation.html">
+        <div class="unit-num">Unit 4</div>
+        <h3>Conjugation <span style="font-weight: 500; font-size: 0.85em; opacity: 0.75;">(La conjugación)</span></h3>
+        <p>Infinitives, verb families, and how person connects to verb endings.</p>
+        <div class="status">● Ready to start</div>
+      </a>
 
-    <a class="unit-card unit6 active" href="unit6-intro-animation.html">
-      <div class="unit-num">Unit 6</div>
-      <h3>Concordancia <span style="font-weight: 500; font-size: 0.85em; opacity: 0.75;">(agreement)</span></h3>
-      <p>Articles and adjectives have to match the noun — gender and number, every time.</p>
-      <div class="status">● Ready to start</div>
-    </a>
+      <a class="unit-card unit5 active" href="unit5-intro-animation.html">
+        <div class="unit-num">Unit 5</div>
+        <h3>Nouns <span style="font-weight: 500; font-size: 0.85em; opacity: 0.75;">(Los sustantivos)</span></h3>
+        <p>Every noun has a gender and number — learn to spot both and make nouns plural.</p>
+        <div class="status">● Ready to start</div>
+      </a>
 
+      <a class="unit-card unit6 active" href="unit6-intro-animation.html">
+        <div class="unit-num">Unit 6</div>
+        <h3>Concordancia <span style="font-weight: 500; font-size: 0.85em; opacity: 0.75;">(agreement)</span></h3>
+        <p>Articles and adjectives have to match the noun — gender and number, every time.</p>
+        <div class="status">● Ready to start</div>
+      </a>
+
+    </div>
+
+    <div class="coming-soon-block">
+      <div class="cs-label">More categories coming soon</div>
+      <p>New units and topics are on the way — this page will grow with them.</p>
+    </div>
   </div>
+</div>
+
+<div class="home-cta">
+  <h2>Ready to board? ✈️</h2>
+  <p>Six units, one clear path. Start with the basics and build your way up to real fluency.</p>
+  <a class="board-btn" href="unit1-intro-animation.html">Start with Unit 1 →</a>
 </div>
 
 <footer>First Class Spanish · Your Ticket to Spanish Fluency</footer>
