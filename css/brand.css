@@ -129,13 +129,13 @@ footer {
 section.block {
   background: var(--white);
   border-radius: 24px;
-  padding: 44px 44px;
+  padding: 48px 46px;
   box-shadow: 0 1px 3px rgba(14,53,34,0.06);
   margin-bottom: 8px;
 }
 .block h2 {
   font-size: 1.6rem;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -145,8 +145,22 @@ section.block {
   font-size: 1.4rem; display: inline-flex; align-items: center; justify-content: center;
   width: 42px; height: 42px; border-radius: 14px; flex-shrink: 0;
 }
-.block p { color: var(--gray); margin-bottom: 14px; font-size: 1.02rem; }
+.block p { color: var(--gray); margin-bottom: 16px; font-size: 1.02rem; line-height: 1.65; }
 .block p:last-child { margin-bottom: 0; }
+
+/* ---------- Softer tables: any *-wrap wrapper containing a table gets
+   rounded corners + a light shadow instead of hard rectangular edges,
+   without needing to touch each page's own table markup. ---------- */
+.article-wrap, .conj-wrap, .plural-wrap {
+  border-radius: 14px; overflow: hidden;
+  box-shadow: 0 1px 4px rgba(14,53,34,0.07);
+}
+.article-wrap table, .conj-wrap table, .plural-wrap table { border-radius: 0; }
+
+/* ---------- Small delight: practice cards lift slightly on hover,
+   matching the same playful micro-interaction already used on unit
+   and quiz-level cards elsewhere on the site. ---------- */
+.practice-card:hover { transform: translateY(-2px) !important; box-shadow: 0 4px 12px rgba(14,53,34,0.08) !important; }
 
 @media (max-width: 640px) {
   section.block { padding: 30px 26px; }
