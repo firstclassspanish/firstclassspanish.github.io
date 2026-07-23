@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 5 Nouns Practice | First Class Spanish</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Sora:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/brand.css?v=5">
+<style>
+  .practice-hero {
+    background: linear-gradient(135deg, var(--rose) 0%, var(--rose-dark) 100%);
+    color: var(--white); padding: 40px 24px 34px; text-align: center;
+  }
+  .practice-hero h1 { color: var(--white); font-size: 1.7rem; margin-bottom: 8px; }
+  .practice-hero p { max-width: 520px; margin: 0 auto; color: rgba(255,255,255,0.92); font-size: 0.98rem; }
+
+  .practice-wrap { max-width: 780px; margin: 0 auto; padding: 30px 24px 60px; }
+
+  .status-bar {
+    display: flex; align-items: center; justify-content: space-between;
+    background: var(--white); border-radius: 12px; padding: 14px 20px;
+    box-shadow: 0 1px 3px rgba(14,53,34,0.06); margin-bottom: 20px; flex-wrap: wrap; gap: 10px;
+  }
+  .status-bar .score { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--rose-dark); }
+  .status-bar .reset-btn {
+    background: var(--rose-light); color: var(--rose-dark); border: none;
+    padding: 8px 16px; border-radius: 18px; font-weight: 600; font-size: 0.85rem; cursor: pointer;
+  }
+
+  .box-container { background: var(--white); border-radius: 16px; padding: 24px; box-shadow: 0 1px 3px rgba(14,53,34,0.06); margin-bottom: 20px; }
+  .gender-zones { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .drop-zone {
+    background: var(--rose-light); border: 2px dashed var(--rose); border-radius: 12px;
+    min-height: 220px; padding: 14px; display: flex; flex-direction: column; align-items: center;
+    gap: 8px; transition: background 0.15s ease, border-color 0.15s ease;
+  }
+  .drop-zone .zone-label { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--rose-dark); font-size: 1.1rem; }
+  .drop-zone .zone-sub { color: var(--muted); font-size: 0.75rem; margin-bottom: 6px; }
+  .drop-zone.hover-target { background: #F5C9DA; border-color: var(--rose-dark); }
+  .drop-zone .placed-cards { display: flex; flex-wrap: wrap; gap: 5px; justify-content: center; }
+
+  .placed-chip { background: var(--jade); color: var(--white); font-size: 0.75rem; font-weight: 600; padding: 4px 10px; border-radius: 10px; }
+
+  .pool-title { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--forest); margin-bottom: 12px; text-align: center; }
+  .card-pool {
+    display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;
+    background: var(--white); border-radius: 16px; padding: 20px;
+    box-shadow: 0 1px 3px rgba(14,53,34,0.06); min-height: 70px;
+  }
+
+  .noun-card {
+    background: var(--gold-light); border: 1.5px solid var(--gold); border-radius: 12px;
+    padding: 10px 16px; font-family: 'Sora', sans-serif; font-weight: 700; color: var(--forest); font-size: 0.92rem;
+    cursor: grab; user-select: none; transition: box-shadow 0.15s ease, transform 0.1s ease, opacity 0.15s ease;
+  }
+  .noun-card:hover { transform: translateY(-2px); }
+  .noun-card.dragging { opacity: 0.4; }
+  .noun-card.selected { box-shadow: 0 0 0 3px var(--rose); transform: translateY(-2px); }
+  .noun-card.placed { display: none; }
+  .noun-card.shake { animation: shake 0.4s ease; }
+  @keyframes shake { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
+
+  .complete-banner {
+    display: none; background: var(--gold-light); border: 1.5px solid var(--gold);
+    border-radius: 14px; padding: 24px; text-align: center; margin-top: 20px;
+  }
+  .complete-banner.show { display: block; }
+  .complete-banner .big { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1.3rem; color: var(--forest); margin-bottom: 6px; }
+  .complete-banner a {
+    display: inline-block; margin-top: 12px; background: var(--rose); color: var(--white);
+    font-weight: 600; padding: 10px 24px; border-radius: 22px; font-size: 0.9rem;
+  }
+
+  .instructions { text-align: center; color: var(--muted); font-size: 0.85rem; margin-bottom: 16px; }
+
+  @media (max-width: 560px) {
+    .gender-zones { grid-template-columns: 1fr; }
+    .drop-zone { min-height: 140px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="brand" href="index.html"><span class="star">★</span> First Class Spanish</a>
+  <div class="unit-pill">Unit 5 · Nouns</div>
+</header>
+
+<div class="practice-hero">
+  <h1>Sort nouns into el or la</h1>
+  <p>Sixteen nouns, two boxes. Some follow the -o/-a pattern, some are the exceptions you just met — trust what you learned, not just the ending.</p>
+</div>
+
+<div class="practice-wrap">
+
+  <div class="status-bar">
+    <div class="score">Placed correctly: <span id="scoreCount">0</span> / <span id="totalCount">0</span></div>
+    <button class="reset-btn" id="resetBtn">Reset</button>
+  </div>
+
+  <p class="instructions">Drag or tap a noun to place it in the right box.</p>
+
+  <div class="box-container">
+    <div class="gender-zones" id="zoneGrid">
+      <div class="drop-zone" data-zone="el">
+        <div class="zone-label">el</div>
+        <div class="zone-sub">masculine</div>
+        <div class="placed-cards"></div>
+      </div>
+      <div class="drop-zone" data-zone="la">
+        <div class="zone-label">la</div>
+        <div class="zone-sub">feminine</div>
+        <div class="placed-cards"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pool-title">Drag or tap a noun to place it:</div>
+  <div class="card-pool" id="cardPool"></div>
+
+  <div class="complete-banner" id="completeBanner">
+    <div class="big">Every noun found its box! 🎉</div>
+    <p>Ready for the leveled quizzes?</p>
+    <a href="unit5-quiz-foundation.html">Start Practicing →</a>
+  </div>
+
+</div>
+
+<footer>First Class Spanish · Your Ticket to Spanish Fluency</footer>
+
+<script>
+const nouns = [
+  { id: 'n1', text: 'libro', zone: 'el' },
+  { id: 'n2', text: 'gato', zone: 'el' },
+  { id: 'n3', text: 'carro', zone: 'el' },
+  { id: 'n4', text: 'problema', zone: 'el' },
+  { id: 'n5', text: 'mapa', zone: 'el' },
+  { id: 'n6', text: 'examen', zone: 'el' },
+  { id: 'n7', text: 'puente', zone: 'el' },
+  { id: 'n8', text: 'día', zone: 'el' },
+  { id: 'n9', text: 'mesa', zone: 'la' },
+  { id: 'n10', text: 'casa', zone: 'la' },
+  { id: 'n11', text: 'ventana', zone: 'la' },
+  { id: 'n12', text: 'mano', zone: 'la' },
+  { id: 'n13', text: 'ciudad', zone: 'la' },
+  { id: 'n14', text: 'clase', zone: 'la' },
+  { id: 'n15', text: 'fuente', zone: 'la' },
+  { id: 'n16', text: 'imagen', zone: 'la' }
+];
+
+let placedCount = 0;
+let selectedCard = null;
+
+const pool = document.getElementById('cardPool');
+const scoreCount = document.getElementById('scoreCount');
+const totalCount = document.getElementById('totalCount');
+const completeBanner = document.getElementById('completeBanner');
+totalCount.textContent = nouns.length;
+
+function shuffle(arr) {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function buildCards() {
+  pool.innerHTML = '';
+  placedCount = 0;
+  scoreCount.textContent = '0';
+  completeBanner.classList.remove('show');
+  document.querySelectorAll('.placed-cards').forEach(p => p.innerHTML = '');
+
+  shuffle(nouns).forEach(n => {
+    const card = document.createElement('div');
+    card.className = 'noun-card';
+    card.textContent = n.text;
+    card.dataset.id = n.id;
+    card.dataset.zone = n.zone;
+    attachInteraction(card);
+    pool.appendChild(card);
+  });
+}
+
+function attachInteraction(card) {
+  card.draggable = true;
+
+  card.addEventListener('dragstart', (e) => {
+    e.dataTransfer.setData('text/plain', card.dataset.id);
+    e.dataTransfer.effectAllowed = 'move';
+    card.classList.add('dragging');
+    clearSelection();
+  });
+
+  card.addEventListener('dragend', () => {
+    card.classList.remove('dragging');
+    clearAllHighlights();
+  });
+
+  card.addEventListener('click', () => {
+    toggleSelect(card);
+  });
+}
+
+function toggleSelect(card) {
+  if (selectedCard === card) {
+    clearSelection();
+    return;
+  }
+  clearSelection();
+  selectedCard = card;
+  card.classList.add('selected');
+}
+
+function clearSelection() {
+  if (selectedCard) selectedCard.classList.remove('selected');
+  selectedCard = null;
+}
+
+function clearAllHighlights() {
+  document.querySelectorAll('.drop-zone').forEach(z => z.classList.remove('hover-target'));
+}
+
+document.querySelectorAll('.drop-zone').forEach(zone => {
+  zone.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    zone.classList.add('hover-target');
+  });
+
+  zone.addEventListener('dragleave', () => {
+    zone.classList.remove('hover-target');
+  });
+
+  zone.addEventListener('drop', (e) => {
+    e.preventDefault();
+    zone.classList.remove('hover-target');
+    const cardId = e.dataTransfer.getData('text/plain');
+    const card = document.querySelector(`.noun-card[data-id="${cardId}"]`);
+    if (card) tryPlace(card, zone);
+  });
+
+  zone.addEventListener('click', () => {
+    if (selectedCard) {
+      tryPlace(selectedCard, zone);
+      clearSelection();
+    }
+  });
+});
+
+function tryPlace(card, zoneEl) {
+  if (zoneEl.dataset.zone === card.dataset.zone) {
+    const chip = document.createElement('div');
+    chip.className = 'placed-chip';
+    chip.textContent = card.textContent;
+    zoneEl.querySelector('.placed-cards').appendChild(chip);
+    card.classList.add('placed');
+    pool.appendChild(card);
+    placedCount++;
+    scoreCount.textContent = placedCount;
+    if (placedCount === nouns.length) {
+      completeBanner.classList.add('show');
+    }
+  } else {
+    pool.appendChild(card);
+    shakeCard(card);
+  }
+}
+
+function shakeCard(card) {
+  card.classList.add('shake');
+  setTimeout(() => card.classList.remove('shake'), 400);
+}
+
+document.getElementById('resetBtn').addEventListener('click', buildCards);
+
+buildCards();
+</script>
+
+</body>
+</html>

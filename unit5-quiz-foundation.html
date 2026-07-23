@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 5 Foundation Quiz | First Class Spanish</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Sora:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/brand.css?v=5">
+<link rel="stylesheet" href="css/quiz.css?v=2">
+</head>
+<body class="unit-rose">
+
+<header>
+  <a class="brand" href="index.html"><span class="star">★</span> First Class Spanish</a>
+  <div class="unit-pill">Unit 5 · Nouns</div>
+</header>
+
+<div class="quiz-hero">
+  <div class="level-badge">🌱</div>
+  <h1>Foundation Quiz</h1>
+  <p>Core concepts, no prior knowledge needed. Take your time — every question includes an explanation.</p>
+</div>
+
+<div class="quiz-wrap">
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <div id="quizContainer"></div>
+  <div class="results" id="results">
+    <div class="score" id="scoreText"></div>
+    <div class="msg" id="scoreMsg"></div>
+    <div class="msg-es" id="scoreMsgEs"></div>
+    <div class="nav-links">
+      <button class="retry-btn" onclick="location.reload()">Try Again</button>
+      <a class="btn secondary" href="unit5-nouns-lesson.html">Back to Lesson</a>
+      <a class="btn" href="unit5-quiz-practice.html">Next: Practice 💪</a>
+    </div>
+  </div>
+</div>
+
+<footer>First Class Spanish · Your Ticket to Spanish Fluency</footer>
+
+<script src="js/quiz-engine.js?v=1"></script>
+<script>
+const questions = [
+  { q: "What does grammatical gender mean for a Spanish noun?", options: ["Whether it's singular or plural", "Every noun is either masculine or feminine", "Whether it's a person or an object", "How the noun is pronounced"], correct: 1, explain: "Gender is just a category every Spanish noun belongs to — not a statement about the object itself." },
+  { q: "El libro (the book) is masculine. Which ending gave that away?", options: ["-o", "-a", "-e", "-z"], correct: 0, explain: "Most nouns ending in -o are masculine." },
+  { q: "La mesa (the table) is feminine. Which ending gave that away?", options: ["-o", "-a", "-e", "consonant"], correct: 1, explain: "Most nouns ending in -a are feminine." },
+  { q: "How do you make \"libro\" plural?", options: ["libros", "libroes", "libres", "librosa"], correct: 0, explain: "Nouns ending in a vowel just add -s: libro → libros." },
+  { q: "How do you make \"papel\" plural?", options: ["papels", "papeles", "papeces", "papel"], correct: 1, explain: "Nouns ending in a consonant add -es: papel → papeles." },
+  { q: "How do you make \"lápiz\" plural?", options: ["lápizes", "lápices", "lápizs", "lápiz"], correct: 1, explain: "Nouns ending in -z change the z to c, then add -es: lápiz → lápices." },
+  { q: "Is \"el problema\" masculine or feminine?", options: ["Masculine", "Feminine"], correct: 0, explain: "El problema is an exception — it ends in -a but is actually masculine." },
+  { q: "What's a safe way to remember a noun's gender?", options: ["Guess based on what the object looks like", "Learn the noun together with its article (el/la)", "All nouns are masculine by default", "Gender doesn't matter in Spanish"], correct: 1, explain: "Learning el libro or la mesa as one unit builds in the gender from the start." }
+];
+
+const resultsMessages = {
+  perfect: "Perfect score! You've got the basics of noun gender down. 🌟",
+  good: "Solid work — you're ready to move on to Practice.",
+  low: "Good start. Revisit the lesson, then give it another shot."
+};
+
+initQuiz(questions, resultsMessages);
+</script>
+
+</body>
+</html>
