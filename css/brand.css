@@ -73,10 +73,9 @@ header {
   justify-content: space-between;
 }
 .site-logo { display: block; line-height: 0; }
-.site-logo svg { height: 52px; width: auto; display: block; }
+.site-logo svg { height: 80px; width: auto; display: block; }
 @media (max-width: 640px) {
-  .site-logo svg { height: 40px; }
-  .site-logo #tagline { display: none; }
+  .site-logo svg { height: 56px; }
 }
 .unit-pill {
   background: rgba(255,255,255,0.15);
@@ -85,8 +84,6 @@ header {
   font-weight: 600;
   padding: 6px 14px;
   border-radius: 20px;
-  display: inline-block;
-  transform: rotate(-2deg);
 }
 
 /* ---------- Footer ---------- */
@@ -139,11 +136,7 @@ section.block {
 .block h2 .emoji-accent {
   font-size: 1.4rem; display: inline-flex; align-items: center; justify-content: center;
   width: 42px; height: 42px; border-radius: 14px; flex-shrink: 0;
-  transform: rotate(-6deg);
-  box-shadow: 0 3px 8px rgba(14,53,34,0.10);
-  transition: transform 0.2s ease;
 }
-.block h2:hover .emoji-accent { transform: rotate(6deg) scale(1.08); }
 .block p { color: var(--gray); margin-bottom: 20px; font-size: 1.02rem; line-height: 1.7; }
 .block p:last-child { margin-bottom: 0; }
 
@@ -234,12 +227,11 @@ section.block {
   border-radius: 18px;
   padding: 22px 20px;
   text-align: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.15s ease;
   display: block;
 }
-.level-card:hover { transform: translateY(-4px) rotate(-1deg); box-shadow: 0 8px 20px rgba(14,53,34,0.12); }
-.level-card .emoji { font-size: 1.8rem; margin-bottom: 6px; display: inline-block; transition: transform 0.2s ease; }
-.level-card:hover .emoji { transform: scale(1.15) rotate(-8deg); }
+.level-card:hover { transform: translateY(-3px); }
+.level-card .emoji { font-size: 1.8rem; margin-bottom: 6px; }
 .level-card .name { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--forest); font-size: 1.05rem; margin-bottom: 4px; }
 .level-card .desc { color: var(--gray); font-size: 0.85rem; margin-bottom: 14px; }
 .level-card .btn { display: inline-block; background: var(--gold); color: var(--white); font-weight: 600; font-size: 0.88rem; padding: 8px 18px; border-radius: 20px; }
@@ -362,5 +354,4 @@ section.block {
 .end-btn.primary { background: var(--gold); color: var(--forest); }
 .end-btn.secondary { background: rgba(255,255,255,0.18); color: var(--white); }
 
-/* ---------- Stamp-style tilt for the "Go Further" badge, used across every unit ---------- */
-.gf-badge { display: inline-block; transform: rotate(-3deg); }
+

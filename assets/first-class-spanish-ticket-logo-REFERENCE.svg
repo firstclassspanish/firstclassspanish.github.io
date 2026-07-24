@@ -27,7 +27,7 @@
   <stop offset="0" stop-color="#2E8B5E" stop-opacity="0.10"/>
   <stop offset="1" stop-color="#2E8B5E" stop-opacity="0.03"/>
 </linearGradient>
-<linearGradient id="foil" x1="0" y1="0" x2="1" y2="1">
+<linearGradient id="ticketFoil" x1="0" y1="0" x2="1" y2="1">
   <stop offset="0"    stop-color="#9C7620"/>
   <stop offset="0.28" stop-color="#E3C46B"/>
   <stop offset="0.52" stop-color="#B8912F"/>
@@ -116,8 +116,8 @@
 <ellipse cx="790" cy="220" rx="352" ry="86" fill="none" stroke="#1C5F3F" stroke-opacity="0.30" stroke-width="0.5" transform="rotate(165.0 790 220)"/>
 <ellipse cx="790" cy="220" rx="352" ry="86" fill="none" stroke="#1C5F3F" stroke-opacity="0.30" stroke-width="0.5" transform="rotate(172.5 790 220)"/>
 </g>
-<path d="M 71,53 L 324.4,53 M 363.6,53 L 1209,53 A 18,18 0 0 1 1227,71 L 1227,369 A 18,18 0 0 1 1209,387 L 363.6,387 M 324.4,387 L 71,387 A 18,18 0 0 1 53,369 L 53,71 A 18,18 0 0 1 71,53" fill="none" stroke="url(#foil)" stroke-width="3.2" stroke-linecap="round"/>
-<path d="M 78,60 L 323.0,60 M 365.0,60 L 1202,60 A 18,18 0 0 1 1220,78 L 1220,362 A 18,18 0 0 1 1202,380 L 365.0,380 M 323.0,380 L 78,380 A 18,18 0 0 1 60,362 L 60,78 A 18,18 0 0 1 78,60" fill="none" stroke="url(#foil)" stroke-width="1" stroke-opacity="0.85"/>
+<path d="M 71,53 L 324.4,53 M 363.6,53 L 1209,53 A 18,18 0 0 1 1227,71 L 1227,369 A 18,18 0 0 1 1209,387 L 363.6,387 M 324.4,387 L 71,387 A 18,18 0 0 1 53,369 L 53,71 A 18,18 0 0 1 71,53" fill="none" stroke="url(#ticketFoil)" stroke-width="3.2" stroke-linecap="round"/>
+<path d="M 78,60 L 323.0,60 M 365.0,60 L 1202,60 A 18,18 0 0 1 1220,78 L 1220,362 A 18,18 0 0 1 1202,380 L 365.0,380 M 323.0,380 L 78,380 A 18,18 0 0 1 60,362 L 60,78 A 18,18 0 0 1 78,60" fill="none" stroke="url(#ticketFoil)" stroke-width="1" stroke-opacity="0.85"/>
 <path d="M 86,68 L 321.4,68 M 366.6,68 L 1194,68 A 18,18 0 0 1 1212,86 L 1212,354 A 18,18 0 0 1 1194,372 L 366.6,372 M 321.4,372 L 86,372 A 18,18 0 0 1 68,354 L 68,86 A 18,18 0 0 1 86,68" fill="none" stroke="#1C5F3F" stroke-width="0.7" stroke-opacity="0.35"/>
 <path d="M 58,40 L 327,40 A 17,17 0 0 0 361,40 L 1222,40 A 18,18 0 0 1 1240,58 L 1240,382 A 18,18 0 0 1 1222,400 L 361,400 A 17,17 0 0 0 327,400 L 58,400 A 18,18 0 0 1 40,382 L 40,58 A 18,18 0 0 1 58,40 Z" fill="none" stroke="#E9DFC4" stroke-width="2"/>
 <path d="M 58,40 L 327,40 A 17,17 0 0 0 361,40 L 1222,40 A 18,18 0 0 1 1240,58 L 1240,382 A 18,18 0 0 1 1222,400 L 361,400 A 17,17 0 0 0 327,400 L 58,400 A 18,18 0 0 1 40,382 L 40,58 A 18,18 0 0 1 58,40 Z" fill="none" stroke="#1C5F3F" stroke-width="0.8" stroke-opacity="0.30"/>
@@ -157,12 +157,12 @@
 <rect x="330" y="40" width="14" height="360" fill="#1C5F3F" opacity="0.05"/>
 <rect x="344" y="40" width="14" height="360" fill="#FFFFFF" opacity="0.35"/>
 <g>
-<circle cx="192" cy="196" r="95" fill="none" stroke="url(#foil)" stroke-width="1"/>
-<circle cx="192" cy="196" r="70" fill="none" stroke="url(#foil)" stroke-width="1"/>
+<circle cx="192" cy="196" r="95" fill="none" stroke="url(#ticketFoil)" stroke-width="1"/>
+<circle cx="192" cy="196" r="70" fill="none" stroke="url(#ticketFoil)" stroke-width="1"/>
 <text class="ut" font-size="15" letter-spacing="3.4" fill="#1C5F3F" fill-opacity="0.85"><textPath href="#sealRing" xlink:href="#sealRing" startOffset="50%" text-anchor="middle">PRIMERA CLASE &#183; FIRST CLASS &#183; ADMIT ONE &#183;</textPath></text>
 <path d="M 192,273 L 198,279 L 192,285 L 186,279 Z" fill="#B8912F"/>
 <circle cx="192" cy="198" r="53" fill="#0B3021" opacity="0.18"/>
-<circle cx="192" cy="196" r="53" fill="url(#foil)"/>
+<circle cx="192" cy="196" r="53" fill="url(#ticketFoil)"/>
 <circle cx="192" cy="196" r="48" fill="#1C5F3F"/>
 <circle cx="192" cy="196" r="48" fill="none" stroke="#0B3021" stroke-opacity="0.35" stroke-width="1"/>
 <circle cx="192" cy="196" r="40" fill="none" stroke="#E3C46B" stroke-opacity="0.55" stroke-width="0.9"/>
@@ -172,8 +172,8 @@
 <text class="ut" x="192" y="360" text-anchor="middle" font-size="16" letter-spacing="3.5" fill="#B8912F">SERIE A &#183; N&#186; 0001</text>
 <text class="ut" x="786" y="132" text-anchor="middle" font-size="21" letter-spacing="8.5" fill="#1C5F3F" fill-opacity="0.85">ADMIT ONE &#183; PASE GENERAL</text>
 <text class="wm" x="786" y="245" text-anchor="middle" font-size="76" textLength="726" lengthAdjust="spacing" fill="#0F3B27" filter="url(#press)">First Class Spanish</text>
-<line x1="486" y1="280" x2="764" y2="280" stroke="url(#foil)" stroke-width="1.4"/>
-<line x1="808" y1="280" x2="1086" y2="280" stroke="url(#foil)" stroke-width="1.4"/>
+<line x1="486" y1="280" x2="764" y2="280" stroke="url(#ticketFoil)" stroke-width="1.4"/>
+<line x1="808" y1="280" x2="1086" y2="280" stroke="url(#ticketFoil)" stroke-width="1.4"/>
 <path d="M 786,272 L 794,280 L 786,288 L 778,280 Z" fill="#B8912F"/>
 <text class="ut" x="786" y="322" text-anchor="middle" font-size="20" letter-spacing="7" fill="#1C5F3F" fill-opacity="0.9">YOUR TICKET TO SPANISH FLUENCY</text>
 <text class="ut" x="0" y="0" font-size="15" letter-spacing="4" fill="#1C5F3F" fill-opacity="0.55" text-anchor="middle" transform="translate(1198,220.0) rotate(90)">FCS-2026-0001</text>

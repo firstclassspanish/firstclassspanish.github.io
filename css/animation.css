@@ -137,7 +137,13 @@ body.animation-page {
   gap: 6px;
 }
 .ctrl-btn:hover { background: rgba(255,255,255,0.3); }
-.ctrl-btn .medallion-icon { width: 18px; height: 18px; flex-shrink: 0; display: block; }
+.ctrl-btn .medallion-icon {
+  width: 18px; height: 18px; flex-shrink: 0; display: block;
+  border-radius: 50%;
+  background: #F6F0DF;
+  padding: 2px;
+  box-sizing: content-box;
+}
 
 .caption-note {
   max-width: 640px;
