@@ -132,8 +132,12 @@ body.animation-page {
   font-weight: 600;
   cursor: pointer;
   font-family: 'Plus Jakarta Sans', sans-serif;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 .ctrl-btn:hover { background: rgba(255,255,255,0.3); }
+.ctrl-btn .medallion-icon { width: 18px; height: 18px; flex-shrink: 0; display: block; }
 
 .caption-note {
   max-width: 640px;
