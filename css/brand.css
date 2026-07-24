@@ -73,9 +73,9 @@ header {
   justify-content: space-between;
 }
 .site-logo { display: block; line-height: 0; }
-.site-logo svg { height: 80px; width: auto; display: block; }
+.site-logo svg { height: 108px; width: auto; display: block; }
 @media (max-width: 640px) {
-  .site-logo svg { height: 56px; }
+  .site-logo svg { height: 72px; }
 }
 .unit-pill {
   background: rgba(255,255,255,0.15);
