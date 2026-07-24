@@ -73,38 +73,18 @@ header {
   justify-content: space-between;
 }
 .brand {
-  position: relative;
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  color: var(--forest);
+  gap: 10px;
+  color: var(--white);
   font-family: 'Sora', sans-serif;
-  font-weight: 800;
-  font-size: 1.15rem;
-  letter-spacing: 0.005em;
+  font-weight: 700;
+  font-size: 1.1rem;
   text-decoration: none;
-  background: var(--gold-light);
-  border: 1.5px solid var(--gold);
-  border-radius: 15px;
-  padding: 9px 22px 9px 12px;
-  transform: rotate(-2deg);
-  box-shadow: 0 4px 14px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.6);
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition: opacity 0.15s ease;
 }
-.brand:hover { transform: rotate(-2deg) translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.6); }
-.brand::before, .brand::after {
-  content: ""; position: absolute; top: 50%; transform: translateY(-50%);
-  width: 17px; height: 17px; border-radius: 50%; background: var(--jade);
-  box-shadow: inset 0 0 0 2px rgba(255,255,255,0.45);
-}
-.brand::before { left: -8.5px; }
-.brand::after { right: -8.5px; }
-.brand .star {
-  display: inline-flex; align-items: center; justify-content: center;
-  width: 29px; height: 29px; border-radius: 50%;
-  background: var(--jade); color: var(--gold-light);
-  font-size: 0.95rem; margin-right: 13px; flex-shrink: 0;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.15), inset 0 0 0 2px rgba(255,255,255,0.25);
-}
+.brand:hover { opacity: 0.85; }
+.brand .star { color: var(--gold); }
 .unit-pill {
   background: rgba(255,255,255,0.15);
   color: var(--white);
@@ -112,6 +92,8 @@ header {
   font-weight: 600;
   padding: 6px 14px;
   border-radius: 20px;
+  display: inline-block;
+  transform: rotate(-2deg);
 }
 
 /* ---------- Footer ---------- */
@@ -164,7 +146,11 @@ section.block {
 .block h2 .emoji-accent {
   font-size: 1.4rem; display: inline-flex; align-items: center; justify-content: center;
   width: 42px; height: 42px; border-radius: 14px; flex-shrink: 0;
+  transform: rotate(-6deg);
+  box-shadow: 0 3px 8px rgba(14,53,34,0.10);
+  transition: transform 0.2s ease;
 }
+.block h2:hover .emoji-accent { transform: rotate(6deg) scale(1.08); }
 .block p { color: var(--gray); margin-bottom: 20px; font-size: 1.02rem; line-height: 1.7; }
 .block p:last-child { margin-bottom: 0; }
 
@@ -255,11 +241,12 @@ section.block {
   border-radius: 18px;
   padding: 22px 20px;
   text-align: center;
-  transition: transform 0.15s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   display: block;
 }
-.level-card:hover { transform: translateY(-3px); }
-.level-card .emoji { font-size: 1.8rem; margin-bottom: 6px; }
+.level-card:hover { transform: translateY(-4px) rotate(-1deg); box-shadow: 0 8px 20px rgba(14,53,34,0.12); }
+.level-card .emoji { font-size: 1.8rem; margin-bottom: 6px; display: inline-block; transition: transform 0.2s ease; }
+.level-card:hover .emoji { transform: scale(1.15) rotate(-8deg); }
 .level-card .name { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--forest); font-size: 1.05rem; margin-bottom: 4px; }
 .level-card .desc { color: var(--gray); font-size: 0.85rem; margin-bottom: 14px; }
 .level-card .btn { display: inline-block; background: var(--gold); color: var(--white); font-weight: 600; font-size: 0.88rem; padding: 8px 18px; border-radius: 20px; }
@@ -381,3 +368,6 @@ section.block {
 }
 .end-btn.primary { background: var(--gold); color: var(--forest); }
 .end-btn.secondary { background: rgba(255,255,255,0.18); color: var(--white); }
+
+/* ---------- Stamp-style tilt for the "Go Further" badge, used across every unit ---------- */
+.gf-badge { display: inline-block; transform: rotate(-3deg); }

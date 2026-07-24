@@ -6,8 +6,8 @@
 <title>First Class Spanish | Your Ticket to Spanish Fluency</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Sora:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/brand.css?v=8">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Sora:wght@600;700;800&family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/brand.css?v=12">
 <style>
   .tagline { color: rgba(255,255,255,0.75); font-size: 0.82rem; }
 
@@ -124,9 +124,15 @@
   .phrase-chip {
     background: var(--gold-light); border: 1.5px solid var(--gold); border-radius: 20px;
     padding: 8px 18px; font-family: 'Sora', sans-serif; font-weight: 700; color: var(--forest);
-    font-size: 0.95rem; cursor: pointer; transition: transform 0.1s ease;
+    font-size: 0.95rem; cursor: pointer; transition: transform 0.15s ease;
   }
   .phrase-chip:hover { transform: translateY(-2px); }
+  .phrase-chip.revealed { animation: chipPop 0.35s ease; }
+  @keyframes chipPop {
+    0% { transform: scale(1); }
+    40% { transform: scale(1.12) rotate(-2deg); }
+    100% { transform: scale(1); }
+  }
   .phrase-chip .translation { display: none; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 500; font-size: 0.72rem; color: var(--muted); margin-top: 3px; }
   .phrase-chip.revealed .translation { display: block; }
   .greeting-note { color: var(--muted); font-size: 0.82rem; margin-top: 4px; }
