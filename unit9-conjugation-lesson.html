@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Unit 3: Parts of Speech | First Class Spanish</title>
+<title>Unit 9: Conjugation | First Class Spanish</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Sora:wght@600;700;800&family=Playfair+Display:wght@800&family=Barlow+Condensed:wght@600&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="assets/fcs-medallion.svg">
 <link rel="stylesheet" href="css/brand.css?v=17">
 <style>
-  .block h2 .tag { background: var(--plum); }
-  .block h2 .emoji-accent { background: var(--plum-light); }
+  .block h2 .tag { background: var(--blue); }
+  .block h2 .emoji-accent { background: var(--blue-light); }
 
   .unit-hero {
-    background: linear-gradient(135deg, var(--plum) 0%, var(--plum-dark) 100%);
+    background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%);
     color: var(--white); padding: 64px 24px 56px; text-align: center;
   }
   .unit-eyebrow {
@@ -25,42 +25,48 @@
   .unit-hero p { max-width: 560px; margin: 0 auto; font-size: 1.1rem; color: rgba(255,255,255,0.92); }
 
   .callout {
-    background: var(--plum-light); border-left: 4px solid var(--plum);
+    background: var(--blue-light); border-left: 4px solid var(--blue);
     padding: 16px 20px; border-radius: 8px; color: var(--forest); font-weight: 600; margin-top: 16px;
   }
 
-  /* Category cards */
-  .category-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 20px; }
-  @media (max-width: 700px) { .category-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 460px) { .category-grid { grid-template-columns: 1fr; } }
-  .category-card { background: var(--plum-light); border-radius: 12px; padding: 18px 16px; }
-  .category-card .name { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--plum-dark); font-size: 1.02rem; margin-bottom: 4px; }
-  .category-card .es-name { color: var(--muted); font-size: 0.78rem; font-weight: 500; margin-bottom: 8px; }
-  .category-card .desc { color: var(--gray); font-size: 0.95rem; margin-bottom: 8px; }
-  .category-card .ex { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--plum-dark); font-size: 0.88rem; }
-  .category-card .ex .es { color: var(--muted); font-weight: 500; }
-
-  /* Tagged sentence display */
-  .tagged-sentence { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin: 20px 0; }
-  .tagged-word { display: flex; flex-direction: column; align-items: center; }
-  .tagged-word .w { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--forest); font-size: 1.1rem; }
-  .tagged-word .t {
-    font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em;
-    padding: 3px 8px; border-radius: 8px; margin-top: 5px; background: var(--plum-light); color: var(--plum-dark);
+  /* Verb family cards */
+  /* Stem + ending color coding (reused throughout the lesson) */
+  .verb-stem { color: var(--blue-dark); }
+  .verb-ending { color: var(--gold); font-weight: 700; }
+  .stem-demo-row { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 20px; }
+  .stem-demo {
+    font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1.8rem;
+    background: var(--blue-light); padding: 14px 24px; border-radius: 12px;
   }
-  .sentence-label { text-align: center; color: var(--muted); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; margin-top: 24px; margin-bottom: 4px; }
-  .sentence-label:first-child { margin-top: 0; }
 
-  /* Try it practice cards */
+  .family-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 20px; }
+  @media (max-width: 600px) { .family-grid { grid-template-columns: 1fr; } }
+  .family-card { background: var(--blue-light); border-radius: 12px; padding: 18px 16px; text-align: center; }
+  .family-card .ending { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--blue-dark); font-size: 1.3rem; margin-bottom: 6px; }
+  .family-card .verbs { color: var(--gray); font-size: 0.95rem; }
+  .family-card .verbs strong { color: var(--forest); }
+
+  /* Conjugation table */
+  .conj-wrap { margin-top: 20px; overflow-x: auto; }
+  .conj-table { width: 100%; border-collapse: collapse; min-width: 520px; }
+  .conj-table th, .conj-table td { border: none; border-bottom: 1.5px solid #ECE9E1; padding: 16px 14px; text-align: center; font-size: 0.92rem; }
+  .conj-table tr:last-child td { border-bottom: none; }
+  .conj-table th { background: var(--blue-light); color: var(--blue-dark); font-family: 'Sora', sans-serif; font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.03em; }
+  .conj-table td.row-head { background: var(--blue-light); color: var(--blue-dark); font-family: 'Sora', sans-serif; font-weight: 700; text-align: left; }
+  .conj-table td.filled { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--forest); }
+  .conj-table td.empty { color: var(--muted); font-style: italic; font-size: 0.8rem; }
+  .conj-table tbody tr:nth-child(even) td:not(.row-head) { background: rgba(54,112,214,0.04); }
+
+  /* Practice cards */
   .practice-list { margin-top: 20px; display: flex; flex-direction: column; gap: 10px; }
   .practice-card { border: 1.5px solid #E4E2DC; border-radius: 12px; padding: 16px 20px; cursor: pointer; transition: border-color 0.15s ease; }
-  .practice-card:hover { border-color: var(--plum); }
+  .practice-card:hover { border-color: var(--blue); }
   .practice-card .subject { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--forest); font-size: 1.02rem; display: flex; align-items: center; justify-content: space-between; }
   .practice-card .hint { color: var(--muted); font-size: 0.8rem; font-weight: 500; }
   .practice-card .answer { display: none; margin-top: 10px; padding-top: 10px; border-top: 1px dashed #E4E2DC; color: var(--gray); font-size: 0.9rem; }
   .practice-card.revealed .answer { display: block; }
-  .practice-card .answer strong { color: var(--plum-dark); }
-  .practice-card .toggle-icon { color: var(--plum); font-weight: 700; font-size: 1.1rem; }
+  .practice-card .answer strong { color: var(--blue-dark); }
+  .practice-card .toggle-icon { color: var(--blue); font-weight: 700; font-size: 1.1rem; }
 
   /* Go Further */
   .go-further { background: var(--gold-light); border: 1.5px dashed var(--gold); border-radius: 16px; padding: 6px 40px; }
@@ -268,83 +274,125 @@
 </g>
 </svg>
   </a>
-  <div class="unit-pill">Unit 3 · Parts of Speech</div>
+  <div class="unit-pill">Unit 9 · Conjugation</div>
 </header>
 
 <div class="unit-hero">
-  <div class="unit-eyebrow">UNIT 3 · PARTS OF SPEECH</div>
-  <h1>Every word has a job.</h1>
-  <p>Nouns, verbs, adjectives, and more — the categories that tell you what each word is doing in a sentence. The same categories work in English and Spanish.</p>
+  <div class="unit-eyebrow">UNIT 9 · CONJUGATION</div>
+  <h1>One verb, six endings.</h1>
+  <div style="color: rgba(255,255,255,0.85); font-weight: 600; font-size: 1.1rem; margin-top: -8px; margin-bottom: 16px;">(though we'll only need five)</div>
+  <p>Every verb has multiple forms — conjugations — to express who's doing the action (person) at different times (tenses: present, past, future, and more). But every one of those forms traces back to the verb's base form, called the infinitive.</p>
 </div>
 
-<div class="unit-goals plum">
+<div class="unit-goals blue">
   <div class="key-question">
     <span class="kq-label">Key question</span>
-    <p>What's the difference between a noun, a verb, and all the other parts of speech?</p>
+    <p>What is conjugation, and how do you do it in Spanish?</p>
   </div>
   <div>
     <div class="goals-label">🎯 What you'll learn</div>
     <ul>
-      <li>What a "part of speech" is, and why every word has one</li>
-      <li>How to identify nouns, verbs, adjectives, and more in a sentence</li>
-      <li>The vocabulary you need to talk about grammar itself — in English and Spanish</li>
+      <li>What an infinitive is, and how to identify a verb's family (-ar, -er, -ir)</li>
+      <li>How to split a verb into its stem and ending</li>
+      <li>How to conjugate regular verbs to match any subject pronoun</li>
     </ul>
   </div>
   <div class="why-block">
     <div class="goals-label">💡 Why it matters</div>
-    <p>Every grammar rule from here on refers to parts of speech by name — mastering this vocabulary now makes every future unit easier to follow.</p>
+    <p>Conjugation is how Spanish shows who's doing the action — it's the one skill you'll use in literally every Spanish sentence you ever speak or write.</p>
   </div>
 </div>
 
 <div class="wrap">
 
   <section class="block" style="margin-top: 40px;">
-    <h2><span class="tag"></span>What is a "part of speech"? <span class="emoji-accent">🧩</span></h2>
-    <p>A part of speech (in Spanish, <strong>una parte de la oración</strong>) is just a category that tells you a word's job in a sentence — is it naming something, doing something, or describing something?</p>
-    <p>The classic count is eight: noun, pronoun, verb, adjective, adverb, preposition, conjunction, interjection. We're using nine, since articles work differently enough from regular adjectives to deserve their own category rather than being folded in. Either way, we're starting with the six that matter most for where you are right now — the rest are covered in <strong>Go Further</strong> below.</p>
-    <div class="callout">Every word you'll ever use fits one of these categories. Learn to spot them, and both Spanish and English grammar get a lot easier to talk about.</div>
+    <h2><span class="tag"></span>Two terms, one relationship <span class="emoji-accent">🔤</span></h2>
+    <p>Before anything else, two terms are worth locking in — this whole unit is really just about the relationship between them. Once it clicks, it's easy.</p>
+    <p><strong>Infinitive</strong> — a verb's name and base form. Not yet tied to any subject or time (tense) — just the plain "to ___" version (to speak, to eat, to live, etc.) you'd find in a dictionary entry. Hablar means "to speak." Comer means "to eat." Vivir means "to live."</p>
+    <p><strong>Conjugation</strong> — what happens when you take that name and change its ending to match who's doing the action. Hablo, hablas, habla — all conjugated forms of the same verb, hablar.</p>
+    <div class="callout">Every verb has a name (its infinitive), and conjugation is just adjusting that name's ending to fit the subject. That's the entire relationship.</div>
   </section>
 
   <div class="ticket-divider"><span class="notch"></span></div>
 
   <section class="block">
-    <h2><span class="tag"></span>Six core categories to start <span class="emoji-accent">🏷️</span></h2>
-    <div class="category-grid">
-      <div class="category-card">
-        <div class="name">Noun</div>
-        <div class="es-name">sustantivo <span style="opacity: 0.8;">(also called nombre)</span></div>
-        <div class="desc">Names a person, place, thing, or idea. Nombre literally means "name" — a handy way to remember what nouns do.</div>
-        <div class="ex">dog <span class="es">→ perro</span></div>
+    <h2><span class="tag"></span>You already do this in English <span class="emoji-accent">🌉</span></h2>
+    <p>Conjugation can sound like a uniquely Spanish thing. It isn't — English conjugates too, just far less dramatically. Take a regular verb like "to walk" alongside one of English's most irregular verbs, "to be":</p>
+    <div class="conj-wrap">
+      <table class="conj-table">
+        <tr>
+          <th></th>
+          <th>to walk <span style="font-weight: 500; opacity: 0.8;">(regular)</span></th>
+          <th>to be <span style="font-weight: 500; opacity: 0.8;">(irregular)</span></th>
+        </tr>
+        <tr>
+          <td class="row-head">I</td>
+          <td class="filled">walk</td>
+          <td class="filled">am</td>
+        </tr>
+        <tr>
+          <td class="row-head">you</td>
+          <td class="filled">walk</td>
+          <td class="filled">are</td>
+        </tr>
+        <tr>
+          <td class="row-head">he/she/it</td>
+          <td class="filled">walk<span class="verb-ending">s</span></td>
+          <td class="filled">is</td>
+        </tr>
+        <tr>
+          <td class="row-head">we</td>
+          <td class="filled">walk</td>
+          <td class="filled">are</td>
+        </tr>
+        <tr>
+          <td class="row-head">they</td>
+          <td class="filled">walk</td>
+          <td class="filled">are</td>
+        </tr>
+      </table>
+    </div>
+    <div class="callout">Notice the difference: "to walk" barely changes at all — just one letter, and only for he/she/it. "To be" is highly irregular — nearly every form looks like a completely different word (am, is, are). Spanish sits at the other end of this spectrum: even its regular verbs conjugate for <em>every</em> subject, not just one. That's exactly why this unit exists.</div>
+    <p style="margin-top: 16px;">One scope note before we go further: everything in this unit conjugates verbs into the <strong>present tense</strong> — action happening now. Spanish has other tenses too (past, future, and more), each with its own endings. Those come in future units; this one is your foundation.</p>
+  </section>
+
+  <div class="ticket-divider"><span class="notch"></span></div>
+
+  <section class="block">
+    <h2><span class="tag"></span>Every infinitive has two parts <span class="emoji-accent">✂️</span></h2>
+    <p>Break hablar apart and you get two pieces: the <strong>stem</strong> (la raíz) and the <strong>ending</strong> (la terminación). Throughout this lesson, the stem stays in blue and the ending stays in gold — so you can start training your eye to spot the split.</p>
+    <div class="stem-demo-row">
+      <div class="stem-demo"><span class="verb-stem">habl</span><span class="verb-ending">ar</span></div>
+      <div class="stem-demo"><span class="verb-stem">com</span><span class="verb-ending">er</span></div>
+      <div class="stem-demo"><span class="verb-stem">viv</span><span class="verb-ending">ir</span></div>
+    </div>
+    <div class="callout">
+      <strong>Here's the actual process, spelled out:</strong>
+      <ol style="margin: 10px 0 0 20px; padding: 0; font-weight: 500;">
+        <li style="margin-bottom: 6px;">Start with the infinitive — hablar.</li>
+        <li style="margin-bottom: 6px;">Drop the ending (-ar, -er, or -ir), leaving just the stem — habl-.</li>
+        <li>Add the ending that matches both the subject (which box in the Box of Six) and the tense. For yo in the present tense, that's -o: habl- + -o = hablo.</li>
+      </ol>
+    </div>
+  </section>
+
+  <div class="ticket-divider"><span class="notch"></span></div>
+
+  <section class="block">
+    <h2><span class="tag"></span>The three verb families <span class="emoji-accent">👪</span></h2>
+    <p>Every Spanish infinitive ends one of three ways. That ending tells you the family — and every verb in a family conjugates the same way.</p>
+    <div class="family-grid">
+      <div class="family-card">
+        <div class="ending">-AR</div>
+        <div class="verbs"><strong><span class="verb-stem">habl</span><span class="verb-ending">ar</span></strong> (to speak)<br><strong><span class="verb-stem">camin</span><span class="verb-ending">ar</span></strong> (to walk)<br><strong><span class="verb-stem">estudi</span><span class="verb-ending">ar</span></strong> (to study)</div>
       </div>
-      <div class="category-card">
-        <div class="name">Pronoun</div>
-        <div class="es-name">pronombre</div>
-        <div class="desc">Stands in for a noun. (Remember these from Unit&nbsp;2!)</div>
-        <div class="ex">she <span class="es">→ ella</span></div>
+      <div class="family-card">
+        <div class="ending">-ER</div>
+        <div class="verbs"><strong><span class="verb-stem">com</span><span class="verb-ending">er</span></strong> (to eat)<br><strong><span class="verb-stem">beb</span><span class="verb-ending">er</span></strong> (to drink)<br><strong><span class="verb-stem">aprend</span><span class="verb-ending">er</span></strong> (to learn)</div>
       </div>
-      <div class="category-card">
-        <div class="name">Verb</div>
-        <div class="es-name">verbo</div>
-        <div class="desc">Shows action, or a state of&nbsp;being.</div>
-        <div class="ex">runs <span class="es">→ corre</span></div>
-      </div>
-      <div class="category-card">
-        <div class="name">Adjective</div>
-        <div class="es-name">adjetivo</div>
-        <div class="desc">Describes a noun.</div>
-        <div class="ex">big <span class="es">→ grande</span></div>
-      </div>
-      <div class="category-card">
-        <div class="name">Adverb</div>
-        <div class="es-name">adverbio</div>
-        <div class="desc">Describes a verb — often how, when, or where.</div>
-        <div class="ex">fast <span class="es">→ rápido</span></div>
-      </div>
-      <div class="category-card">
-        <div class="name">Article</div>
-        <div class="es-name">artículo</div>
-        <div class="desc">Signals that a noun is&nbsp;coming.</div>
-        <div class="ex">the <span class="es">→ el / la</span></div>
+      <div class="family-card">
+        <div class="ending">-IR</div>
+        <div class="verbs"><strong><span class="verb-stem">viv</span><span class="verb-ending">ir</span></strong> (to live)<br><strong><span class="verb-stem">escrib</span><span class="verb-ending">ir</span></strong> (to write)<br><strong><span class="verb-stem">abr</span><span class="verb-ending">ir</span></strong> (to open)</div>
       </div>
     </div>
   </section>
@@ -352,45 +400,99 @@
   <div class="ticket-divider"><span class="notch"></span></div>
 
   <section class="block">
-    <h2><span class="tag"></span>See them in a sentence <span class="emoji-accent">📝</span></h2>
-    <p>Same categories, same sentence, two languages.</p>
-
-    <div class="sentence-label">English</div>
-    <div class="tagged-sentence">
-      <div class="tagged-word"><div class="w">The</div><div class="t">article</div></div>
-      <div class="tagged-word"><div class="w">big</div><div class="t">adjective</div></div>
-      <div class="tagged-word"><div class="w">dog</div><div class="t">noun</div></div>
-      <div class="tagged-word"><div class="w">runs</div><div class="t">verb</div></div>
-      <div class="tagged-word"><div class="w">fast.</div><div class="t">adverb</div></div>
+    <h2><span class="tag"></span>Conjugating hablar <span class="emoji-accent">📦</span></h2>
+    <p>Here's the Box of Six from Unit 7 — now filled in with a real conjugated verb.</p>
+    <div class="conj-wrap">
+      <table class="conj-table">
+        <tr>
+          <th></th>
+          <th>Singular</th>
+          <th>Plural</th>
+        </tr>
+        <tr>
+          <td class="row-head">1st person</td>
+          <td class="filled">yo <span class="verb-stem">habl</span><span class="verb-ending">o</span></td>
+          <td class="filled">nosotros <span class="verb-stem">habl</span><span class="verb-ending">amos</span></td>
+        </tr>
+        <tr>
+          <td class="row-head">2nd person</td>
+          <td class="filled">tú <span class="verb-stem">habl</span><span class="verb-ending">as</span></td>
+          <td class="empty">— not used —</td>
+        </tr>
+        <tr>
+          <td class="row-head">3rd person</td>
+          <td class="filled">él/ella/usted <span class="verb-stem">habl</span><span class="verb-ending">a</span></td>
+          <td class="filled">ellos/ustedes <span class="verb-stem">habl</span><span class="verb-ending">an</span></td>
+        </tr>
+      </table>
     </div>
-
-    <div class="sentence-label">Español</div>
-    <div class="tagged-sentence">
-      <div class="tagged-word"><div class="w">El</div><div class="t">article</div></div>
-      <div class="tagged-word"><div class="w">perro</div><div class="t">noun</div></div>
-      <div class="tagged-word"><div class="w">grande</div><div class="t">adjective</div></div>
-      <div class="tagged-word"><div class="w">corre</div><div class="t">verb</div></div>
-      <div class="tagged-word"><div class="w">rápido.</div><div class="t">adverb</div></div>
-    </div>
-
-    <div class="callout">Here's the actual rule: in English, descriptive adjectives usually come <em>before</em> the noun ("big dog"). In Spanish, they usually come <em>after</em> the noun ("perro grande"). Same categories, opposite default order — and it's consistent enough to count on.</div>
+    <div class="callout">Notice the pattern: each box gets its own ending. Learn where a subject sits in the Box of Six, and you already know which ending it needs.</div>
+    <div class="callout" style="margin-top: 16px;"><strong>Since the ending already tells you the subject, Spanish speakers often drop the pronoun entirely.</strong> Hablo already means "I speak" — you don't need to also say yo. Same for tú, nosotros, and ellos/ustedes. The one exception: <strong>3rd person singular</strong>. Habla could mean he speaks, she speaks, or you (formal) speak — the ending alone can't tell you which. There, you'll usually want to keep the pronoun, use a name, or lean on context that's already clear from the conversation.</div>
   </section>
 
   <div class="ticket-divider"><span class="notch"></span></div>
 
   <section class="block">
-    <h2><span class="tag"></span>Try it: which category? <span class="emoji-accent">✏️</span></h2>
-    <p>Here are some words. Decide the part of speech before checking your answer.</p>
+    <h2><span class="tag"></span>The same pattern, three families <span class="emoji-accent">🔁</span></h2>
+    <p>Every regular verb in a family follows the exact same set of endings. Compare hablar, comer, and vivir side by side.</p>
+    <div class="conj-wrap">
+      <table class="conj-table">
+        <tr>
+          <th></th>
+          <th>hablar</th>
+          <th>comer</th>
+          <th>vivir</th>
+        </tr>
+        <tr>
+          <td class="row-head">yo</td>
+          <td class="filled"><span class="verb-stem">habl</span><span class="verb-ending">o</span></td>
+          <td class="filled"><span class="verb-stem">com</span><span class="verb-ending">o</span></td>
+          <td class="filled"><span class="verb-stem">viv</span><span class="verb-ending">o</span></td>
+        </tr>
+        <tr>
+          <td class="row-head">tú</td>
+          <td class="filled"><span class="verb-stem">habl</span><span class="verb-ending">as</span></td>
+          <td class="filled"><span class="verb-stem">com</span><span class="verb-ending">es</span></td>
+          <td class="filled"><span class="verb-stem">viv</span><span class="verb-ending">es</span></td>
+        </tr>
+        <tr>
+          <td class="row-head">él/ella/usted</td>
+          <td class="filled"><span class="verb-stem">habl</span><span class="verb-ending">a</span></td>
+          <td class="filled"><span class="verb-stem">com</span><span class="verb-ending">e</span></td>
+          <td class="filled"><span class="verb-stem">viv</span><span class="verb-ending">e</span></td>
+        </tr>
+        <tr>
+          <td class="row-head">nosotros</td>
+          <td class="filled"><span class="verb-stem">habl</span><span class="verb-ending">amos</span></td>
+          <td class="filled"><span class="verb-stem">com</span><span class="verb-ending">emos</span></td>
+          <td class="filled"><span class="verb-stem">viv</span><span class="verb-ending">imos</span></td>
+        </tr>
+        <tr>
+          <td class="row-head">ellos/ustedes</td>
+          <td class="filled"><span class="verb-stem">habl</span><span class="verb-ending">an</span></td>
+          <td class="filled"><span class="verb-stem">com</span><span class="verb-ending">en</span></td>
+          <td class="filled"><span class="verb-stem">viv</span><span class="verb-ending">en</span></td>
+        </tr>
+      </table>
+    </div>
+    <div class="callout">Once you've memorized one family's pattern, you can conjugate any regular verb in that family — not just the example. That's the whole payoff of this unit.</div>
+  </section>
+
+  <div class="ticket-divider"><span class="notch"></span></div>
+
+  <section class="block">
+    <h2><span class="tag"></span>Try it: conjugate it <span class="emoji-accent">✏️</span></h2>
+    <p>Here's a subject and a verb. Work out the conjugated form before checking your answer.</p>
     <div class="practice-list" id="practiceList"></div>
-    <div class="callout" style="text-align: center;">Ready for a bigger challenge? <a href="unit3-category-sort-english.html" style="text-decoration: underline; font-weight: 700;">Sort a full set of words by category →</a></div>
+    <div class="callout" style="text-align: center;">Ready for a bigger challenge? <a href="unit9-conjugation-practice.html" style="text-decoration: underline; font-weight: 700;">Sort conjugated verbs into the Box of Six →</a></div>
   </section>
 
   <div class="ticket-divider"><span class="notch"></span></div>
 
   <section class="block">
     <h2><span class="tag"></span>Why this matters <span class="emoji-accent">💡</span></h2>
-    <p>Verbs are about to become the center of attention — Unit 9 is entirely about conjugating them. Knowing what a verb <em>is</em>, and being able to spot one in a sentence, is exactly what that unit builds on.</p>
-    <div class="callout">This also works in reverse: once you can name these categories in Spanish, you'll start noticing them in English too — most students find their English grammar gets sharper right alongside their Spanish.</div>
+    <p>This is the moment everything connects: grammatical person (Unit 7) tells you which box a subject belongs in, parts of speech (Unit 3) tells you a word is a verb in the first place, and conjugation (this unit) tells you exactly how that verb changes for each box.</p>
+    <div class="callout">You've now got the core toolkit for building real Spanish sentences — a subject, a correctly conjugated verb, and the vocabulary to fill in the rest.</div>
   </section>
 
   <div class="ticket-divider"><span class="notch"></span></div>
@@ -399,36 +501,31 @@
     <summary>
       <div class="gf-title">
         <span class="gf-badge">Go Further</span>
-        <h2>The rest of the parts of speech</h2>
+        <h2>Not every verb plays by these rules</h2>
       </div>
       <span class="chevron">›</span>
     </summary>
     <div class="gf-body">
-      <p>Between the six core categories above and these three, that's the traditional full set of parts of speech — not a deep dive on any of them, just enough to know they exist.</p>
+      <p>Everything above covers regular verbs — the majority of what you'll encounter. A few categories bend the rules, worth knowing about even before you study them in depth.</p>
 
       <div class="gf-section">
-        <div class="gf-section-title">Prepositions</div>
-        <p>Show a relationship — often location or direction. English: in, on, with. Spanish: en, con, para.</p>
+        <div class="gf-section-title">Irregular verbs</div>
+        <p>Some verbs don't follow the family pattern at all — ser (to be) and ir (to go) are two of the most common. These get memorized individually rather than derived from a pattern.</p>
       </div>
 
       <div class="gf-section">
-        <div class="gf-section-title">Conjunctions</div>
-        <p>Connect words or ideas. English: and, but, or. Spanish: y, pero, o.</p>
+        <div class="gf-section-title">Stem-changing verbs</div>
+        <p>Some verbs keep the regular endings but change a vowel in the middle — querer (to want) becomes quiero, not "quero." The ending pattern still applies; just the stem shifts.</p>
       </div>
 
       <div class="gf-section">
-        <div class="gf-section-title">Interjections</div>
-        <p>Short bursts of emotion or reaction. English: wow, ouch. Spanish: ¡ay!, ¡olé!</p>
+        <div class="gf-section-title">Reflexive verbs</div>
+        <p>Some verbs describe an action done to oneself and need an extra pronoun — llamarse (to be called/named), as in me llamo... (my name is...). These have their own set of rules layered on top of regular conjugation.</p>
       </div>
 
       <div class="gf-section">
-        <div class="gf-section-title">Agreement is coming later</div>
-        <p>You may have noticed grande didn't change form in our example — but adjectives and articles in Spanish actually do change depending on the noun they describe. Articles alone have four forms: el (masculine singular), la (feminine singular), los (masculine plural), las (feminine plural) — all of them meaning "the." Which one you use depends on the noun that follows. The full rules, including adjectives, are their own topic, with their own unit, coming later.</p>
-      </div>
-
-      <div class="gf-section">
-        <div class="gf-section-title">Can adjectives ever go before the noun?</div>
-        <p>Yes — "after the noun" is the default, not an absolute rule. Some adjectives can move before the noun, and a few actually change meaning depending on where they sit. For example, un amigo viejo means a friend who is old (in age), while un viejo amigo means a longtime friend — same word, different placement, different shade of meaning. This is genuinely its own topic, best covered in a future unit focused specifically on adjectives — for now, just know that placement isn't as fixed as it might seem.</p>
+        <div class="gf-section-title">This is just present tense</div>
+        <p>Everything in this unit covers the present tense — action happening now. Spanish has several other tenses (past, future, and more), each with its own conjugation patterns. Those are future units.</p>
       </div>
     </div>
   </details>
@@ -439,26 +536,25 @@
     <h2>Put it into practice</h2>
     <p class="sub">Three levels. Work your way up whenever you're ready.</p>
     <div class="level-grid">
-      <a class="level-card" href="unit3-quiz-foundation.html">
+      <a class="level-card" href="unit9-quiz-foundation.html">
         <div class="emoji">🌱</div>
         <div class="name">Foundation</div>
         <div class="desc">Guided intro. No prior knowledge needed.</div>
         <span class="btn">Start</span>
       </a>
-      <a class="level-card" href="unit3-quiz-practice.html">
+      <a class="level-card" href="unit9-quiz-practice.html">
         <div class="emoji">💪</div>
         <div class="name">Practice</div>
         <div class="desc">Reinforcement drills to build confidence.</div>
         <span class="btn">Start</span>
       </a>
-      <a class="level-card" href="unit3-quiz-mastery.html">
+      <a class="level-card" href="unit9-quiz-mastery.html">
         <div class="emoji">🎯</div>
         <div class="name">Mastery</div>
         <div class="desc">Challenge level. Prove you've got it.</div>
         <span class="btn">Start</span>
       </a>
     </div>
-    <p style="text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 20px;">Want extra reps with a wider variety of words? Try the <a href="unit3-quiz-categories.html" style="text-decoration: underline; font-weight: 700; color: var(--plum-dark);">Category Practice Quiz</a> — great for repeat runs.</p>
   </section>
 
 </div>
@@ -467,16 +563,14 @@
 
 <script>
 const practiceItems = [
-  { subject: "casa", en: "house", answer: "Noun", esAnswer: "Sustantivo", note: "Casa names a thing — that makes it a noun." },
-  { subject: "corre", en: "runs", answer: "Verb", esAnswer: "Verbo", note: "Corre shows action — that makes it a verb." },
-  { subject: "rápido", en: "fast", answer: "Adverb", esAnswer: "Adverbio", note: "Rápido describes how the action happens." },
-  { subject: "ella", en: "she", answer: "Pronoun", esAnswer: "Pronombre", note: "Ella stands in for a name. You met this back in Unit 7." },
-  { subject: "grande", en: "big", answer: "Adjective", esAnswer: "Adjetivo", note: "Grande describes a noun." },
-  { subject: "el", en: "the", answer: "Article", esAnswer: "Artículo", note: "El signals that a masculine noun is coming." },
-  { subject: "hablar", en: "to speak", answer: "Verb", esAnswer: "Verbo", note: "This unconjugated form is called an infinitive, and it's the star of Unit 9." },
-  { subject: "bonito", en: "pretty", answer: "Adjective", esAnswer: "Adjetivo", note: "Bonito describes a noun." },
-  { subject: "nosotros", en: "we", answer: "Pronoun", esAnswer: "Pronombre", note: "Nosotros stands in for a group that includes the speaker. Another callback to the Box of Six." },
-  { subject: "una", en: "a / an", answer: "Article", esAnswer: "Artículo", note: "Una signals a feminine noun is coming." }
+  { subject: "yo + hablar", answer: "hablo", note: "1st person singular takes the -o ending for -ar verbs." },
+  { subject: "tú + comer", answer: "comes", note: "2nd person singular takes -es for -er verbs." },
+  { subject: "ella + vivir", answer: "vive", note: "3rd person singular takes -e for -ir verbs." },
+  { subject: "nosotros + hablar", answer: "hablamos", note: "1st person plural takes -amos for -ar verbs." },
+  { subject: "ellos + comer", answer: "comen", note: "3rd person plural takes -en for -er verbs." },
+  { subject: "usted + hablar", answer: "habla", note: "Usted is grammatically 3rd person singular, just like él/ella — same ending." },
+  { subject: "nosotros + vivir", answer: "vivimos", note: "1st person plural takes -imos for -ir verbs." },
+  { subject: "ustedes + comer", answer: "comen", note: "Ustedes borrows the 3rd-person-plural ending, just like ellos." }
 ];
 
 const list = document.getElementById('practiceList');
@@ -485,11 +579,11 @@ practiceItems.forEach((item) => {
   card.className = 'practice-card';
   card.innerHTML = `
     <div class="subject">
-      <span>${item.subject} <span style="color: var(--muted); font-weight: 500; font-size: 0.85em;">(${item.en})</span></span>
+      <span>${item.subject}</span>
       <span class="toggle-icon">＋</span>
     </div>
-    <div class="hint">Tap to reveal the category</div>
-    <div class="answer"><strong>${item.esAnswer} (${item.answer})</strong>. ${item.note}</div>
+    <div class="hint">Tap to reveal the answer</div>
+    <div class="answer"><strong>${item.answer}</strong>. ${item.note}</div>
   `;
   card.addEventListener('click', () => {
     card.classList.toggle('revealed');

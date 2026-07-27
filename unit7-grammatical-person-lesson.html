@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Unit 3: Parts of Speech | First Class Spanish</title>
+<title>Unit 7: Grammatical Person | First Class Spanish</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Sora:wght@600;700;800&family=Playfair+Display:wght@800&family=Barlow+Condensed:wght@600&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="assets/fcs-medallion.svg">
 <link rel="stylesheet" href="css/brand.css?v=17">
 <style>
-  .block h2 .tag { background: var(--plum); }
-  .block h2 .emoji-accent { background: var(--plum-light); }
+  .block h2 .tag { background: var(--terracotta); }
+  .block h2 .emoji-accent { background: var(--terracotta-light); }
 
   .unit-hero {
-    background: linear-gradient(135deg, var(--plum) 0%, var(--plum-dark) 100%);
+    background: linear-gradient(135deg, var(--terracotta) 0%, var(--terracotta-dark) 100%);
     color: var(--white); padding: 64px 24px 56px; text-align: center;
   }
   .unit-eyebrow {
@@ -25,44 +25,47 @@
   .unit-hero p { max-width: 560px; margin: 0 auto; font-size: 1.1rem; color: rgba(255,255,255,0.92); }
 
   .callout {
-    background: var(--plum-light); border-left: 4px solid var(--plum);
+    background: var(--terracotta-light); border-left: 4px solid var(--terracotta);
     padding: 16px 20px; border-radius: 8px; color: var(--forest); font-weight: 600; margin-top: 16px;
   }
 
-  /* Category cards */
-  .category-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 20px; }
-  @media (max-width: 700px) { .category-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 460px) { .category-grid { grid-template-columns: 1fr; } }
-  .category-card { background: var(--plum-light); border-radius: 12px; padding: 18px 16px; }
-  .category-card .name { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--plum-dark); font-size: 1.02rem; margin-bottom: 4px; }
-  .category-card .es-name { color: var(--muted); font-size: 0.78rem; font-weight: 500; margin-bottom: 8px; }
-  .category-card .desc { color: var(--gray); font-size: 0.95rem; margin-bottom: 8px; }
-  .category-card .ex { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--plum-dark); font-size: 0.88rem; }
-  .category-card .ex .es { color: var(--muted); font-weight: 500; }
+  /* Person cards (1st/2nd/3rd concept intro) */
+  .person-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 20px; }
+  @media (max-width: 700px) { .person-grid { grid-template-columns: 1fr; } }
+  .person-card { background: var(--terracotta-light); border-radius: 12px; padding: 20px 18px; text-align: center; }
+  .person-card .num { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--terracotta-dark); font-size: 1.6rem; margin-bottom: 6px; }
+  .person-card .label { font-weight: 700; color: var(--forest); font-size: 0.95rem; margin-bottom: 8px; }
+  .person-card .desc { color: var(--gray); font-size: 0.95rem; }
+  .person-card .ex { color: var(--terracotta-dark); font-size: 1.1rem; font-weight: 700; margin-top: 8px; }
 
-  /* Tagged sentence display */
-  .tagged-sentence { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin: 20px 0; }
-  .tagged-word { display: flex; flex-direction: column; align-items: center; }
-  .tagged-word .w { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--forest); font-size: 1.1rem; }
-  .tagged-word .t {
-    font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em;
-    padding: 3px 8px; border-radius: 8px; margin-top: 5px; background: var(--plum-light); color: var(--plum-dark);
-  }
-  .sentence-label { text-align: center; color: var(--muted); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; margin-top: 24px; margin-bottom: 4px; }
-  .sentence-label:first-child { margin-top: 0; }
+  /* Box of Six grid */
+  .box-wrap { margin-top: 20px; overflow-x: auto; }
+  .box-table { width: 100%; border-collapse: collapse; min-width: 480px; }
+  .box-table th, .box-table td { border: 1.5px solid #E4E2DC; padding: 14px 12px; text-align: center; font-size: 0.92rem; }
+  .box-table th { background: var(--terracotta-light); color: var(--terracotta-dark); font-family: 'Sora', sans-serif; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.03em; }
+  .box-table td.row-head { background: var(--terracotta-light); color: var(--terracotta-dark); font-family: 'Sora', sans-serif; font-weight: 700; text-align: left; }
+  .box-table td.filled { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--forest); }
+  .box-table td.empty { color: var(--muted); font-style: italic; font-size: 0.82rem; }
+  .box-table .en-sub { display: block; color: var(--muted); font-weight: 500; font-size: 0.78rem; margin-top: 3px; }
+
+  .axis-explain { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 18px; }
+  @media (max-width: 600px) { .axis-explain { grid-template-columns: 1fr; } }
+  .axis-card { background: #FAFAF8; border-radius: 10px; padding: 14px 16px; }
+  .axis-card .head { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--terracotta-dark); font-size: 0.92rem; margin-bottom: 4px; }
+  .axis-card p { font-size: 0.95rem; color: var(--gray); margin: 0; }
 
   /* Try it practice cards */
   .practice-list { margin-top: 20px; display: flex; flex-direction: column; gap: 10px; }
   .practice-card { border: 1.5px solid #E4E2DC; border-radius: 12px; padding: 16px 20px; cursor: pointer; transition: border-color 0.15s ease; }
-  .practice-card:hover { border-color: var(--plum); }
+  .practice-card:hover { border-color: var(--terracotta); }
   .practice-card .subject { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--forest); font-size: 1.02rem; display: flex; align-items: center; justify-content: space-between; }
   .practice-card .hint { color: var(--muted); font-size: 0.8rem; font-weight: 500; }
   .practice-card .answer { display: none; margin-top: 10px; padding-top: 10px; border-top: 1px dashed #E4E2DC; color: var(--gray); font-size: 0.9rem; }
   .practice-card.revealed .answer { display: block; }
-  .practice-card .answer strong { color: var(--plum-dark); }
-  .practice-card .toggle-icon { color: var(--plum); font-weight: 700; font-size: 1.1rem; }
+  .practice-card .answer strong { color: var(--terracotta-dark); }
+  .practice-card .toggle-icon { color: var(--terracotta); font-weight: 700; font-size: 1.1rem; }
 
-  /* Go Further */
+  /* Go Further (optional) */
   .go-further { background: var(--gold-light); border: 1.5px dashed var(--gold); border-radius: 16px; padding: 6px 40px; }
   .go-further summary { list-style: none; cursor: pointer; padding: 24px 0; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
   .go-further summary::-webkit-details-marker { display: none; }
@@ -76,6 +79,10 @@
   .gf-section { background: var(--white); border-radius: 12px; padding: 16px 20px; margin-bottom: 12px; }
   .gf-section-title { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--forest); font-size: 0.98rem; margin-bottom: 6px; }
   .gf-section p { color: var(--gray); font-size: 0.92rem; margin: 0; }
+  .pf-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+  .pf-chip { background: var(--terracotta-light); border-radius: 10px; padding: 8px 14px; text-align: center; }
+  .pf-chip .w { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--terracotta-dark); font-size: 0.92rem; }
+  .pf-chip .r { font-size: 0.68rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.03em; margin-top: 2px; }
 
   @media (max-width: 640px) { .go-further { padding: 4px 20px; } }
 </style>
@@ -268,129 +275,165 @@
 </g>
 </svg>
   </a>
-  <div class="unit-pill">Unit 3 · Parts of Speech</div>
+  <div class="unit-pill">Unit 7 · Grammatical Person</div>
 </header>
 
 <div class="unit-hero">
-  <div class="unit-eyebrow">UNIT 3 · PARTS OF SPEECH</div>
-  <h1>Every word has a job.</h1>
-  <p>Nouns, verbs, adjectives, and more — the categories that tell you what each word is doing in a sentence. The same categories work in English and Spanish.</p>
+  <div class="unit-eyebrow">UNIT 7 · GRAMMATICAL PERSON</div>
+  <h1>Every sentence has a subject.</h1>
+  <p>A subject is the person or thing (noun) doing the action. Every subject in a sentence falls into one of six categories — once you can spot which one, everything else in Spanish grammar gets easier.</p>
+  <p style="margin-top: 12px; font-size: 0.95rem; color: rgba(255,255,255,0.85);">The real value of this becomes clear once we get into conjugation. Don't worry if that word is unfamiliar yet — it's an essential skill, and we'll walk you through it step by step.</p>
 </div>
 
-<div class="unit-goals plum">
+<div class="unit-goals terracotta">
   <div class="key-question">
     <span class="kq-label">Key question</span>
-    <p>What's the difference between a noun, a verb, and all the other parts of speech?</p>
+    <p>What's the one thing I can learn now that'll make learning Spanish a lot easier?</p>
   </div>
   <div>
     <div class="goals-label">🎯 What you'll learn</div>
     <ul>
-      <li>What a "part of speech" is, and why every word has one</li>
-      <li>How to identify nouns, verbs, adjectives, and more in a sentence</li>
-      <li>The vocabulary you need to talk about grammar itself — in English and Spanish</li>
+      <li>How to spot the subject of any sentence</li>
+      <li>Spanish's six subject pronouns — and how to sort any subject into the right one</li>
+      <li>Why Latin American Spanish skips vosotros</li>
     </ul>
   </div>
   <div class="why-block">
     <div class="goals-label">💡 Why it matters</div>
-    <p>Every grammar rule from here on refers to parts of speech by name — mastering this vocabulary now makes every future unit easier to follow.</p>
+    <p>Subject pronouns are the foundation of Spanish conjugation — every verb ending you'll ever learn depends on knowing which of these six boxes a subject falls into.</p>
   </div>
 </div>
 
 <div class="wrap">
 
   <section class="block" style="margin-top: 40px;">
-    <h2><span class="tag"></span>What is a "part of speech"? <span class="emoji-accent">🧩</span></h2>
-    <p>A part of speech (in Spanish, <strong>una parte de la oración</strong>) is just a category that tells you a word's job in a sentence — is it naming something, doing something, or describing something?</p>
-    <p>The classic count is eight: noun, pronoun, verb, adjective, adverb, preposition, conjunction, interjection. We're using nine, since articles work differently enough from regular adjectives to deserve their own category rather than being folded in. Either way, we're starting with the six that matter most for where you are right now — the rest are covered in <strong>Go Further</strong> below.</p>
-    <div class="callout">Every word you'll ever use fits one of these categories. Learn to spot them, and both Spanish and English grammar get a lot easier to talk about.</div>
+    <h2><span class="tag"></span>Three quick definitions <span class="emoji-accent">🔤</span></h2>
+    <p><strong>Subject</strong> — the person or thing (noun) doing the action. "Elena runs." "We speak Spanish." Elena and we are the subjects.</p>
+    <p><strong>Pronoun</strong> — a word that stands in for a name (noun). "Elena runs. She is fast." She replaces Elena.</p>
+    <p><strong>Subject pronoun</strong> — a pronoun that replaces the subject specifically. In English, that's <em>I, you, he/she/it, we, they.</em> Spanish has its own set of these — that's exactly what fills the Box of Six you're about to learn.</p>
+    <div class="callout">Every sentence has a subject — often expressed as a subject pronoun. That's exactly what this unit teaches you to recognize and use.</div>
   </section>
 
   <div class="ticket-divider"><span class="notch"></span></div>
 
   <section class="block">
-    <h2><span class="tag"></span>Six core categories to start <span class="emoji-accent">🏷️</span></h2>
-    <div class="category-grid">
-      <div class="category-card">
-        <div class="name">Noun</div>
-        <div class="es-name">sustantivo <span style="opacity: 0.8;">(also called nombre)</span></div>
-        <div class="desc">Names a person, place, thing, or idea. Nombre literally means "name" — a handy way to remember what nouns do.</div>
-        <div class="ex">dog <span class="es">→ perro</span></div>
+    <h2><span class="tag"></span>What is "grammatical person"? <span class="emoji-accent">🧩</span></h2>
+    <p>It answers one question: <strong>who is the subject, relative to the speaker?</strong> Three possible answers:</p>
+    <div class="person-grid">
+      <div class="person-card">
+        <div class="num">1st person</div>
+        <div class="label">The speaker</div>
+        <div class="desc">Me, or me and others.</div>
+        <div class="ex">I · we</div>
       </div>
-      <div class="category-card">
-        <div class="name">Pronoun</div>
-        <div class="es-name">pronombre</div>
-        <div class="desc">Stands in for a noun. (Remember these from Unit&nbsp;2!)</div>
-        <div class="ex">she <span class="es">→ ella</span></div>
+      <div class="person-card">
+        <div class="num">2nd person</div>
+        <div class="label">The one spoken to</div>
+        <div class="desc">The person (or people) you're talking to.</div>
+        <div class="ex">you</div>
       </div>
-      <div class="category-card">
-        <div class="name">Verb</div>
-        <div class="es-name">verbo</div>
-        <div class="desc">Shows action, or a state of&nbsp;being.</div>
-        <div class="ex">runs <span class="es">→ corre</span></div>
-      </div>
-      <div class="category-card">
-        <div class="name">Adjective</div>
-        <div class="es-name">adjetivo</div>
-        <div class="desc">Describes a noun.</div>
-        <div class="ex">big <span class="es">→ grande</span></div>
-      </div>
-      <div class="category-card">
-        <div class="name">Adverb</div>
-        <div class="es-name">adverbio</div>
-        <div class="desc">Describes a verb — often how, when, or where.</div>
-        <div class="ex">fast <span class="es">→ rápido</span></div>
-      </div>
-      <div class="category-card">
-        <div class="name">Article</div>
-        <div class="es-name">artículo</div>
-        <div class="desc">Signals that a noun is&nbsp;coming.</div>
-        <div class="ex">the <span class="es">→ el / la</span></div>
+      <div class="person-card">
+        <div class="num">3rd person</div>
+        <div class="label">Everyone else</div>
+        <div class="desc">Anyone or anything else being talked about.</div>
+        <div class="ex">he · she · it · they</div>
       </div>
     </div>
+    <div class="callout">Every subject fits one of these three. That's the whole concept — the rest is just recognizing it quickly.</div>
   </section>
 
   <div class="ticket-divider"><span class="notch"></span></div>
 
   <section class="block">
-    <h2><span class="tag"></span>See them in a sentence <span class="emoji-accent">📝</span></h2>
-    <p>Same categories, same sentence, two languages.</p>
+    <h2><span class="tag"></span>Meet the Box of Six <span class="emoji-accent">📦</span></h2>
+    <p>These six boxes are Spanish's <strong>subject pronouns</strong>, organized by person and number. Person tells you <em>who</em>. Number tells you <em>how many</em> — singular or plural. Combine both, and you get six boxes.</p>
 
-    <div class="sentence-label">English</div>
-    <div class="tagged-sentence">
-      <div class="tagged-word"><div class="w">The</div><div class="t">article</div></div>
-      <div class="tagged-word"><div class="w">big</div><div class="t">adjective</div></div>
-      <div class="tagged-word"><div class="w">dog</div><div class="t">noun</div></div>
-      <div class="tagged-word"><div class="w">runs</div><div class="t">verb</div></div>
-      <div class="tagged-word"><div class="w">fast.</div><div class="t">adverb</div></div>
+    <h3 style="font-size: 1.05rem; color: var(--terracotta-dark); margin-top: 20px; margin-bottom: 8px;">You already use this — in English</h3>
+
+    <div class="box-wrap">
+      <table class="box-table">
+        <tr>
+          <th></th>
+          <th>Singular</th>
+          <th>Plural</th>
+        </tr>
+        <tr>
+          <td class="row-head">1st person</td>
+          <td class="filled">I</td>
+          <td class="filled">we</td>
+        </tr>
+        <tr>
+          <td class="row-head">2nd person</td>
+          <td class="filled">you</td>
+          <td class="filled">you</td>
+        </tr>
+        <tr>
+          <td class="row-head">3rd person</td>
+          <td class="filled">he / she / it</td>
+          <td class="filled">they</td>
+        </tr>
+      </table>
     </div>
 
-    <div class="sentence-label">Español</div>
-    <div class="tagged-sentence">
-      <div class="tagged-word"><div class="w">El</div><div class="t">article</div></div>
-      <div class="tagged-word"><div class="w">perro</div><div class="t">noun</div></div>
-      <div class="tagged-word"><div class="w">grande</div><div class="t">adjective</div></div>
-      <div class="tagged-word"><div class="w">corre</div><div class="t">verb</div></div>
-      <div class="tagged-word"><div class="w">rápido.</div><div class="t">adverb</div></div>
+    <div class="callout">Notice: English uses "you" for both boxes (singular and plural). Spanish keeps them separate (uses distinct pronouns) — that's the source of most differences below.</div>
+
+    <div class="axis-explain">
+      <div class="axis-card">
+        <div class="head">Rows = person</div>
+        <p>1st, 2nd, or 3rd — same three categories as above.</p>
+      </div>
+      <div class="axis-card">
+        <div class="head">Columns = number</div>
+        <p>Singular (one) or plural (more than one).</p>
+      </div>
     </div>
 
-    <div class="callout">Here's the actual rule: in English, descriptive adjectives usually come <em>before</em> the noun ("big dog"). In Spanish, they usually come <em>after</em> the noun ("perro grande"). Same categories, opposite default order — and it's consistent enough to count on.</div>
+    <h3 style="font-size: 1.05rem; color: var(--terracotta-dark); margin-top: 28px; margin-bottom: 8px;">Same grid — now in Spanish</h3>
+
+    <div class="box-wrap">
+      <table class="box-table">
+        <tr>
+          <th></th>
+          <th>Singular</th>
+          <th>Plural</th>
+        </tr>
+        <tr>
+          <td class="row-head">1st person</td>
+          <td class="filled">yo<span class="en-sub">I</span></td>
+          <td class="filled">nosotros / nosotras<span class="en-sub">we</span></td>
+        </tr>
+        <tr>
+          <td class="row-head">2nd person</td>
+          <td class="filled">tú<span class="en-sub">you</span></td>
+          <td class="empty">vosotros<span class="en-sub">you (informal, plural)</span><br>Spain only*</td>
+        </tr>
+        <tr>
+          <td class="row-head">3rd person</td>
+          <td class="filled">él / ella / usted<span class="en-sub">he / she / you (formal)</span></td>
+          <td class="filled">ellos / ellas / ustedes<span class="en-sub">they / you (plural)</span></td>
+        </tr>
+      </table>
+    </div>
+
+    <p style="font-size: 0.85rem; color: var(--muted); margin-top: 10px;">*Vosotros is Spain's word; ustedes covers this box almost everywhere else. Curious why? Check the <strong>Go Further</strong> section below.</p>
   </section>
 
   <div class="ticket-divider"><span class="notch"></span></div>
 
   <section class="block">
-    <h2><span class="tag"></span>Try it: which category? <span class="emoji-accent">✏️</span></h2>
-    <p>Here are some words. Decide the part of speech before checking your answer.</p>
+    <h2><span class="tag"></span>Try it: which box? <span class="emoji-accent">✏️</span></h2>
+    <p>Here are some subjects. For each one, decide the person (1st/2nd/3rd) and number (singular/plural) before checking your answer.</p>
     <div class="practice-list" id="practiceList"></div>
-    <div class="callout" style="text-align: center;">Ready for a bigger challenge? <a href="unit3-category-sort-english.html" style="text-decoration: underline; font-weight: 700;">Sort a full set of words by category →</a></div>
+    <div class="callout" style="text-align: center;">Ready for a bigger challenge? <a href="unit7-box-of-six-practice.html" style="text-decoration: underline; font-weight: 700;">Sort a full set of subjects into the Box of Six →</a></div>
   </section>
 
   <div class="ticket-divider"><span class="notch"></span></div>
 
   <section class="block">
     <h2><span class="tag"></span>Why this matters <span class="emoji-accent">💡</span></h2>
-    <p>Verbs are about to become the center of attention — Unit 9 is entirely about conjugating them. Knowing what a verb <em>is</em>, and being able to spot one in a sentence, is exactly what that unit builds on.</p>
-    <div class="callout">This also works in reverse: once you can name these categories in Spanish, you'll start noticing them in English too — most students find their English grammar gets sharper right alongside their Spanish.</div>
+    <p>In Spanish, every verb ending changes based on which box its subject belongs to. That's why hablo (yo), hablas (tú), habla (él/ella/usted), hablamos (nosotros), and hablan (ellos/ustedes) all look different — each one is tied to a different box (grammatical person).</p>
+    <p>It also means speakers can often drop the subject pronoun entirely. Hablo already means "I speak" — no need to also say "yo."</p>
+    <div class="callout">Same six categories, later for object pronouns too ("me," "you," "him," "them"). Learn this box well now — you'll reuse it constantly.</div>
   </section>
 
   <div class="ticket-divider"><span class="notch"></span></div>
@@ -399,36 +442,48 @@
     <summary>
       <div class="gf-title">
         <span class="gf-badge">Go Further</span>
-        <h2>The rest of the parts of speech</h2>
+        <h2>The finer points of the Box of Six</h2>
       </div>
       <span class="chevron">›</span>
     </summary>
     <div class="gf-body">
-      <p>Between the six core categories above and these three, that's the traditional full set of parts of speech — not a deep dive on any of them, just enough to know they exist.</p>
+      <p>Everything below is optional depth — none of it is required to use the Box of Six well. Come back to this section anytime something below feels relevant.</p>
 
       <div class="gf-section">
-        <div class="gf-section-title">Prepositions</div>
-        <p>Show a relationship — often location or direction. English: in, on, with. Spanish: en, con, para.</p>
+        <div class="gf-section-title">Why is the middle-right box empty?</div>
+        <p>Remember how English uses "you" for both singular and plural? Spanish actually has a word for plural "you" — vosotros — but it's mostly used in Spain. Across Latin America, when you're talking <em>to</em> more than one person, you use <strong>ustedes</strong> instead, and it sits in the <em>3rd person</em>-person-plural box, not 2nd. Since Spanish doesn't use a separate plural-you verb form here, ustedes simply borrows the 3rd-person-plural forms. That's exactly why the vosotros box stays empty in this course.</p>
       </div>
 
       <div class="gf-section">
-        <div class="gf-section-title">Conjunctions</div>
-        <p>Connect words or ideas. English: and, but, or. Spanish: y, pero, o.</p>
+        <div class="gf-section-title">Two ways to say "you"</div>
+        <p>Spanish has two singular "you" pronouns: <strong>tú</strong> (informal — friends, family, people your age) and <strong>usted</strong> (formal — teachers, strangers, elders, anyone you'd address respectfully). English used to have this same split — "thou" was the informal "you," while "you" was the formal, respectful version. Over time, thou disappeared, and "you" took over both jobs (part of why English's box shows the same word twice). Spanish kept both forms. One catch: tú stays in its own 2nd-person box, but usted is grammatically treated as 3rd person — its verb endings match él/ella, not tú.</p>
       </div>
 
       <div class="gf-section">
-        <div class="gf-section-title">Interjections</div>
-        <p>Short bursts of emotion or reaction. English: wow, ouch. Spanish: ¡ay!, ¡olé!</p>
+        <div class="gf-section-title">What about vosotros, really?</div>
+        <p>Vosotros is the informal plural "you" used in Spain, with its own unique set of verb endings. It's mostly a Spain-only form — across Latin America, ustedes covers plural "you" in both formal and informal situations, so vosotros isn't needed here. You may run into it watching shows or movies from Spain, but you won't need it for this course.</p>
       </div>
 
       <div class="gf-section">
-        <div class="gf-section-title">Agreement is coming later</div>
-        <p>You may have noticed grande didn't change form in our example — but adjectives and articles in Spanish actually do change depending on the noun they describe. Articles alone have four forms: el (masculine singular), la (feminine singular), los (masculine plural), las (feminine plural) — all of them meaning "the." Which one you use depends on the noun that follows. The full rules, including adjectives, are their own topic, with their own unit, coming later.</p>
+        <div class="gf-section-title">What happened to "it"?</div>
+        <p>You may have noticed Spanish has no word for "it" anywhere in the box. That's not an oversight — Spanish just doesn't use a subject pronoun for it the way English does. Inanimate subjects typically just use the verb conjugation on its own, without a stated pronoun.</p>
       </div>
 
       <div class="gf-section">
-        <div class="gf-section-title">Can adjectives ever go before the noun?</div>
-        <p>Yes — "after the noun" is the default, not an absolute rule. Some adjectives can move before the noun, and a few actually change meaning depending on where they sit. For example, un amigo viejo means a friend who is old (in age), while un viejo amigo means a longtime friend — same word, different placement, different shade of meaning. This is genuinely its own topic, best covered in a future unit focused specifically on adjectives — for now, just know that placement isn't as fixed as it might seem.</p>
+        <div class="gf-section-title">A quick word on masculine and feminine</div>
+        <p>You may have noticed nosotros/nosotras and ellos/ellas each come in two forms. Here's the basic rule: use the <strong>-as</strong> form when everyone in the group is female. Use the <strong>-os</strong> form for an all-male group — <em>and</em> for a mixed group, even just one male among many females. This full topic (grammatical gender, and how it extends to articles and adjectives too) gets its own dedicated unit later.</p>
+      </div>
+
+      <div class="gf-section">
+        <div class="gf-section-title">It's not just subject pronouns</div>
+        <p>Everything in this unit has used subject pronouns — but the same six categories apply to other pronoun types too. Take "I": it has a whole family of related words, and every one of them is still 1st person singular.</p>
+        <div class="pf-row">
+          <div class="pf-chip"><div class="w">I</div><div class="r">subject</div></div>
+          <div class="pf-chip"><div class="w">me</div><div class="r">object</div></div>
+          <div class="pf-chip"><div class="w">my</div><div class="r">possessive</div></div>
+          <div class="pf-chip"><div class="w">mine</div><div class="r">possessive</div></div>
+        </div>
+        <p style="margin-top: 10px;">This unit focuses on subject pronouns specifically — the other types get their own attention later, using the exact same Box of Six you just learned.</p>
       </div>
     </div>
   </details>
@@ -439,26 +494,26 @@
     <h2>Put it into practice</h2>
     <p class="sub">Three levels. Work your way up whenever you're ready.</p>
     <div class="level-grid">
-      <a class="level-card" href="unit3-quiz-foundation.html">
+      <a class="level-card" href="unit7-quiz-foundation.html">
         <div class="emoji">🌱</div>
         <div class="name">Foundation</div>
         <div class="desc">Guided intro. No prior knowledge needed.</div>
         <span class="btn">Start</span>
       </a>
-      <a class="level-card" href="unit3-quiz-practice.html">
+      <a class="level-card" href="unit7-quiz-practice.html">
         <div class="emoji">💪</div>
         <div class="name">Practice</div>
         <div class="desc">Reinforcement drills to build confidence.</div>
         <span class="btn">Start</span>
       </a>
-      <a class="level-card" href="unit3-quiz-mastery.html">
+      <a class="level-card" href="unit7-quiz-mastery.html">
         <div class="emoji">🎯</div>
         <div class="name">Mastery</div>
         <div class="desc">Challenge level. Prove you've got it.</div>
         <span class="btn">Start</span>
       </a>
     </div>
-    <p style="text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 20px;">Want extra reps with a wider variety of words? Try the <a href="unit3-quiz-categories.html" style="text-decoration: underline; font-weight: 700; color: var(--plum-dark);">Category Practice Quiz</a> — great for repeat runs.</p>
+    <p style="text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 20px;">Want extra reps with a wider variety of subjects? Try the <a href="unit7-quiz-subjects.html" style="text-decoration: underline; font-weight: 700; color: var(--terracotta-dark);">Subject Practice Quiz</a> — great for repeat runs.</p>
   </section>
 
 </div>
@@ -467,29 +522,29 @@
 
 <script>
 const practiceItems = [
-  { subject: "casa", en: "house", answer: "Noun", esAnswer: "Sustantivo", note: "Casa names a thing — that makes it a noun." },
-  { subject: "corre", en: "runs", answer: "Verb", esAnswer: "Verbo", note: "Corre shows action — that makes it a verb." },
-  { subject: "rápido", en: "fast", answer: "Adverb", esAnswer: "Adverbio", note: "Rápido describes how the action happens." },
-  { subject: "ella", en: "she", answer: "Pronoun", esAnswer: "Pronombre", note: "Ella stands in for a name. You met this back in Unit 7." },
-  { subject: "grande", en: "big", answer: "Adjective", esAnswer: "Adjetivo", note: "Grande describes a noun." },
-  { subject: "el", en: "the", answer: "Article", esAnswer: "Artículo", note: "El signals that a masculine noun is coming." },
-  { subject: "hablar", en: "to speak", answer: "Verb", esAnswer: "Verbo", note: "This unconjugated form is called an infinitive, and it's the star of Unit 9." },
-  { subject: "bonito", en: "pretty", answer: "Adjective", esAnswer: "Adjetivo", note: "Bonito describes a noun." },
-  { subject: "nosotros", en: "we", answer: "Pronoun", esAnswer: "Pronombre", note: "Nosotros stands in for a group that includes the speaker. Another callback to the Box of Six." },
-  { subject: "una", en: "a / an", answer: "Article", esAnswer: "Artículo", note: "Una signals a feminine noun is coming." }
+  { subject: "Elena", answer: "3rd person singular", pronoun: "ella", note: "Elena is one person, not the speaker or the listener — so she falls in the 3rd person singular box." },
+  { subject: "Mom and Dad", answer: "3rd person plural", pronoun: "ellos", note: "Two people, neither the speaker nor the listener — 3rd person plural." },
+  { subject: "My dog and I", answer: "1st person plural", pronoun: "nosotros", note: "Because \"I\" is included, the speaker is part of this subject — that makes it 1st person, and plural since there's more than one." },
+  { subject: "I", answer: "1st person singular", pronoun: "yo", note: "Just the speaker, alone — 1st person singular." },
+  { subject: "You (talking directly to one friend)", answer: "2nd person singular", pronoun: "tú", note: "The person being spoken to, just one of them — 2nd person singular." },
+  { subject: "You and your sister (both being spoken to)", answer: "2nd person plural (in concept)", pronoun: "ustedes", note: "This is plural \"you\" — 2nd person plural in concept. But remember: since vosotros isn't used, ustedes actually borrows the 3rd-person-plural box for its verb forms." },
+  { subject: "The teacher", answer: "3rd person singular", pronoun: "él / ella", note: "One person being talked about, not speaking or being spoken to — 3rd person singular." },
+  { subject: "My friends and I", answer: "1st person plural", pronoun: "nosotros", note: "The speaker is included again, so this is 1st person — and plural because it's more than one person." },
+  { subject: "The students", answer: "3rd person plural", pronoun: "ellos / ellas", note: "A group being talked about, not speaking or being spoken to — 3rd person plural." },
+  { subject: "My brother", answer: "3rd person singular", pronoun: "él", note: "One person, not the speaker or listener — 3rd person singular." }
 ];
 
 const list = document.getElementById('practiceList');
-practiceItems.forEach((item) => {
+practiceItems.forEach((item, i) => {
   const card = document.createElement('div');
   card.className = 'practice-card';
   card.innerHTML = `
     <div class="subject">
-      <span>${item.subject} <span style="color: var(--muted); font-weight: 500; font-size: 0.85em;">(${item.en})</span></span>
+      <span>${item.subject}</span>
       <span class="toggle-icon">＋</span>
     </div>
-    <div class="hint">Tap to reveal the category</div>
-    <div class="answer"><strong>${item.esAnswer} (${item.answer})</strong>. ${item.note}</div>
+    <div class="hint">Tap to reveal the answer</div>
+    <div class="answer"><strong>${item.answer}</strong> — pronoun: <strong>${item.pronoun}</strong>. ${item.note}</div>
   `;
   card.addEventListener('click', () => {
     card.classList.toggle('revealed');

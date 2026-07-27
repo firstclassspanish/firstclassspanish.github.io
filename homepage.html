@@ -6,10 +6,29 @@
 <title>First Class Spanish | Your Ticket to Spanish Fluency</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Sora:wght@600;700;800&family=Playfair+Display:wght@800&family=Barlow+Condensed:wght@600&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Sora:wght@600;700;800&family=Playfair+Display:wght@800&family=Barlow+Condensed:wght@600;700&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="assets/fcs-medallion.svg">
 <link rel="stylesheet" href="css/brand.css?v=17">
 <style>
+
+  .nav-header { justify-content: center; }
+  .nav-links { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+  .nav-pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,0.14); color: var(--white);
+    font-family: 'Sora', sans-serif; font-weight: 600; font-size: 0.9rem;
+    padding: 9px 18px; border-radius: 20px; text-decoration: none;
+    transition: background 0.15s ease;
+  }
+  .nav-pill:hover { background: rgba(255,255,255,0.24); }
+  .soon-tag {
+    background: var(--gold); color: var(--forest); font-size: 0.68rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.03em; padding: 2px 7px; border-radius: 8px;
+  }
+  @media (max-width: 640px) {
+    .nav-links { gap: 8px; }
+    .nav-pill { font-size: 0.82rem; padding: 7px 14px; }
+  }
 
   .hero { text-align: center; padding: 56px 24px 50px; }
   .hero-ticket { margin: 0 auto 32px; }
@@ -84,7 +103,14 @@
   }
   .unit-card.active:hover { transform: translateY(-3px); }
   .unit-card.active { cursor: pointer; }
-  .unit-card.locked { opacity: 0.6; }
+
+  .unit-card.locked {
+    background: transparent; border: 1.5px dashed #C9C6BC; cursor: default;
+  }
+  .unit-card.locked .unit-num { background: transparent; border: 1.5px solid #B8B4A8; color: var(--muted); }
+  .unit-card.locked h3 { color: var(--gray); }
+  .unit-card.locked p { color: var(--muted); }
+  .unit-card.locked .status { color: var(--muted); }
 
   .unit-card .unit-num {
     display: inline-block; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 0.75rem;
@@ -99,9 +125,9 @@
   .unit-card.unit1 .unit-num { background: var(--teal); color: var(--white); }
   .unit-card.unit1 .status { color: var(--teal); }
 
-  .unit-card.unit2 { background: var(--terracotta-light); }
-  .unit-card.unit2 .unit-num { background: var(--terracotta); color: var(--white); }
-  .unit-card.unit2 .status { color: var(--terracotta); }
+  .unit-card.unit7 { background: var(--terracotta-light); }
+  .unit-card.unit7 .unit-num { background: var(--terracotta); color: var(--white); }
+  .unit-card.unit7 .status { color: var(--terracotta); }
 
   .unit-card.partsofspeech { background: var(--plum-light); }
   .unit-card.partsofspeech .unit-num { background: var(--plum); color: var(--white); }
@@ -136,192 +162,12 @@
 </head>
 <body>
 
-<header>
-  <a href="index.html" class="site-logo" aria-label="First Class Spanish home">
-    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1280 440" width="1280" height="440" role="img" aria-label="First Class Spanish ticket logo">
-<defs>
-<style>
-.wm  { font-family:'Playfair Display', Georgia, 'Times New Roman', serif; font-weight:800; }
-.ut  { font-family:'Barlow Condensed', 'Helvetica Neue', Arial, sans-serif; font-weight:600; }
-</style>
-<filter id="hdrLift" x="-15%" y="-25%" width="130%" height="170%">
-  <feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#0B2A1C" flood-opacity="0.20"/>
-  <feDropShadow dx="0" dy="3"  stdDeviation="3"  flood-color="#0B2A1C" flood-opacity="0.16"/>
-</filter>
-<filter id="hdrGrain" x="0%" y="0%" width="100%" height="100%">
-  <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch" result="n"/>
-  <feColorMatrix type="saturate" values="0"/>
-  <feComponentTransfer><feFuncA type="linear" slope="0.16" intercept="0"/></feComponentTransfer>
-</filter>
-<filter id="hdrPress" x="-10%" y="-30%" width="120%" height="180%">
-  <feDropShadow dx="0" dy="1.2" stdDeviation="0" flood-color="#FFFFFF" flood-opacity="0.75"/>
-  <feDropShadow dx="0" dy="-0.8" stdDeviation="0.6" flood-color="#06170F" flood-opacity="0.35"/>
-</filter>
-<linearGradient id="hdrPaper" x1="0" y1="0" x2="0" y2="1">
-  <stop offset="0"    stop-color="#FBF7EC"/>
-  <stop offset="0.55" stop-color="#F6F0DF"/>
-  <stop offset="1"    stop-color="#E9DFC4"/>
-</linearGradient>
-<linearGradient id="hdrStubTint" x1="0" y1="0" x2="1" y2="0">
-  <stop offset="0" stop-color="#2E8B5E" stop-opacity="0.10"/>
-  <stop offset="1" stop-color="#2E8B5E" stop-opacity="0.03"/>
-</linearGradient>
-<linearGradient id="hdrTicketFoil" x1="0" y1="0" x2="1" y2="1">
-  <stop offset="0"    stop-color="#9C7620"/>
-  <stop offset="0.28" stop-color="#E3C46B"/>
-  <stop offset="0.52" stop-color="#B8912F"/>
-  <stop offset="0.78" stop-color="#F0DA9A"/>
-  <stop offset="1"    stop-color="#9C7620"/>
-</linearGradient>
-<linearGradient id="hdrSheen" x1="0" y1="0" x2="1" y2="0.6">
-  <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.30"/>
-  <stop offset="0.35" stop-color="#FFFFFF" stop-opacity="0.05"/>
-  <stop offset="1" stop-color="#0B3021" stop-opacity="0.07"/>
-</linearGradient>
-<pattern id="hdrHatch" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(0)">
-  <path d="M -1,10 L 10,-1" stroke="#1C5F3F" stroke-opacity="0.13" stroke-width="0.9"/>
-  <path d="M -1,4 L 4,-1"   stroke="#1C5F3F" stroke-opacity="0.05" stroke-width="0.6"/>
-</pattern>
-<clipPath id="hdrClipTicket"><path d="M 58,40 L 327,40 A 17,17 0 0 0 361,40 L 1222,40 A 18,18 0 0 1 1240,58 L 1240,382 A 18,18 0 0 1 1222,400 L 361,400 A 17,17 0 0 0 327,400 L 58,400 A 18,18 0 0 1 40,382 L 40,58 A 18,18 0 0 1 58,40 Z"/></clipPath>
-<mask id="hdrPunch" maskUnits="userSpaceOnUse" x="0" y="0" width="1280" height="440">
-<rect x="0" y="0" width="1280" height="440" fill="#fff"/>
-<circle cx="344" cy="70" r="3.1" fill="#000"/>
-<circle cx="344" cy="90" r="3.1" fill="#000"/>
-<circle cx="344" cy="110" r="3.1" fill="#000"/>
-<circle cx="344" cy="130" r="3.1" fill="#000"/>
-<circle cx="344" cy="150" r="3.1" fill="#000"/>
-<circle cx="344" cy="170" r="3.1" fill="#000"/>
-<circle cx="344" cy="190" r="3.1" fill="#000"/>
-<circle cx="344" cy="210" r="3.1" fill="#000"/>
-<circle cx="344" cy="230" r="3.1" fill="#000"/>
-<circle cx="344" cy="250" r="3.1" fill="#000"/>
-<circle cx="344" cy="270" r="3.1" fill="#000"/>
-<circle cx="344" cy="290" r="3.1" fill="#000"/>
-<circle cx="344" cy="310" r="3.1" fill="#000"/>
-<circle cx="344" cy="330" r="3.1" fill="#000"/>
-<circle cx="344" cy="350" r="3.1" fill="#000"/>
-<circle cx="344" cy="370" r="3.1" fill="#000"/>
-</mask>
-<path id="hdrSealRing" fill="none" d="M 192,279 a 83,83 0 1,1 0,-166 a 83,83 0 1,1 0,166"/>
-</defs>
-<g mask="url(#hdrPunch)">
-<path d="M 58,40 L 327,40 A 17,17 0 0 0 361,40 L 1222,40 A 18,18 0 0 1 1240,58 L 1240,382 A 18,18 0 0 1 1222,400 L 361,400 A 17,17 0 0 0 327,400 L 58,400 A 18,18 0 0 1 40,382 L 40,58 A 18,18 0 0 1 58,40 Z" fill="url(#hdrPaper)" filter="url(#hdrLift)"/>
-<g clip-path="url(#hdrClipTicket)">
-<rect x="40" y="40" width="1200" height="360" fill="url(#hdrHatch)"/>
-<rect x="40" y="40" width="304" height="360" fill="url(#hdrStubTint)"/>
-<g opacity="0.30">
-<ellipse cx="192" cy="196" rx="72" ry="27" fill="none" stroke="#1C5F3F" stroke-opacity="0.32" stroke-width="0.55" transform="rotate(0 192 196)"/>
-<ellipse cx="192" cy="196" rx="72" ry="27" fill="none" stroke="#1C5F3F" stroke-opacity="0.32" stroke-width="0.55" transform="rotate(10 192 196)"/>
-<ellipse cx="192" cy="196" rx="72" ry="27" fill="none" stroke="#1C5F3F" stroke-opacity="0.32" stroke-width="0.55" transform="rotate(20 192 196)"/>
-<ellipse cx="192" cy="196" rx="72" ry="27" fill="none" stroke="#1C5F3F" stroke-opacity="0.32" stroke-width="0.55" transform="rotate(30 192 196)"/>
-<ellipse cx="192" cy="196" rx="72" ry="27" fill="none" stroke="#1C5F3F" stroke-opacity="0.32" stroke-width="0.55" transform="rotate(40 192 196)"/>
-<ellipse cx="192" cy="196" rx="72" ry="27" fill="none" stroke="#1C5F3F" stroke-opacity="0.32" stroke-width="0.55" transform="rotate(50 192 196)"/>
-<ellipse cx="192" cy="196" rx="72" ry="27" fill="none" stroke="#1C5F3F" stroke-opacity="0.32" stroke-width="0.55" transform="rotate(60 192 196)"/>
-<ellipse cx="192" cy="196" rx="72" ry="27" fill="none" stroke="#1C5F3F" stroke-opacity="0.32" stroke-width="0.55" transform="rotate(70 192 196)"/>
-<ellipse cx="192" cy="196" rx="72" ry="27" fill="none" stroke="#1C5F3F" stroke-opacity="0.32" stroke-width="0.55" transform="rotate(80 192 196)"/>
-<ellipse cx="192" cy="196" rx="72" ry="27" fill="none" stroke="#1C5F3F" stroke-opacity="0.32" stroke-width="0.55" transform="rotate(90 192 196)"/>
-<ellipse cx="192" cy="196" rx="72" ry="27" fill="none" stroke="#1C5F3F" stroke-opacity="0.32" stroke-width="0.55" transform="rotate(100 192 196)"/>
-<ellipse cx="192" cy="196" rx="72" ry="27" fill="none" stroke="#1C5F3F" stroke-opacity="0.32" stroke-width="0.55" transform="rotate(110 192 196)"/>
-<ellipse cx="192" cy="196" rx="72" ry="27" fill="none" stroke="#1C5F3F" stroke-opacity="0.32" stroke-width="0.55" transform="rotate(120 192 196)"/>
-<ellipse cx="192" cy="196" rx="72" ry="27" fill="none" stroke="#1C5F3F" stroke-opacity="0.32" stroke-width="0.55" transform="rotate(130 192 196)"/>
-<ellipse cx="192" cy="196" rx="72" ry="27" fill="none" stroke="#1C5F3F" stroke-opacity="0.32" stroke-width="0.55" transform="rotate(140 192 196)"/>
-<ellipse cx="192" cy="196" rx="72" ry="27" fill="none" stroke="#1C5F3F" stroke-opacity="0.32" stroke-width="0.55" transform="rotate(150 192 196)"/>
-<ellipse cx="192" cy="196" rx="72" ry="27" fill="none" stroke="#1C5F3F" stroke-opacity="0.32" stroke-width="0.55" transform="rotate(160 192 196)"/>
-<ellipse cx="192" cy="196" rx="72" ry="27" fill="none" stroke="#1C5F3F" stroke-opacity="0.32" stroke-width="0.55" transform="rotate(170 192 196)"/>
-</g>
-<g opacity="0.22">
-<ellipse cx="790" cy="220" rx="352" ry="86" fill="none" stroke="#1C5F3F" stroke-opacity="0.30" stroke-width="0.5" transform="rotate(0.0 790 220)"/>
-<ellipse cx="790" cy="220" rx="352" ry="86" fill="none" stroke="#1C5F3F" stroke-opacity="0.30" stroke-width="0.5" transform="rotate(7.5 790 220)"/>
-<ellipse cx="790" cy="220" rx="352" ry="86" fill="none" stroke="#1C5F3F" stroke-opacity="0.30" stroke-width="0.5" transform="rotate(15.0 790 220)"/>
-<ellipse cx="790" cy="220" rx="352" ry="86" fill="none" stroke="#1C5F3F" stroke-opacity="0.30" stroke-width="0.5" transform="rotate(22.5 790 220)"/>
-<ellipse cx="790" cy="220" rx="352" ry="86" fill="none" stroke="#1C5F3F" stroke-opacity="0.30" stroke-width="0.5" transform="rotate(30.0 790 220)"/>
-<ellipse cx="790" cy="220" rx="352" ry="86" fill="none" stroke="#1C5F3F" stroke-opacity="0.30" stroke-width="0.5" transform="rotate(37.5 790 220)"/>
-<ellipse cx="790" cy="220" rx="352" ry="86" fill="none" stroke="#1C5F3F" stroke-opacity="0.30" stroke-width="0.5" transform="rotate(45.0 790 220)"/>
-<ellipse cx="790" cy="220" rx="352" ry="86" fill="none" stroke="#1C5F3F" stroke-opacity="0.30" stroke-width="0.5" transform="rotate(52.5 790 220)"/>
-<ellipse cx="790" cy="220" rx="352" ry="86" fill="none" stroke="#1C5F3F" stroke-opacity="0.30" stroke-width="0.5" transform="rotate(60.0 790 220)"/>
-<ellipse cx="790" cy="220" rx="352" ry="86" fill="none" stroke="#1C5F3F" stroke-opacity="0.30" stroke-width="0.5" transform="rotate(67.5 790 220)"/>
-<ellipse cx="790" cy="220" rx="352" ry="86" fill="none" stroke="#1C5F3F" stroke-opacity="0.30" stroke-width="0.5" transform="rotate(75.0 790 220)"/>
-<ellipse cx="790" cy="220" rx="352" ry="86" fill="none" stroke="#1C5F3F" stroke-opacity="0.30" stroke-width="0.5" transform="rotate(82.5 790 220)"/>
-<ellipse cx="790" cy="220" rx="352" ry="86" fill="none" stroke="#1C5F3F" stroke-opacity="0.30" stroke-width="0.5" transform="rotate(90.0 790 220)"/>
-<ellipse cx="790" cy="220" rx="352" ry="86" fill="none" stroke="#1C5F3F" stroke-opacity="0.30" stroke-width="0.5" transform="rotate(97.5 790 220)"/>
-<ellipse cx="790" cy="220" rx="352" ry="86" fill="none" stroke="#1C5F3F" stroke-opacity="0.30" stroke-width="0.5" transform="rotate(105.0 790 220)"/>
-<ellipse cx="790" cy="220" rx="352" ry="86" fill="none" stroke="#1C5F3F" stroke-opacity="0.30" stroke-width="0.5" transform="rotate(112.5 790 220)"/>
-<ellipse cx="790" cy="220" rx="352" ry="86" fill="none" stroke="#1C5F3F" stroke-opacity="0.30" stroke-width="0.5" transform="rotate(120.0 790 220)"/>
-<ellipse cx="790" cy="220" rx="352" ry="86" fill="none" stroke="#1C5F3F" stroke-opacity="0.30" stroke-width="0.5" transform="rotate(127.5 790 220)"/>
-<ellipse cx="790" cy="220" rx="352" ry="86" fill="none" stroke="#1C5F3F" stroke-opacity="0.30" stroke-width="0.5" transform="rotate(135.0 790 220)"/>
-<ellipse cx="790" cy="220" rx="352" ry="86" fill="none" stroke="#1C5F3F" stroke-opacity="0.30" stroke-width="0.5" transform="rotate(142.5 790 220)"/>
-<ellipse cx="790" cy="220" rx="352" ry="86" fill="none" stroke="#1C5F3F" stroke-opacity="0.30" stroke-width="0.5" transform="rotate(150.0 790 220)"/>
-<ellipse cx="790" cy="220" rx="352" ry="86" fill="none" stroke="#1C5F3F" stroke-opacity="0.30" stroke-width="0.5" transform="rotate(157.5 790 220)"/>
-<ellipse cx="790" cy="220" rx="352" ry="86" fill="none" stroke="#1C5F3F" stroke-opacity="0.30" stroke-width="0.5" transform="rotate(165.0 790 220)"/>
-<ellipse cx="790" cy="220" rx="352" ry="86" fill="none" stroke="#1C5F3F" stroke-opacity="0.30" stroke-width="0.5" transform="rotate(172.5 790 220)"/>
-</g>
-<path d="M 71,53 L 324.4,53 M 363.6,53 L 1209,53 A 18,18 0 0 1 1227,71 L 1227,369 A 18,18 0 0 1 1209,387 L 363.6,387 M 324.4,387 L 71,387 A 18,18 0 0 1 53,369 L 53,71 A 18,18 0 0 1 71,53" fill="none" stroke="url(#hdrTicketFoil)" stroke-width="3.2" stroke-linecap="round"/>
-<path d="M 78,60 L 323.0,60 M 365.0,60 L 1202,60 A 18,18 0 0 1 1220,78 L 1220,362 A 18,18 0 0 1 1202,380 L 365.0,380 M 323.0,380 L 78,380 A 18,18 0 0 1 60,362 L 60,78 A 18,18 0 0 1 78,60" fill="none" stroke="url(#hdrTicketFoil)" stroke-width="1" stroke-opacity="0.85"/>
-<path d="M 86,68 L 321.4,68 M 366.6,68 L 1194,68 A 18,18 0 0 1 1212,86 L 1212,354 A 18,18 0 0 1 1194,372 L 366.6,372 M 321.4,372 L 86,372 A 18,18 0 0 1 68,354 L 68,86 A 18,18 0 0 1 86,68" fill="none" stroke="#1C5F3F" stroke-width="0.7" stroke-opacity="0.35"/>
-<path d="M 58,40 L 327,40 A 17,17 0 0 0 361,40 L 1222,40 A 18,18 0 0 1 1240,58 L 1240,382 A 18,18 0 0 1 1222,400 L 361,400 A 17,17 0 0 0 327,400 L 58,400 A 18,18 0 0 1 40,382 L 40,58 A 18,18 0 0 1 58,40 Z" fill="none" stroke="#E9DFC4" stroke-width="2"/>
-<path d="M 58,40 L 327,40 A 17,17 0 0 0 361,40 L 1222,40 A 18,18 0 0 1 1240,58 L 1240,382 A 18,18 0 0 1 1222,400 L 361,400 A 17,17 0 0 0 327,400 L 58,400 A 18,18 0 0 1 40,382 L 40,58 A 18,18 0 0 1 58,40 Z" fill="none" stroke="#1C5F3F" stroke-width="0.8" stroke-opacity="0.30"/>
-<line x1="344" y1="56" x2="344" y2="384" stroke="#1C5F3F" stroke-opacity="0.30" stroke-width="1" stroke-dasharray="1 5" stroke-linecap="round"/>
-<circle cx="344" cy="70" r="4.4" fill="none" stroke="#8C7A55" stroke-opacity="0.35" stroke-width="1.6"/>
-<circle cx="344" cy="71" r="3.9" fill="none" stroke="#FFFFFF" stroke-opacity="0.55" stroke-width="1"/>
-<circle cx="344" cy="90" r="4.4" fill="none" stroke="#8C7A55" stroke-opacity="0.35" stroke-width="1.6"/>
-<circle cx="344" cy="91" r="3.9" fill="none" stroke="#FFFFFF" stroke-opacity="0.55" stroke-width="1"/>
-<circle cx="344" cy="110" r="4.4" fill="none" stroke="#8C7A55" stroke-opacity="0.35" stroke-width="1.6"/>
-<circle cx="344" cy="111" r="3.9" fill="none" stroke="#FFFFFF" stroke-opacity="0.55" stroke-width="1"/>
-<circle cx="344" cy="130" r="4.4" fill="none" stroke="#8C7A55" stroke-opacity="0.35" stroke-width="1.6"/>
-<circle cx="344" cy="131" r="3.9" fill="none" stroke="#FFFFFF" stroke-opacity="0.55" stroke-width="1"/>
-<circle cx="344" cy="150" r="4.4" fill="none" stroke="#8C7A55" stroke-opacity="0.35" stroke-width="1.6"/>
-<circle cx="344" cy="151" r="3.9" fill="none" stroke="#FFFFFF" stroke-opacity="0.55" stroke-width="1"/>
-<circle cx="344" cy="170" r="4.4" fill="none" stroke="#8C7A55" stroke-opacity="0.35" stroke-width="1.6"/>
-<circle cx="344" cy="171" r="3.9" fill="none" stroke="#FFFFFF" stroke-opacity="0.55" stroke-width="1"/>
-<circle cx="344" cy="190" r="4.4" fill="none" stroke="#8C7A55" stroke-opacity="0.35" stroke-width="1.6"/>
-<circle cx="344" cy="191" r="3.9" fill="none" stroke="#FFFFFF" stroke-opacity="0.55" stroke-width="1"/>
-<circle cx="344" cy="210" r="4.4" fill="none" stroke="#8C7A55" stroke-opacity="0.35" stroke-width="1.6"/>
-<circle cx="344" cy="211" r="3.9" fill="none" stroke="#FFFFFF" stroke-opacity="0.55" stroke-width="1"/>
-<circle cx="344" cy="230" r="4.4" fill="none" stroke="#8C7A55" stroke-opacity="0.35" stroke-width="1.6"/>
-<circle cx="344" cy="231" r="3.9" fill="none" stroke="#FFFFFF" stroke-opacity="0.55" stroke-width="1"/>
-<circle cx="344" cy="250" r="4.4" fill="none" stroke="#8C7A55" stroke-opacity="0.35" stroke-width="1.6"/>
-<circle cx="344" cy="251" r="3.9" fill="none" stroke="#FFFFFF" stroke-opacity="0.55" stroke-width="1"/>
-<circle cx="344" cy="270" r="4.4" fill="none" stroke="#8C7A55" stroke-opacity="0.35" stroke-width="1.6"/>
-<circle cx="344" cy="271" r="3.9" fill="none" stroke="#FFFFFF" stroke-opacity="0.55" stroke-width="1"/>
-<circle cx="344" cy="290" r="4.4" fill="none" stroke="#8C7A55" stroke-opacity="0.35" stroke-width="1.6"/>
-<circle cx="344" cy="291" r="3.9" fill="none" stroke="#FFFFFF" stroke-opacity="0.55" stroke-width="1"/>
-<circle cx="344" cy="310" r="4.4" fill="none" stroke="#8C7A55" stroke-opacity="0.35" stroke-width="1.6"/>
-<circle cx="344" cy="311" r="3.9" fill="none" stroke="#FFFFFF" stroke-opacity="0.55" stroke-width="1"/>
-<circle cx="344" cy="330" r="4.4" fill="none" stroke="#8C7A55" stroke-opacity="0.35" stroke-width="1.6"/>
-<circle cx="344" cy="331" r="3.9" fill="none" stroke="#FFFFFF" stroke-opacity="0.55" stroke-width="1"/>
-<circle cx="344" cy="350" r="4.4" fill="none" stroke="#8C7A55" stroke-opacity="0.35" stroke-width="1.6"/>
-<circle cx="344" cy="351" r="3.9" fill="none" stroke="#FFFFFF" stroke-opacity="0.55" stroke-width="1"/>
-<circle cx="344" cy="370" r="4.4" fill="none" stroke="#8C7A55" stroke-opacity="0.35" stroke-width="1.6"/>
-<circle cx="344" cy="371" r="3.9" fill="none" stroke="#FFFFFF" stroke-opacity="0.55" stroke-width="1"/>
-<rect x="330" y="40" width="14" height="360" fill="#1C5F3F" opacity="0.05"/>
-<rect x="344" y="40" width="14" height="360" fill="#FFFFFF" opacity="0.35"/>
-<g>
-<circle cx="192" cy="196" r="95" fill="none" stroke="url(#hdrTicketFoil)" stroke-width="1"/>
-<circle cx="192" cy="196" r="70" fill="none" stroke="url(#hdrTicketFoil)" stroke-width="1"/>
-<text class="ut" font-size="15" letter-spacing="3.4" fill="#1C5F3F" fill-opacity="0.85"><textPath href="#hdrSealRing" xlink:href="#hdrSealRing" startOffset="50%" text-anchor="middle">PRIMERA CLASE &#183; FIRST CLASS &#183; ADMIT ONE &#183;</textPath></text>
-<path d="M 192,273 L 198,279 L 192,285 L 186,279 Z" fill="#B8912F"/>
-<circle cx="192" cy="198" r="53" fill="#0B3021" opacity="0.18"/>
-<circle cx="192" cy="196" r="53" fill="url(#hdrTicketFoil)"/>
-<circle cx="192" cy="196" r="48" fill="#1C5F3F"/>
-<circle cx="192" cy="196" r="48" fill="none" stroke="#0B3021" stroke-opacity="0.35" stroke-width="1"/>
-<circle cx="192" cy="196" r="40" fill="none" stroke="#E3C46B" stroke-opacity="0.55" stroke-width="0.9"/>
-<path d="M 192.00,171.00 L 198.23,187.42 L 215.78,188.27 L 202.08,199.28 L 206.69,216.23 L 192.00,206.60 L 177.31,216.23 L 181.92,199.28 L 168.22,188.27 L 185.77,187.42 Z" fill="#0B3021" opacity="0.30" transform="translate(0,2)"/>
-<path d="M 192.00,171.00 L 198.23,187.42 L 215.78,188.27 L 202.08,199.28 L 206.69,216.23 L 192.00,206.60 L 177.31,216.23 L 181.92,199.28 L 168.22,188.27 L 185.77,187.42 Z" fill="#F6F0DF"/>
-</g>
-<text class="ut" x="192" y="360" text-anchor="middle" font-size="26" letter-spacing="2" fill="#B8912F">SERIE A &#183; N&#186; 0001</text>
-<text class="ut" x="786" y="132" text-anchor="middle" font-size="35" letter-spacing="5" fill="#1C5F3F" fill-opacity="0.85">ADMIT ONE &#183; PASE GENERAL</text>
-<text class="wm" x="786" y="245" text-anchor="middle" font-size="84" textLength="802" lengthAdjust="spacing" fill="#0F3B27" filter="url(#hdrPress)">First Class Spanish</text>
-<line x1="486" y1="280" x2="764" y2="280" stroke="url(#hdrTicketFoil)" stroke-width="1.4"/>
-<line x1="808" y1="280" x2="1086" y2="280" stroke="url(#hdrTicketFoil)" stroke-width="1.4"/>
-<path d="M 786,272 L 794,280 L 786,288 L 778,280 Z" fill="#B8912F"/>
-<text class="ut" x="786" y="332" text-anchor="middle" font-size="38" letter-spacing="3.5" fill="#1C5F3F" fill-opacity="0.9">YOUR TICKET TO SPANISH FLUENCY</text>
-<text class="ut" x="0" y="0" font-size="15" letter-spacing="4" fill="#1C5F3F" fill-opacity="0.55" text-anchor="middle" transform="translate(1198,220.0) rotate(90)">FCS-2026-0001</text>
-<rect x="40" y="40" width="1200" height="360" filter="url(#hdrGrain)" opacity="0.5" style="mix-blend-mode:multiply"/>
-<rect x="40" y="40" width="1200" height="360" fill="url(#hdrSheen)"/>
-</g>
-</g>
-</svg>
-  </a>
+<header class="nav-header">
+  <div class="nav-links">
+    <a href="#" class="nav-pill" title="Coming soon">Grammar Practice <span class="soon-tag">Soon</span></a>
+    <a href="#" class="nav-pill" title="Coming soon">Reading &amp; Comprehension <span class="soon-tag">Soon</span></a>
+    <a href="#" class="nav-pill" title="Coming soon">Word Bank <span class="soon-tag">Soon</span></a>
+  </div>
 </header>
 
 <div class="hero">
@@ -330,7 +176,7 @@
 <defs>
 <style>
 .wm  { font-family:'Playfair Display', Georgia, 'Times New Roman', serif; font-weight:800; }
-.ut  { font-family:'Barlow Condensed', 'Helvetica Neue', Arial, sans-serif; font-weight:600; }
+.ut  { font-family:'Barlow Condensed', 'Helvetica Neue', Arial, sans-serif; font-weight:700; }
 </style>
 <filter id="lift" x="-15%" y="-25%" width="130%" height="170%">
   <feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#0B2A1C" flood-opacity="0.20"/>
@@ -502,7 +348,7 @@
 <line x1="486" y1="280" x2="764" y2="280" stroke="url(#ticketFoil)" stroke-width="1.4"/>
 <line x1="808" y1="280" x2="1086" y2="280" stroke="url(#ticketFoil)" stroke-width="1.4"/>
 <path d="M 786,272 L 794,280 L 786,288 L 778,280 Z" fill="#B8912F"/>
-<text class="ut" x="786" y="322" text-anchor="middle" font-size="20" letter-spacing="7" fill="#1C5F3F" fill-opacity="0.9">YOUR TICKET TO SPANISH FLUENCY</text>
+<text class="ut" x="786" y="326" text-anchor="middle" font-size="28" letter-spacing="5" fill="#1C5F3F" fill-opacity="0.9">YOUR TICKET TO SPANISH FLUENCY</text>
 <text class="ut" x="0" y="0" font-size="15" letter-spacing="4" fill="#1C5F3F" fill-opacity="0.55" text-anchor="middle" transform="translate(1198,220.0) rotate(90)">FCS-2026-0001</text>
 <rect x="40" y="40" width="1200" height="360" filter="url(#grain)" opacity="0.5" style="mix-blend-mode:multiply"/>
 <rect x="40" y="40" width="1200" height="360" fill="url(#sheen)"/>
@@ -533,15 +379,15 @@
     <div class="category-intro">
       <div class="category-stamp">
         <div class="stamp-star">★</div>
-        <div class="stamp-label">Core<br>Skills</div>
+        <div class="stamp-label">Your<br>Itinerary</div>
       </div>
       <div class="category-heading">
-        <h2>Core Skills</h2>
-        <p>Units 1–6 · The foundation everything else builds on.</p>
+        <h2>Your Itinerary</h2>
+        <p>Units 1–9 · The foundation everything else builds on.</p>
       </div>
     </div>
 
-    <p class="category-explainer">These six units aren't about mastering every rule right away — that comes later, in more advanced lessons. Here, the goal is simpler: give you the general idea and the most important facts for each topic, so you can start reading, writing, and speaking with real confidence — fast.</p>
+    <p class="category-explainer">These nine units aren't about mastering every rule right away — that comes later, in more advanced lessons. Here, the goal is simpler: give you the general idea and the most important facts for each topic, so you can start reading, writing, and speaking with real confidence — fast. (A few units are still being built — they're shown below so you can see where they'll fit in.)</p>
 
     <div class="unit-grid">
 
@@ -552,11 +398,11 @@
         <div class="status">● Ready to start</div>
       </a>
 
-      <a class="unit-card unit2 active" href="unit2-intro-animation.html">
+      <a class="unit-card locked">
         <div class="unit-num">Unit 2</div>
-        <h3>Grammatical Person<span class="unit-translation">La persona gramatical</span></h3>
-        <p>Meet the Box of Six — the foundation for verbs, pronouns, and everything ahead.</p>
-        <div class="status">● Ready to start</div>
+        <h3>Greetings &amp; Introductions<span class="unit-translation">Saludos y presentaciones</span></h3>
+        <p>Everyday phrases for meeting people, saying hello, and saying goodbye.</p>
+        <div class="status">🔒 Coming soon</div>
       </a>
 
       <a class="unit-card partsofspeech active" href="unit3-intro-animation.html">
@@ -566,11 +412,11 @@
         <div class="status">● Ready to start</div>
       </a>
 
-      <a class="unit-card conjugation active" href="unit4-intro-animation.html">
+      <a class="unit-card locked">
         <div class="unit-num">Unit 4</div>
-        <h3>Conjugation<span class="unit-translation">La conjugación</span></h3>
-        <p>Infinitives, verb families, and how person connects to verb endings.</p>
-        <div class="status">● Ready to start</div>
+        <h3>Cognates &amp; False Cognates<span class="unit-translation">Cognados y falsos cognados</span></h3>
+        <p>Hundreds of Spanish words you already know — and a few tricky traps to watch for.</p>
+        <div class="status">🔒 Coming soon</div>
       </a>
 
       <a class="unit-card unit5 active" href="unit5-intro-animation.html">
@@ -587,8 +433,56 @@
         <div class="status">● Ready to start</div>
       </a>
 
+      <a class="unit-card unit7 active" href="unit7-intro-animation.html">
+        <div class="unit-num">Unit 7</div>
+        <h3>Grammatical Person<span class="unit-translation">La persona gramatical</span></h3>
+        <p>Meet the Box of Six — the foundation for verbs, pronouns, and everything ahead.</p>
+        <div class="status">● Ready to start</div>
+      </a>
+
+      <a class="unit-card locked">
+        <div class="unit-num">Unit 8</div>
+        <h3>Verbs<span class="unit-translation">Los verbos</span></h3>
+        <p>Infinitives, the three verb families, and the top verbs you'll use every day.</p>
+        <div class="status">🔒 Coming soon</div>
+      </a>
+
+      <a class="unit-card conjugation active" href="unit9-intro-animation.html">
+        <div class="unit-num">Unit 9</div>
+        <h3>Conjugation<span class="unit-translation">La conjugación</span></h3>
+        <p>Infinitives, verb families, and how person connects to verb endings.</p>
+        <div class="status">● Ready to start</div>
+      </a>
+
+    </div>
+  </div>
+
+  <div class="category-block sidetrips-block">
+    <div class="category-intro">
+      <div class="category-heading">
+        <h2>Side Trips</h2>
+        <p>Detours worth taking — no ticket required, hop in whenever you're curious.</p>
+      </div>
     </div>
 
+    <div class="unit-grid">
+
+      <a class="unit-card locked">
+        <div class="unit-num">Preposiciones</div>
+        <h3>Prepositions<span class="unit-translation">Las preposiciones</span></h3>
+        <p>The small words that connect everything — where, when, and how things relate.</p>
+        <div class="status">🔒 Coming soon</div>
+      </a>
+
+    </div>
+
+    <div class="coming-soon-block">
+      <div class="cs-label">More Side Trips coming soon</div>
+      <p>Accent and stress rules, and other standalone essentials, will join this cluster over time.</p>
+    </div>
+  </div>
+
+  <div class="category-block">
     <div class="coming-soon-block">
       <div class="cs-label">More categories coming soon</div>
       <p>New units and topics are on the way — this page will grow with them.</p>
@@ -598,7 +492,7 @@
 
 <div class="home-cta">
   <h2>Ready to board? ✈️</h2>
-  <p>Six units, one clear path. Start with the basics and build your way up to real fluency.</p>
+  <p>Ten units, one clear path. Start with the basics and build your way up to real fluency.</p>
   <a class="board-btn" href="unit1-intro-animation.html">Start with Unit 1 →</a>
 </div>
 

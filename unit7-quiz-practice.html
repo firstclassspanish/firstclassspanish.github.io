@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Unit 3 Foundation Quiz | First Class Spanish</title>
+<title>Unit 7 Practice Quiz | First Class Spanish</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Sora:wght@600;700;800&family=Playfair+Display:wght@800&family=Barlow+Condensed:wght@600&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="css/brand.css?v=17">
 <link rel="stylesheet" href="css/quiz.css?v=4">
 </head>
-<body class="unit-plum">
+<body class="unit-terracotta">
 
 <header>
   <a href="index.html" class="site-logo" aria-label="First Class Spanish home">
@@ -199,13 +199,13 @@
 </g>
 </svg>
   </a>
-  <div class="unit-pill">Unit 3 · Parts of Speech</div>
+  <div class="unit-pill">Unit 7 · Grammatical Person</div>
 </header>
 
 <div class="quiz-hero">
-  <div class="level-badge">🌱</div>
-  <h1>Foundation Quiz</h1>
-  <p>Core concepts, no prior knowledge needed. Take your time — every question includes an explanation.</p>
+  <div class="level-badge">💪</div>
+  <h1>Practice Quiz</h1>
+  <p>Time to apply what you know. These questions ask you to sort real subjects into the right box.</p>
 </div>
 
 <div class="quiz-wrap">
@@ -217,8 +217,8 @@
     <div class="msg-es" id="scoreMsgEs"></div>
     <div class="nav-links">
       <button class="retry-btn" onclick="location.reload()">Try Again</button>
-      <a class="btn secondary" href="unit3-parts-of-speech-lesson.html">Back to Lesson</a>
-      <a class="btn" href="unit3-quiz-practice.html">Next: Practice 💪</a>
+      <a class="btn secondary" href="unit7-quiz-foundation.html">Back to Foundation</a>
+      <a class="btn" href="unit7-quiz-mastery.html">Next: Mastery 🎯</a>
     </div>
   </div>
 </div>
@@ -228,20 +228,71 @@
 <script src="js/quiz-engine.js?v=1"></script>
 <script>
 const questions = [
-  { q: "What does a noun do?", options: ["Shows action", "Names a person, place, thing, or idea", "Describes a noun", "Connects two words"], correct: 1, explain: "A noun names something — perro (dog), casa (house), amor (love) are all nouns." },
-  { q: "What does a verb show?", options: ["A description", "Action or a state of being", "A category of noun", "A number"], correct: 1, explain: "Verbs show action (corre = runs) or state of being (es = is)." },
-  { q: "What does an adjective do?", options: ["Names a thing", "Shows action", "Describes a noun", "Stands in for a noun"], correct: 2, explain: "Adjectives describe nouns — grande (big), bonito (pretty)." },
-  { q: "What does an adverb usually describe?", options: ["A noun", "A verb — often how, when, or where", "An article", "A pronoun"], correct: 1, explain: "Adverbs usually describe verbs: corre rápido (runs fast) — rápido describes how he runs." },
-  { q: "What does an article do?", options: ["Describes a noun", "Shows action", "Signals that a noun is coming", "Connects two sentences"], correct: 2, explain: "Articles (el, la, un, una) come right before a noun to signal it's about to appear." },
-  { q: "What is a pronoun?", options: ["A word that names a specific thing", "A word that stands in for a noun", "A word that describes an action", "A word that shows number"], correct: 1, explain: "Pronouns (ella, nosotros) stand in for a noun so you don't have to repeat a name — you met these in Unit 7." },
-  { q: "Which part of speech is \"perro\" (dog)?", options: ["Verb", "Adjective", "Noun", "Adverb"], correct: 2, explain: "Perro names a thing — that makes it a noun." },
-  { q: "Which part of speech is \"corre\" (runs)?", options: ["Noun", "Verb", "Article", "Pronoun"], correct: 1, explain: "Corre shows action — that makes it a verb." }
+  {
+    q: "\"Elena\" — which box does this subject belong in?",
+    options: ["1st person singular", "2nd person singular", "3rd person singular", "3rd person plural"],
+    correct: 2,
+    explain: "Elena is one person, not the speaker or the listener — 3rd person singular. Pronoun: ella."
+  },
+  {
+    q: "\"My dog and I\" — which box does this subject belong in?",
+    options: ["1st person singular", "1st person plural", "3rd person singular", "3rd person plural"],
+    correct: 1,
+    explain: "Since \"I\" is included, the speaker is part of the subject — that makes it 1st person, and plural since it's more than one. Pronoun: nosotros."
+  },
+  {
+    q: "\"The students\" — which box does this subject belong in?",
+    options: ["2nd person plural", "3rd person singular", "3rd person plural", "1st person plural"],
+    correct: 2,
+    explain: "A group being talked about, not speaking or being spoken to — 3rd person plural. Pronoun: ellos/ellas."
+  },
+  {
+    q: "You're talking directly to your friend Marco. Which pronoun would you use?",
+    options: ["usted", "tú", "él", "ustedes"],
+    correct: 1,
+    explain: "Marco is a friend, so this calls for the informal tú — 2nd person singular."
+  },
+  {
+    q: "You're addressing your school principal, someone you'd speak to formally. Which pronoun fits?",
+    options: ["tú", "usted", "nosotros", "ellos"],
+    correct: 1,
+    explain: "A formal relationship calls for usted — even though it means \"you,\" it's grammatically 3rd person."
+  },
+  {
+    q: "\"You and your sister\" (both being spoken to) — which pronoun, and which box does it use for verb conjugation?",
+    options: [
+      "tú — 2nd person singular",
+      "vosotros — 2nd person plural",
+      "ustedes — 3rd person plural box",
+      "nosotros — 1st person plural"
+    ],
+    correct: 2,
+    explain: "This is plural \"you\" in concept, but since vosotros isn't used, ustedes borrows the 3rd-person-plural box for its verb forms."
+  },
+  {
+    q: "\"My friends and I\" — which box?",
+    options: ["1st person plural", "2nd person plural", "3rd person plural", "1st person singular"],
+    correct: 0,
+    explain: "The speaker is included, so this is 1st person — and plural, since it's more than one person. Pronoun: nosotros."
+  },
+  {
+    q: "Which of these is grammatically 3rd person, even though it translates as \"you\"?",
+    options: ["tú", "usted", "yo", "nosotros"],
+    correct: 1,
+    explain: "Usted means \"you\" but its verb endings match él/ella — grammatically 3rd person singular."
+  },
+  {
+    q: "\"The teacher\" — which box?",
+    options: ["1st person singular", "2nd person singular", "3rd person singular", "3rd person plural"],
+    correct: 2,
+    explain: "One person being talked about, not speaking or being spoken to — 3rd person singular."
+  }
 ];
 
 const resultsMessages = {
-  perfect: "Perfect score! You've got the six categories down. 🌟",
-  good: "Solid work — you're ready to move on to Practice.",
-  low: "Good start. Revisit the lesson, then give it another shot."
+  perfect: "Perfect score! Sorting subjects into boxes is clicking. 🌟",
+  good: "Nice work — you're ready for the Mastery challenge.",
+  low: "Getting there. Revisit the tricky cases in the lesson, then try again."
 };
 
 initQuiz(questions, resultsMessages);

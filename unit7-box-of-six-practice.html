@@ -3,15 +3,99 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Unit 3 Foundation Quiz | First Class Spanish</title>
+<title>Unit 7 Box of Six Practice | First Class Spanish</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Sora:wght@600;700;800&family=Playfair+Display:wght@800&family=Barlow+Condensed:wght@600&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="assets/fcs-medallion.svg">
 <link rel="stylesheet" href="css/brand.css?v=17">
-<link rel="stylesheet" href="css/quiz.css?v=4">
+<style>
+  * { -webkit-tap-highlight-color: transparent; }
+
+  .practice-hero {
+    background: linear-gradient(135deg, var(--terracotta) 0%, var(--terracotta-dark) 100%);
+    color: var(--white); padding: 40px 24px 34px; text-align: center;
+  }
+  .practice-hero h1 { color: var(--white); font-size: 1.7rem; margin-bottom: 8px; }
+  .practice-hero p { max-width: 520px; margin: 0 auto; color: rgba(255,255,255,0.92); font-size: 0.98rem; }
+
+  .practice-wrap { max-width: 780px; margin: 0 auto; padding: 30px 24px 60px; }
+
+  .status-bar {
+    display: flex; align-items: center; justify-content: space-between;
+    background: var(--white); border-radius: 12px; padding: 14px 20px;
+    box-shadow: 0 1px 3px rgba(14,53,34,0.06); margin-bottom: 20px; flex-wrap: wrap; gap: 10px;
+  }
+  .status-bar .score { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--terracotta-dark); }
+  .status-bar .reset-btn {
+    background: var(--terracotta-light); color: var(--terracotta-dark); border: none;
+    padding: 8px 16px; border-radius: 18px; font-weight: 600; font-size: 0.85rem; cursor: pointer;
+  }
+
+  .box-container { background: var(--white); border-radius: 16px; padding: 24px; box-shadow: 0 1px 3px rgba(14,53,34,0.06); margin-bottom: 20px; }
+  .box-of-six { display: grid; grid-template-columns: 70px 1fr 1fr; gap: 8px; }
+  .box-header {
+    font-family: 'Sora', sans-serif; font-weight: 700; font-size: 0.78rem; text-transform: uppercase;
+    letter-spacing: 0.03em; color: var(--terracotta-dark); text-align: center; padding: 6px 0;
+  }
+  .row-label {
+    display: flex; align-items: center; justify-content: flex-end; padding-right: 8px;
+    font-family: 'Sora', sans-serif; font-weight: 700; font-size: 0.8rem; color: var(--terracotta-dark);
+  }
+  .drop-zone {
+    background: var(--terracotta-light); border: 2px dashed var(--terracotta); border-radius: 12px;
+    min-height: 90px; padding: 8px; display: flex; flex-direction: column; align-items: center;
+    justify-content: center; gap: 4px; transition: background 0.15s ease, border-color 0.15s ease;
+  }
+  .drop-zone .zone-label { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--terracotta-dark); font-size: 0.85rem; }
+  .drop-zone .zone-sub { color: var(--muted); font-size: 0.7rem; }
+  .drop-zone.disabled { background: #F0EFEA; border: 2px dashed #D8D6CE; opacity: 0.7; }
+  .drop-zone.disabled .zone-label { color: var(--muted); }
+  .drop-zone.hover-target { background: #EFDFD3; border-color: var(--terracotta-dark); }
+  .drop-zone .placed-cards { display: flex; flex-wrap: wrap; gap: 4px; justify-content: center; margin-top: 4px; }
+
+  .placed-chip { background: var(--jade); color: var(--white); font-size: 0.72rem; font-weight: 600; padding: 3px 8px; border-radius: 10px; }
+
+  .pool-title { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--forest); margin-bottom: 12px; text-align: center; }
+  .card-pool {
+    display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;
+    background: var(--white); border-radius: 16px; padding: 20px;
+    box-shadow: 0 1px 3px rgba(14,53,34,0.06); min-height: 70px;
+  }
+
+  .subject-card {
+    background: var(--gold-light); border: 1.5px solid var(--gold); border-radius: 12px;
+    padding: 10px 16px; font-weight: 600; color: var(--forest); font-size: 0.88rem;
+    cursor: grab; user-select: none;
+    transition: box-shadow 0.15s ease, transform 0.1s ease; position: relative;
+  }
+  .subject-card.dragging { opacity: 0.4; }
+  .subject-card.selected { box-shadow: 0 0 0 3px var(--terracotta); transform: translateY(-2px); }
+  .subject-card.placed { display: none; }
+  .subject-card.shake { animation: shake 0.4s ease; }
+  @keyframes shake { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
+
+  .instructions { text-align: center; color: var(--muted); font-size: 0.85rem; margin-bottom: 16px; }
+
+  .complete-banner {
+    display: none; background: var(--gold-light); border: 1.5px solid var(--gold);
+    border-radius: 14px; padding: 24px; text-align: center; margin-top: 20px;
+  }
+  .complete-banner.show { display: block; }
+  .complete-banner .big { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1.3rem; color: var(--forest); margin-bottom: 6px; }
+  .complete-banner a {
+    display: inline-block; margin-top: 12px; background: var(--terracotta); color: var(--white);
+    font-weight: 600; padding: 10px 24px; border-radius: 22px; font-size: 0.9rem;
+  }
+
+  @media (max-width: 560px) {
+    .box-of-six { grid-template-columns: 46px 1fr 1fr; }
+    .drop-zone { min-height: 76px; padding: 4px; }
+    .drop-zone .zone-label { font-size: 0.72rem; }
+  }
+</style>
 </head>
-<body class="unit-plum">
+<body>
 
 <header>
   <a href="index.html" class="site-logo" aria-label="First Class Spanish home">
@@ -199,52 +283,198 @@
 </g>
 </svg>
   </a>
-  <div class="unit-pill">Unit 3 · Parts of Speech</div>
+  <div class="unit-pill">Unit 7 · Grammatical Person</div>
 </header>
 
-<div class="quiz-hero">
-  <div class="level-badge">🌱</div>
-  <h1>Foundation Quiz</h1>
-  <p>Core concepts, no prior knowledge needed. Take your time — every question includes an explanation.</p>
+<div class="practice-hero">
+  <h1>Sort the subjects into the Box of Six</h1>
+  <p>Drag each subject into the box where it belongs — or tap a card, then tap a box, if that's easier on your device.</p>
 </div>
 
-<div class="quiz-wrap">
-  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
-  <div id="quizContainer"></div>
-  <div class="results" id="results">
-    <div class="score" id="scoreText"></div>
-    <div class="msg" id="scoreMsg"></div>
-    <div class="msg-es" id="scoreMsgEs"></div>
-    <div class="nav-links">
-      <button class="retry-btn" onclick="location.reload()">Try Again</button>
-      <a class="btn secondary" href="unit3-parts-of-speech-lesson.html">Back to Lesson</a>
-      <a class="btn" href="unit3-quiz-practice.html">Next: Practice 💪</a>
+<div class="practice-wrap">
+
+  <div class="status-bar">
+    <div class="score">Placed correctly: <span id="scoreCount">0</span> / <span id="totalCount">0</span></div>
+    <button class="reset-btn" id="resetBtn">Reset</button>
+  </div>
+
+  <p class="instructions">Remember: the vosotros box is grayed out — it's not used in this course, so no card belongs there. *Also has a feminine form (nosotras, ellas) — more on that in a future unit.</p>
+
+  <div class="box-container">
+    <div class="box-of-six" id="boxGrid">
+      <div></div>
+      <div class="box-header">Singular</div>
+      <div class="box-header">Plural</div>
+
+      <div class="row-label">1st person</div>
+      <div class="drop-zone" data-zone="1s"><div class="zone-label">yo</div><div class="zone-sub">I</div><div class="placed-cards"></div></div>
+      <div class="drop-zone" data-zone="1p"><div class="zone-label">nosotros*</div><div class="zone-sub">we</div><div class="placed-cards"></div></div>
+
+      <div class="row-label">2nd person</div>
+      <div class="drop-zone" data-zone="2s"><div class="zone-label">tú</div><div class="zone-sub">you</div><div class="placed-cards"></div></div>
+      <div class="drop-zone disabled" data-zone="2p" data-disabled="true"><div class="zone-label">vosotros</div><div class="zone-sub">not used</div><div class="placed-cards"></div></div>
+
+      <div class="row-label">3rd person</div>
+      <div class="drop-zone" data-zone="3s"><div class="zone-label">él / ella / usted</div><div class="zone-sub">he / she / you (formal)</div><div class="placed-cards"></div></div>
+      <div class="drop-zone" data-zone="3p"><div class="zone-label">ellos / ustedes*</div><div class="zone-sub">they / you (plural)</div><div class="placed-cards"></div></div>
     </div>
   </div>
+
+  <div class="pool-title">Drag or tap a card to place it:</div>
+  <div class="card-pool" id="cardPool"></div>
+
+  <div class="complete-banner" id="completeBanner">
+    <div class="big">You've filled the Box of Six! 🎉</div>
+    <p>Every subject found its home. Want more reps with a wider variety, or ready for the leveled quizzes?</p>
+    <a href="unit7-quiz-subjects.html">More Subject Practice →</a>
+    <a href="unit7-quiz-foundation.html" style="margin-left: 10px;">Start the Leveled Quizzes →</a>
+  </div>
+
 </div>
 
 <footer>First Class Spanish · Your Ticket to Spanish Fluency</footer>
 
-<script src="js/quiz-engine.js?v=1"></script>
 <script>
-const questions = [
-  { q: "What does a noun do?", options: ["Shows action", "Names a person, place, thing, or idea", "Describes a noun", "Connects two words"], correct: 1, explain: "A noun names something — perro (dog), casa (house), amor (love) are all nouns." },
-  { q: "What does a verb show?", options: ["A description", "Action or a state of being", "A category of noun", "A number"], correct: 1, explain: "Verbs show action (corre = runs) or state of being (es = is)." },
-  { q: "What does an adjective do?", options: ["Names a thing", "Shows action", "Describes a noun", "Stands in for a noun"], correct: 2, explain: "Adjectives describe nouns — grande (big), bonito (pretty)." },
-  { q: "What does an adverb usually describe?", options: ["A noun", "A verb — often how, when, or where", "An article", "A pronoun"], correct: 1, explain: "Adverbs usually describe verbs: corre rápido (runs fast) — rápido describes how he runs." },
-  { q: "What does an article do?", options: ["Describes a noun", "Shows action", "Signals that a noun is coming", "Connects two sentences"], correct: 2, explain: "Articles (el, la, un, una) come right before a noun to signal it's about to appear." },
-  { q: "What is a pronoun?", options: ["A word that names a specific thing", "A word that stands in for a noun", "A word that describes an action", "A word that shows number"], correct: 1, explain: "Pronouns (ella, nosotros) stand in for a noun so you don't have to repeat a name — you met these in Unit 7." },
-  { q: "Which part of speech is \"perro\" (dog)?", options: ["Verb", "Adjective", "Noun", "Adverb"], correct: 2, explain: "Perro names a thing — that makes it a noun." },
-  { q: "Which part of speech is \"corre\" (runs)?", options: ["Noun", "Verb", "Article", "Pronoun"], correct: 1, explain: "Corre shows action — that makes it a verb." }
+const subjects = [
+  { id: 'c1', text: 'I', zone: '1s' },
+  { id: 'c2', text: 'Just me, myself', zone: '1s' },
+  { id: 'c3', text: 'My dog and I', zone: '1p' },
+  { id: 'c4', text: 'My friends and I', zone: '1p' },
+  { id: 'c5', text: 'You (talking to one friend)', zone: '2s' },
+  { id: 'c6', text: 'You (talking to your brother)', zone: '2s' },
+  { id: 'c7', text: 'Elena', zone: '3s' },
+  { id: 'c8', text: 'The teacher', zone: '3s' },
+  { id: 'c9', text: 'Usted (the formal "you")', zone: '3s' },
+  { id: 'c10', text: 'Mom and Dad', zone: '3p' },
+  { id: 'c11', text: 'The students', zone: '3p' },
+  { id: 'c12', text: 'You and your sister (both being spoken to)', zone: '3p' }
 ];
 
-const resultsMessages = {
-  perfect: "Perfect score! You've got the six categories down. 🌟",
-  good: "Solid work — you're ready to move on to Practice.",
-  low: "Good start. Revisit the lesson, then give it another shot."
-};
+let placedCount = 0;
+let selectedCard = null;
 
-initQuiz(questions, resultsMessages);
+const pool = document.getElementById('cardPool');
+const scoreCount = document.getElementById('scoreCount');
+const totalCount = document.getElementById('totalCount');
+const completeBanner = document.getElementById('completeBanner');
+totalCount.textContent = subjects.length;
+
+function buildCards() {
+  pool.innerHTML = '';
+  placedCount = 0;
+  scoreCount.textContent = '0';
+  completeBanner.classList.remove('show');
+  document.querySelectorAll('.placed-cards').forEach(p => p.innerHTML = '');
+
+  subjects.forEach(subj => {
+    const card = document.createElement('div');
+    card.className = 'subject-card';
+    card.textContent = subj.text;
+    card.dataset.id = subj.id;
+    card.dataset.zone = subj.zone;
+    attachInteraction(card);
+    pool.appendChild(card);
+  });
+}
+
+function attachInteraction(card) {
+  card.draggable = true;
+
+  card.addEventListener('dragstart', (e) => {
+    e.dataTransfer.setData('text/plain', card.dataset.id);
+    e.dataTransfer.effectAllowed = 'move';
+    card.classList.add('dragging');
+    clearSelection();
+  });
+
+  card.addEventListener('dragend', () => {
+    card.classList.remove('dragging');
+    clearAllHighlights();
+  });
+
+  card.addEventListener('click', () => {
+    toggleSelect(card);
+  });
+}
+
+function toggleSelect(card) {
+  if (selectedCard === card) {
+    clearSelection();
+    return;
+  }
+  clearSelection();
+  selectedCard = card;
+  card.classList.add('selected');
+}
+
+function clearSelection() {
+  if (selectedCard) selectedCard.classList.remove('selected');
+  selectedCard = null;
+}
+
+function clearAllHighlights() {
+  document.querySelectorAll('.drop-zone').forEach(z => z.classList.remove('hover-target'));
+}
+
+document.querySelectorAll('.drop-zone').forEach(zone => {
+  zone.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    if (zone.dataset.disabled !== 'true') zone.classList.add('hover-target');
+  });
+
+  zone.addEventListener('dragleave', () => {
+    zone.classList.remove('hover-target');
+  });
+
+  zone.addEventListener('drop', (e) => {
+    e.preventDefault();
+    zone.classList.remove('hover-target');
+    const cardId = e.dataTransfer.getData('text/plain');
+    const card = document.querySelector(`.subject-card[data-id="${cardId}"]`);
+    if (card) tryPlace(card, zone);
+  });
+
+  zone.addEventListener('click', () => {
+    if (selectedCard) {
+      tryPlace(selectedCard, zone);
+      clearSelection();
+    }
+  });
+});
+
+function tryPlace(card, zoneEl) {
+  if (zoneEl.dataset.disabled === 'true') {
+    pool.appendChild(card);
+    shakeCard(card);
+    return;
+  }
+
+  if (zoneEl.dataset.zone === card.dataset.zone) {
+    const chip = document.createElement('div');
+    chip.className = 'placed-chip';
+    chip.textContent = card.textContent;
+    zoneEl.querySelector('.placed-cards').appendChild(chip);
+    card.classList.add('placed');
+    pool.appendChild(card);
+    placedCount++;
+    scoreCount.textContent = placedCount;
+    if (placedCount === subjects.length) {
+      completeBanner.classList.add('show');
+    }
+  } else {
+    pool.appendChild(card);
+    shakeCard(card);
+  }
+}
+
+function shakeCard(card) {
+  card.classList.add('shake');
+  setTimeout(() => card.classList.remove('shake'), 400);
+}
+
+document.getElementById('resetBtn').addEventListener('click', buildCards);
+
+buildCards();
 </script>
 
 </body>

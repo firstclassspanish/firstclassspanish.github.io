@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 9 Intro Animation | First Class Spanish</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Sora:wght@600;700;800&family=Playfair+Display:wght@800&family=Barlow+Condensed:wght@600&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="assets/fcs-medallion.svg">
+<link rel="stylesheet" href="css/brand.css?v=17">
+<link rel="stylesheet" href="css/animation.css?v=8">
+<style>
+  /* Verb family cards */
+  .family-row { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-bottom: 16px; }
+  .family-card {
+    background: rgba(255,255,255,0.14); border-radius: 12px; padding: 14px 18px; text-align: center;
+    opacity: 0; transform: scale(0.85); animation: pop 0.4s ease forwards;
+  }
+  .family-card:nth-child(1) { animation-delay: 0.2s; }
+  .family-card:nth-child(2) { animation-delay: 0.6s; }
+  .family-card:nth-child(3) { animation-delay: 1.0s; }
+  .family-card .ending { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--gold); font-size: 1.1rem; }
+  .family-card .verb { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--white); font-size: 1rem; margin-top: 4px; }
+
+  /* Hook: compact conjugated forms with translations */
+  .messy-word.compact { font-size: clamp(1rem, 3.6vw, 1.4rem); margin: 2px 0; }
+  .conj-translation { font-size: 0.55em; font-weight: 500; color: rgba(255,255,255,0.7); }
+
+  /* Bridge: infinitive translation label + highlighted term */
+  .settle-sub { color: rgba(255,255,255,0.8); font-size: 1rem; margin-top: 4px; }
+
+  /* Hook: left-align the word stack */
+  .hook-word-list { display: flex; flex-direction: column; align-items: flex-start; margin: 0 auto 10px; }
+
+  /* Family card translations */
+  .family-translation { color: rgba(255,255,255,0.7); font-size: 0.75rem; margin-top: 3px; }
+
+  /* Box cell translations */
+  .box-translation { font-size: 0.6rem; font-weight: 500; color: rgba(255,255,255,0.7); font-style: normal; margin-top: 2px; }
+</style>
+</head>
+<body class="animation-page">
+
+<div>
+  <div class="stage theme-blue" id="stage">
+
+    <div class="home-control">
+      <a class="ctrl-btn" href="index.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="medallion-icon" role="img" aria-label="First Class Spanish">
+<defs><linearGradient id="foil" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0" stop-color="#9C7620"/><stop offset="0.28" stop-color="#E3C46B"/>
+  <stop offset="0.52" stop-color="#B8912F"/><stop offset="0.78" stop-color="#F0DA9A"/>
+  <stop offset="1" stop-color="#9C7620"/></linearGradient><clipPath id="discClip240"><circle cx="256" cy="256" r="222.0"/></clipPath></defs>
+<circle cx="256" cy="260.8" r="240" fill="#0B3021" opacity="0.18"/><circle cx="256" cy="256" r="240" fill="url(#foil)"/><circle cx="256" cy="256" r="222.0" fill="#1C5F3F"/><g clip-path="url(#discClip240)"><ellipse cx="256" cy="256" rx="192.0" ry="72.0" fill="none" stroke="#E3C46B" stroke-opacity="0.16" stroke-width="1" transform="rotate(0.0 256 256)"/><ellipse cx="256" cy="256" rx="192.0" ry="72.0" fill="none" stroke="#E3C46B" stroke-opacity="0.16" stroke-width="1" transform="rotate(15.0 256 256)"/><ellipse cx="256" cy="256" rx="192.0" ry="72.0" fill="none" stroke="#E3C46B" stroke-opacity="0.16" stroke-width="1" transform="rotate(30.0 256 256)"/><ellipse cx="256" cy="256" rx="192.0" ry="72.0" fill="none" stroke="#E3C46B" stroke-opacity="0.16" stroke-width="1" transform="rotate(45.0 256 256)"/><ellipse cx="256" cy="256" rx="192.0" ry="72.0" fill="none" stroke="#E3C46B" stroke-opacity="0.16" stroke-width="1" transform="rotate(60.0 256 256)"/><ellipse cx="256" cy="256" rx="192.0" ry="72.0" fill="none" stroke="#E3C46B" stroke-opacity="0.16" stroke-width="1" transform="rotate(75.0 256 256)"/><ellipse cx="256" cy="256" rx="192.0" ry="72.0" fill="none" stroke="#E3C46B" stroke-opacity="0.16" stroke-width="1" transform="rotate(90.0 256 256)"/><ellipse cx="256" cy="256" rx="192.0" ry="72.0" fill="none" stroke="#E3C46B" stroke-opacity="0.16" stroke-width="1" transform="rotate(105.0 256 256)"/><ellipse cx="256" cy="256" rx="192.0" ry="72.0" fill="none" stroke="#E3C46B" stroke-opacity="0.16" stroke-width="1" transform="rotate(120.0 256 256)"/><ellipse cx="256" cy="256" rx="192.0" ry="72.0" fill="none" stroke="#E3C46B" stroke-opacity="0.16" stroke-width="1" transform="rotate(135.0 256 256)"/><ellipse cx="256" cy="256" rx="192.0" ry="72.0" fill="none" stroke="#E3C46B" stroke-opacity="0.16" stroke-width="1" transform="rotate(150.0 256 256)"/><ellipse cx="256" cy="256" rx="192.0" ry="72.0" fill="none" stroke="#E3C46B" stroke-opacity="0.16" stroke-width="1" transform="rotate(165.0 256 256)"/></g><circle cx="256" cy="256" r="186.0" fill="none" stroke="#E3C46B" stroke-opacity="0.60" stroke-width="5.3"/><path d="M 256.00,134.08 L 287.10,216.07 L 374.69,220.31 L 306.33,275.23 L 329.36,359.85 L 256.00,311.80 L 182.64,359.85 L 205.67,275.23 L 137.31,220.31 L 224.90,216.07 Z" fill="#0B3021" opacity="0.30"/><path d="M 256.00,131.20 L 287.10,213.19 L 374.69,217.43 L 306.33,272.35 L 329.36,356.97 L 256.00,308.92 L 182.64,356.97 L 205.67,272.35 L 137.31,217.43 L 224.90,213.19 Z" fill="#F6F0DF"/>
+</svg> Home</a>
+    </div>
+    <div class="top-controls">
+      <button class="ctrl-btn" id="skipBtn">Skip ⏭</button>
+    </div>
+
+    <!-- Beat 1: Hook -->
+    <div class="beat" data-beat="0">
+      <div class="hook-word-list">
+        <div class="messy-word w1 compact">hablo <span class="conj-translation">(I speak)</span></div>
+        <div class="messy-word w2 compact">hablas <span class="conj-translation">(you speak)</span></div>
+        <div class="messy-word w3 compact">habla <span class="conj-translation">(he/she speaks)</span></div>
+        <div class="messy-word w4 compact">hablamos <span class="conj-translation">(we speak)</span></div>
+        <div class="messy-word w5 compact">hablan <span class="conj-translation">(they speak)</span></div>
+      </div>
+      <p class="vo">Five different words — but they're all just <strong class="highlight-term">one verb</strong>.</p>
+    </div>
+
+    <!-- Beat 2: Bridge -->
+    <div class="beat" data-beat="1">
+      <div class="settle-word">hablar</div>
+      <div class="settle-sub">(to speak / to talk)</div>
+      <p class="vo">Every verb starts life in one plain form — the <strong class="highlight-term">infinitive</strong>.</p>
+    </div>
+
+    <!-- Beat 3: Reveal - verb families -->
+    <div class="beat" data-beat="2">
+      <div class="family-row">
+        <div class="family-card"><div class="ending">-AR</div><div class="verb">hablar</div><div class="family-translation">(to speak)</div></div>
+        <div class="family-card"><div class="ending">-ER</div><div class="verb">comer</div><div class="family-translation">(to eat)</div></div>
+        <div class="family-card"><div class="ending">-IR</div><div class="verb">vivir</div><div class="family-translation">(to live)</div></div>
+      </div>
+      <p class="vo">Every Spanish infinitive ends one of three ways. That ending tells you the <strong class="highlight-term">family</strong> — and every verb in a family conjugates the same way.</p>
+    </div>
+
+    <!-- Beat 4: Proof - Box of Six activated -->
+    <div class="beat" data-beat="3">
+      <div class="box-grid" id="boxGrid">
+        <div class="box-cell header"></div>
+        <div class="box-cell header">Singular</div>
+        <div class="box-cell header">Plural</div>
+
+        <div class="box-cell row-label">1st person</div>
+        <div class="box-cell filled two-line"><div>hablo</div><div class="box-translation">(I speak)</div></div>
+        <div class="box-cell filled two-line"><div>hablamos</div><div class="box-translation">(we speak)</div></div>
+
+        <div class="box-cell row-label">2nd person</div>
+        <div class="box-cell filled two-line"><div>hablas</div><div class="box-translation">(you speak)</div></div>
+        <div class="box-cell empty">(not used)</div>
+
+        <div class="box-cell row-label">3rd person</div>
+        <div class="box-cell filled two-line"><div>habla</div><div class="box-translation">(he/she speaks)</div></div>
+        <div class="box-cell filled two-line"><div>hablan</div><div class="box-translation">(they speak)</div></div>
+      </div>
+      <p class="vo">Remember the <strong class="highlight-term">Box of Six</strong>? Watch what happens when hablar meets it.</p>
+    </div>
+
+    <!-- Beat 5: Payoff + CTA -->
+    <div class="beat" data-beat="4">
+      <div class="cta-star">★</div>
+      <div class="cta-title">Unit 9 · Conjugation</div>
+      <div class="cta-sub">Let's put it together.</div>
+      <div class="end-actions">
+        <button class="end-btn secondary" id="replayBtn">Replay</button>
+        <a class="end-btn primary" href="unit9-conjugation-lesson.html">Start the Lesson</a>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="progress-dots" id="dots"></div>
+    </div>
+
+  </div>
+
+  <p class="caption-note">Silent animatic — pairs with the narration script. Add voiceover audio once recorded.</p>
+</div>
+
+<script src="js/animation-engine.js?v=1"></script>
+<script>
+  const durations = [9500, 5800, 7200, 8600, 6000]; // ms per beat
+  initAnimation(durations, 'unit9-conjugation-lesson.html');
+</script>
+
+</body>
+</html>
