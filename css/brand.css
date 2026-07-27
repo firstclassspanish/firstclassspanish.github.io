@@ -147,6 +147,10 @@ section.block {
 .block p { color: var(--gray); margin-bottom: 20px; font-size: 1.02rem; line-height: 1.7; }
 .block p:last-child { margin-bottom: 0; }
 
+/* Small parenthetical translation gloss — for inline (English) or (Spanish)
+   translations next to a term, e.g. "Saludos (Greetings)" */
+.es-gloss { font-weight: 500; font-size: 0.62em; color: var(--muted); white-space: nowrap; }
+
 /* ---------- Softer tables: any *-wrap wrapper containing a table gets
    rounded corners + a light shadow instead of hard rectangular edges,
    without needing to touch each page's own table markup. ---------- */

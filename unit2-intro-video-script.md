@@ -9,11 +9,11 @@
 
 ## 0:00–0:07 — Hook
 
-**VO:** "Hey. What's up. Yo. English has a dozen ways to say hi — so where do you even start in Spanish?"
+**VO:** "Hi. Good morning. How are you? English already has plenty of ways to greet someone — so where do you start in Spanish?"
 
-**Visual:** The three English greetings appear on screen one at a time, a little messy/overlapping — echoing the tone of Unit 1's "though/through/tough" hook.
+**Visual:** The three English greetings appear on screen one at a time, a little scattered — echoing the tone of Unit 1's "though/through/tough" hook.
 
-**On-screen text:** Hey / What's up / Yo
+**On-screen text:** Hi / Good morning / How are you?
 
 ---
 
@@ -27,7 +27,7 @@
 
 ## 0:16–0:30 — Saludos
 
-**VO:** "Hola works anytime. But for something more specific, match it to the time of day — buenos días in the morning, buenas tardes in the afternoon, buenas noches at night."
+**VO:** "Hola works anytime. But for something more specific, match your saludo — your greeting — to the time of day: buenos días in the morning, buenas tardes in the afternoon, buenas noches at night."
 
 **Visual:** Four phrase chips pop in one at a time: Hola, Buenos días, Buenas tardes, Buenas noches. Amber color family.
 
@@ -37,7 +37,7 @@
 
 ## 0:30–0:42 — Despedidas
 
-**VO:** "Goodbyes work the same way — a handful of simple, reusable phrases covers almost everything."
+**VO:** "Saying goodbye works the same way — a handful of simple, reusable despedidas, or goodbyes."
 
 **Visual:** Four more phrase chips: Adiós, Hasta luego, Hasta mañana, Nos vemos.
 
