@@ -3,71 +3,50 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Unit 2: Greetings & Introductions | First Class Spanish</title>
+<title>Unit 2 Vocabulary | First Class Spanish</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Sora:wght@600;700;800&family=Playfair+Display:wght@800&family=Barlow+Condensed:wght@600&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="assets/fcs-medallion.svg">
 <link rel="stylesheet" href="css/brand.css?v=19">
 <style>
-  .block h2 .tag { background: var(--amber); }
-  .block h2 .emoji-accent { background: var(--amber-light); }
-
-  .unit-hero {
+  .vocab-hero {
     background: linear-gradient(135deg, var(--amber) 0%, var(--amber-dark) 100%);
-    color: var(--white); padding: 64px 24px 56px; text-align: center;
+    color: var(--white); padding: 56px 24px 48px; text-align: center;
   }
-  .unit-eyebrow {
+  .vocab-eyebrow {
     display: inline-block; background: rgba(255,255,255,0.18); padding: 6px 16px;
-    border-radius: 20px; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.03em; margin-bottom: 20px;
+    border-radius: 20px; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.03em; margin-bottom: 18px;
   }
-  .unit-hero h1 { color: var(--white); font-size: 2.4rem; font-weight: 700; max-width: 680px; margin: 0 auto 16px; }
-  .unit-hero p { max-width: 560px; margin: 0 auto; font-size: 1.1rem; color: rgba(255,255,255,0.92); }
-
-  .section-subtitle { font-weight: 600; color: var(--gray); font-size: 1.02rem; margin: -8px 0 16px; }
-
-  /* ---------- Greeting / farewell phrase grid ---------- */
-  .phrase-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 20px; }
-  @media (max-width: 640px) { .phrase-grid { grid-template-columns: 1fr; } }
-  .phrase-card { background: var(--amber-light); border-radius: 12px; padding: 16px 18px; }
-  .phrase-card .es { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--amber-dark); font-size: 1.15rem; }
-  .phrase-card .en { color: var(--gray); font-size: 0.9rem; margin-top: 4px; }
-  .phrase-card .when { color: var(--muted); font-size: 0.82rem; margin-top: 6px; font-style: italic; }
-
-  /* ---------- Dialogue exchange ---------- */
-  .dialogue-block { background: #FAFAF8; border-radius: 14px; padding: 20px 22px; margin-top: 20px; }
-  .dialogue-row { display: flex; align-items: baseline; gap: 12px; padding: 8px 0; }
-  .dialogue-row .speaker { font-size: 0.78rem; font-weight: 700; color: var(--amber-dark); min-width: 60px; text-transform: uppercase; letter-spacing: 0.03em; }
-  .dialogue-row .line { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--forest); font-size: 1.05rem; }
-  .dialogue-row .translation { color: var(--muted); font-size: 0.88rem; margin-left: auto; text-align: right; }
-  @media (max-width: 640px) {
-    .dialogue-row { flex-wrap: wrap; }
-    .dialogue-row .translation { margin-left: 72px; text-align: left; }
+  .vocab-hero h1 { color: var(--white); font-size: 2.1rem; font-weight: 700; max-width: 620px; margin: 0 auto 14px; }
+  .vocab-hero p { max-width: 560px; margin: 0 auto 22px; font-size: 1.05rem; color: rgba(255,255,255,0.92); }
+  .pdf-btn {
+    display: inline-flex; align-items: center; gap: 8px; background: var(--white); color: var(--amber-dark);
+    font-weight: 700; padding: 11px 24px; border-radius: 24px; font-size: 0.92rem;
   }
 
-  /* ---------- Formality note cards ---------- */
-  .formality-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 20px; }
-  @media (max-width: 640px) { .formality-grid { grid-template-columns: 1fr; } }
-  .formality-card { border: 1.5px solid #E4E2DC; border-radius: 12px; padding: 16px 18px; }
-  .formality-card .head { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--amber-dark); font-size: 1rem; margin-bottom: 4px; }
-  .formality-card .desc { color: var(--gray); font-size: 0.92rem; }
-  .formality-card .ex { color: var(--muted); font-size: 0.9rem; margin-top: 6px; font-style: italic; }
+  .vocab-wrap { max-width: 920px; margin: 0 auto; padding: 0 24px 40px; }
 
-  /* ---------- Go Further (optional) ---------- */
-  .go-further { background: var(--gold-light); border: 1.5px dashed var(--gold); border-radius: 16px; padding: 6px 40px; }
-  .go-further summary { list-style: none; cursor: pointer; padding: 24px 0; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-  .go-further summary::-webkit-details-marker { display: none; }
-  .go-further .gf-title { display: flex; align-items: center; gap: 10px; }
-  .go-further .gf-badge { background: var(--gold); color: var(--white); font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; padding: 4px 10px; border-radius: 10px; }
-  .go-further summary h2 { font-size: 1.3rem; margin: 0; }
-  .go-further .chevron { font-size: 1.2rem; color: var(--forest); transition: transform 0.2s ease; flex-shrink: 0; }
-  .go-further[open] .chevron { transform: rotate(90deg); }
-  .go-further .gf-body { padding-bottom: 30px; }
-  .go-further .gf-body > p { color: var(--gray); margin-bottom: 16px; }
-  .gf-rule { background: var(--white); border-radius: 12px; padding: 16px 20px; margin-bottom: 12px; }
-  .gf-rule .gf-rule-title { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--forest); font-size: 0.98rem; margin-bottom: 4px; }
-  .gf-rule p { color: var(--gray); font-size: 0.92rem; margin: 0; }
-  .gf-rule .gf-ex { color: var(--amber-dark); font-weight: 600; margin-top: 6px; font-size: 0.88rem; }
+  .category-block { margin-top: 40px; }
+  .category-title {
+    font-size: 1.15rem; color: var(--amber-dark); margin-bottom: 16px;
+    padding-bottom: 8px; border-bottom: 2px solid var(--amber-light);
+    display: flex; align-items: baseline; gap: 8px;
+  }
+  .category-title .es-gloss { font-size: 0.72em; }
+
+  .vocab2-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  @media (max-width: 640px) { .vocab2-grid { grid-template-columns: 1fr; } }
+
+  .vocab2-card { background: var(--amber-light); border-radius: 12px; padding: 16px 18px; }
+  .vocab2-card .es { font-family: 'Sora', sans-serif; font-weight: 700; color: var(--amber-dark); font-size: 1.05rem; }
+  .vocab2-card .en { color: var(--gray); font-size: 0.9rem; margin-top: 4px; }
+  .vocab2-card .lit { color: var(--muted); font-size: 0.78rem; margin-top: 6px; font-style: italic; }
+
+  .back-links { display: flex; gap: 12px; justify-content: center; margin-top: 44px; flex-wrap: wrap; }
+  .back-links a { display: inline-block; font-weight: 600; font-size: 0.9rem; padding: 10px 22px; border-radius: 22px; }
+  .back-links a.primary { background: var(--amber); color: var(--white); }
+  .back-links a.secondary { background: var(--white); color: var(--forest); border: 1.5px solid #E4E2DC; }
 </style>
 </head>
 <body>
@@ -260,158 +239,67 @@
   </a>
   <div class="unit-pill">Unit 2 · Greetings &amp; Introductions</div>
 </header>
-<div class="unit-hero">
-  <div class="unit-eyebrow">UNIT 2 &middot; GREETINGS &amp; INTRODUCTIONS</div>
-  <h1>Every conversation starts the same way.</h1>
-  <p>A handful of simple, reusable phrases cover almost every greeting, goodbye, and introduction you'll need. Let's learn the pattern.</p>
+<div class="vocab-hero">
+  <div class="vocab-eyebrow">UNIT 2 &middot; VOCABULARY</div>
+  <h1>Saludos, despedidas &amp; presentaciones.</h1>
+  <p>A robust reference list to build on what you learned in the lesson &mdash; 30 phrases across greetings, goodbyes, and introductions.</p>
+  <a class="pdf-btn" href="downloads/unit2-vocabulary.pdf" download>&#128190; Download as PDF</a>
 </div>
 
-<div class="unit-goals amber">
-  <div class="key-question">
-    <span class="kq-label">Key question</span>
-    <p>What do you actually say the moment you meet someone &mdash; and the moment you leave?</p>
+<div class="vocab-wrap">
+
+  <div class="category-block">
+    <div class="category-title">Saludos <span class="es-gloss">(Greetings)</span></div>
+    <div class="vocab2-grid">
+      <div class="vocab2-card"><div class="es">Hola</div><div class="en">Hi / Hello</div></div>
+      <div class="vocab2-card"><div class="es">Buenos d&iacute;as</div><div class="en">Good morning</div></div>
+      <div class="vocab2-card"><div class="es">Buenas tardes</div><div class="en">Good afternoon</div></div>
+      <div class="vocab2-card"><div class="es">Buenas noches</div><div class="en">Good evening / night</div></div>
+      <div class="vocab2-card"><div class="es">&iquest;Qu&eacute; tal?</div><div class="en">How's it going?</div></div>
+      <div class="vocab2-card"><div class="es">&iquest;C&oacute;mo est&aacute;s?</div><div class="en">How are you? (informal)</div></div>
+      <div class="vocab2-card"><div class="es">&iquest;C&oacute;mo est&aacute; usted?</div><div class="en">How are you? (formal)</div></div>
+      <div class="vocab2-card"><div class="es">&iquest;Qu&eacute; hay de nuevo?</div><div class="en">What's new?</div></div>
+      <div class="vocab2-card"><div class="es">&iquest;C&oacute;mo te va?</div><div class="en">How's it going for you?</div></div>
+      <div class="vocab2-card"><div class="es">&iexcl;Bienvenido / Bienvenida!</div><div class="en">Welcome!</div></div>
+    </div>
   </div>
-  <div>
-    <div class="goals-label">&#127919; What you'll learn</div>
-    <ul>
-      <li>Greetings that match the time of day (saludos)</li>
-      <li>Simple, everyday ways to say goodbye (despedidas)</li>
-      <li>How to introduce yourself and ask someone's name (presentaciones)</li>
-      <li>When to use informal vs. formal phrasing</li>
-    </ul>
+
+  <div class="category-block">
+    <div class="category-title">Despedidas <span class="es-gloss">(Goodbyes)</span></div>
+    <div class="vocab2-grid">
+      <div class="vocab2-card"><div class="es">Adi&oacute;s</div><div class="en">Goodbye</div></div>
+      <div class="vocab2-card"><div class="es">Hasta luego</div><div class="en">See you later</div></div>
+      <div class="vocab2-card"><div class="es">Hasta ma&ntilde;ana</div><div class="en">See you tomorrow</div></div>
+      <div class="vocab2-card"><div class="es">Hasta pronto</div><div class="en">See you soon</div></div>
+      <div class="vocab2-card"><div class="es">Nos vemos</div><div class="en">See you around</div></div>
+      <div class="vocab2-card"><div class="es">Chao</div><div class="en">Bye (casual)</div></div>
+      <div class="vocab2-card"><div class="es">Cu&iacute;date</div><div class="en">Take care</div></div>
+      <div class="vocab2-card"><div class="es">Que tengas un buen d&iacute;a</div><div class="en">Have a good day</div></div>
+      <div class="vocab2-card"><div class="es">Fue un placer</div><div class="en">It was a pleasure</div></div>
+      <div class="vocab2-card"><div class="es">Nos hablamos</div><div class="en">We'll talk (later)</div></div>
+    </div>
   </div>
-  <div class="why-block">
-    <div class="goals-label">&#128161; Why it matters</div>
-    <p>These are the very first words you'll actually say in Spanish, out loud, to a real person. Getting comfortable here builds confidence fast.</p>
+
+  <div class="category-block">
+    <div class="category-title">Presentaciones <span class="es-gloss">(Introductions)</span></div>
+    <div class="vocab2-grid">
+      <div class="vocab2-card"><div class="es">Me llamo ___</div><div class="en">My name is ___</div><div class="lit">lit. "I call myself ___"</div></div>
+      <div class="vocab2-card"><div class="es">&iquest;C&oacute;mo te llamas?</div><div class="en">What's your name? (informal)</div><div class="lit">lit. "how do you call yourself?"</div></div>
+      <div class="vocab2-card"><div class="es">&iquest;C&oacute;mo se llama usted?</div><div class="en">What's your name? (formal)</div></div>
+      <div class="vocab2-card"><div class="es">Mi nombre es ___</div><div class="en">My name is ___</div></div>
+      <div class="vocab2-card"><div class="es">Mucho gusto</div><div class="en">Nice to meet you</div><div class="lit">lit. "much pleasure"</div></div>
+      <div class="vocab2-card"><div class="es">Igualmente</div><div class="en">Likewise</div></div>
+      <div class="vocab2-card"><div class="es">Encantado / Encantada</div><div class="en">Delighted (to meet you)</div></div>
+      <div class="vocab2-card"><div class="es">El gusto es m&iacute;o</div><div class="en">The pleasure is mine</div><div class="lit">lit. "the pleasure is mine"</div></div>
+      <div class="vocab2-card"><div class="es">&iquest;De d&oacute;nde eres?</div><div class="en">Where are you from? (informal)</div></div>
+      <div class="vocab2-card"><div class="es">Soy de ___</div><div class="en">I'm from ___</div></div>
+    </div>
   </div>
-</div>
 
-<div class="wrap">
-
-  <section class="block" style="margin-top: 40px;">
-    <h2><span class="tag"></span>Saludos <span class="es-gloss">(Greetings)</span> <span class="emoji-accent">&#9728;&#65039;</span></h2>
-    <p class="section-subtitle">Phrases that follow the clock.</p>
-    <p><strong>Hola</strong> works any time of day &mdash; when in doubt, that's always a safe choice. But Spanish speakers often greet each other based on the time of day instead, the same way English speakers sometimes say "good morning" instead of just "hi."</p>
-    <div class="phrase-grid">
-      <div class="phrase-card"><div class="es">Hola</div><div class="en">Hi / Hello</div><div class="when">any time of day</div></div>
-      <div class="phrase-card"><div class="es">Buenos d&iacute;as</div><div class="en">Good morning</div><div class="when">until around midday</div></div>
-      <div class="phrase-card"><div class="es">Buenas tardes</div><div class="en">Good afternoon</div><div class="when">midday until evening</div></div>
-      <div class="phrase-card"><div class="es">Buenas noches</div><div class="en">Good evening / night</div><div class="when">evening onward</div></div>
-    </div>
-    <p>Once you've greeted someone, a natural next line is <strong>&iquest;Qu&eacute; tal?</strong> or <strong>&iquest;C&oacute;mo est&aacute;s?</strong> &mdash; both mean roughly "how's it going?"</p>
-    <div class="callout">Notice <strong>buenas noches</strong> does double duty &mdash; it can mean "good evening" when you arrive, or "good night" when you leave. Context makes it clear which one you mean.</div>
-  </section>
-
-  <div class="ticket-divider"><span class="notch"></span></div>
-
-  <section class="block">
-    <h2><span class="tag"></span>Despedidas <span class="es-gloss">(Goodbyes)</span> <span class="emoji-accent">&#128075;</span></h2>
-    <p class="section-subtitle">Simple, reusable phrases.</p>
-    <p>Saying goodbye works the same way &mdash; a small set of phrases covers almost every situation.</p>
-    <div class="phrase-grid">
-      <div class="phrase-card"><div class="es">Adi&oacute;s</div><div class="en">Goodbye</div><div class="when">general, any time</div></div>
-      <div class="phrase-card"><div class="es">Hasta luego</div><div class="en">See you later</div><div class="when">expecting to see them again soon</div></div>
-      <div class="phrase-card"><div class="es">Hasta ma&ntilde;ana</div><div class="en">See you tomorrow</div><div class="when">you'll see them again the next day</div></div>
-      <div class="phrase-card"><div class="es">Nos vemos</div><div class="en">See you around</div><div class="when">casual, no specific time</div></div>
-    </div>
-  </section>
-
-  <div class="ticket-divider"><span class="notch"></span></div>
-
-  <section class="block">
-    <h2><span class="tag"></span>Presentaciones <span class="es-gloss">(Introductions)</span> <span class="emoji-accent">&#129309;</span></h2>
-    <p class="section-subtitle">Meeting someone new.</p>
-    <p>Meeting someone new follows a simple, repeatable pattern: share your name, ask theirs, and respond to the introduction.</p>
-    <div class="callout"><strong>A quick note on translation:</strong> some Spanish phrases match English word for word &mdash; others express the same idea in a completely different way. When that happens, you learn the phrase as a whole, understanding both what it literally says and what it actually means. <strong>Me llamo Ana</strong> is a good first example: it literally says "I call myself Ana," even though the natural English is "My name is Ana."</div>
-    <div class="dialogue-block">
-      <div class="dialogue-row"><span class="speaker">Ana</span><span class="line">Me llamo Ana. &iquest;C&oacute;mo te llamas?</span><span class="translation">"My name is Ana. What's your name?"</span></div>
-      <div class="dialogue-row"><span class="speaker">Luis</span><span class="line">Me llamo Luis. Mucho gusto.</span><span class="translation">"My name is Luis. Nice to meet you."</span></div>
-      <div class="dialogue-row"><span class="speaker">Ana</span><span class="line">Igualmente.</span><span class="translation">"Likewise."</span></div>
-    </div>
-    <div class="callout" style="margin-top: 14px;">Literally, word for word: <strong>me llamo</strong> = "I call myself" &middot; <strong>&iquest;c&oacute;mo te llamas?</strong> = "how do you call yourself?" &middot; <strong>mucho gusto</strong> = "much pleasure." Once you notice that pattern, the natural English translations ("my name is" / "what's your name?" / "nice to meet you") make a lot more sense.</div>
-    <div class="callout">Instead of <strong>igualmente</strong>, you'll also hear <strong>encantado</strong> (if you're male) or <strong>encantada</strong> (if you're female) &mdash; both mean roughly "delighted to meet you."</div>
-  </section>
-
-  <div class="ticket-divider"><span class="notch"></span></div>
-
-  <section class="block">
-    <h2><span class="tag"></span>Informal vs. formal <span class="emoji-accent">&#127917;</span></h2>
-    <p>Just like in English you might greet a friend differently than a teacher, Spanish shifts the phrasing slightly depending on who you're talking to.</p>
-    <div class="formality-grid">
-      <div class="formality-card">
-        <div class="head">Informal (t&uacute;)</div>
-        <div class="desc">Friends, family, classmates &mdash; people your own age or close to you.</div>
-        <div class="ex">&iquest;C&oacute;mo est&aacute;s? &middot; &iquest;C&oacute;mo te llamas?</div>
-      </div>
-      <div class="formality-card">
-        <div class="head">Formal (usted)</div>
-        <div class="desc">Teachers, strangers, elders &mdash; anyone you'd address respectfully.</div>
-        <div class="ex">&iquest;C&oacute;mo est&aacute; usted? &middot; &iquest;C&oacute;mo se llama usted?</div>
-      </div>
-    </div>
-    <div class="callout">Don't worry about mastering this distinction yet &mdash; it comes from grammatical person, which gets its own full unit later. For now, just notice that both versions exist.</div>
-  </section>
-
-  <div class="ticket-divider"><span class="notch"></span></div>
-
-  <details class="go-further">
-    <summary>
-      <div class="gf-title">
-        <span class="gf-badge">Go Further</span>
-        <h2>Greetings vary by region</h2>
-      </div>
-      <span class="chevron">&rsaquo;</span>
-    </summary>
-    <div class="gf-body">
-      <p>Everything below is optional depth &mdash; the phrases above will work almost anywhere in the Spanish-speaking world. But greetings are one of the places where local flavor shows up the most.</p>
-
-      <div class="gf-rule">
-        <div class="gf-rule-title">&iquest;Qu&eacute; onda? (Mexico)</div>
-        <p>A very casual "what's up?" heard constantly among friends in Mexico.</p>
-        <div class="gf-ex">&iquest;Qu&eacute; onda, c&oacute;mo est&aacute;s? &mdash; "What's up, how's it going?"</div>
-      </div>
-
-      <div class="gf-rule">
-        <div class="gf-rule-title">A kiss on the cheek</div>
-        <p>In many Latin American countries, a light cheek kiss (sometimes paired with a hand on the shoulder) is a common greeting between friends &mdash; a handshake is more common in formal or first-time situations.</p>
-      </div>
-    </div>
-  </details>
-
-  <div class="ticket-divider"><span class="notch"></span></div>
-
-  <section class="block" style="text-align: center;">
-    <h2 style="justify-content: center;"><span class="tag"></span>Want the full phrase list?</h2>
-    <p>Browse all 30 phrases from this lesson &mdash; saludos, despedidas, and presentaciones &mdash; in one place, with a printable PDF version too.</p>
-    <a href="unit2-vocabulary.html" style="display: inline-block; margin-top: 10px; background: var(--amber); color: var(--white); font-weight: 600; padding: 10px 24px; border-radius: 22px; font-size: 0.92rem;">Browse Vocabulary &rarr;</a>
-  </section>
-
-  <div class="ticket-divider"><span class="notch"></span></div>
-
-  <section class="quiz-cta">
-    <h2>Put it into practice</h2>
-    <p class="sub">Three levels. Work your way up whenever you're ready.</p>
-    <div class="level-grid">
-      <a class="level-card" href="unit2-quiz-foundation.html">
-        <div class="emoji">&#127793;</div>
-        <div class="name">Foundation</div>
-        <div class="desc">Guided intro. No prior knowledge needed.</div>
-        <span class="btn">Start</span>
-      </a>
-      <a class="level-card" href="unit2-quiz-practice.html">
-        <div class="emoji">&#128170;</div>
-        <div class="name">Practice</div>
-        <div class="desc">Reinforcement drills to build confidence.</div>
-        <span class="btn">Start</span>
-      </a>
-      <a class="level-card" href="unit2-quiz-mastery.html">
-        <div class="emoji">&#127919;</div>
-        <div class="name">Mastery</div>
-        <div class="desc">Challenge level. Prove you've got it.</div>
-        <span class="btn">Start</span>
-      </a>
-    </div>
-  </section>
+  <div class="back-links">
+    <a class="secondary" href="unit2-greetings-lesson.html">Back to Lesson</a>
+    <a class="primary" href="unit2-quiz-foundation.html">Start Practicing &rarr;</a>
+  </div>
 
 </div>
 
