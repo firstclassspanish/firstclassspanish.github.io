@@ -23,25 +23,32 @@
   --teal-light: #DEF7F7;
   --teal-dark: #0F7575;
 
-  /* Unit 2 — Grammatical Person */
-  --terracotta: #E8623D;
-  --terracotta-light: #FFEBE2;
-  --terracotta-dark: #B8431F;
+  /* Unit 2 — Greetings & Introductions */
+  --amber: #D9952C;
+  --amber-light: #FBEDD6;
+  --amber-dark: #8C5F1C;
 
   /* Unit 3 — Parts of Speech */
   --plum: #9B4DC4;
   --plum-light: #F5E4FC;
   --plum-dark: #7333A0;
 
-  /* Unit 4 — Conjugation */
+  /* Unit 7 — Grammatical Person */
+  --terracotta: #E8623D;
+  --terracotta-light: #FFEBE2;
+  --terracotta-dark: #B8431F;
+
+  /* Unit 9 — Conjugation */
   --blue: #3670D6;
   --blue-light: #E5EDFC;
   --blue-dark: #244F9E;
 
+  /* Unit 5 — Nouns */
   --rose: #C23B6B;
   --rose-light: #FBE3EC;
   --rose-dark: #8F2650;
 
+  /* Unit 6 — Agreement */
   --moss: #5B8C5A;
   --moss-light: #E8F1E4;
   --moss-dark: #3E6440;
@@ -166,6 +173,7 @@ section.block {
 }
 .callout:hover { transform: translateX(5px); }
 .callout.terracotta { background: var(--terracotta-light); border-left-color: var(--terracotta); }
+.callout.amber { background: var(--amber-light); border-left-color: var(--amber); }
 .callout.plum { background: var(--plum-light); border-left-color: var(--plum); }
 .callout.blue { background: var(--blue-light); border-left-color: var(--blue); }
 .callout.rose { background: var(--rose-light); border-left-color: var(--rose); }
@@ -187,6 +195,7 @@ section.block {
   padding: 20px 24px; border-radius: 22px 22px 22px 4px; margin-top: 16px;
 }
 .callout-bold.terracotta { background: var(--terracotta); }
+.callout-bold.amber { background: var(--amber); }
 .callout-bold.plum { background: var(--plum); }
 .callout-bold.blue { background: var(--blue); }
 .callout-bold.rose { background: var(--rose); }
@@ -268,6 +277,7 @@ section.block {
   margin-bottom: 10px;
 }
 .unit-goals.terracotta .goals-label { color: var(--terracotta-dark); }
+.unit-goals.amber .goals-label { color: var(--amber-dark); }
 .unit-goals.plum .goals-label { color: var(--plum-dark); }
 .unit-goals.blue .goals-label { color: var(--blue-dark); }
 .unit-goals.rose .goals-label { color: var(--rose-dark); }
@@ -290,6 +300,7 @@ section.block {
   font-weight: 700;
 }
 .unit-goals.terracotta li::before { color: var(--terracotta); }
+.unit-goals.amber li::before { color: var(--amber); }
 .unit-goals.plum li::before { color: var(--plum); }
 .unit-goals.blue li::before { color: var(--blue); }
 .unit-goals.rose li::before { color: var(--rose); }
@@ -299,6 +310,7 @@ section.block {
   padding-left: 20px;
 }
 .unit-goals.terracotta .why-block { border-left-color: var(--terracotta-light); }
+.unit-goals.amber .why-block { border-left-color: var(--amber-light); }
 .unit-goals.plum .why-block { border-left-color: var(--plum-light); }
 .unit-goals.blue .why-block { border-left-color: var(--blue-light); }
 .unit-goals.rose .why-block { border-left-color: var(--rose-light); }
@@ -312,6 +324,7 @@ section.block {
   border-bottom: 1.5px dashed var(--teal-light);
 }
 .unit-goals.terracotta .key-question { border-bottom-color: var(--terracotta-light); }
+.unit-goals.amber .key-question { border-bottom-color: var(--amber-light); }
 .unit-goals.plum .key-question { border-bottom-color: var(--plum-light); }
 .unit-goals.blue .key-question { border-bottom-color: var(--blue-light); }
 .unit-goals.rose .key-question { border-bottom-color: var(--rose-light); }
@@ -327,6 +340,7 @@ section.block {
   margin-bottom: 6px;
 }
 .unit-goals.terracotta .kq-label { color: var(--terracotta-dark); }
+.unit-goals.amber .kq-label { color: var(--amber-dark); }
 .unit-goals.plum .kq-label { color: var(--plum-dark); }
 .unit-goals.blue .kq-label { color: var(--blue-dark); }
 .unit-goals.rose .kq-label { color: var(--rose-dark); }

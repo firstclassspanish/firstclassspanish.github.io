@@ -8,10 +8,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Sora:wght@600;700;800&family=Playfair+Display:wght@800&family=Barlow+Condensed:wght@600&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="assets/fcs-medallion.svg">
-<link rel="stylesheet" href="css/brand.css?v=17">
-<link rel="stylesheet" href="css/quiz.css?v=4">
+<link rel="stylesheet" href="css/brand.css?v=18">
+<link rel="stylesheet" href="css/quiz.css?v=5">
 </head>
-<body class="unit-terracotta">
+<body class="unit-amber">
 
 <header>
   <a href="index.html" class="site-logo" aria-label="First Class Spanish home">
@@ -199,13 +199,12 @@
 </g>
 </svg>
   </a>
-  <div class="unit-pill">Unit 2 · Grammatical Person</div>
+  <div class="unit-pill">Unit 2 · Greetings &amp; Introductions</div>
 </header>
-
 <div class="quiz-hero">
-  <div class="level-badge">💪</div>
+  <div class="level-badge">&#128170;</div>
   <h1>Practice Quiz</h1>
-  <p>Time to apply what you know. These questions ask you to sort real subjects into the right box.</p>
+  <p>Real-life situations. Choose the most natural greeting, goodbye, or introduction for the context.</p>
 </div>
 
 <div class="quiz-wrap">
@@ -217,82 +216,71 @@
     <div class="msg-es" id="scoreMsgEs"></div>
     <div class="nav-links">
       <button class="retry-btn" onclick="location.reload()">Try Again</button>
-      <a class="btn secondary" href="unit2-quiz-foundation.html">Back to Foundation</a>
-      <a class="btn" href="unit2-quiz-mastery.html">Next: Mastery 🎯</a>
+      <a class="btn secondary" href="unit2-greetings-lesson.html">Back to Lesson</a>
+      <a class="btn" href="unit2-quiz-mastery.html">Next: Mastery &#127919;</a>
     </div>
   </div>
 </div>
 
-<footer>First Class Spanish · Your Ticket to Spanish Fluency</footer>
+<footer>First Class Spanish &middot; Your Ticket to Spanish Fluency</footer>
 
 <script src="js/quiz-engine.js?v=1"></script>
 <script>
 const questions = [
   {
-    q: "\"Elena\" — which box does this subject belong in?",
-    options: ["1st person singular", "2nd person singular", "3rd person singular", "3rd person plural"],
+    q: "It's 8pm and you're greeting a friend. Which is most natural?",
+    options: ["Buenos d\u00edas", "Buenas tardes", "Buenas noches", "Hasta luego"],
     correct: 2,
-    explain: "Elena is one person, not the speaker or the listener — 3rd person singular. Pronoun: ella."
+    explain: "By evening, buenas noches (\"good evening\") is the natural greeting."
   },
   {
-    q: "\"My dog and I\" — which box does this subject belong in?",
-    options: ["1st person singular", "1st person plural", "3rd person singular", "3rd person plural"],
+    q: "You expect to see your friend again in an hour. What do you say when you leave?",
+    options: ["Hasta ma\u00f1ana", "Hasta luego", "Buenos d\u00edas", "Mucho gusto"],
     correct: 1,
-    explain: "Since \"I\" is included, the speaker is part of the subject — that makes it 1st person, and plural since it's more than one. Pronoun: nosotros."
+    explain: "Hasta luego (\"see you later\") fits when you expect to see them again soon — not necessarily the next day."
   },
   {
-    q: "\"The students\" — which box does this subject belong in?",
-    options: ["2nd person plural", "3rd person singular", "3rd person plural", "1st person plural"],
+    q: "Someone says \"Mucho gusto\" to you after you introduce yourself. What's a natural reply?",
+    options: ["Adi\u00f3s", "Buenos d\u00edas", "Igualmente", "Hasta ma\u00f1ana"],
     correct: 2,
-    explain: "A group being talked about, not speaking or being spoken to — 3rd person plural. Pronoun: ellos/ellas."
+    explain: "Igualmente (\"likewise\") is the natural response to someone saying it's nice to meet you."
   },
   {
-    q: "You're talking directly to your friend Marco. Which pronoun would you use?",
-    options: ["usted", "tú", "él", "ustedes"],
+    q: "You're a teacher greeting a student's parent for the first time. Which is more appropriate?",
+    options: ["\u00bfC\u00f3mo est\u00e1s?", "\u00bfC\u00f3mo est\u00e1 usted?", "\u00bfQu\u00e9 onda?", "Hola, \u00bfqu\u00e9 tal?"],
     correct: 1,
-    explain: "Marco is a friend, so this calls for the informal tú — 2nd person singular."
+    explain: "Usted is the formal \"you,\" appropriate for someone you don't know well or should address respectfully."
   },
   {
-    q: "You're addressing your school principal, someone you'd speak to formally. Which pronoun fits?",
-    options: ["tú", "usted", "nosotros", "ellos"],
+    q: "\"Buenas noches\" can mean both...",
+    options: ["\"Hello\" and \"goodbye\"", "\"Good evening\" and \"good night\"", "\"Good morning\" and \"good afternoon\"", "\"Please\" and \"thank you\""],
     correct: 1,
-    explain: "A formal relationship calls for usted — even though it means \"you,\" it's grammatically 3rd person."
+    explain: "Buenas noches does double duty — it can greet someone in the evening or say goodnight when leaving."
   },
   {
-    q: "\"You and your sister\" (both being spoken to) — which pronoun, and which box does it use for verb conjugation?",
-    options: [
-      "tú — 2nd person singular",
-      "vosotros — 2nd person plural",
-      "ustedes — 3rd person plural box",
-      "nosotros — 1st person plural"
-    ],
+    q: "A male speaker wants to say \"delighted to meet you\" instead of igualmente. He should say...",
+    options: ["Encantada", "Encantado", "Buenas tardes", "Nos vemos"],
+    correct: 1,
+    explain: "Encantado is the masculine form; encantada is used by female speakers."
+  },
+  {
+    q: "Which phrase asks \"how's it going?\" as a casual follow-up to a greeting?",
+    options: ["\u00bfDe d\u00f3nde eres?", "\u00bfC\u00f3mo te llamas?", "\u00bfQu\u00e9 tal?", "Hasta luego"],
     correct: 2,
-    explain: "This is plural \"you\" in concept, but since vosotros isn't used, ustedes borrows the 3rd-person-plural box for its verb forms."
+    explain: "\u00bfQu\u00e9 tal? is a casual, common way to ask how someone is doing."
   },
   {
-    q: "\"My friends and I\" — which box?",
-    options: ["1st person plural", "2nd person plural", "3rd person plural", "1st person singular"],
-    correct: 0,
-    explain: "The speaker is included, so this is 1st person — and plural, since it's more than one person. Pronoun: nosotros."
-  },
-  {
-    q: "Which of these is grammatically 3rd person, even though it translates as \"you\"?",
-    options: ["tú", "usted", "yo", "nosotros"],
+    q: "You're saying goodbye to a friend with no specific plan to meet again soon. Best fit?",
+    options: ["Hasta ma\u00f1ana", "Nos vemos", "Buenos d\u00edas", "Mucho gusto"],
     correct: 1,
-    explain: "Usted means \"you\" but its verb endings match él/ella — grammatically 3rd person singular."
-  },
-  {
-    q: "\"The teacher\" — which box?",
-    options: ["1st person singular", "2nd person singular", "3rd person singular", "3rd person plural"],
-    correct: 2,
-    explain: "One person being talked about, not speaking or being spoken to — 3rd person singular."
+    explain: "Nos vemos (\"see you around\") works well when there's no set time to meet again."
   }
 ];
 
 const resultsMessages = {
-  perfect: "Perfect score! Sorting subjects into boxes is clicking. 🌟",
-  good: "Nice work — you're ready for the Mastery challenge.",
-  low: "Getting there. Revisit the tricky cases in the lesson, then try again."
+  perfect: "Excellent — you're reading real situations correctly! \ud83c\udf1f",
+  good: "Nice work! A little more practice and you'll have this locked in.",
+  low: "Keep at it — review the lesson's callouts, then try again."
 };
 
 initQuiz(questions, resultsMessages);

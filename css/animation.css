@@ -28,6 +28,7 @@ body.animation-page {
   justify-content: center;
 }
 .stage.theme-teal { background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%); }
+.stage.theme-amber { background: linear-gradient(135deg, var(--amber) 0%, var(--amber-dark) 100%); }
 .stage.theme-terracotta { background: linear-gradient(135deg, var(--terracotta) 0%, var(--terracotta-dark) 100%); }
 .stage.theme-plum { background: linear-gradient(135deg, var(--plum) 0%, var(--plum-dark) 100%); }
 .stage.theme-blue { background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%); }

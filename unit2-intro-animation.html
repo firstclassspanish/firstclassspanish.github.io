@@ -8,27 +8,35 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Sora:wght@600;700;800&family=Playfair+Display:wght@800&family=Barlow+Condensed:wght@600&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="assets/fcs-medallion.svg">
-<link rel="stylesheet" href="css/brand.css?v=17">
-<link rel="stylesheet" href="css/animation.css?v=8">
+<link rel="stylesheet" href="css/brand.css?v=18">
+<link rel="stylesheet" href="css/animation.css?v=9">
 <style>
-  /* Box of Six grid */
-
-  /* Hook: sentences with highlighted subject */
-  .sentence-line {
+  .flash-words { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; max-width: 480px; }
+  .flash-words span {
     font-family: 'Sora', sans-serif; font-weight: 700; color: var(--white);
-    font-size: clamp(1.1rem, 4vw, 1.5rem); margin: 4px 0;
+    background: rgba(255,255,255,0.15); padding: 8px 16px; border-radius: 20px;
+    font-size: 1.05rem; opacity: 0; animation: pop 0.35s ease forwards;
+  }
+  .flash-words span:nth-child(1) { animation-delay: 0.1s; }
+  .flash-words span:nth-child(2) { animation-delay: 0.5s; }
+  .flash-words span:nth-child(3) { animation-delay: 0.9s; }
+  .flash-words span:nth-child(4) { animation-delay: 1.3s; }
+
+  .dialogue-line {
+    font-family: 'Sora', sans-serif; font-weight: 700; color: var(--white);
+    font-size: clamp(1.25rem, 4.5vw, 1.8rem); margin: 6px 0;
     opacity: 0; transform: translateY(10px); animation: rise 0.5s ease forwards;
   }
-  .sentence-line.l1 { animation-delay: 0.2s; }
-  .sentence-line.l2 { animation-delay: 1.4s; }
-  .sentence-line.l3 { animation-delay: 2.6s; }
-  .subj-hl { color: var(--gold); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+  .dialogue-line.l1 { animation-delay: 0.2s; }
+  .dialogue-line.l2 { animation-delay: 1.6s; }
+  .dialogue-meaning { color: rgba(255,255,255,0.85); font-size: 0.95rem; margin-top: 16px; min-height: 1.4em; opacity: 0; animation-delay: 2.6s; }
+  .dialogue-meaning.show { opacity: 1; transition: opacity 0.5s ease; }
 </style>
 </head>
 <body class="animation-page">
 
 <div>
-  <div class="stage theme-terracotta" id="stage">
+  <div class="stage theme-amber" id="stage">
 
     <div class="home-control">
       <a class="ctrl-btn" href="index.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="medallion-icon" role="img" aria-label="First Class Spanish">
@@ -45,72 +53,49 @@
 
     <!-- Beat 1: Hook -->
     <div class="beat" data-beat="0">
-      <div class="sentence-line l1"><span class="subj-hl">Elena</span> runs.</div>
-      <div class="sentence-line l2"><span class="subj-hl">We</span> speak Spanish.</div>
-      <div class="sentence-line l3"><span class="subj-hl">They</span> arrived late.</div>
-      <p class="vo">Every sentence has a subject — the person or thing doing the action.</p>
+      <div class="messy-word w1">Hey</div>
+      <div class="messy-word w2">What's up</div>
+      <div class="messy-word w3">Yo</div>
+      <p class="vo">English has a dozen ways to say hi. Where do you even start in Spanish?</p>
     </div>
 
     <!-- Beat 2: Bridge -->
     <div class="beat" data-beat="1">
-      <div class="settle-word">Every subject fits a category.</div>
-      <p class="vo">Every subject can be sorted by two things: whether it's <strong class="highlight-term">1st, 2nd, or 3rd person</strong> — and whether it's <strong class="highlight-term">singular or plural</strong>, one or more than one.</p>
+      <div class="settle-word">Spanish greetings follow the clock.</div>
+      <p class="vo">In Spanish, greetings are simple — you just need to know <strong class="highlight-term">what time of day it is</strong>.</p>
     </div>
 
-    <!-- Beat 3: Reveal - English Box of Six first -->
+    <!-- Beat 3: Reveal - Saludos -->
     <div class="beat" data-beat="2">
-      <div class="box-title">Subject Pronouns</div>
-      <div class="box-grid">
-        <div class="box-cell header"></div>
-        <div class="box-cell header">Singular</div>
-        <div class="box-cell header">Plural</div>
-
-        <div class="box-cell row-label">1st person</div>
-        <div class="box-cell filled">I</div>
-        <div class="box-cell filled">we</div>
-
-        <div class="box-cell row-label">2nd person</div>
-        <div class="box-cell filled">you</div>
-        <div class="box-cell filled">you</div>
-
-        <div class="box-cell row-label">3rd person</div>
-        <div class="box-cell filled">he/she/it</div>
-        <div class="box-cell filled">they</div>
+      <div class="flash-words">
+        <span>Hola</span><span>Buenos días</span><span>Buenas tardes</span><span>Buenas noches</span>
       </div>
-      <p class="vo">In grammar, this is called <strong class="highlight-term">person</strong> — and English already sorts pronouns into six boxes. The <strong class="highlight-term">Box of Six</strong>.</p>
+      <p class="vo"><strong class="highlight-term">Hola</strong> works anytime. For something more specific, match it to the time of day — morning, afternoon, or night.</p>
     </div>
 
-    <!-- Beat 4: Reveal - Same boxes, in Spanish -->
+    <!-- Beat 4: Reveal - Despedidas -->
     <div class="beat" data-beat="3">
-      <div class="box-title">Pronombres personales <span style="opacity: 0.7; font-weight: 500;">(Subject Pronouns)</span></div>
-      <div class="box-grid" id="boxGrid">
-        <div class="box-cell header"></div>
-        <div class="box-cell header">Singular</div>
-        <div class="box-cell header">Plural</div>
-
-        <div class="box-cell row-label">1st person</div>
-        <div class="box-cell filled">yo</div>
-        <div class="box-cell filled">nosotros</div>
-
-        <div class="box-cell row-label">2nd person</div>
-        <div class="box-cell filled">tú</div>
-        <div class="box-cell empty">Spain only</div>
-
-        <div class="box-cell row-label">3rd person</div>
-        <div class="box-cell filled">él/ella/usted</div>
-        <div class="box-cell filled">ellos/ustedes</div>
+      <div class="flash-words">
+        <span>Adiós</span><span>Hasta luego</span><span>Hasta mañana</span><span>Nos vemos</span>
       </div>
-      <p class="vo">Spanish uses the exact same six boxes — just with different words.</p>
+      <p class="vo">Goodbyes work the same way — a handful of simple, reusable phrases for <strong class="highlight-term">despedidas</strong>.</p>
     </div>
 
-    <!-- Beat 5: CTA -->
+    <!-- Beat 5: Reveal - Presentaciones -->
     <div class="beat" data-beat="4">
+      <div class="dialogue-line l1">Me llamo Ana.</div>
+      <div class="dialogue-line l2">¿Cómo te llamas?</div>
+      <div class="dialogue-meaning" id="dialogueMeaning">"My name is Ana." · "What's your name?"</div>
+    </div>
+
+    <!-- Beat 6: CTA -->
+    <div class="beat" data-beat="5">
       <div class="cta-star">★</div>
-      <div class="cta-title">Unit 2 · Grammatical Person</div>
-      <div class="cta-sub">Let's build your Box of Six.</div>
+      <div class="cta-title">Unit 2 · Greetings &amp; Introductions</div>
+      <div class="cta-sub">Let's start talking.</div>
       <div class="end-actions">
         <button class="end-btn secondary" id="replayBtn">Replay</button>
-        <a class="end-btn primary" href="unit2-grammatical-person-lesson.html">Start the Lesson</a>
+        <a class="end-btn primary" href="unit2-greetings-lesson.html">Start the Lesson</a>
       </div>
     </div>
 
@@ -125,8 +110,18 @@
 
 <script src="js/animation-engine.js?v=1"></script>
 <script>
-  const durations = [9600, 9000, 11000, 11500, 8000]; // ms per beat
-  initAnimation(durations, 'unit2-grammatical-person-lesson.html');
+  const durations = [6800, 6200, 7800, 7200, 7800, 7000]; // ms per beat
+
+  function showDialogueMeaning() {
+    const meaning = document.getElementById('dialogueMeaning');
+    meaning.classList.remove('show');
+    void meaning.offsetWidth;
+    meaning.classList.add('show');
+  }
+
+  initAnimation(durations, 'unit2-greetings-lesson.html', (beatIndex) => {
+    if (beatIndex === 4) showDialogueMeaning();
+  });
 </script>
 
 </body>

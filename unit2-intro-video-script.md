@@ -1,79 +1,77 @@
 # Unit 2 Concept Video — Script & Storyboard
-*"The Box of Six" — intro video for the Grammatical Person lesson*
+*"Greetings Follow the Clock" — intro video for the Greetings & Introductions lesson*
 
-**Length:** ~80 seconds
-**Tone:** Warm, confident — like handing someone a key that suddenly makes a confusing pile of verb endings make sense
+**Length:** ~65 seconds
+**Tone:** Warm, direct, a little playful — like a teacher letting you in on something that'll make their life easier
 **Style:** Talking-to-camera OR voiceover-over-animation both work with this script as written
 
 ---
 
-## 0:00–0:08 — Hook
+## 0:00–0:07 — Hook
 
-**VO:** "Every sentence has a subject — the person or thing doing the action."
+**VO:** "Hey. What's up. Yo. English has a dozen ways to say hi — so where do you even start in Spanish?"
 
-**Visual:** Three simple sentences rise onto screen one at a time, each with its subject word visually highlighted (gold, underlined): "Elena runs." / "We speak Spanish." / "They arrived late."
+**Visual:** The three English greetings appear on screen one at a time, a little messy/overlapping — echoing the tone of Unit 1's "though/through/tough" hook.
 
-**On-screen text:** the three sentences, subject highlighted in each
-
----
-
-## 0:08–0:18 — The bridge
-
-**VO:** "No matter what the subject is, it can be sorted into one of six categories."
-
-**Visual:** The three highlighted subjects (Elena, We, They) settle and simplify, hinting that a system is coming — without revealing the box yet.
+**On-screen text:** Hey / What's up / Yo
 
 ---
 
-## 0:18–0:30 — Plant the vocabulary
+## 0:07–0:16 — The bridge
 
-**VO:** "I, you, he, she, we, they — these are pronouns, and each one points to one of those six categories."
+**VO:** "Good news — Spanish greetings are simple. You just need to know what time of day it is."
 
-**Visual:** Small pronoun bubbles float in one at a time — I, you, he, she, we, they — landing gently, like puzzle pieces settling into place. Keep this simple and uncluttered; it's a plant, not a full lesson.
-
-**Note:** This is intentionally light — just enough for "subject" and "pronoun" to feel like real words with real meaning before the Box of Six shows up. Both get a fuller treatment later in this unit, and again in Unit 3 (Parts of Speech).
+**Visual:** The messy English words clear away. A clean clock or sun/moon motif settles into place.
 
 ---
 
-## 0:30–0:48 — The reveal
+## 0:16–0:30 — Saludos
 
-**VO:** "In grammar, that's called person — and in Spanish, there are exactly six. We call it the Box of Six."
+**VO:** "Hola works anytime. But for something more specific, match it to the time of day — buenos días in the morning, buenas tardes in the afternoon, buenas noches at night."
 
-**Visual:** A clean 2-column, 3-row grid draws itself on screen — Singular / Plural across the top, then fills in one cell at a time: yo, tú, él/ella/usted, nosotros, ellos/ellas/ustedes. (Vosotros deliberately skipped — this is Latin American Spanish.)
+**Visual:** Four phrase chips pop in one at a time: Hola, Buenos días, Buenas tardes, Buenas noches. Amber color family.
 
-**On-screen text:** THE BOX OF SIX — with the grid
-
----
-
-## 0:48–1:02 — Proof / connection to English
-
-**VO:** "You already know these pronouns — you use them every day in English. I, you, he or she, we, they. Spanish just organizes them a little differently."
-
-**Visual:** English pronouns (I / you / he-she / we / they) appear alongside the Spanish box, lining up side by side — visually mapping one to the other.
+**On-screen text:** Hola · Buenos días · Buenas tardes · Buenas noches
 
 ---
 
-## 1:02–1:14 — Payoff
+## 0:30–0:42 — Despedidas
 
-**VO:** "Knowing a subject's category is useful in all kinds of ways. Most immediately, it tells you exactly how to conjugate a verb — and later, it'll do the same for object pronouns too."
+**VO:** "Goodbyes work the same way — a handful of simple, reusable phrases covers almost everything."
 
-**Visual:** The box gives a confident little "lock-in" pulse or glow — like a foundation piece clicking into place. Maybe small ghost-icons of "conjugation" and "object pronouns" appear briefly beside it, hinting at what's ahead without explaining them yet.
+**Visual:** Four more phrase chips: Adiós, Hasta luego, Hasta mañana, Nos vemos.
+
+**On-screen text:** Adiós · Hasta luego · Hasta mañana · Nos vemos
 
 ---
 
-## 1:14–1:20 — CTA
+## 0:42–0:55 — Presentaciones
 
-**VO:** "Let's build your Box of Six."
+**VO:** "And introducing yourself follows one simple pattern: me llamo — my name is — and cómo te llamas asks theirs."
 
-**Visual:** Cut to Unit 2 title card / logo.
+**Visual:** A two-line mini dialogue types on screen, like a text exchange:
+"Me llamo Ana."
+"¿Cómo te llamas?"
+Small translation beneath once both lines have appeared.
 
-**On-screen text:** Unit 2 · Grammatical Person
+**On-screen text:** "Me llamo Ana." · "¿Cómo te llamas?"
+
+---
+
+## 0:55–1:05 — CTA
+
+**VO:** "Let's start talking."
+
+**Visual:** Cut to the Unit 2 lesson page / logo. Simple, confident close — no hard sell.
+
+**On-screen text:** Unit 2 · Greetings & Introductions
 
 ---
 
 ## Production notes
 
-- **Vosotros is intentionally excluded** from the box — this is Latin American Spanish throughout, consistent with Unit 1.
-- **Don't over-explain object pronouns or conjugation here** — this is a teaser/foundation-setting line, not a lesson. Those get their own full treatment in Unit 2's later content and in Unit 3.
-- **The "it's not random" beat is the emotional core of this video** — many students experience verb endings as arbitrary memorization. This animation's whole job is to reframe that as a system with exactly six predictable slots.
-- **Reuses the same script template as Unit 1:** hook → bridge/problem → reveal → proof → payoff → CTA. Worth keeping this structure for Units 3 and 4 too, for consistency across the site.
+- **No forced ticket metaphor** — same approach as Unit 1; let this piece stand on its own.
+- **Keep it Latin American throughout** — no vosotros, no Spain-specific slang in the core script. (Regional flavor like "qué onda" or "che" lives in the lesson's optional Go Further section, not this core video.)
+- **Music:** light and a little playful throughout — greetings are a warm, low-stakes topic, so this can sit slightly more upbeat than Unit 1's video from the start.
+- **If recording narration yourself:** keep pacing unhurried, especially through the saludos/despedidas phrase lists — give each phrase a beat to land before moving to the next.
+- **Reusability:** built from the same hook → bridge → reveal → reveal → reveal → CTA structure used across the unit intro videos, with three "reveal" beats here (saludos, despedidas, presentaciones) instead of one.

@@ -35,6 +35,7 @@
 /* Default accent (overridden per unit via body class, see quiz-engine init) */
 .explain { background: var(--teal-light); border-left: 4px solid var(--teal); }
 body.unit-terracotta .explain { background: var(--terracotta-light); border-left-color: var(--terracotta); }
+body.unit-amber .explain { background: var(--amber-light); border-left-color: var(--amber); }
 body.unit-plum .explain { background: var(--plum-light); border-left-color: var(--plum); }
 body.unit-blue .explain { background: var(--blue-light); border-left-color: var(--blue); }
 body.unit-rose .explain { background: var(--rose-light); border-left-color: var(--rose); }

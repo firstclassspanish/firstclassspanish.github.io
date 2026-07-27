@@ -8,10 +8,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Sora:wght@600;700;800&family=Playfair+Display:wght@800&family=Barlow+Condensed:wght@600&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="assets/fcs-medallion.svg">
-<link rel="stylesheet" href="css/brand.css?v=17">
-<link rel="stylesheet" href="css/quiz.css?v=4">
+<link rel="stylesheet" href="css/brand.css?v=18">
+<link rel="stylesheet" href="css/quiz.css?v=5">
 </head>
-<body class="unit-terracotta">
+<body class="unit-amber">
 
 <header>
   <a href="index.html" class="site-logo" aria-label="First Class Spanish home">
@@ -199,13 +199,12 @@
 </g>
 </svg>
   </a>
-  <div class="unit-pill">Unit 2 · Grammatical Person</div>
+  <div class="unit-pill">Unit 2 · Greetings &amp; Introductions</div>
 </header>
-
 <div class="quiz-hero">
-  <div class="level-badge">🎯</div>
+  <div class="level-badge">&#127919;</div>
   <h1>Mastery Quiz</h1>
-  <p>The challenge level. These questions mix tricky subjects and test the reasoning behind each box.</p>
+  <p>Formality, context, and nuance. Prove you've got greetings and introductions down cold.</p>
 </div>
 
 <div class="quiz-wrap">
@@ -217,96 +216,101 @@
     <div class="msg-es" id="scoreMsgEs"></div>
     <div class="nav-links">
       <button class="retry-btn" onclick="location.reload()">Try Again</button>
-      <a class="btn secondary" href="unit2-quiz-practice.html">Back to Practice</a>
-      <a class="btn" href="unit2-grammatical-person-lesson.html">Back to Lesson</a>
+      <a class="btn secondary" href="unit2-greetings-lesson.html">Back to Lesson</a>
+      <a class="btn" href="index.html">Back to Home</a>
     </div>
   </div>
 </div>
 
-<footer>First Class Spanish · Your Ticket to Spanish Fluency</footer>
+<footer>First Class Spanish &middot; Your Ticket to Spanish Fluency</footer>
 
 <script src="js/quiz-engine.js?v=1"></script>
 <script>
 const questions = [
   {
-    q: "\"Usted\" translates as \"you,\" but for verb conjugation purposes, which box does it actually use?",
-    options: ["2nd person singular, same as tú", "3rd person singular, same as él/ella", "1st person singular", "3rd person plural"],
-    correct: 1,
-    explain: "Despite meaning \"you,\" usted is grammatically 3rd person singular — its verb endings match él/ella, not tú."
-  },
-  {
-    q: "A student says \"vosotros\" is the correct way to say plural \"you\" in everyday Latin American Spanish. What's the issue with that?",
+    q: "Which pair correctly matches formality level? (informal \u2192 formal)",
     options: [
-      "Vosotros doesn't mean \"you\" at all",
-      "Vosotros is mainly used in Spain; Latin America uses ustedes instead",
-      "Vosotros is only for formal situations",
-      "There's no issue — that's correct"
+      "\u00bfC\u00f3mo est\u00e1s? \u2192 \u00bfC\u00f3mo te llamas?",
+      "\u00bfC\u00f3mo te llamas? \u2192 \u00bfC\u00f3mo se llama usted?",
+      "Hola \u2192 Adi\u00f3s",
+      "Buenos d\u00edas \u2192 Buenas noches"
     ],
     correct: 1,
-    explain: "Vosotros is Spain's informal plural \"you.\" Across Latin America, ustedes fills that role for both formal and informal situations."
+    explain: "\u00bfC\u00f3mo te llamas? (informal) becomes \u00bfC\u00f3mo se llama usted? (formal) — same question, different formality."
   },
   {
-    q: "\"You and your sister\" (both being addressed) — what makes this subject tricky to categorize?",
+    q: "You meet your new boss for the first time. Which greeting-and-question combo fits best?",
     options: [
-      "It doesn't fit any box",
-      "It's conceptually 2nd person plural, but grammatically uses the 3rd-person-plural box",
-      "It's always 1st person",
-      "It's only used in formal writing"
+      "\u00bfQu\u00e9 onda? \u00bfC\u00f3mo est\u00e1s?",
+      "Buenos d\u00edas. \u00bfC\u00f3mo est\u00e1 usted?",
+      "Hola. Nos vemos.",
+      "Che, \u00bfqu\u00e9 tal?"
     ],
     correct: 1,
-    explain: "This is plural \"you\" in meaning, but since vosotros isn't used, ustedes borrows the 3rd-person-plural verb forms."
+    explain: "A first meeting with someone in authority calls for a formal, respectful greeting — buenos d\u00edas plus the formal usted."
   },
   {
-    q: "Why does English speakers' historical use of \"thou\" help explain tú vs. usted?",
+    q: "Complete the exchange naturally: \"Me llamo Carlos. \u00bfC\u00f3mo te llamas?\" \u2014 \"___. Mucho gusto.\"",
+    options: ["Adi\u00f3s", "Me llamo Sof\u00eda", "Buenas noches", "Hasta luego"],
+    correct: 1,
+    explain: "The natural reply states your own name before responding to the introduction — \"Me llamo Sof\u00eda. Mucho gusto.\""
+  },
+  {
+    q: "Why doesn't \"buenas tardes\" work well as a goodbye at 11pm?",
     options: [
-      "It doesn't relate at all",
-      "English also once had a formal/informal \"you\" split, similar to tú/usted",
-      "Thou is the same word as usted",
-      "English never distinguished formal and informal \"you\""
+      "It's grammatically incorrect",
+      "It refers to the afternoon, not late night — buenas noches fits better",
+      "It's only used for hello, never goodbye",
+      "Tardes is a formal-only word"
     ],
     correct: 1,
-    explain: "English used to have thou (informal) alongside you (formal) — a similar split to tú/usted, though English eventually dropped thou entirely."
+    explain: "Tardes covers the afternoon-into-evening window; by late night, buenas noches is the natural choice."
   },
   {
-    q: "\"My brother and my cousins\" — assuming the speaker is not included, which box?",
-    options: ["1st person plural", "2nd person plural", "3rd person plural", "3rd person singular"],
+    q: "A classmate you already know well greets you with \u00bfQu\u00e9 tal? What's happening grammatically?",
+    options: [
+      "They're using the formal usted form",
+      "They're using a casual, informal greeting appropriate between peers",
+      "They're asking your name",
+      "They're saying goodbye"
+    ],
+    correct: 1,
+    explain: "\u00bfQu\u00e9 tal? is casual and informal — fitting for someone you already know, like a classmate or friend."
+  },
+  {
+    q: "Which greeting-goodbye pair would be the odd one out in a same-day conversation with a friend?",
+    options: [
+      "Hola ... Nos vemos",
+      "Buenas tardes ... Hasta luego",
+      "Buenos d\u00edas ... Hasta ma\u00f1ana (if you won't see them again until tomorrow)",
+      "Buenos d\u00edas ... Buenas tardes"
+    ],
+    correct: 3,
+    explain: "Buenos d\u00edas and buenas tardes are both greetings — pairing two greetings together doesn't make sense as a greeting/goodbye pair."
+  },
+  {
+    q: "In the exchange \"Me llamo Ana. Mucho gusto.\" \u2014 \"Igualmente,\" what is igualmente responding to?",
+    options: ["Ana's name", "The greeting time of day", "The sentiment of mucho gusto — \"nice to meet you\" too", "A goodbye"],
     correct: 2,
-    explain: "The speaker isn't part of this group, and it's more than one person — 3rd person plural."
+    explain: "Igualmente means \"likewise\" — it echoes back the sentiment of mucho gusto, not the name itself."
   },
   {
-    q: "You're introduced to your friend's grandmother for the first time. Which pronoun would typically be most appropriate?",
-    options: ["tú", "usted", "nosotros", "ustedes"],
-    correct: 1,
-    explain: "A first meeting with an elder calls for the formal usted, out of respect — even though only one person is being addressed."
-  },
-  {
-    q: "Which statement best explains why the Box of Six matters beyond this unit?",
+    q: "Which best explains why Spanish greetings shift with time of day, unlike a single all-purpose English \"hi\"?",
     options: [
-      "It only matters for spelling",
-      "It's the foundation for verb conjugation and, later, object pronouns",
-      "It's only used in written Spanish",
-      "It doesn't apply to real conversations"
+      "Spanish has no word for \"hi\" at all",
+      "Time-based greetings are optional flavor; hola already covers every situation, similar to how English speakers can choose \"hi\" or \"good morning\"",
+      "Time-based greetings are required by law",
+      "Only formal speech uses time-based greetings"
     ],
     correct: 1,
-    explain: "Every verb ending in Spanish is tied to one of these six boxes — and the same six categories reappear later for object pronouns."
-  },
-  {
-    q: "\"I\" is 1st person singular. What happens to the person and number if you change it to \"my classmates and I\"?",
-    options: [
-      "Stays 1st person singular",
-      "Becomes 1st person plural",
-      "Becomes 3rd person plural",
-      "Becomes 2nd person plural"
-    ],
-    correct: 1,
-    explain: "Adding others to a subject that includes the speaker keeps it 1st person, but now plural — nosotros."
+    explain: "Just like English speakers can say \"hi\" anytime or opt for \"good morning,\" Spanish speakers can always fall back on hola or choose a time-specific greeting."
   }
 ];
 
 const resultsMessages = {
-  perfect: "Perfect score! You've mastered the Box of Six. 🎯",
-  good: "Strong work — the tricky cases are clicking into place.",
-  low: "Some genuine trap questions in there. Revisit usted/ustedes, then try again."
+  perfect: "Outstanding — you've mastered greetings and introductions! \ud83c\udf1f",
+  good: "Great work! You've got a strong handle on this.",
+  low: "This level pushes hard — review the lesson and give it another attempt."
 };
 
 initQuiz(questions, resultsMessages);
