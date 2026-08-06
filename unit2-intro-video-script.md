@@ -19,9 +19,9 @@
 
 ## 0:07–0:16 — The bridge
 
-**VO:** "Good news — Spanish greetings are simple. You just need to know what time of day it is."
+**VO:** "Good news — Spanish greetings work the same way English ones already do. Morning, afternoon, evening, night."
 
-**Visual:** The messy English words clear away. A clean clock or sun/moon motif settles into place.
+**Visual:** The messy English words clear away. A clean sun/moon motif settles into place, marking the four times of day.
 
 ---
 
